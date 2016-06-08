@@ -17,6 +17,7 @@
 #import "TGLabel.h"
 #import "TGManager.h"
 #import "MMShare.h"
+#import "TGUtils.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

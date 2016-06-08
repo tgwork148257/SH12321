@@ -1,21 +1,15 @@
 //
-//  MMUtils.m
-//  MM-Community
+//  TGUtils.m
+//  SH12321
 //
-//  Created by meimi on 16/2/17.
-//  Copyright © 2016年 Meime. All rights reserved.
+//  Created by Tommy on 6/8/16.
+//  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "MMUtils.h"
-//#import "SBJson.h"
-//#import "MJRefresh.h"
-//#import "NSString+CXAHyperlinkParser.h"
+#import "TGUtils.h"
 
+@implementation TGUtils
 
-
-@implementation MMUtils
-
-//获取当前屏幕显示的viewcontroller
 + (TGViewController *)currentVCWithCurrentView:(UIView *)view{
     
     TGViewController *result = nil;
@@ -106,7 +100,7 @@
         if (showBlock) {
             showBlock();
         }
-
+        
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3F delay:1.3F options:UIViewAnimationOptionTransitionNone animations:^{
             infoView.frame = CGRectMake(infoView.frame.origin.x, infoViewY, infoView.frame.size.width, 0);
@@ -144,7 +138,7 @@
 }
 
 + (NSString *)dayOrMonthConvertToStr:(NSInteger)dayOrMonth{
-   return [self convertToStr:dayOrMonth];
+    return [self convertToStr:dayOrMonth];
 }
 
 + (NSString *)convertToStr:(NSInteger)number {
@@ -162,18 +156,18 @@
 }
 
 + (NSInteger)currentMonthWithDate:(NSDate *)date{
-   return [[self currentDateComponentWithData:date] month];
+    return [[self currentDateComponentWithData:date] month];
 }
 
 + (NSInteger)currentYearWithDate:(NSDate *)date{
-   return [[self currentDateComponentWithData:date] year];
+    return [[self currentDateComponentWithData:date] year];
 }
 
 + (NSString *)currentDateStrWithDate:(NSDate *)date{
     NSString *year = IntegerToStr([self currentYearWithDate:date]);
     NSString *month = [self dayOrMonthConvertToStr:[self currentMonthWithDate:date]];
     NSString *day = [self dayOrMonthConvertToStr:[self currentDayWithDate:date]];
-   return [[[[year stringByAppendingString:@"-"] stringByAppendingString:month] stringByAppendingString:@"-"] stringByAppendingString:day];
+    return [[[[year stringByAppendingString:@"-"] stringByAppendingString:month] stringByAppendingString:@"-"] stringByAppendingString:day];
 }
 
 + (NSDateComponents *)currentDateComponentWithData:(NSDate *)date{
@@ -264,10 +258,10 @@
 
 #pragma mark - 去掉字符串首尾的空格
 + (NSString *)removeStrSpace:(NSString *)str{
-//    NSString * rangeStr = @" yangiqjun   -  123 ";
-//    str  = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//    return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//    return str;
+    //    NSString * rangeStr = @" yangiqjun   -  123 ";
+    //    str  = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    //    return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    //    return str;
     return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
@@ -279,14 +273,6 @@
         return NO;
     }
 }
-
-#pragma mark - Show Munu
-+ (void)showMenuWithSuperView:(UIView *)superView{
-    
-}
-
-
-
 
 
 @end

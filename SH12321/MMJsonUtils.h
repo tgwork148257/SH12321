@@ -6,9 +6,7 @@
 //  Copyright © 2016 Meime. All rights reserved.
 //
 
-#import "MMUtils.h"
-
-@interface MMJsonUtils : MMUtils
+@interface MMJsonUtils : NSObject
 
 //+ (void)set:(id)value for:(id)target;
 //

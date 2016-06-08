@@ -1,17 +1,18 @@
 //
-//  MMUtils.h
-//  MM-Community
+//  TGUtils.h
+//  SH12321
 //
-//  Created by meimi on 16/2/17.
-//  Copyright © 2016年 Meime. All rights reserved.
+//  Created by Tommy on 6/8/16.
+//  Copyright © 2016 12321. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+
 typedef void (^InfoBlock) ();
 
 
 @class TGViewController;
-@interface MMUtils : NSObject
+@interface TGUtils : NSObject
 
 /*
  *获取当前显示的viewController
@@ -80,9 +81,6 @@ typedef void (^InfoBlock) ();
 //判断Tableview 数组数据
 + (BOOL)isCorrectArr:(NSArray *)arr index:(NSInteger)index;
 
-//Show Munu
-+ (void)showMenuWithSuperView:(UIView *)superView;
-
 //识别字符串的网址并返回
 + (NSArray *)matchWebsiteOrTopicStr:(NSString *)sourceStr;
 
@@ -92,4 +90,5 @@ typedef void (^InfoBlock) ();
                               contentStr:(NSString *)contentStr
                                 textFont:(UIFont *)font
                                textColor:(UIColor *)color;
+
 @end
