@@ -13,6 +13,25 @@
 		65F8CBBB1D07E60E008C7763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBB91D07E60E008C7763 /* Main.storyboard */; };
 		65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBC1D07E60E008C7763 /* Assets.xcassets */; };
 		65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBE1D07E60E008C7763 /* LaunchScreen.storyboard */; };
+		65F8CBCC1D07E697008C7763 /* ReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBCB1D07E697008C7763 /* ReportListViewController.m */; };
+		65F8CC1B1D07F880008C7763 /* NewsHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC1A1D07F880008C7763 /* NewsHomeVC.m */; };
+		65F8CC1E1D07F8B4008C7763 /* MeHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC1D1D07F8B4008C7763 /* MeHomeVC.m */; };
+		65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC211D07F96C008C7763 /* LoginVC.m */; };
+		65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC271D080495008C7763 /* ReportCrankCallVC.m */; };
+		65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */; };
+		65F8CC3E1D08058D008C7763 /* MMJsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */; };
+		65F8CC3F1D08058D008C7763 /* MMLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC311D08058D008C7763 /* MMLink.m */; };
+		65F8CC401D08058D008C7763 /* MMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC331D08058D008C7763 /* MMMenuItem.m */; };
+		65F8CC421D08058D008C7763 /* MMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC361D08058D008C7763 /* MMModel.m */; };
+		65F8CC431D08058D008C7763 /* MMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC381D08058D008C7763 /* MMShare.m */; };
+		65F8CC441D08058D008C7763 /* MMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC3A1D08058D008C7763 /* MMStore.m */; };
+		65F8CC451D08058D008C7763 /* MMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC3C1D08058D008C7763 /* MMUtils.m */; };
+		65F8CC491D0805BC008C7763 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC481D0805BC008C7763 /* TGViewController.m */; };
+		65F8CC4E1D080AEF008C7763 /* TGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC4D1D080AEF008C7763 /* TGButton.m */; };
+		65F8CC511D080C63008C7763 /* TGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC501D080C63008C7763 /* TGLabel.m */; };
+		65F8CC541D080CDB008C7763 /* TGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC531D080CDB008C7763 /* TGManager.m */; };
+		65F8CC571D080DBC008C7763 /* TGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC561D080DBC008C7763 /* TGView.m */; };
+		65F8CC5A1D080F5E008C7763 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC591D080F5E008C7763 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +45,46 @@
 		65F8CBBC1D07E60E008C7763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65F8CBBF1D07E60E008C7763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65F8CBC11D07E60E008C7763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F8CBCA1D07E697008C7763 /* ReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListViewController.h; sourceTree = "<group>"; };
+		65F8CBCB1D07E697008C7763 /* ReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListViewController.m; sourceTree = "<group>"; };
+		65F8CBCE1D07E712008C7763 /* TGCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGCommon.h; sourceTree = "<group>"; };
+		65F8CC191D07F880008C7763 /* NewsHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsHomeVC.h; sourceTree = "<group>"; };
+		65F8CC1A1D07F880008C7763 /* NewsHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsHomeVC.m; sourceTree = "<group>"; };
+		65F8CC1C1D07F8B4008C7763 /* MeHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHomeVC.h; sourceTree = "<group>"; };
+		65F8CC1D1D07F8B4008C7763 /* MeHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHomeVC.m; sourceTree = "<group>"; };
+		65F8CC201D07F96C008C7763 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		65F8CC211D07F96C008C7763 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		65F8CC261D080495008C7763 /* ReportCrankCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCrankCallVC.h; sourceTree = "<group>"; };
+		65F8CC271D080495008C7763 /* ReportCrankCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCrankCallVC.m; sourceTree = "<group>"; };
+		65F8CC291D080503008C7763 /* ReportScamsCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportScamsCallVC.h; sourceTree = "<group>"; };
+		65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportScamsCallVC.m; sourceTree = "<group>"; };
+		65F8CC2E1D08058D008C7763 /* MMJsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMJsonUtils.h; sourceTree = "<group>"; };
+		65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMJsonUtils.m; sourceTree = "<group>"; };
+		65F8CC301D08058D008C7763 /* MMLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLink.h; sourceTree = "<group>"; };
+		65F8CC311D08058D008C7763 /* MMLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLink.m; sourceTree = "<group>"; };
+		65F8CC321D08058D008C7763 /* MMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMenuItem.h; sourceTree = "<group>"; };
+		65F8CC331D08058D008C7763 /* MMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMenuItem.m; sourceTree = "<group>"; };
+		65F8CC351D08058D008C7763 /* MMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMModel.h; sourceTree = "<group>"; };
+		65F8CC361D08058D008C7763 /* MMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMModel.m; sourceTree = "<group>"; };
+		65F8CC371D08058D008C7763 /* MMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMShare.h; sourceTree = "<group>"; };
+		65F8CC381D08058D008C7763 /* MMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMShare.m; sourceTree = "<group>"; };
+		65F8CC391D08058D008C7763 /* MMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMStore.h; sourceTree = "<group>"; };
+		65F8CC3A1D08058D008C7763 /* MMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMStore.m; sourceTree = "<group>"; };
+		65F8CC3B1D08058D008C7763 /* MMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUtils.h; sourceTree = "<group>"; };
+		65F8CC3C1D08058D008C7763 /* MMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUtils.m; sourceTree = "<group>"; };
+		65F8CC471D0805BC008C7763 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
+		65F8CC481D0805BC008C7763 /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
+		65F8CC4B1D0806F3008C7763 /* SH12321PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SH12321PrefixHeader.pch; sourceTree = "<group>"; };
+		65F8CC4C1D080AEF008C7763 /* TGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGButton.h; sourceTree = "<group>"; };
+		65F8CC4D1D080AEF008C7763 /* TGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGButton.m; sourceTree = "<group>"; };
+		65F8CC4F1D080C63008C7763 /* TGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLabel.h; sourceTree = "<group>"; };
+		65F8CC501D080C63008C7763 /* TGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLabel.m; sourceTree = "<group>"; };
+		65F8CC521D080CDB008C7763 /* TGManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGManager.h; sourceTree = "<group>"; };
+		65F8CC531D080CDB008C7763 /* TGManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGManager.m; sourceTree = "<group>"; };
+		65F8CC551D080DBC008C7763 /* TGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGView.h; sourceTree = "<group>"; };
+		65F8CC561D080DBC008C7763 /* TGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGView.m; sourceTree = "<group>"; };
+		65F8CC581D080F5E008C7763 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		65F8CC591D080F5E008C7763 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +117,13 @@
 		65F8CBAF1D07E60E008C7763 /* SH12321 */ = {
 			isa = PBXGroup;
 			children = (
+				65F8CC131D07F5D1008C7763 /* Config */,
+				65F8CC461D08059B008C7763 /* TGUI */,
+				65F8CBCD1D07E6F3008C7763 /* TGUtils */,
+				65F8CBC91D07E634008C7763 /* Report */,
+				65F8CC171D07F82E008C7763 /* News */,
+				65F8CC181D07F85C008C7763 /* Me */,
+				65F8CC1F1D07F94D008C7763 /* Login */,
 				65F8CBB31D07E60E008C7763 /* AppDelegate.h */,
 				65F8CBB41D07E60E008C7763 /* AppDelegate.m */,
 				65F8CBB61D07E60E008C7763 /* ViewController.h */,
@@ -77,6 +143,95 @@
 				65F8CBB11D07E60E008C7763 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65F8CBC91D07E634008C7763 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CBCA1D07E697008C7763 /* ReportListViewController.h */,
+				65F8CBCB1D07E697008C7763 /* ReportListViewController.m */,
+				65F8CC261D080495008C7763 /* ReportCrankCallVC.h */,
+				65F8CC271D080495008C7763 /* ReportCrankCallVC.m */,
+				65F8CC291D080503008C7763 /* ReportScamsCallVC.h */,
+				65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */,
+			);
+			name = Report;
+			sourceTree = "<group>";
+		};
+		65F8CBCD1D07E6F3008C7763 /* TGUtils */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC2E1D08058D008C7763 /* MMJsonUtils.h */,
+				65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */,
+				65F8CC301D08058D008C7763 /* MMLink.h */,
+				65F8CC311D08058D008C7763 /* MMLink.m */,
+				65F8CC321D08058D008C7763 /* MMMenuItem.h */,
+				65F8CC331D08058D008C7763 /* MMMenuItem.m */,
+				65F8CC351D08058D008C7763 /* MMModel.h */,
+				65F8CC361D08058D008C7763 /* MMModel.m */,
+				65F8CC371D08058D008C7763 /* MMShare.h */,
+				65F8CC381D08058D008C7763 /* MMShare.m */,
+				65F8CC391D08058D008C7763 /* MMStore.h */,
+				65F8CC3A1D08058D008C7763 /* MMStore.m */,
+				65F8CC3B1D08058D008C7763 /* MMUtils.h */,
+				65F8CC3C1D08058D008C7763 /* MMUtils.m */,
+				65F8CBCE1D07E712008C7763 /* TGCommon.h */,
+				65F8CC521D080CDB008C7763 /* TGManager.h */,
+				65F8CC531D080CDB008C7763 /* TGManager.m */,
+			);
+			name = TGUtils;
+			sourceTree = "<group>";
+		};
+		65F8CC131D07F5D1008C7763 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC4B1D0806F3008C7763 /* SH12321PrefixHeader.pch */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		65F8CC171D07F82E008C7763 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC191D07F880008C7763 /* NewsHomeVC.h */,
+				65F8CC1A1D07F880008C7763 /* NewsHomeVC.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		65F8CC181D07F85C008C7763 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC1C1D07F8B4008C7763 /* MeHomeVC.h */,
+				65F8CC1D1D07F8B4008C7763 /* MeHomeVC.m */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		65F8CC1F1D07F94D008C7763 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC201D07F96C008C7763 /* LoginVC.h */,
+				65F8CC211D07F96C008C7763 /* LoginVC.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		65F8CC461D08059B008C7763 /* TGUI */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CC471D0805BC008C7763 /* TGViewController.h */,
+				65F8CC481D0805BC008C7763 /* TGViewController.m */,
+				65F8CC551D080DBC008C7763 /* TGView.h */,
+				65F8CC561D080DBC008C7763 /* TGView.m */,
+				65F8CC581D080F5E008C7763 /* UIView+Extension.h */,
+				65F8CC591D080F5E008C7763 /* UIView+Extension.m */,
+				65F8CC4C1D080AEF008C7763 /* TGButton.h */,
+				65F8CC4D1D080AEF008C7763 /* TGButton.m */,
+				65F8CC4F1D080C63008C7763 /* TGLabel.h */,
+				65F8CC501D080C63008C7763 /* TGLabel.m */,
+			);
+			name = TGUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +304,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F8CBCC1D07E697008C7763 /* ReportListViewController.m in Sources */,
+				65F8CC441D08058D008C7763 /* MMStore.m in Sources */,
+				65F8CC5A1D080F5E008C7763 /* UIView+Extension.m in Sources */,
+				65F8CC431D08058D008C7763 /* MMShare.m in Sources */,
 				65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */,
+				65F8CC1B1D07F880008C7763 /* NewsHomeVC.m in Sources */,
 				65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */,
+				65F8CC451D08058D008C7763 /* MMUtils.m in Sources */,
+				65F8CC401D08058D008C7763 /* MMMenuItem.m in Sources */,
+				65F8CC491D0805BC008C7763 /* TGViewController.m in Sources */,
+				65F8CC511D080C63008C7763 /* TGLabel.m in Sources */,
+				65F8CC3E1D08058D008C7763 /* MMJsonUtils.m in Sources */,
+				65F8CC571D080DBC008C7763 /* TGView.m in Sources */,
+				65F8CC421D08058D008C7763 /* MMModel.m in Sources */,
+				65F8CC541D080CDB008C7763 /* TGManager.m in Sources */,
 				65F8CBB21D07E60E008C7763 /* main.m in Sources */,
+				65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */,
+				65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */,
+				65F8CC4E1D080AEF008C7763 /* TGButton.m in Sources */,
+				65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */,
+				65F8CC1E1D07F8B4008C7763 /* MeHomeVC.m in Sources */,
+				65F8CC3F1D08058D008C7763 /* MMLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +437,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SH12321/SH12321PrefixHeader.pch";
 				INFOPLIST_FILE = SH12321/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.12321.SH12321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -274,6 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SH12321/SH12321PrefixHeader.pch";
 				INFOPLIST_FILE = SH12321/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.12321.SH12321;
@@ -300,6 +481,7 @@
 				65F8CBC61D07E60E008C7763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

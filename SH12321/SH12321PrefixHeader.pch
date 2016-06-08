@@ -1,0 +1,25 @@
+//
+//  SH12321PrefixHeader.pch
+//  SH12321
+//
+//  Created by Tommy on 6/8/16.
+//  Copyright © 2016 12321. All rights reserved.
+//
+
+#ifndef SH12321PrefixHeader_pch
+#define SH12321PrefixHeader_pch
+
+#import "TGViewController.h"
+#import "TGCommon.h"
+#import "TGView.h"
+#import "UIView+Extension.h"
+#import "TGButton.h"
+#import "TGLabel.h"
+#import "TGManager.h"
+#import "MMShare.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* SH12321PrefixHeader_pch */
