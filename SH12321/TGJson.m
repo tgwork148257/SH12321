@@ -1,15 +1,14 @@
 //
-//  MMJsonUtils.m
-//  MM-Community
+//  TGJson.m
+//  SH12321
 //
-//  Created by meimi on 4/16/16.
-//  Copyright © 2016 Meime. All rights reserved.
+//  Created by Tommy on 6/12/16.
+//  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "MMJsonUtils.h"
+#import "TGJson.h"
 
-@implementation MMJsonUtils
-
+@implementation TGJson
 #pragma mark -- 给字符串类型的字段赋值
 +(NSString *)JsonStr:(id)value{
     if (value == nil || value == [NSNull null]) {
@@ -17,7 +16,7 @@
     }
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value stringValue];
-//        return @"";
+        //        return @"";
     }
     if ([value isKindOfClass:[NSString class]]) {
         return value;
@@ -52,13 +51,13 @@
     }else{
         return value;
     }
-//    if ([value isKindOfClass:[NSNumber class]]) {
-//        return value;
-//    }
-//    if ([value isKindOfClass:[NSString class]]) {
-//        return @(0);
-//    }
-//    return @(0);
+    //    if ([value isKindOfClass:[NSNumber class]]) {
+    //        return value;
+    //    }
+    //    if ([value isKindOfClass:[NSString class]]) {
+    //        return @(0);
+    //    }
+    //    return @(0);
 }
 
 + (void)set:(id)value for:(id)target{
@@ -90,6 +89,5 @@
 + (BOOL)isNumberType:(id)varValue{
     return [varValue isKindOfClass:[NSNumber class]];
 }
-
 
 @end

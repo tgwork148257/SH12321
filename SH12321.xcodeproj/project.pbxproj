@@ -19,9 +19,7 @@
 		65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC211D07F96C008C7763 /* LoginVC.m */; };
 		65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC271D080495008C7763 /* ReportCrankCallVC.m */; };
 		65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */; };
-		65F8CC3E1D08058D008C7763 /* MMJsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */; };
 		65F8CC3F1D08058D008C7763 /* MMLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC311D08058D008C7763 /* MMLink.m */; };
-		65F8CC421D08058D008C7763 /* MMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC361D08058D008C7763 /* MMModel.m */; };
 		65F8CC431D08058D008C7763 /* MMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC381D08058D008C7763 /* MMShare.m */; };
 		65F8CC491D0805BC008C7763 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC481D0805BC008C7763 /* TGViewController.m */; };
 		65F8CC4E1D080AEF008C7763 /* TGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC4D1D080AEF008C7763 /* TGButton.m */; };
@@ -30,6 +28,8 @@
 		65F8CC571D080DBC008C7763 /* TGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC561D080DBC008C7763 /* TGView.m */; };
 		65F8CC5A1D080F5E008C7763 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC591D080F5E008C7763 /* UIView+Extension.m */; };
 		65F8CC5D1D081259008C7763 /* TGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC5C1D081259008C7763 /* TGUtils.m */; };
+		65F8CC601D0CF964008C7763 /* TGJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC5F1D0CF964008C7763 /* TGJson.m */; };
+		65F8CC631D0CF9C3008C7763 /* TGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC621D0CF9C3008C7763 /* TGModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,12 +56,8 @@
 		65F8CC271D080495008C7763 /* ReportCrankCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCrankCallVC.m; sourceTree = "<group>"; };
 		65F8CC291D080503008C7763 /* ReportScamsCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportScamsCallVC.h; sourceTree = "<group>"; };
 		65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportScamsCallVC.m; sourceTree = "<group>"; };
-		65F8CC2E1D08058D008C7763 /* MMJsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMJsonUtils.h; sourceTree = "<group>"; };
-		65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMJsonUtils.m; sourceTree = "<group>"; };
 		65F8CC301D08058D008C7763 /* MMLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLink.h; sourceTree = "<group>"; };
 		65F8CC311D08058D008C7763 /* MMLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLink.m; sourceTree = "<group>"; };
-		65F8CC351D08058D008C7763 /* MMModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMModel.h; sourceTree = "<group>"; };
-		65F8CC361D08058D008C7763 /* MMModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMModel.m; sourceTree = "<group>"; };
 		65F8CC371D08058D008C7763 /* MMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMShare.h; sourceTree = "<group>"; };
 		65F8CC381D08058D008C7763 /* MMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMShare.m; sourceTree = "<group>"; };
 		65F8CC471D0805BC008C7763 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
@@ -79,6 +75,10 @@
 		65F8CC591D080F5E008C7763 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		65F8CC5B1D081259008C7763 /* TGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUtils.h; sourceTree = "<group>"; };
 		65F8CC5C1D081259008C7763 /* TGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUtils.m; sourceTree = "<group>"; };
+		65F8CC5E1D0CF964008C7763 /* TGJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGJson.h; sourceTree = "<group>"; };
+		65F8CC5F1D0CF964008C7763 /* TGJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGJson.m; sourceTree = "<group>"; };
+		65F8CC611D0CF9C3008C7763 /* TGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGModel.h; sourceTree = "<group>"; };
+		65F8CC621D0CF9C3008C7763 /* TGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,12 +155,12 @@
 		65F8CBCD1D07E6F3008C7763 /* TGUtils */ = {
 			isa = PBXGroup;
 			children = (
-				65F8CC2E1D08058D008C7763 /* MMJsonUtils.h */,
-				65F8CC2F1D08058D008C7763 /* MMJsonUtils.m */,
+				65F8CC5E1D0CF964008C7763 /* TGJson.h */,
+				65F8CC5F1D0CF964008C7763 /* TGJson.m */,
 				65F8CC301D08058D008C7763 /* MMLink.h */,
 				65F8CC311D08058D008C7763 /* MMLink.m */,
-				65F8CC351D08058D008C7763 /* MMModel.h */,
-				65F8CC361D08058D008C7763 /* MMModel.m */,
+				65F8CC611D0CF9C3008C7763 /* TGModel.h */,
+				65F8CC621D0CF9C3008C7763 /* TGModel.m */,
 				65F8CC371D08058D008C7763 /* MMShare.h */,
 				65F8CC381D08058D008C7763 /* MMShare.m */,
 				65F8CC5B1D081259008C7763 /* TGUtils.h */,
@@ -298,17 +298,17 @@
 				65F8CC5A1D080F5E008C7763 /* UIView+Extension.m in Sources */,
 				65F8CC431D08058D008C7763 /* MMShare.m in Sources */,
 				65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */,
+				65F8CC631D0CF9C3008C7763 /* TGModel.m in Sources */,
 				65F8CC1B1D07F880008C7763 /* NewsHomeVC.m in Sources */,
 				65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */,
 				65F8CC491D0805BC008C7763 /* TGViewController.m in Sources */,
 				65F8CC511D080C63008C7763 /* TGLabel.m in Sources */,
-				65F8CC3E1D08058D008C7763 /* MMJsonUtils.m in Sources */,
 				65F8CC571D080DBC008C7763 /* TGView.m in Sources */,
-				65F8CC421D08058D008C7763 /* MMModel.m in Sources */,
 				65F8CC541D080CDB008C7763 /* TGManager.m in Sources */,
 				65F8CBB21D07E60E008C7763 /* main.m in Sources */,
 				65F8CC5D1D081259008C7763 /* TGUtils.m in Sources */,
 				65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */,
+				65F8CC601D0CF964008C7763 /* TGJson.m in Sources */,
 				65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */,
 				65F8CC4E1D080AEF008C7763 /* TGButton.m in Sources */,
 				65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */,

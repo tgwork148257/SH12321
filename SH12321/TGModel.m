@@ -1,14 +1,14 @@
 //
-//  MMModel.m
-//  MM-Community
+//  TGModel.m
+//  SH12321
 //
-//  Created by meimi on 16/1/20.
-//  Copyright © 2016年 Meime. All rights reserved.
+//  Created by Tommy on 6/12/16.
+//  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "MMModel.h"
+#import "TGModel.h"
 
-@implementation MMModel
+@implementation TGModel
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic{
     if (self = [super init]) {
@@ -17,9 +17,5 @@
         return nil;
     }
 }
-
-
-
-
 
 @end

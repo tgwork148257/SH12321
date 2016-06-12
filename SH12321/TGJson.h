@@ -1,13 +1,14 @@
 //
-//  MMJsonUtils.h
-//  MM-Community
+//  TGJson.h
+//  SH12321
 //
-//  Created by meimi on 4/16/16.
-//  Copyright © 2016 Meime. All rights reserved.
+//  Created by Tommy on 6/12/16.
+//  Copyright © 2016 12321. All rights reserved.
 //
 
-@interface MMJsonUtils : NSObject
+#import <Foundation/Foundation.h>
 
+@interface TGJson : NSObject
 //+ (void)set:(id)value for:(id)target;
 //
 //+ (void)NSIntegerJsonDic:(NSDictionary *)dic key:(NSString *)key;
