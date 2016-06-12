@@ -17,8 +17,6 @@
 		65F8CC1B1D07F880008C7763 /* NewsHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC1A1D07F880008C7763 /* NewsHomeVC.m */; };
 		65F8CC1E1D07F8B4008C7763 /* MeHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC1D1D07F8B4008C7763 /* MeHomeVC.m */; };
 		65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC211D07F96C008C7763 /* LoginVC.m */; };
-		65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC271D080495008C7763 /* ReportCrankCallVC.m */; };
-		65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */; };
 		65F8CC3F1D08058D008C7763 /* MMLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC311D08058D008C7763 /* MMLink.m */; };
 		65F8CC431D08058D008C7763 /* MMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC381D08058D008C7763 /* MMShare.m */; };
 		65F8CC491D0805BC008C7763 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC481D0805BC008C7763 /* TGViewController.m */; };
@@ -59,6 +57,8 @@
 		65F8CD2A1D0D0DCE008C7763 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD211D0D0DCE008C7763 /* AFURLSessionManager.m */; };
 		65F8CD2D1D0D0E82008C7763 /* NewsDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD2C1D0D0E82008C7763 /* NewsDetailsVC.m */; };
 		65F8CD301D0D17FC008C7763 /* NewsHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD2F1D0D17FC008C7763 /* NewsHomeCell.m */; };
+		65F8CD361D0D288E008C7763 /* ReportCrankCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD351D0D288E008C7763 /* ReportCrankCallVC.m */; };
+		65F8CD391D0D28A3008C7763 /* ReportScamsCallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD381D0D28A3008C7763 /* ReportScamsCallVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,10 +81,6 @@
 		65F8CC1D1D07F8B4008C7763 /* MeHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHomeVC.m; sourceTree = "<group>"; };
 		65F8CC201D07F96C008C7763 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		65F8CC211D07F96C008C7763 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		65F8CC261D080495008C7763 /* ReportCrankCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCrankCallVC.h; sourceTree = "<group>"; };
-		65F8CC271D080495008C7763 /* ReportCrankCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCrankCallVC.m; sourceTree = "<group>"; };
-		65F8CC291D080503008C7763 /* ReportScamsCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportScamsCallVC.h; sourceTree = "<group>"; };
-		65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportScamsCallVC.m; sourceTree = "<group>"; };
 		65F8CC301D08058D008C7763 /* MMLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLink.h; sourceTree = "<group>"; };
 		65F8CC311D08058D008C7763 /* MMLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLink.m; sourceTree = "<group>"; };
 		65F8CC371D08058D008C7763 /* MMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMShare.h; sourceTree = "<group>"; };
@@ -170,6 +166,10 @@
 		65F8CD2C1D0D0E82008C7763 /* NewsDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailsVC.m; sourceTree = "<group>"; };
 		65F8CD2E1D0D17FC008C7763 /* NewsHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsHomeCell.h; sourceTree = "<group>"; };
 		65F8CD2F1D0D17FC008C7763 /* NewsHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsHomeCell.m; sourceTree = "<group>"; };
+		65F8CD341D0D288E008C7763 /* ReportCrankCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCrankCallVC.h; sourceTree = "<group>"; };
+		65F8CD351D0D288E008C7763 /* ReportCrankCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCrankCallVC.m; sourceTree = "<group>"; };
+		65F8CD371D0D28A3008C7763 /* ReportScamsCallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportScamsCallVC.h; sourceTree = "<group>"; };
+		65F8CD381D0D28A3008C7763 /* ReportScamsCallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportScamsCallVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,10 +237,10 @@
 			children = (
 				65F8CBCA1D07E697008C7763 /* ReportListViewController.h */,
 				65F8CBCB1D07E697008C7763 /* ReportListViewController.m */,
-				65F8CC261D080495008C7763 /* ReportCrankCallVC.h */,
-				65F8CC271D080495008C7763 /* ReportCrankCallVC.m */,
-				65F8CC291D080503008C7763 /* ReportScamsCallVC.h */,
-				65F8CC2A1D080503008C7763 /* ReportScamsCallVC.m */,
+				65F8CD341D0D288E008C7763 /* ReportCrankCallVC.h */,
+				65F8CD351D0D288E008C7763 /* ReportCrankCallVC.m */,
+				65F8CD371D0D28A3008C7763 /* ReportScamsCallVC.h */,
+				65F8CD381D0D28A3008C7763 /* ReportScamsCallVC.m */,
 			);
 			name = Report;
 			sourceTree = "<group>";
@@ -491,6 +491,7 @@
 				65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */,
 				65F8CBCC1D07E697008C7763 /* ReportListViewController.m in Sources */,
 				65F8CD2D1D0D0E82008C7763 /* NewsDetailsVC.m in Sources */,
+				65F8CD391D0D28A3008C7763 /* ReportScamsCallVC.m in Sources */,
 				65F8CC5A1D080F5E008C7763 /* UIView+Extension.m in Sources */,
 				65F8CD271D0D0DCE008C7763 /* AFURLConnectionOperation.m in Sources */,
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,
@@ -516,13 +517,11 @@
 				65F8CC541D080CDB008C7763 /* TGManager.m in Sources */,
 				65F8CBB21D07E60E008C7763 /* main.m in Sources */,
 				65F8CC5D1D081259008C7763 /* TGUtils.m in Sources */,
-				65F8CC2B1D080503008C7763 /* ReportScamsCallVC.m in Sources */,
 				65F8CD031D0D00FB008C7763 /* SBJsonStreamParser.m in Sources */,
 				65F8CC601D0CF964008C7763 /* TGJson.m in Sources */,
 				65F8CC6C1D0CFBAE008C7763 /* MeHomeCellModel.m in Sources */,
 				65F8CC221D07F96C008C7763 /* LoginVC.m in Sources */,
 				65F8CC4E1D080AEF008C7763 /* TGButton.m in Sources */,
-				65F8CC281D080495008C7763 /* ReportCrankCallVC.m in Sources */,
 				65F8CC1E1D07F8B4008C7763 /* MeHomeVC.m in Sources */,
 				65F8CD0C1D0D00FB008C7763 /* SBJsonWriter.m in Sources */,
 				65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */,
@@ -535,6 +534,7 @@
 				65F8CD281D0D0DCE008C7763 /* AFURLRequestSerialization.m in Sources */,
 				65F8CD0B1D0D00FB008C7763 /* SBJsonUTF8Stream.m in Sources */,
 				65F8CD291D0D0DCE008C7763 /* AFURLResponseSerialization.m in Sources */,
+				65F8CD361D0D288E008C7763 /* ReportCrankCallVC.m in Sources */,
 				65F8CD071D0D00FB008C7763 /* SBJsonStreamWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,8 @@
 @implementation ReportListViewController{
     UIView *reportView;
     NSArray *labelArr;
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -76,6 +78,15 @@
 
 - (void)jumpToReportVC:(UITapGestureRecognizer *)tap{
     NSInteger tag = tap.view.tag;
+    NSString *title = labelArr[tag];
+    switch (tag) {
+        case 0:
+            <#statements#>
+            break;
+            
+        default:
+            break;
+    }
     
 }
 
