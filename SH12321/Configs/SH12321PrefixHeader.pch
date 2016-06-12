@@ -10,6 +10,7 @@
 #define SH12321PrefixHeader_pch
 
 #import "RequestDefine.h"
+#import "AFNetworking.h"
 #import "TGCommon.h"
 #import "TGViewController.h"
 #import "TGView.h"
