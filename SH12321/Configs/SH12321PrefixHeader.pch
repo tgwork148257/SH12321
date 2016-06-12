@@ -13,13 +13,14 @@
 #import "AFNetworking.h"
 #import "TGCommon.h"
 #import "TGViewController.h"
+#import "TGTableViewCell.h"
 #import "TGView.h"
 #import "UIView+Extension.h"
 #import "TGButton.h"
 #import "TGLabel.h"
 #import "TGManager.h"
-#import "MMShare.h"
 #import "TGUtils.h"
+#import "TGModel.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

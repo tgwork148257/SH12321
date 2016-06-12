@@ -87,6 +87,63 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 1:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 2:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 4:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 5:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 6:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 7:
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+//        case 0:
+//        {
+//            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+//            vc.navigationTitle = title;
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }
+//            break;
+            
             
         default:
             break;

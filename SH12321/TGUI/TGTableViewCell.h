@@ -1,5 +1,5 @@
 //
-//  NewsHomeCell.h
+//  TGTableViewCell.h
 //  SH12321
 //
 //  Created by Tommy on 6/12/16.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsHomeCell : UITableViewCell
+@interface TGTableViewCell : UITableViewCell
+
+- (void)buildCell;
+
++ (CGFloat)cellHeight;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  MeHomeCellModel.h
+//  ReportRecordModel.h
 //  SH12321
 //
 //  Created by Tommy on 6/12/16.
@@ -8,6 +8,6 @@
 
 #import "TGModel.h"
 
-@interface MeHomeCellModel : TGModel
+@interface ReportRecordModel : TGModel
 
 @end
