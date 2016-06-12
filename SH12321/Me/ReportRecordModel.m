@@ -10,4 +10,6 @@
 
 @implementation ReportRecordModel
 
+
+
 @end

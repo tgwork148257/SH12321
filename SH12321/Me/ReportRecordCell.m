@@ -8,14 +8,16 @@
 
 #import "ReportRecordCell.h"
 
-@implementation ReportRecordCell
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+@implementation ReportRecordCell{
+    
 }
-*/
+
+- (void)buildCell{
+    
+}
+
++ (CGFloat)cellHeight{
+    return 100;
+}
 
 @end
