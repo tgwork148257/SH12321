@@ -8,14 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^InfoBlock) ();
-
 @interface TGViewController : UIViewController
 
-//@property (nonatomic, strong) UIView *allContentView;                 //包含所以视图的自定义view
-
-@property (nonatomic, strong) UIView *infoView;                         // 提示背景
-@property (nonatomic, strong) UILabel *infoLabel;                       // 提示文字
 
 @property (nonatomic, strong) UIView *navigationView;                   //导航栏view
 @property (nonatomic, strong) UILabel *navigationLabel;                 //导航栏标题
@@ -26,13 +20,7 @@ typedef void (^InfoBlock) ();
 
 //@property (nonatomic, strong) UIButton *rightTitleBtn;                  //导航栏右边文字按钮
 
-@property (nonatomic, copy) InfoBlock showBlock;
-
-@property (nonatomic, copy) InfoBlock dismissBlock;
-
-
-#pragma mark - 提示信息
-- (void)showInfo:(NSString *)showText show:(InfoBlock)showBlock dismiss:(InfoBlock)dismissBlock;
+@property (nonatomic, copy) NSString *navigationTitle;
 
 
 #pragma mark -- 导航栏左边按钮点击

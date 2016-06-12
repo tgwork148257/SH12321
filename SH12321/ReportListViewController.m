@@ -81,7 +81,11 @@
     NSString *title = labelArr[tag];
     switch (tag) {
         case 0:
-            <#statements#>
+        {
+            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
+            vc.navigationTitle = title;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
             
         default:

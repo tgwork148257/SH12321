@@ -46,9 +46,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    _allContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H)];
-    //    _allContentView.backgroundColor = [UIColor whiteColor];
-    //    [self.view addSubview:_allContentView];
+
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
@@ -81,27 +79,20 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     }
     
     //导航栏标题
-    CGRect navigationLabelRect = [TGManager rectWithString:@"第三方士大夫的身" attrDic:@{NSFontAttributeName: FONTSIZE17}];
+    CGRect navigationLabelRect;
+    if (!EMPTY_STRING(self.navigationTitle)) {
+        navigationLabelRect = [TGManager rectWithString:@"navigationTitle" attrDic:@{NSFontAttributeName: FONTSIZE17}];;
+    }else{
+        navigationLabelRect = CGRectZero;
+    }
     _navigationView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, navigationViewWidth, navigationViewHeight)];
     _navigationLabel = [[UILabel alloc] initWithFrame:CGRectMake((navigationViewWidth - navigationLabelRect.size.width)/2, 0, navigationLabelRect.size.width, navigationViewHeight)];
     _navigationLabel.textAlignment = NSTextAlignmentCenter;
     _navigationLabel.textColor = [UIColor blackColor];
     _navigationLabel.font = FONTSIZE17;
+    _navigationLabel.text = self.navigationTitle;
     [_navigationView addSubview:_navigationLabel];
     self.navigationItem.titleView = _navigationView;
-    
-    // 提示背景
-    _infoView = [[UIView alloc] initWithFrame:CGRectMake(0, -40, DEVICE_W, 40)];
-    
-    
-    // 提示信息
-    _infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, DEVICE_W, 20)];
-    _infoLabel.text = @"美秘提示";
-    _infoLabel.backgroundColor = [UIColor clearColor];
-    _infoLabel.textColor = [UIColor whiteColor];
-    _infoLabel.textAlignment = NSTextAlignmentCenter;
-    _infoLabel.font = [UIFont systemFontOfSize:10.0f];
-    [_infoView addSubview:_infoLabel];
     
     _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _leftBtn.frame = CGRectMake(0, 0, 48.0F, 48.0F);
@@ -116,10 +107,8 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     
     _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _rightBtn.frame = CGRectMake(0, 0, 48, 48);
-    //    [_rightBtn setTitle:@"返回" forState:UIControlStateNormal];
     [_rightBtn setTitleColor:C_RED forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = FONTSIZE14;
-    //    [_rightBtn setImage:[UIImage imageNamed:@"nav_button_back@2x.png"] forState:UIControlStateNormal];
     [_rightBtn addTarget:self action:@selector(rightBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:_rightBtn];
     //    rightItem.width = 20;//此处修改到边界的距离，请自行测试
@@ -129,17 +118,6 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
         _rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -40);
         _leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -46.0F, 0, 0);
     }
-    
-    //    _rightTitleBtn = nil;
-    //    _rightTitleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    _rightTitleBtn.frame = CGRectMake(DEVICE_W - L_R_EDGE - 40, 0, 48, 48);
-    //    [_rightTitleBtn setTitle:@"提交" forState:UIControlStateNormal];
-    //    [_rightTitleBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    //    _rightTitleBtn.titleLabel.font = FONTSIZE14;
-    //    [_rightTitleBtn addTarget:self action:@selector(rightTitleBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
-    //    [self.navigationController.navigationBar addSubview:self.rightTitleBtn];
-    
-    
 }
 - (void)noNetworkButtonAction {
     
@@ -159,7 +137,6 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
 }
 
 - (void)showAlertView {
-    
     noNetworkBGView = [TGView initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H) backgroundColor:[UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.5] superView:[UIApplication sharedApplication].keyWindow];
     
     noNetworkWhiteView = [TGView initWithFrame:CGRectMake(0, 0, 250, 150) backgroundColor:[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1] superView:noNetworkBGView];
@@ -196,35 +173,6 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
 #pragma mark -- 右边点击按钮
 - (void)rightTitleBtnDidClick{
     
-}
-
-#pragma mark - 显示提示信息
-- (void)showInfo:(NSString *)showText show:(InfoBlock)showBlock  dismiss:(InfoBlock)dismissBlock{
-    //    [_infoView removeFromSuperview];
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:_infoView];
-    [UIView animateWithDuration:0.5F animations:^{
-        _infoView.frame = CGRectMake(0, 0, DEVICE_W, _infoView.frame.size.height);
-        _infoLabel.text = showText;
-        if (showBlock) {
-            showBlock();
-        }
-        if (dismissBlock) {
-            _dismissBlock = dismissBlock;
-        }
-    } completion:^(BOOL finished) {
-        [self performSelector:@selector(dismissInfoLabel) withObject:nil afterDelay:1.3f];
-    }];
-}
-
-- (void)dismissInfoLabel{
-    [UIView animateWithDuration:0.5F animations:^{
-        _infoView.frame = CGRectMake(0, -40, DEVICE_W, _infoView.frame.size.height);
-    } completion:^(BOOL finished) {
-        if (_dismissBlock) {
-            _dismissBlock();
-        }
-    }];
 }
 
 - (void)hiddenTabbar{
