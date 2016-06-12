@@ -79,61 +79,46 @@
 - (void)jumpToReportVC:(UITapGestureRecognizer *)tap{
     NSInteger tag = tap.view.tag;
     NSString *title = labelArr[tag];
+    TGViewController *vc;
     switch (tag) {
         case 0:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 1:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 2:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 3:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 4:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 5:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 6:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
         case 7:
         {
-            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-            vc.navigationTitle = title;
-            [self.navigationController pushViewController:vc animated:YES];
+            vc = [[ReportCrankCallVC alloc] init];
         }
             break;
 //        case 0:
@@ -148,7 +133,9 @@
         default:
             break;
     }
-    
+    vc.navigationTitle = title;
+    [self.navigationController pushViewController:vc animated:YES];
+    [self hiddenTabbar];
 }
 
 @end

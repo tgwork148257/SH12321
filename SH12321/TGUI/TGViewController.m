@@ -184,7 +184,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
             }
         }
     } completion:^(BOOL finished) {
-        [MMShare sharedInstance].isShowTabbar = NO;
+//        [MMShare sharedInstance].isShowTabbar = NO;
     }];
 }
 
@@ -197,7 +197,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
             }
         }
     } completion:^(BOOL finished) {
-        [MMShare sharedInstance].isShowTabbar = YES;
+//        [MMShare sharedInstance].isShowTabbar = YES;
     }];
 }
 
