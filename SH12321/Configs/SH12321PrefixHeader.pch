@@ -9,8 +9,9 @@
 #ifndef SH12321PrefixHeader_pch
 #define SH12321PrefixHeader_pch
 
-#import "TGViewController.h"
+#import "RequestDefine.h"
 #import "TGCommon.h"
+#import "TGViewController.h"
 #import "TGView.h"
 #import "UIView+Extension.h"
 #import "TGButton.h"
