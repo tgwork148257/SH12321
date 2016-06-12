@@ -60,6 +60,7 @@
 		65F8CD861D0D34D8008C7763 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD811D0D34D8008C7763 /* LoginVC.m */; };
 		65F8CD871D0D34D8008C7763 /* MeHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD831D0D34D8008C7763 /* MeHomeVC.m */; };
 		65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */; };
+		65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,8 @@
 		65F8CD831D0D34D8008C7763 /* MeHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHomeVC.m; sourceTree = "<group>"; };
 		65F8CD841D0D34D8008C7763 /* ReportRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordModel.h; sourceTree = "<group>"; };
 		65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordModel.m; sourceTree = "<group>"; };
+		65F8CD891D0D4007008C7763 /* ReportRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordCell.h; sourceTree = "<group>"; };
+		65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +421,8 @@
 				65F8CD831D0D34D8008C7763 /* MeHomeVC.m */,
 				65F8CD841D0D34D8008C7763 /* ReportRecordModel.h */,
 				65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */,
+				65F8CD891D0D4007008C7763 /* ReportRecordCell.h */,
+				65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				65F8CD0C1D0D00FB008C7763 /* SBJsonWriter.m in Sources */,
 				65F8CD7B1D0D34A4008C7763 /* NewsDetailModel.m in Sources */,
 				65F8CD431D0D2FF7008C7763 /* TGService.m in Sources */,
+				65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */,
 				65F8CD551D0D33C8008C7763 /* TGViewController.m in Sources */,
 				65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */,
 				65F8CD241D0D0DCE008C7763 /* AFHTTPSessionManager.m in Sources */,
