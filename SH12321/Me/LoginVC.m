@@ -10,6 +10,8 @@
 
 #define viewY  300
 #define viewH  100
+#define loginBtnW 200
+#define loginBtnH 64
 
 @interface LoginVC ()
 
@@ -25,6 +27,9 @@
     UITextField *verifyCodeTextField;
     TGButton *sendVerifyCodeBtn;
     
+    
+    TGButton *loginBtn;
+    
     NSTimer *timer;
     NSInteger timeUpdate;
 }
@@ -38,6 +43,7 @@
 
 - (void)initViews{
     phoneNumberView = [[UIView alloc] initWithFrame:CGRectMake(0, viewY, DEVICE_W, viewH)];
+    [self.view addSubview:phoneNumberView];
     prePhoneNumberLabel = [TGLabel initWithFrame:CGRectMake(0, 0, 100, viewH) text:@"请输入手机号码" textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:phoneNumberView];
     phoneNumberTextField = [[UITextField alloc] initWithFrame:CGRectMake(prePhoneNumberLabel.x + prePhoneNumberLabel.width, 0, MIDDLE_W - prePhoneNumberLabel.width, viewH)];
     phoneNumberTextField.borderStyle = UITextBorderStyleLine;
@@ -45,6 +51,7 @@
     [phoneNumberView addSubview:phoneNumberTextField];
     
     verifyCodeView = [[UIView alloc] initWithFrame:CGRectMake(0, phoneNumberView.y + phoneNumberView.height, DEVICE_W, viewH)];
+    [self.view addSubview:verifyCodeView];
     preverifyCodeLabel = [TGLabel initWithFrame:CGRectMake(0, 0, 100, viewH) text:@"验证码" textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:verifyCodeView];
     verifyCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(preverifyCodeLabel.x + preverifyCodeLabel.width, 0, 100, viewH)];
     verifyCodeTextField.font = FONTSIZE12;
@@ -54,6 +61,8 @@
     sendVerifyCodeBtn = [TGButton initTitleBtnWithFrame:CGRectMake(0, 0, MIDDLE_W - preverifyCodeLabel.width - verifyCodeTextField.width, viewH) title:@"点击获取验证码" titleColor:C_BLACK titleFont:FONTSIZE12 backgroundColor:nil superView:verifyCodeView];
     [sendVerifyCodeBtn addTarget:self action:@selector(sendVerifyCodeBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
+    loginBtn = [TGButton initTitleBtnWithFrame:CGRectMake((DEVICE_W - loginBtnW)/2, verifyCodeView.y + verifyCodeView.height + 50, loginBtnW, loginBtnH) title:@"登录" titleColor:C_BLACK titleFont:FONTSIZE14 backgroundColor:nil superView:self.view];
+    [loginBtn addTarget:self action:@selector(loginBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -74,6 +83,11 @@
     
     [sendVerifyCodeBtn setTitle:[NSString stringWithFormat:@"%lds", (long)timeUpdate] forState:UIControlStateNormal];
     timeUpdate--;
+}
+
+
+- (void)loginBtnDidClick{
+    
 }
 
 @end

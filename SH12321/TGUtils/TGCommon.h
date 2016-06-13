@@ -160,8 +160,24 @@
 #pragma mark ----- 其他常量
 //*************************其他常量*************************//
 
+//********服务端请求相关*********//
 
+//请求服务端最大时间
+#define REQUEST_TIMEOUT     10
 
+//登录用access token
+#define ACCESS_TOKEN @"ffff"
+
+//设备唯一标识符 device token
+#define DEVICE_TOKEN [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+//设备系统版本 device os version
+#define DEVICE_OS_VERSION [[UIDevice currentDevice] systemVersion]
+//设备当前应用版本 device app version
+#define DEVICE_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+//服务端请求版本key 和 value
+#define SERVER_VERSION_KEY      @"VERSION"         //服务端接口版本key
+#define SERVER_VERSION_VALUE    @"1.0"             //服务端接口版本value
 
 
 
