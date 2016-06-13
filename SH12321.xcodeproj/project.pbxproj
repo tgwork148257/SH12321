@@ -61,6 +61,7 @@
 		65F8CD871D0D34D8008C7763 /* MeHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD831D0D34D8008C7763 /* MeHomeVC.m */; };
 		65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */; };
 		65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */; };
+		65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8D1D0E5257008C7763 /* TGRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,8 @@
 		65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordModel.m; sourceTree = "<group>"; };
 		65F8CD891D0D4007008C7763 /* ReportRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordCell.h; sourceTree = "<group>"; };
 		65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordCell.m; sourceTree = "<group>"; };
+		65F8CD8C1D0E5257008C7763 /* TGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRequest.h; sourceTree = "<group>"; };
+		65F8CD8D1D0E5257008C7763 /* TGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,8 @@
 				65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */,
 				65F8CC8C1D0CFEE7008C7763 /* ServerRequest.h */,
 				65F8CC8D1D0CFEE7008C7763 /* ServerRequest.m */,
+				65F8CD8C1D0E5257008C7763 /* TGRequest.h */,
+				65F8CD8D1D0E5257008C7763 /* TGRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				65F8CD261D0D0DCE008C7763 /* AFSecurityPolicy.m in Sources */,
 				65F8CBB21D07E60E008C7763 /* main.m in Sources */,
 				65F8CD031D0D00FB008C7763 /* SBJsonStreamParser.m in Sources */,
+				65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */,
 				65F8CD641D0D3442008C7763 /* TGJson.m in Sources */,
 				65F8CD0C1D0D00FB008C7763 /* SBJsonWriter.m in Sources */,
 				65F8CD7B1D0D34A4008C7763 /* NewsDetailModel.m in Sources */,
