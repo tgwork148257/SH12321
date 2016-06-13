@@ -16,7 +16,6 @@
     }
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value stringValue];
-        //        return @"";
     }
     if ([value isKindOfClass:[NSString class]]) {
         return value;

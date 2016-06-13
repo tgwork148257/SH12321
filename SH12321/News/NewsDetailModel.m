@@ -10,4 +10,18 @@
 
 @implementation NewsDetailModel
 
+- (instancetype)initWithDictionary:(NSDictionary *)dic{
+    if (self = [super init]) {
+        if (!EMPTY_DIC(dic)) {
+            self.newsID = [TGJson JsonStr:[dic objectForKey:@"club_id"]];
+            self.newsTime = [TGJson JsonStr:[dic objectForKey:@"club_status"]];
+            self.newsTitle = [TGJson JsonStr:[dic objectForKey:@"join_status"]];
+            self.newsSource = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
+            self.newsContent = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
+            self.newsPicUrlStr = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
+        }
+    }
+    return self;
+}
+
 @end

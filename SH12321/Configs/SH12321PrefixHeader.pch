@@ -20,6 +20,7 @@
 #import "TGLabel.h"
 #import "TGManager.h"
 #import "TGUtils.h"
+#import "TGJson.h"
 #import "TGModel.h"
 
 

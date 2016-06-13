@@ -10,4 +10,16 @@
 
 @interface NewsDetailModel : TGModel
 
+@property (nonatomic, copy) NSString *newsID;
+
+@property (nonatomic, copy) NSString *newsTitle;
+
+@property (nonatomic, copy) NSString *newsTime;
+
+@property (nonatomic, copy) NSString *newsSource;
+
+@property (nonatomic, copy) NSString *newsPicUrlStr;
+
+@property (nonatomic, copy) NSString *newsContent;
+
 @end
