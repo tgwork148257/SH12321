@@ -78,7 +78,6 @@
 		65F8CC831D0CFE7F008C7763 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		65F8CC861D0CFEE7008C7763 /* ParseRequestErrorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseRequestErrorData.h; sourceTree = "<group>"; };
 		65F8CC871D0CFEE7008C7763 /* ParseRequestErrorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseRequestErrorData.m; sourceTree = "<group>"; };
-		65F8CC881D0CFEE7008C7763 /* RequestDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDefine.h; sourceTree = "<group>"; };
 		65F8CC891D0CFEE7008C7763 /* RequestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
 		65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequsetData.h; sourceTree = "<group>"; };
 		65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequsetData.m; sourceTree = "<group>"; };
@@ -262,7 +261,6 @@
 			children = (
 				65F8CC861D0CFEE7008C7763 /* ParseRequestErrorData.h */,
 				65F8CC871D0CFEE7008C7763 /* ParseRequestErrorData.m */,
-				65F8CC881D0CFEE7008C7763 /* RequestDefine.h */,
 				65F8CC891D0CFEE7008C7763 /* RequestUrl.h */,
 				65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */,
 				65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */,
