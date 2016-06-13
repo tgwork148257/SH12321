@@ -11,4 +11,9 @@
 
 @interface TGRequest : NSObject
 
+
++ (void)getDeviceToken;
+
++(void)TestAFN;
+
 @end

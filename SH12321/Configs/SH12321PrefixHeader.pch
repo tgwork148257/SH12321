@@ -9,7 +9,6 @@
 #ifndef SH12321PrefixHeader_pch
 #define SH12321PrefixHeader_pch
 
-#import "RequestDefine.h"
 #import "AFNetworking.h"
 #import "TGCommon.h"
 #import "TGViewController.h"
@@ -22,6 +21,7 @@
 #import "TGUtils.h"
 #import "TGJson.h"
 #import "TGModel.h"
+#import "TGRequest.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

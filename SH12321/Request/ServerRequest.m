@@ -11,7 +11,6 @@
 #import "SBJson.h"
 #import "ParseRequestErrorData.h"
 #import "RequestUrl.h"
-#import "RequestDefine.h"
 #import "AFNetworking.h"
 
 

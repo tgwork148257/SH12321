@@ -83,6 +83,7 @@
     switch (tag) {
         case 0:
         {
+            [TGRequest TestAFN];
             vc = [[ReportCrankCallVC alloc] init];
         }
             break;
