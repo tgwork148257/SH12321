@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ReportDataType){
-    ReportCrankCall,
-    ReportScamCall,
-};
-
+@class ReportDataModel;
 @interface TGService : NSObject
 
 + (instancetype)sharedInstance;
 
 
-- (void)commitReportDataWithType:(ReportDataType)type data:(TGModel *)model;
+- (void)commitReportWithData:(ReportDataModel *)model success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 @end

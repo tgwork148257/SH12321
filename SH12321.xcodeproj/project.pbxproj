@@ -62,6 +62,7 @@
 		65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */; };
 		65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */; };
 		65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8D1D0E5257008C7763 /* TGRequest.m */; };
+		65F8CD921D0EA106008C7763 /* ReportDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD911D0EA106008C7763 /* ReportDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +179,9 @@
 		65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordCell.m; sourceTree = "<group>"; };
 		65F8CD8C1D0E5257008C7763 /* TGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRequest.h; sourceTree = "<group>"; };
 		65F8CD8D1D0E5257008C7763 /* TGRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRequest.m; sourceTree = "<group>"; };
+		65F8CD8F1D0E9890008C7763 /* ServiceConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceConfig.h; sourceTree = "<group>"; };
+		65F8CD901D0EA106008C7763 /* ReportDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDataModel.h; sourceTree = "<group>"; };
+		65F8CD911D0EA106008C7763 /* ReportDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +350,7 @@
 			children = (
 				65F8CD411D0D2FF7008C7763 /* TGService.h */,
 				65F8CD421D0D2FF7008C7763 /* TGService.m */,
+				65F8CD8F1D0E9890008C7763 /* ServiceConfig.h */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -396,6 +401,8 @@
 				65F8CD6C1D0D346C008C7763 /* ReportListViewController.m */,
 				65F8CD6D1D0D346C008C7763 /* ReportScamsCallVC.h */,
 				65F8CD6E1D0D346C008C7763 /* ReportScamsCallVC.m */,
+				65F8CD901D0EA106008C7763 /* ReportDataModel.h */,
+				65F8CD911D0EA106008C7763 /* ReportDataModel.m */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -504,6 +511,7 @@
 				65F8CC8E1D0CFEE7008C7763 /* ParseRequestErrorData.m in Sources */,
 				65F8CD671D0D3442008C7763 /* TGUtils.m in Sources */,
 				65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */,
+				65F8CD921D0EA106008C7763 /* ReportDataModel.m in Sources */,
 				65F8CD271D0D0DCE008C7763 /* AFURLConnectionOperation.m in Sources */,
 				65F8CD861D0D34D8008C7763 /* LoginVC.m in Sources */,
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,

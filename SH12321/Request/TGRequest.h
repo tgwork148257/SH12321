@@ -16,4 +16,9 @@
 
 +(void)TestAFN;
 
+
+
+#pragma mark -- 举报骚扰电话接口
++ (void)commitReportCrankCallWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail;
+
 @end

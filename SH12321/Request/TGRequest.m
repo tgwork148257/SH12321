@@ -11,12 +11,8 @@
 
 @implementation TGRequest
 
-+ (void)getDeviceToken{
-    
-}
-
-//获取Json
-+ (void)JSONDataWithUrl:(NSString*)url success:(void(^)(id json)) success fail:(void(^)())fail;
+//获取Json GET方法
++ (void)getJsonDataWithUrl:(NSString*)url parameters:(id)parameters success:(void(^)(id json)) success fail:(void(^)())fail;
 
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -115,5 +111,31 @@
     }];
     [dataTask resume];
 }
+
+
+
+/************************************接口************************************/
+#pragma mark -- 举报骚扰电话接口
++ (void)commitReportCrankCallWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
