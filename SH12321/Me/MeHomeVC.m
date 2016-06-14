@@ -63,17 +63,6 @@
     return 0.1;
 }
 
-#pragma mark - 计算cell高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
-        ReportRecordModel *model = [cellDataArr objectAtIndex:indexPath.row];
-        return [ReportRecordCell cellHeight];
-        return 0;
-    }else{
-        return 0;
-    }
-}
-
 #pragma mark - cell 数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (!EMPTY_ARR(cellDataArr)) {
@@ -81,6 +70,11 @@
     }else{
         return 0;
     }
+}
+
+#pragma mark - 计算cell高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [ReportRecordCell cellHeight];
 }
 
 #pragma mark - build cell

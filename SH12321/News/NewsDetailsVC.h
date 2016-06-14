@@ -7,7 +7,10 @@
 //
 
 #import "TGViewController.h"
+#import "NewsDetailModel.h"
 
 @interface NewsDetailsVC : TGViewController
+
+@property (nonatomic, strong) NewsDetailModel *model;
 
 @end

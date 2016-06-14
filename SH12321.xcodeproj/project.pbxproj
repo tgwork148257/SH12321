@@ -63,6 +63,14 @@
 		65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */; };
 		65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8D1D0E5257008C7763 /* TGRequest.m */; };
 		65F8CD921D0EA106008C7763 /* ReportDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD911D0EA106008C7763 /* ReportDataModel.m */; };
+		65F8CD9C1D0F9450008C7763 /* tabbar_club_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD941D0F9450008C7763 /* tabbar_club_off@2x.png */; };
+		65F8CD9D1D0F9450008C7763 /* tabbar_club_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD951D0F9450008C7763 /* tabbar_club_on@2x.png */; };
+		65F8CD9E1D0F9450008C7763 /* tabbar_dialog_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD961D0F9450008C7763 /* tabbar_dialog_off@2x.png */; };
+		65F8CD9F1D0F9450008C7763 /* tabbar_dialog_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD971D0F9450008C7763 /* tabbar_dialog_on@2x.png */; };
+		65F8CDA01D0F9450008C7763 /* tabbar_plan_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD981D0F9450008C7763 /* tabbar_plan_off@2x.png */; };
+		65F8CDA11D0F9450008C7763 /* tabbar_plan_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD991D0F9450008C7763 /* tabbar_plan_on@2x.png */; };
+		65F8CDA21D0F9450008C7763 /* tabbar_user_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD9A1D0F9450008C7763 /* tabbar_user_off@2x.png */; };
+		65F8CDA31D0F9450008C7763 /* tabbar_user_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD9B1D0F9450008C7763 /* tabbar_user_on@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +190,14 @@
 		65F8CD8F1D0E9890008C7763 /* ServiceConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceConfig.h; sourceTree = "<group>"; };
 		65F8CD901D0EA106008C7763 /* ReportDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDataModel.h; sourceTree = "<group>"; };
 		65F8CD911D0EA106008C7763 /* ReportDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDataModel.m; sourceTree = "<group>"; };
+		65F8CD941D0F9450008C7763 /* tabbar_club_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_club_off@2x.png"; sourceTree = "<group>"; };
+		65F8CD951D0F9450008C7763 /* tabbar_club_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_club_on@2x.png"; sourceTree = "<group>"; };
+		65F8CD961D0F9450008C7763 /* tabbar_dialog_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_dialog_off@2x.png"; sourceTree = "<group>"; };
+		65F8CD971D0F9450008C7763 /* tabbar_dialog_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_dialog_on@2x.png"; sourceTree = "<group>"; };
+		65F8CD981D0F9450008C7763 /* tabbar_plan_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_plan_off@2x.png"; sourceTree = "<group>"; };
+		65F8CD991D0F9450008C7763 /* tabbar_plan_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_plan_on@2x.png"; sourceTree = "<group>"; };
+		65F8CD9A1D0F9450008C7763 /* tabbar_user_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_user_off@2x.png"; sourceTree = "<group>"; };
+		65F8CD9B1D0F9450008C7763 /* tabbar_user_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_user_on@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +239,7 @@
 				65F8CD7F1D0D34D8008C7763 /* Me */,
 				65F8CD401D0D2FBA008C7763 /* Service */,
 				65F8CC851D0CFEBE008C7763 /* Request */,
+				65F8CD931D0F940B008C7763 /* Resource */,
 				65F8CBB31D07E60E008C7763 /* AppDelegate.h */,
 				65F8CBB41D07E60E008C7763 /* AppDelegate.m */,
 				65F8CBB61D07E60E008C7763 /* ViewController.h */,
@@ -437,6 +454,21 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		65F8CD931D0F940B008C7763 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CD941D0F9450008C7763 /* tabbar_club_off@2x.png */,
+				65F8CD951D0F9450008C7763 /* tabbar_club_on@2x.png */,
+				65F8CD961D0F9450008C7763 /* tabbar_dialog_off@2x.png */,
+				65F8CD971D0F9450008C7763 /* tabbar_dialog_on@2x.png */,
+				65F8CD981D0F9450008C7763 /* tabbar_plan_off@2x.png */,
+				65F8CD991D0F9450008C7763 /* tabbar_plan_on@2x.png */,
+				65F8CD9A1D0F9450008C7763 /* tabbar_user_off@2x.png */,
+				65F8CD9B1D0F9450008C7763 /* tabbar_user_on@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,8 +526,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F8CDA31D0F9450008C7763 /* tabbar_user_on@2x.png in Resources */,
 				65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */,
+				65F8CD9F1D0F9450008C7763 /* tabbar_dialog_on@2x.png in Resources */,
 				65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */,
+				65F8CDA01D0F9450008C7763 /* tabbar_plan_off@2x.png in Resources */,
+				65F8CD9E1D0F9450008C7763 /* tabbar_dialog_off@2x.png in Resources */,
+				65F8CDA11D0F9450008C7763 /* tabbar_plan_on@2x.png in Resources */,
+				65F8CD9C1D0F9450008C7763 /* tabbar_club_off@2x.png in Resources */,
+				65F8CDA21D0F9450008C7763 /* tabbar_user_off@2x.png in Resources */,
+				65F8CD9D1D0F9450008C7763 /* tabbar_club_on@2x.png in Resources */,
 				65F8CBBB1D07E60E008C7763 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
