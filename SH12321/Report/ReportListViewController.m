@@ -35,6 +35,7 @@
 }
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"举报";
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     

@@ -21,6 +21,8 @@
 }
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"新闻";
+    
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     

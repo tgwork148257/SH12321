@@ -47,12 +47,10 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
     [self.tabBarItem setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithRed:255.0/255.0f green:99/255.0f blue:99/255.0f alpha:1]} forState:UIControlStateSelected];
-    
     
     
     // 显示NavigationBar底部黑色线

@@ -15,6 +15,7 @@
 @implementation NewsDetailsVC
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"新闻详情";
     [super viewDidLoad];
     
 }

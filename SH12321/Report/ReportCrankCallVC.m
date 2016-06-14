@@ -15,6 +15,7 @@
 @implementation ReportCrankCallVC
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"举报骚扰电话";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

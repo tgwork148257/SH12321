@@ -15,6 +15,7 @@
 @implementation ReportScamsCallVC
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"举报诈骗电话";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
