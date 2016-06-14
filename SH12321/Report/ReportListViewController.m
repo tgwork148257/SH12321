@@ -37,12 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    labelArr = @[@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
+    labelArr = @[@"举报骚扰电话",@"举报诈骗电话",@"举报短信",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
     [self addViews];
 }
 
 - (void)addViews{
-    
     reportView = [[UIView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H)];
     [self.view addSubview:reportView];
     

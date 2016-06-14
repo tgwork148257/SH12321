@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 
 @property (nonatomic, copy) NSString *reportCrankCallType;     //举报骚扰电话类型
 
+@property (nonatomic, copy) NSString *reportCrankCallStatus;    //举报骚扰电话形式
+
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
 
 @end
