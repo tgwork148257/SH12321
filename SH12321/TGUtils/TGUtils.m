@@ -124,8 +124,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *now;
     NSDateComponents *comps = [[NSDateComponents alloc] init];
-    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit |
-    NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
+    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     now=[NSDate date];
     comps = [calendar components:unitFlags fromDate:now];
     NSInteger week = [comps weekday];
@@ -175,7 +175,8 @@
         date = [NSDate date];
     }
     NSCalendar *currentCalender = [NSCalendar currentCalendar];
-    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSUInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
+    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *dateComponent = [currentCalender components:unitFlags fromDate:date];
     return dateComponent;
 }

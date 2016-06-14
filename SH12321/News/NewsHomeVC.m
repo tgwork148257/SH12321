@@ -52,7 +52,7 @@
 #pragma mark - 计算cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
-        NewsDetailModel *model = [tableviewData objectAtIndex:indexPath.row];
+//        NewsDetailModel *model = [tableviewData objectAtIndex:indexPath.row];
         return 100;
     }else{
         return 0;
