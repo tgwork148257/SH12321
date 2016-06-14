@@ -16,7 +16,9 @@
 }
 
 - (void)buildCell{
-    
+    imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, 50)];
+    imageview.backgroundColor = C_RED;
+    [self.contentView addSubview:imageview];
 }
 
 + (CGFloat)cellHeight{

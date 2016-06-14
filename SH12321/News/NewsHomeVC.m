@@ -22,10 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.leftBtn.hidden = YES;
     
     tableviewData = [[NSMutableArray alloc] init];
-
+    for (int i = 0; i < 10; i++) {
+        NewsDetailModel *model = [[NewsDetailModel alloc] init];
+        model.newsContent = @"ccc";
+        [tableviewData addObject:model];
+    }
+    [self addTableView];
 }
 
 

@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.leftBtn.hidden = YES;
+    
     cellDataArr = [[NSMutableArray alloc] init];
     
     [self addTableView];

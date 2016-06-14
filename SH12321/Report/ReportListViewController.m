@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.leftBtn.hidden = YES;
     
     labelArr = @[@"举报骚扰电话",@"举报诈骗电话",@"举报短信",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
     [self addViews];

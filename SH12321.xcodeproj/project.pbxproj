@@ -71,6 +71,7 @@
 		65F8CDA11D0F9450008C7763 /* tabbar_plan_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD991D0F9450008C7763 /* tabbar_plan_on@2x.png */; };
 		65F8CDA21D0F9450008C7763 /* tabbar_user_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD9A1D0F9450008C7763 /* tabbar_user_off@2x.png */; };
 		65F8CDA31D0F9450008C7763 /* tabbar_user_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CD9B1D0F9450008C7763 /* tabbar_user_on@2x.png */; };
+		65F8CDA51D0F9C25008C7763 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CDA41D0F9C25008C7763 /* nav_back@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +199,7 @@
 		65F8CD991D0F9450008C7763 /* tabbar_plan_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_plan_on@2x.png"; sourceTree = "<group>"; };
 		65F8CD9A1D0F9450008C7763 /* tabbar_user_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_user_off@2x.png"; sourceTree = "<group>"; };
 		65F8CD9B1D0F9450008C7763 /* tabbar_user_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_user_on@2x.png"; sourceTree = "<group>"; };
+		65F8CDA41D0F9C25008C7763 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 		65F8CD931D0F940B008C7763 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				65F8CDA41D0F9C25008C7763 /* nav_back@2x.png */,
 				65F8CD941D0F9450008C7763 /* tabbar_club_off@2x.png */,
 				65F8CD951D0F9450008C7763 /* tabbar_club_on@2x.png */,
 				65F8CD961D0F9450008C7763 /* tabbar_dialog_off@2x.png */,
@@ -527,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F8CDA31D0F9450008C7763 /* tabbar_user_on@2x.png in Resources */,
+				65F8CDA51D0F9C25008C7763 /* nav_back@2x.png in Resources */,
 				65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */,
 				65F8CD9F1D0F9450008C7763 /* tabbar_dialog_on@2x.png in Resources */,
 				65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */,

@@ -39,6 +39,7 @@
     reportListVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_club_off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     reportListVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_club_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     reportListVC.tabBarItem.title= @"举报";
+    reportListVC.navigationTitle = @"举报";
     [reportListVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateNormal];
     [reportListVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateSelected];
     
@@ -46,6 +47,7 @@
     newsHomeVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_dialog_off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     newsHomeVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_dialog_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     newsHomeVC.tabBarItem.title= @"新闻";
+    newsHomeVC.navigationTitle = @"新闻";
     [newsHomeVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateNormal];
     [newsHomeVC.tabBarItem setTitleTextAttributes:@{[UIColor greenColor]: NSForegroundColorAttributeName} forState:UIControlStateSelected];
 
@@ -53,6 +55,7 @@
     meHomeVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_user_off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     meHomeVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_user_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     meHomeVC.tabBarItem.title = @"我";
+    meHomeVC.navigationTitle = @"我";
     [meHomeVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateNormal];
     [meHomeVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateSelected];
     
@@ -65,7 +68,7 @@
         LoginVC *loginVC = [[LoginVC alloc] init];
         loginVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_plan_off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         loginVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_plan_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        loginVC.tabBarItem.title= @"首页";
+        loginVC.tabBarItem.title= @"举报";
         [loginVC.tabBarItem setTitleTextAttributes:@{[UIColor redColor]: NSForegroundColorAttributeName} forState:UIControlStateNormal];
         [loginVC.tabBarItem setTitleTextAttributes:@{[UIColor greenColor]: NSForegroundColorAttributeName} forState:UIControlStateSelected];
         reportHomeNavC = [[UINavigationController alloc] initWithRootViewController:loginVC];
