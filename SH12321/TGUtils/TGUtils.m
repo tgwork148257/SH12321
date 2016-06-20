@@ -257,6 +257,20 @@
     return number;
 }
 
+#pragma mark - 是否是全数字
++ (BOOL)isNumber:(NSString *)string{
+    if (EMPTY_STRING(string)) {
+        return NO;
+    }
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if(string.length > 0)
+    {
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
 #pragma mark - 去掉字符串首尾的空格
 + (NSString *)removeStrSpace:(NSString *)str{
     //    NSString * rangeStr = @" yangiqjun   -  123 ";

@@ -8,15 +8,43 @@
 
 #import "ReportShortMessageVC.h"
 
-@implementation ReportShortMessageVC
+@interface ReportShortMessageVC() <UITextFieldDelegate, UITextViewDelegate>
+
+@end
+
+@implementation ReportShortMessageVC{
+    TGLabel *sendNumberLabel;
+    UITextField *sendNumberTextField;
+    
+    
+    TGLabel *acceptNumberLabel;
+    UITextField *acceptNumberTextField;
+    
+    TGLabel *messageContentLabel;
+    UITextView *messageContentTextView;
+}
 
 - (void)viewDidLoad {
     self.navigationTitle = @"举报短信";
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self addSubviews];
+}
+
+- (void)addSubviews{
+    
 }
 
 - (void)commitReport{
+    
+    if ([TGUtils isNumber:sendNumberTextField.text]) {
+        [TGToast showWithText:@"发送号码输入错误"];
+    }
+    
+    if ([TGUtils isNumber:acceptNumberTextField.text]) {
+        [TGToast showWithText:@"接收号码输入错误"];
+    }
+    
     
 }
 

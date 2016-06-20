@@ -23,6 +23,7 @@
 #import "TGModel.h"
 #import "TGRequest.h"
 #import "UIImageView+WebCache.h"
+#import "TGToast.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

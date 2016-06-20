@@ -37,15 +37,9 @@ typedef void (^InfoBlock) ();
 
 
 
-+ (NSString *)createPublishImageJsonStrWithData:(NSArray *)arr;
-
-+ (NSString *)createScheduleTimeSettingJsonWithData:(NSDictionary *)dic;
-
 //评论中计算评论内容的左间距
 + (CGFloat)commentContentX:(CGFloat)contentW;
 
-// 上拉加载 没有更多数据后
-+ (void)endRefreshingWithNoMoreDataDismissWithTableView:(UITableView *)tableView;
 
 
 //压缩图片
@@ -74,6 +68,9 @@ typedef void (^InfoBlock) ();
 
 //中英文计算字符长度
 + (NSInteger)countTextLength:(NSString *)str;
+
+#pragma mark - 是否是全数字
++ (BOOL)isNumber:(NSString *)str;
 
 //去掉字符串的空格
 + (NSString *)removeStrSpace:(NSString *)str;
