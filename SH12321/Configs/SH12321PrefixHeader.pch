@@ -22,6 +22,7 @@
 #import "TGJson.h"
 #import "TGModel.h"
 #import "TGRequest.h"
+#import "UIImageView+WebCache.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

@@ -9,6 +9,13 @@
 #import "ReportListViewController.h"
 #import "ReportCrankCallVC.h"
 #import "ReportScamsCallVC.h"
+#import "ReportShortMessageVC.h"
+#import "ReportWebsiteVC.h"
+#import "ReportAppVC.h"
+#import "ReportWIFIVC.h"
+#import "ReportFakeBasicStationVC.h"
+#import "ReportEmailVC.h"
+
 
 
 #define viewW DEVICE_W/3
@@ -39,7 +46,7 @@
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     
-    labelArr = @[@"举报骚扰电话",@"举报诈骗电话",@"举报短信",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
+    labelArr = @[@"举报骚扰电话",@"举报诈骗电话",@"举报短信",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
     [self addViews];
 }
 
@@ -49,7 +56,7 @@
     
     CGFloat x = 0;
     CGFloat y = 0;
-    for (NSInteger i = 0; i < 8; i++) {
+    for (NSInteger i = 0; i < 9; i++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, y, viewW, viewH)];
         view.tag  = i;
         view.userInteractionEnabled = YES;
