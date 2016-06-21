@@ -35,6 +35,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    
     ReportListViewController *reportListVC = [[ReportListViewController alloc] init];
     reportListVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_club_off"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     reportListVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_club_on"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -78,6 +79,7 @@
     tabbar.delegate = self;
     self.window.rootViewController = tabbar;
     [self.window makeKeyAndVisible];
+    
 }
 
 #pragma mark  tabBarController Delegate

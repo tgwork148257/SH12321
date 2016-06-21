@@ -10,7 +10,8 @@
 #define CommonDefine_h
 
 #define grayBgColor  [TGManager colorWithString:@"EEEEEE"] //灰色背景
-#define commitBtnBgColor [TGManager colorWithString:@"000000"] //提交按钮背景
+#define commitBtnBgColor greenBgColor //提交按钮背景
+#define greenBgColor C_GREEN
 
 static const CGFloat reportItemLabelH = 32.0F;
 static const CGFloat reportItemTextFieldH = 32.0F;

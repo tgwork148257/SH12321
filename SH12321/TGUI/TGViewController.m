@@ -48,7 +48,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = greenBgColor;
     self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
     [self.tabBarItem setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithRed:255.0/255.0f green:99/255.0f blue:99/255.0f alpha:1]} forState:UIControlStateSelected];
     

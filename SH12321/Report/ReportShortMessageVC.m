@@ -33,6 +33,7 @@
     self.navigationTitle = @"举报短信";
     [super viewDidLoad];
     
+
     self.view.backgroundColor = grayBgColor;
     reportView = [[UIView alloc] init];
     reportView.backgroundColor = C_WHITE;

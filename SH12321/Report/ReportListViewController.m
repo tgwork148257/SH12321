@@ -21,7 +21,7 @@
 
 #define viewW DEVICE_W/3
 #define viewH                   150
-#define imageViewLeft           20
+#define imageViewLeft           (viewW - iamgeViewW)/2
 #define imageViewTop            20
 #define iamgeViewW              100
 #define imageViewH              100
@@ -67,10 +67,10 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(imageViewLeft, imageViewTop, iamgeViewW, imageViewH)];
         imageView.image = [UIImage imageNamed:imageStrWithIndex(i)];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y + imageView.frame.size.height + imageviewToLabelGap, viewH, labelH)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y + imageView.frame.size.height + imageviewToLabelGap, viewW, labelH)];
         label.text = labelArr[i];
         label.textAlignment  = NSTextAlignmentCenter;
-        label.textColor = C_BLUE;
+        label.textColor = C_BLACK;
         
         [view addSubview:imageView];
         [view addSubview:label];
