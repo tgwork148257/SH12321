@@ -11,30 +11,56 @@
 #define viewH    24
 #define imageWH  16
 
-@implementation SelectTypeView
+#define btnTag 223333
 
-+ (SelectTypeView *)initY:(CGFloat)Y titles:(NSArray *)titles superview:(UIView *)superview{
-    SelectTypeView *view = [[SelectTypeView alloc] initWithFrame:CGRectMake(0, Y, DEVICE_W, viewH * titles.count)];
-    
+@implementation SelectTypeView{
+    NSArray *titlesArr;
+    NSString *selectTitleStr;
+    NSInteger selectTitleIndex;
+}
+
+- (void)addTitles:(NSArray *)titles y:(CGFloat)y superview:(UIView *)superview{
+    [superview addSubview:self];
+    self.frame = CGRectMake(0, y, DEVICE_W, titles.count * viewH);
+    titlesArr = titles;
     CGFloat labelX = L_R_EDGE;
     CGFloat labelY = 0;
     CGFloat btnX = DEVICE_W - L_R_EDGE - imageWH;
     CGFloat btnY = (viewH - imageWH)/2;
     for (NSInteger i=0; i < titles.count; i ++) {
         NSString *title = [titles objectAtIndex:i];
-        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:view];
+        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self];
         label.numberOfLines = 1;
         
-        TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, imageWH, imageWH) superView:view];
+        TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, imageWH, imageWH) superView:self];
         [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
+        btn.tag = btnTag + i;
+        [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         
         labelY += viewH;
         btnY += viewH;
-        
+    }
+}
+
+- (void)btnDidClick:(TGButton *)btn{
+    if (!EMPTY_STRING(selectTitleStr)) {
+        for (TGButton *btn in self.subviews) {
+            btn.selected = NO;
+        }
     }
     
-    return view;
+    selectTitleIndex = btn.tag - btnTag;
+    selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+    btn.selected = YES;
+    
+}
+- (NSInteger)selectIndex{
+    return selectTitleIndex;
+}
+
+- (NSString *)selectTypeStr{
+    return selectTitleStr;
 }
 
 @end
