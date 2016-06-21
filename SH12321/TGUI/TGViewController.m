@@ -116,6 +116,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
         _rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -40);
         _leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -46.0F, 0, 0);
     }
+    
 }
 - (void)noNetworkButtonAction {
     
@@ -153,9 +154,9 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     
     noNetworkButton = [TGButton initTitleBtnWithFrame:CGRectMake(0, noNetworkLabel.height + noNetworkLabel.y, noNetworkLabel.width, 60) title:@"重试一下" titleColor:C_RED titleFont:[UIFont systemFontOfSize:14.0f] backgroundColor:[UIColor whiteColor] superView:noNetworkWhiteView];
     [noNetworkButton addTarget:self action:@selector(noNetworkButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    noNetworkButton.layer.borderColor = C_greyish.CGColor;
+    noNetworkButton.layer.borderColor = C_BLUE.CGColor;
     noNetworkButton.layer.borderWidth = 0.5f;
-    [noNetworkButton setTitleColor:C_greyish forState:UIControlStateHighlighted];
+    [noNetworkButton setTitleColor:C_BLUE forState:UIControlStateHighlighted];
 }
 
 #pragma mark -- 返回按钮

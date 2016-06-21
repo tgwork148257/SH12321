@@ -33,7 +33,7 @@
     meHomeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H) style:UITableViewStyleGrouped];
     meHomeTableView.delegate = self;
     meHomeTableView.dataSource = self;
-    meHomeTableView.backgroundColor = C_white;
+    meHomeTableView.backgroundColor = C_WHITE;
     meHomeTableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     [self.view addSubview:meHomeTableView];
     // 添加动效视图

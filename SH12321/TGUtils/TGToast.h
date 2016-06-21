@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define DEFAULT_DISPLAY_DURATION 1.5
+#define DEFAULT_DISPLAY_DURATION 1.2
 
 @interface TGToast : NSObject{
     NSString *text;

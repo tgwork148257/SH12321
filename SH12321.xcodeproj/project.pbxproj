@@ -24,6 +24,11 @@
 		6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6570480E1D17C8D300D98E92 /* UIImageView+WebCache.m */; };
 		657048201D17C8D300D98E92 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 657048101D17C8D300D98E92 /* UIView+WebCacheOperation.m */; };
 		657048231D17D1D200D98E92 /* TGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 657048221D17D1D200D98E92 /* TGToast.m */; };
+		65DDC07A1D19162400F02FA3 /* ReportInfoRevealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */; };
+		65DDC0801D19206900F02FA3 /* CommitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC07F1D19206900F02FA3 /* CommitButton.m */; };
+		65DDC0831D19244600F02FA3 /* ReportItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0821D19244600F02FA3 /* ReportItemLabel.m */; };
+		65DDC0861D19278400F02FA3 /* ReportItemTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0851D19278400F02FA3 /* ReportItemTextField.m */; };
+		65DDC0891D19279C00F02FA3 /* ReportItemTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */; };
 		65F8CBB21D07E60E008C7763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB11D07E60E008C7763 /* main.m */; };
 		65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB41D07E60E008C7763 /* AppDelegate.m */; };
 		65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB71D07E60E008C7763 /* ViewController.m */; };
@@ -31,7 +36,6 @@
 		65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBC1D07E60E008C7763 /* Assets.xcassets */; };
 		65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBE1D07E60E008C7763 /* LaunchScreen.storyboard */; };
 		65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC831D0CFE7F008C7763 /* MyMD5.m */; };
-		65F8CC8E1D0CFEE7008C7763 /* ParseRequestErrorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC871D0CFEE7008C7763 /* ParseRequestErrorData.m */; };
 		65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */; };
 		65F8CC901D0CFEE7008C7763 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC8D1D0CFEE7008C7763 /* ServerRequest.m */; };
 		65F8CD011D0D00FB008C7763 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CCE91D0D00FB008C7763 /* NSObject+SBJson.m */; };
@@ -133,6 +137,18 @@
 		657048101D17C8D300D98E92 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		657048211D17D1D200D98E92 /* TGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGToast.h; sourceTree = "<group>"; };
 		657048221D17D1D200D98E92 /* TGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGToast.m; sourceTree = "<group>"; };
+		65DDC0771D18DAA800F02FA3 /* ServiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceDefine.h; sourceTree = "<group>"; };
+		65DDC0781D19162400F02FA3 /* ReportInfoRevealVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportInfoRevealVC.h; sourceTree = "<group>"; };
+		65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportInfoRevealVC.m; sourceTree = "<group>"; };
+		65DDC07D1D191FEA00F02FA3 /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		65DDC07E1D19206900F02FA3 /* CommitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitButton.h; sourceTree = "<group>"; };
+		65DDC07F1D19206900F02FA3 /* CommitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitButton.m; sourceTree = "<group>"; };
+		65DDC0811D19244600F02FA3 /* ReportItemLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportItemLabel.h; sourceTree = "<group>"; };
+		65DDC0821D19244600F02FA3 /* ReportItemLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItemLabel.m; sourceTree = "<group>"; };
+		65DDC0841D19278400F02FA3 /* ReportItemTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportItemTextField.h; sourceTree = "<group>"; };
+		65DDC0851D19278400F02FA3 /* ReportItemTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItemTextField.m; sourceTree = "<group>"; };
+		65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportItemTextView.h; sourceTree = "<group>"; };
+		65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItemTextView.m; sourceTree = "<group>"; };
 		65F8CBAD1D07E60E008C7763 /* SH12321.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SH12321.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8CBB11D07E60E008C7763 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F8CBB31D07E60E008C7763 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,8 +161,6 @@
 		65F8CBC11D07E60E008C7763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65F8CC821D0CFE7F008C7763 /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
 		65F8CC831D0CFE7F008C7763 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
-		65F8CC861D0CFEE7008C7763 /* ParseRequestErrorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseRequestErrorData.h; sourceTree = "<group>"; };
-		65F8CC871D0CFEE7008C7763 /* ParseRequestErrorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseRequestErrorData.m; sourceTree = "<group>"; };
 		65F8CC891D0CFEE7008C7763 /* RequestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
 		65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequsetData.h; sourceTree = "<group>"; };
 		65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequsetData.m; sourceTree = "<group>"; };
@@ -323,6 +337,22 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		65DDC07C1D191FDA00F02FA3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				65DDC07D1D191FEA00F02FA3 /* CommonDefine.h */,
+				65DDC07E1D19206900F02FA3 /* CommitButton.h */,
+				65DDC07F1D19206900F02FA3 /* CommitButton.m */,
+				65DDC0811D19244600F02FA3 /* ReportItemLabel.h */,
+				65DDC0821D19244600F02FA3 /* ReportItemLabel.m */,
+				65DDC0841D19278400F02FA3 /* ReportItemTextField.h */,
+				65DDC0851D19278400F02FA3 /* ReportItemTextField.m */,
+				65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */,
+				65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		65F8CBA41D07E60E008C7763 = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				65F8CC801D0CFE4B008C7763 /* ThirdPartyTools */,
+				65DDC07C1D191FDA00F02FA3 /* Common */,
 				65F8CC911D0CFF74008C7763 /* Configs */,
 				65F8CD441D0D33C8008C7763 /* TGUI */,
 				65F8CD571D0D3442008C7763 /* TGUtils */,
@@ -396,8 +427,6 @@
 		65F8CC851D0CFEBE008C7763 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				65F8CC861D0CFEE7008C7763 /* ParseRequestErrorData.h */,
-				65F8CC871D0CFEE7008C7763 /* ParseRequestErrorData.m */,
 				65F8CC891D0CFEE7008C7763 /* RequestUrl.h */,
 				65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */,
 				65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */,
@@ -481,6 +510,7 @@
 				65F8CD411D0D2FF7008C7763 /* TGService.h */,
 				65F8CD421D0D2FF7008C7763 /* TGService.m */,
 				65F8CD8F1D0E9890008C7763 /* ServiceConfig.h */,
+				65DDC0771D18DAA800F02FA3 /* ServiceDefine.h */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -545,6 +575,8 @@
 				65F8CDB31D0FA7C2008C7763 /* ReportFakeBasicStationVC.m */,
 				65F8CDB51D0FA7E1008C7763 /* ReportEmailVC.h */,
 				65F8CDB61D0FA7E1008C7763 /* ReportEmailVC.m */,
+				65DDC0781D19162400F02FA3 /* ReportInfoRevealVC.h */,
+				65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */,
 				65F8CD901D0EA106008C7763 /* ReportDataModel.h */,
 				65F8CD911D0EA106008C7763 /* ReportDataModel.m */,
 			);
@@ -678,8 +710,8 @@
 			files = (
 				657048171D17C8D300D98E92 /* SDWebImageDownloaderOperation.m in Sources */,
 				65F8CD531D0D33C8008C7763 /* TGTableViewCell.m in Sources */,
-				65F8CC8E1D0CFEE7008C7763 /* ParseRequestErrorData.m in Sources */,
 				65F8CD671D0D3442008C7763 /* TGUtils.m in Sources */,
+				65DDC0831D19244600F02FA3 /* ReportItemLabel.m in Sources */,
 				65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */,
 				657048121D17C8D300D98E92 /* NSData+ImageContentType.m in Sources */,
 				65F8CDAB1D0FA778008C7763 /* ReportWebsiteVC.m in Sources */,
@@ -702,6 +734,7 @@
 				65F8CD631D0D3442008C7763 /* MMLink.m in Sources */,
 				65F8CD231D0D0DCE008C7763 /* AFHTTPRequestOperationManager.m in Sources */,
 				65F8CD011D0D00FB008C7763 /* NSObject+SBJson.m in Sources */,
+				65DDC0891D19279C00F02FA3 /* ReportItemTextView.m in Sources */,
 				65F8CD661D0D3442008C7763 /* TGModel.m in Sources */,
 				65F8CD251D0D0DCE008C7763 /* AFNetworkReachabilityManager.m in Sources */,
 				65F8CDB11D0FA79C008C7763 /* ReportWIFIVC.m in Sources */,
@@ -728,6 +761,8 @@
 				65F8CD431D0D2FF7008C7763 /* TGService.m in Sources */,
 				65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */,
 				65F8CD551D0D33C8008C7763 /* TGViewController.m in Sources */,
+				65DDC07A1D19162400F02FA3 /* ReportInfoRevealVC.m in Sources */,
+				65DDC0861D19278400F02FA3 /* ReportItemTextField.m in Sources */,
 				65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */,
 				6570481E1D17C8D300D98E92 /* UIImageView+HighlightedWebCache.m in Sources */,
 				65F8CD241D0D0DCE008C7763 /* AFHTTPSessionManager.m in Sources */,
@@ -746,6 +781,7 @@
 				65F8CD511D0D33C8008C7763 /* TGButton.m in Sources */,
 				657048161D17C8D300D98E92 /* SDWebImageDownloader.m in Sources */,
 				6570481C1D17C8D300D98E92 /* UIImage+MultiFormat.m in Sources */,
+				65DDC0801D19206900F02FA3 /* CommitButton.m in Sources */,
 				65F8CD291D0D0DCE008C7763 /* AFURLResponseSerialization.m in Sources */,
 				657048151D17C8D300D98E92 /* SDWebImageDecoder.m in Sources */,
 				65F8CD6F1D0D346C008C7763 /* ReportCrankCallVC.m in Sources */,

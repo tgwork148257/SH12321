@@ -9,7 +9,6 @@
 #import "ServerRequest.h"
 #import "MyMD5.h"
 #import "SBJson.h"
-#import "ParseRequestErrorData.h"
 #import "RequestUrl.h"
 #import "AFNetworking.h"
 

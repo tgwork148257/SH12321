@@ -15,6 +15,7 @@
 #import "ReportWIFIVC.h"
 #import "ReportFakeBasicStationVC.h"
 #import "ReportEmailVC.h"
+#import "ReportInfoRevealVC.h"
 
 
 
@@ -46,7 +47,7 @@
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     
-    labelArr = @[@"举报骚扰电话",@"举报诈骗电话",@"举报短信",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话",@"举报电话"];
+    labelArr = @[@"垃圾短信",@"诈骗电话",@"骚扰电话",@"垃圾网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"信息泄露"];
     [self addViews];
 }
 
@@ -92,12 +93,12 @@
         case 0:
         {
             [TGRequest TestAFN];
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportShortMessageVC alloc] init];
         }
             break;
         case 1:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportScamsCallVC alloc] init];
         }
             break;
         case 2:
@@ -107,36 +108,34 @@
             break;
         case 3:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportWebsiteVC alloc] init];
         }
             break;
         case 4:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportEmailVC alloc] init];
         }
             break;
         case 5:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportAppVC alloc] init];
         }
             break;
         case 6:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportFakeBasicStationVC alloc] init];
         }
             break;
         case 7:
         {
-            vc = [[ReportCrankCallVC alloc] init];
+            vc = [[ReportWIFIVC alloc] init];
         }
             break;
-//        case 0:
-//        {
-//            ReportCrankCallVC *vc = [[ReportCrankCallVC alloc] init];
-//            vc.navigationTitle = title;
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
+        case 8:
+        {
+            vc = [[ReportInfoRevealVC alloc] init];
+        }
+            break;
             
             
         default:

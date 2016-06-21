@@ -41,7 +41,7 @@
     tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H) style:UITableViewStylePlain];
     tableview.delegate = self;
     tableview.dataSource = self;
-    tableview.backgroundColor = C_white;
+    tableview.backgroundColor = C_WHITE;
     tableview.separatorStyle =  UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableview];
 

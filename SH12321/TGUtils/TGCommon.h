@@ -81,32 +81,6 @@
 #define C_WHITE             [UIColor whiteColor]
 #define C_BLACK             [UIColor blackColor]
 
-//自定义颜色
-#define C_charcoalGrey          [TGManager colorWithR:51.0F  G:61.0F  B:71.0F]
-#define C_silver                [TGManager colorWithR:202.0F G:209.0F B:214.0F]
-#define C_dark                  [TGManager colorWithR:39.0F  G:46.0F  B:55.0F]
-#define C_greyish               [TGManager colorWithR:179.0F G:179.0F B:179.0F]
-#define C_black60               [TGManager colorWithR:0.0F   G:0.0F   B:0.0F  alpha:0.5F]
-#define C_white                 [TGManager colorWithR:255.0F G:255.0F B:255.0F]
-#define C_whiteTwo              [TGManager colorWithR:213.0F G:213.0F B:213.0F]
-#define C_whiteThree            [TGManager colorWithR:242.0F G:242.0F B:242.0F]
-#define C_whiteFour             [TGManager colorWithR:250.0F G:250.0F B:250.0F]
-#define C_coolGrey              [TGManager colorWithR:162.0F G:167.0F B:170.0F]
-#define C_coolGreyTwo           [TGManager colorWithR:145.0F G:150.0F B:154.0F]
-#define C_peachPink             [TGManager colorWithR:255.0F G:131.0F B:131.0F]
-#define C_warmGrey              [TGManager colorWithR:114.0F G:114.0F B:114.0F]
-#define C_warmGreyTwo           [TGManager colorWithR:155.0F G:155.0F B:155.0F]
-#define C_warmGreyThree         [TGManager colorWithR:128.0F G:128.0F B:128.0F]
-#define C_denim                 [TGManager colorWithR:59.0F  G:94.0F  B:142.0F]
-#define C_veryLightPink         [TGManager colorWithR:255.0F G:247.0F B:247.0F]
-#define C_grapefruit            [TGManager colorWithR:255.0F G:82.0F  B:82.0F]
-#define C_grapefruitTwo         [TGManager colorWithR:255.0F G:99.0F  B:99.0F]
-#define C_mutedBlue             [TGManager colorWithR:58.0F  G:106.0F B:154.0F]
-#define C_greyishBrown          [TGManager colorWithR:74.0F  G:74.0F  B:74.0F]
-#define C_veryLightPinkThree    [TGManager colorWithR:255.0F G:238.0F B:238.0F]
-#define C_mutedBlue             [TGManager colorWithR:58.0F  G:106.0F B:154.0F]
-#define C_almostBlack           [TGManager colorWithR:11.0F  G:16.0F  B:19.0F]
-
 #define nav_right_item_x        DEVICE_W - nav_item_width - 6
 #define nav_left_item_x         2
 #define nav_item_width          36

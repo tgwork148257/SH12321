@@ -8,6 +8,7 @@
 
 #import "TGService.h"
 #import "ServiceConfig.h"
+#import "ServiceDefine.h"
 #import "ReportDataModel.h"
 
 @implementation TGService
@@ -37,77 +38,93 @@
     switch (type) {
         case ReportCrankCall:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportSendNumber forKey:crankCallSendNumberKey];
+            [dic setObject:model.reportAcceptNumber forKey:crankCallAcceptNumberKey];
+            [dic setObject:@(model.reportType) forKey:crankCallTypeKey];
+            [dic setObject:model.reportTime forKey:crankCallTimeKey];
+            [dic setObject:model.reportTimeLength forKey:crankCallLengthKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:crankCallContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportScamCall:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportSendNumber forKey:scamCallSendNumberKey];
+            [dic setObject:model.reportAcceptNumber forKey:scamCallAcceptNumberKey];
+            [dic setObject:@(model.reportType) forKey:scamCallTypeKey];
+            [dic setObject:model.reportTime forKey:scamCallTimeKey];
+            [dic setObject:model.reportTimeLength forKey:scamCallLengthKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:scamCallContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportMessage:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportSendNumber forKey:messageSendNumberKey];
+            [dic setObject:model.reportAcceptNumber forKey:messageAcceptNumberKey];
+//            [dic setObject:@(model.reportType) forKey:scamCallTypeKey];
+//            [dic setObject:model.reportTime forKey:scamCallTimeKey];
+//            [dic setObject:model.reportTimeLength forKey:scamCallLengthKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:messageContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportWebsite:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportWebsiteURL forKey:websiteURLKey];
+            [dic setObject:model.reportWebsiteType forKey:websiteTypeKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:websiteContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportWIFI:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportName forKey:WIFINameKey];
+            [dic setObject:model.reportAdress forKey:WIFIAdressKey];
+//            if (!EMPTY_STRING(model.reportContent)) {
+//                [dic setObject:model.reportContent forKey:AppContentKey];
+//            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportApp:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportName forKey:AppNameKey];
+            [dic setObject:model.reportAppSource forKey:AppSourceKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:AppContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
             break;
         case ReportFakeBaseStation:
         {
-            NSDictionary *dic = @{@"parameter1":@"A",
-                                  @"parameter1":@"B",
-                                  @"parameter1":@"C",
-                                  @"parameter1":@"D",
-                                  };
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:model.reportFakeBasicStationType forKey:fakeBasicStationTypeKey];
+            [dic setObject:model.reportAdress forKey:fakeBasicStationAdressKey];
+            if (!EMPTY_STRING(model.reportContent)) {
+                [dic setObject:model.reportContent forKey:fakeBasicStationContentKey];
+            }
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }

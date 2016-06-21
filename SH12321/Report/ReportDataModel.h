@@ -21,7 +21,9 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 
 @interface ReportDataModel : TGModel
 
-@property (nonatomic, copy) NSString *reportPhoneNumber;    //举报电话
+@property (nonatomic, copy) NSString *reportAcceptNumber;    //接收内容电话
+
+@property (nonatomic, copy) NSString *reportSendNumber;    //发送内容电话
 
 @property (nonatomic, copy) NSString *reportContent;        //举报内容
 
@@ -36,9 +38,17 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 @property (nonatomic, copy) NSString *reportName;           //举报名称 (App, WIFI, 伪基站)
 
 
+@property (nonatomic, copy) NSString *reportWebsiteURL;         //举报网站URL
+
+@property (nonatomic, copy) NSString *reportWebsiteType;         //举报网站类型
+
+
 @property (nonatomic, copy) NSString *reportCrankCallType;     //举报骚扰电话类型
 
 @property (nonatomic, copy) NSString *reportCrankCallStatus;    //举报骚扰电话形式
+
+
+@property (nonatomic, copy) NSString *reportFakeBasicStationType;           //举报伪基站类型
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
 

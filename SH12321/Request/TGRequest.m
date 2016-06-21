@@ -16,7 +16,7 @@
 
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
+//    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
     
     NSDictionary *dict = @{@"format":@"json"};
     
