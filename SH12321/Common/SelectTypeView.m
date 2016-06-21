@@ -45,7 +45,7 @@
 
 - (void)btnDidClick:(TGButton *)btn{
     if (!EMPTY_STRING(selectTitleStr)) {
-        for (TGButton *btn in self.subviews) {
+        for (TGButton *btn in btn.superview.subviews) {
             btn.selected = NO;
         }
     }
