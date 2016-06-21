@@ -29,6 +29,8 @@
 		65DDC0831D19244600F02FA3 /* ReportItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0821D19244600F02FA3 /* ReportItemLabel.m */; };
 		65DDC0861D19278400F02FA3 /* ReportItemTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0851D19278400F02FA3 /* ReportItemTextField.m */; };
 		65DDC0891D19279C00F02FA3 /* ReportItemTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */; };
+		65DDC08F1D19335800F02FA3 /* SHStreetsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */; };
+		65DDC0921D19337700F02FA3 /* SHAreasListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0911D19337700F02FA3 /* SHAreasListVC.m */; };
 		65F8CBB21D07E60E008C7763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB11D07E60E008C7763 /* main.m */; };
 		65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB41D07E60E008C7763 /* AppDelegate.m */; };
 		65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB71D07E60E008C7763 /* ViewController.m */; };
@@ -149,6 +151,10 @@
 		65DDC0851D19278400F02FA3 /* ReportItemTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItemTextField.m; sourceTree = "<group>"; };
 		65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportItemTextView.h; sourceTree = "<group>"; };
 		65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportItemTextView.m; sourceTree = "<group>"; };
+		65DDC08D1D19335800F02FA3 /* SHStreetsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHStreetsListVC.h; sourceTree = "<group>"; };
+		65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHStreetsListVC.m; sourceTree = "<group>"; };
+		65DDC0901D19337700F02FA3 /* SHAreasListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAreasListVC.h; sourceTree = "<group>"; };
+		65DDC0911D19337700F02FA3 /* SHAreasListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAreasListVC.m; sourceTree = "<group>"; };
 		65F8CBAD1D07E60E008C7763 /* SH12321.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SH12321.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8CBB11D07E60E008C7763 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F8CBB31D07E60E008C7763 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -349,6 +355,10 @@
 				65DDC0851D19278400F02FA3 /* ReportItemTextField.m */,
 				65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */,
 				65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */,
+				65DDC0901D19337700F02FA3 /* SHAreasListVC.h */,
+				65DDC0911D19337700F02FA3 /* SHAreasListVC.m */,
+				65DDC08D1D19335800F02FA3 /* SHStreetsListVC.h */,
+				65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -765,8 +775,10 @@
 				65DDC0861D19278400F02FA3 /* ReportItemTextField.m in Sources */,
 				65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */,
 				6570481E1D17C8D300D98E92 /* UIImageView+HighlightedWebCache.m in Sources */,
+				65DDC08F1D19335800F02FA3 /* SHStreetsListVC.m in Sources */,
 				65F8CD241D0D0DCE008C7763 /* AFHTTPSessionManager.m in Sources */,
 				65F8CD021D0D00FB008C7763 /* SBJsonParser.m in Sources */,
+				65DDC0921D19337700F02FA3 /* SHAreasListVC.m in Sources */,
 				65F8CD081D0D00FB008C7763 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				65F8CDB71D0FA7E1008C7763 /* ReportEmailVC.m in Sources */,
 				65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */,

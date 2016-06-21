@@ -16,6 +16,7 @@
 #import "ReportFakeBasicStationVC.h"
 #import "ReportEmailVC.h"
 #import "ReportInfoRevealVC.h"
+#import "SHAreasListVC.h"
 
 
 
@@ -42,10 +43,15 @@
     
 }
 
+- (void)leftBtnDidClick{
+    SHAreasListVC *vc = [[SHAreasListVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)viewDidLoad {
     self.navigationTitle = @"举报";
     [super viewDidLoad];
-    self.leftBtn.hidden = YES;
+//    self.leftBtn.hidden = YES;
     
     labelArr = @[@"垃圾短信",@"诈骗电话",@"骚扰电话",@"垃圾网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"信息泄露"];
     [self addViews];
