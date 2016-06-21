@@ -31,6 +31,7 @@
 		65DDC0891D19279C00F02FA3 /* ReportItemTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */; };
 		65DDC08F1D19335800F02FA3 /* SHStreetsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */; };
 		65DDC0921D19337700F02FA3 /* SHAreasListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0911D19337700F02FA3 /* SHAreasListVC.m */; };
+		65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0941D19392C00F02FA3 /* SelectTypeView.m */; };
 		65F8CBB21D07E60E008C7763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB11D07E60E008C7763 /* main.m */; };
 		65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB41D07E60E008C7763 /* AppDelegate.m */; };
 		65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB71D07E60E008C7763 /* ViewController.m */; };
@@ -155,6 +156,8 @@
 		65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHStreetsListVC.m; sourceTree = "<group>"; };
 		65DDC0901D19337700F02FA3 /* SHAreasListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAreasListVC.h; sourceTree = "<group>"; };
 		65DDC0911D19337700F02FA3 /* SHAreasListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAreasListVC.m; sourceTree = "<group>"; };
+		65DDC0931D19392C00F02FA3 /* SelectTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeView.h; sourceTree = "<group>"; };
+		65DDC0941D19392C00F02FA3 /* SelectTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeView.m; sourceTree = "<group>"; };
 		65F8CBAD1D07E60E008C7763 /* SH12321.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SH12321.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8CBB11D07E60E008C7763 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F8CBB31D07E60E008C7763 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				65DDC07D1D191FEA00F02FA3 /* CommonDefine.h */,
+				65DDC0931D19392C00F02FA3 /* SelectTypeView.h */,
+				65DDC0941D19392C00F02FA3 /* SelectTypeView.m */,
 				65DDC07E1D19206900F02FA3 /* CommitButton.h */,
 				65DDC07F1D19206900F02FA3 /* CommitButton.m */,
 				65DDC0811D19244600F02FA3 /* ReportItemLabel.h */,
@@ -730,6 +735,7 @@
 				65F8CD271D0D0DCE008C7763 /* AFURLConnectionOperation.m in Sources */,
 				65F8CD861D0D34D8008C7763 /* LoginVC.m in Sources */,
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,
+				65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */,
 				6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */,
 				65F8CD051D0D00FB008C7763 /* SBJsonStreamParserAdapter.m in Sources */,
 				65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */,
