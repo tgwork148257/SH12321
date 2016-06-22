@@ -28,6 +28,7 @@
     return view;
 }
 
+
 - (void)addTimeStr:(NSString *)timeStr{
     for (UIView *view in self.subviews) {
         if (view.tag == timeLabelTag) {
