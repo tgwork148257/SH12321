@@ -12,26 +12,56 @@
 
 @end
 
-@implementation ReportInfoRevealVC
+@implementation ReportInfoRevealVC{
+    
+    UIView *reportView;
+    
+    ReportItemLabel *reportContentLabel;
+    ReportItemTextView *reportContentTextView;
+    
+    CommitButton *commitBtn;
+    
+    ReportDataModel *model;
+}
 
 - (void)viewDidLoad {
+    self.navigationTitle = @"举报个人信息泄露";
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = grayBgColor;
+    reportView = [[UIView alloc] init];
+    reportView.backgroundColor = C_WHITE;
+    model = [[ReportDataModel alloc] init];
+    model.reportType = ReportMessage;
+    
+    [self addSubviews];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addSubviews{
+    
+    reportContentLabel = [ReportItemLabel initWithY:0 title:@"个人信息泄露" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:nil superView:reportView];
+    
+    reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
+    [self.view addSubview:reportView];
+    
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
+    [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)commitReport{
+    
+//    model.reportWebsiteURL = reportWIFINameTextField.text;
+    //    model.reportAcceptNumber = reportWebsiteTypeView.text;
+    model.reportContent = reportContentTextView.text;
+    [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
+        [TGToast showWithText:@"举报成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } fail:^{
+        [TGToast showWithText:@"举报失败，请重试"];
+    }];
 }
-*/
+
 
 @end
