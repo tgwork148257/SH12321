@@ -55,11 +55,11 @@
     btn.selected = YES;
     
 }
-- (NSInteger)selectIndex{
+- (NSInteger)getSelectIndex{
     return selectTitleIndex;
 }
 
-- (NSString *)selectTypeStr{
+- (NSString *)getSelectTypeStr{
     return selectTitleStr;
 }
 
