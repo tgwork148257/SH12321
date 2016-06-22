@@ -12,8 +12,8 @@
 #define imageViewW 24
 #define imageViewH viewH
 
-#define timeLabelTag 443434
-#define iconTag 443435
+#define timeLabelTag    443434
+#define iconTag         443435
 
 @implementation SelectTimeItemView
 

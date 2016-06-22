@@ -150,38 +150,38 @@
 }
 
 - (void)confirmBtnDidClick{
-    if ([self isDateSettingCorrect]) {
+//    if ([self isDateSettingCorrect]) {
         if ([self.delegate respondsToSelector:@selector(selectTimeWithYear:month:day:time:)]) {
-            [self.delegate selectTimeWithYear:selectedYear month:selectedMonth day:selectedDay time:nil];
+            [self.delegate selectTimeWithYear:selectedYear month:selectedMonth day:selectedDay time:@"7:00"];
             [self removeFromSuperview];;
         }
-    }else{
-        [TGToast showWithText:@"时间选择错误"];
-    }
+//    }else{
+//        [TGToast showWithText:@"时间选择错误"];
+//    }
     
 }
 
 
-- (BOOL)isDateSettingCorrect{
-    BOOL isDateSettingCorrect = NO;
-    if (([selectedYear integerValue] > currentYear)) {
-        isDateSettingCorrect = YES;
-    }else if (([selectedYear integerValue] == currentYear)){
-        if ([selectedMonth integerValue] > currentMonth) {
-            isDateSettingCorrect = YES;
-        }else if ([selectedMonth integerValue] == currentMonth){
-            if ([selectedDay integerValue] >= currentDay) {
-                isDateSettingCorrect = YES;
-            }else{
-                isDateSettingCorrect = NO;
-            }
-        }else{
-            isDateSettingCorrect = NO;
-        }
-    }else{
-        isDateSettingCorrect = NO;
-    }
-    return isDateSettingCorrect;
-}
+//- (BOOL)isDateSettingCorrect{
+//    BOOL isDateSettingCorrect = NO;
+//    if (([selectedYear integerValue] > currentYear)) {
+//        isDateSettingCorrect = YES;
+//    }else if (([selectedYear integerValue] == currentYear)){
+//        if ([selectedMonth integerValue] > currentMonth) {
+//            isDateSettingCorrect = YES;
+//        }else if ([selectedMonth integerValue] == currentMonth){
+//            if ([selectedDay integerValue] >= currentDay) {
+//                isDateSettingCorrect = YES;
+//            }else{
+//                isDateSettingCorrect = NO;
+//            }
+//        }else{
+//            isDateSettingCorrect = NO;
+//        }
+//    }else{
+//        isDateSettingCorrect = NO;
+//    }
+//    return isDateSettingCorrect;
+//}
 
 @end

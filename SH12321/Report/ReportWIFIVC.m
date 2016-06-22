@@ -8,6 +8,10 @@
 
 #import "ReportWIFIVC.h"
 
+@interface ReportWIFIVC() <SelectTimeViewDelegate>
+
+@end
+
 @implementation ReportWIFIVC{
     
     UIView *reportView;
@@ -60,8 +64,15 @@
 
 - (void)selectTime{
     SelectTimeView *selectTimeView = [SelectTimeView initWithY:DEVICE_H - selectTimeViewH superView:self.view];
+    selectTimeView.delegate = self;
     [selectTimeView addSubviews];
 }
+
+- (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
+    NSString *dateTimeStr = [[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:time];
+    [selectTimeItemView addTimeStr:dateTimeStr];
+}
+
 
 - (void)commitReport{
     
