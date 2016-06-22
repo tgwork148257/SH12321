@@ -59,7 +59,7 @@
 
 - (void)commitReport{
     
-    model.reportSendNumber = websiteURLTextField.text;
+    model.reportWebsiteURL = websiteURLTextField.text;
 //    model.reportAcceptNumber = reportWebsiteTypeView.text;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
