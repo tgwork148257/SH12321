@@ -39,29 +39,25 @@
         case ReportCrankCall:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportSendNumber forKey:crankCallSendNumberKey];
-            [dic setObject:model.reportAcceptNumber forKey:crankCallAcceptNumberKey];
-            [dic setObject:@(model.reportType) forKey:crankCallTypeKey];
-            [dic setObject:model.reportTime forKey:crankCallTimeKey];
-            [dic setObject:model.reportTimeLength forKey:crankCallLengthKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:crankCallContentKey];
-            }
-            [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
+            [dic setValue:model.reportSendNumber forKey:crankCallSendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:crankCallAcceptNumberKey];
+            [dic setValue:@(model.reportType) forKey:crankCallTypeKey];
+            [dic setValue:model.reportTime forKey:crankCallTimeKey];
+            [dic setValue:model.reportTimeLength forKey:crankCallLengthKey];
+            [dic setValue:model.reportContent forKey:crankCallContentKey];
             
+            [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
         }
             break;
         case ReportScamCall:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportSendNumber forKey:scamCallSendNumberKey];
-            [dic setObject:model.reportAcceptNumber forKey:scamCallAcceptNumberKey];
-            [dic setObject:@(model.reportType) forKey:scamCallTypeKey];
-            [dic setObject:model.reportTime forKey:scamCallTimeKey];
-            [dic setObject:model.reportTimeLength forKey:scamCallLengthKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:scamCallContentKey];
-            }
+            [dic setValue:model.reportSendNumber forKey:scamCallSendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:scamCallAcceptNumberKey];
+            [dic setValue:@(model.reportType) forKey:scamCallTypeKey];
+            [dic setValue:model.reportTime forKey:scamCallTimeKey];
+            [dic setValue:model.reportTimeLength forKey:scamCallLengthKey];
+            [dic setValue:model.reportContent forKey:scamCallContentKey];
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
@@ -69,14 +65,13 @@
         case ReportMessage:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportSendNumber forKey:messageSendNumberKey];
-            [dic setObject:model.reportAcceptNumber forKey:messageAcceptNumberKey];
-//            [dic setObject:@(model.reportType) forKey:scamCallTypeKey];
-//            [dic setObject:model.reportTime forKey:scamCallTimeKey];
-//            [dic setObject:model.reportTimeLength forKey:scamCallLengthKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:messageContentKey];
-            }
+            [dic setValue:model.reportSendNumber forKey:messageSendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:messageAcceptNumberKey];
+//            [dic setValue:@(model.reportType) forKey:scamCallTypeKey];
+//            [dic setValue:model.reportTime forKey:scamCallTimeKey];
+//            [dic setValue:model.reportTimeLength forKey:scamCallLengthKey];
+            [dic setValue:model.reportContent forKey:messageContentKey];
+            
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
@@ -84,11 +79,10 @@
         case ReportWebsite:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportWebsiteURL forKey:websiteURLKey];
-            [dic setObject:model.reportWebsiteType forKey:websiteTypeKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:websiteContentKey];
-            }
+            [dic setValue:model.reportWebsiteURL forKey:websiteURLKey];
+            [dic setValue:model.reportWebsiteType forKey:websiteTypeKey];
+            [dic setValue:model.reportContent forKey:websiteContentKey];
+
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
@@ -96,11 +90,10 @@
         case ReportWIFI:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportName forKey:WIFINameKey];
-            [dic setObject:model.reportAdress forKey:WIFIAdressKey];
-//            if (!EMPTY_STRING(model.reportContent)) {
-//                [dic setObject:model.reportContent forKey:AppContentKey];
-//            }
+            [dic setValue:model.reportName forKey:WIFINameKey];
+            [dic setValue:model.reportAdress forKey:WIFIAdressKey];
+//          [dic setValue:model.reportContent forKey:AppContentKey];
+            
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
@@ -108,11 +101,10 @@
         case ReportApp:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportName forKey:AppNameKey];
-            [dic setObject:model.reportAppSource forKey:AppSourceKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:AppContentKey];
-            }
+            [dic setValue:model.reportName forKey:AppNameKey];
+            [dic setValue:model.reportAppSource forKey:AppSourceKey];
+            [dic setValue:model.reportContent forKey:AppContentKey];
+            
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }
@@ -120,11 +112,10 @@
         case ReportFakeBaseStation:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:model.reportFakeBasicStationType forKey:fakeBasicStationTypeKey];
-            [dic setObject:model.reportAdress forKey:fakeBasicStationAdressKey];
-            if (!EMPTY_STRING(model.reportContent)) {
-                [dic setObject:model.reportContent forKey:fakeBasicStationContentKey];
-            }
+            [dic setValue:model.reportFakeBasicStationType forKey:fakeBasicStationTypeKey];
+            [dic setValue:model.reportAdress forKey:fakeBasicStationAdressKey];
+            [dic setValue:model.reportContent forKey:fakeBasicStationContentKey];
+            
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             
         }

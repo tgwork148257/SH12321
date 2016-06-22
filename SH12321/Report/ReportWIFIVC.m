@@ -65,9 +65,9 @@
 
 - (void)commitReport{
     
-    model.reportWebsiteURL = reportWIFINameTextField.text;
+//    model.reportWebsiteURL = reportWIFINameTextField.text;
     //    model.reportAcceptNumber = reportWebsiteTypeView.text;
-    model.reportTime = [selectTimeItemView timeStr];
+//    model.reportTime = [selectTimeItemView timeStr];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];
