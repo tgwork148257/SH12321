@@ -17,8 +17,7 @@
     ReportItemLabel *reportWIFIAdressLabel;
     SelectTypeView *reportWebsiteTypeView;
     
-    ReportItemLabel *reportContentLabel;
-    ReportItemTextView *reportContentTextView;
+    SelectTimeItemView *selectTimeItemView;
     
     CommitButton *commitBtn;
     
@@ -46,10 +45,12 @@
     reportWebsiteTypeView = [SelectTypeView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height superView:reportView];
     [reportWebsiteTypeView addTitles:@[@"不良类型1",@"不良类型2",@"不良类型3",@"不良类型4",@"不良类型5"]];
     
-    reportContentLabel = [ReportItemLabel initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height title:@"不良网站内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:nil superView:reportView];
+    selectTimeItemView = [SelectTimeItemView initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height superView:reportView];
+    selectTimeItemView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
+    [selectTimeItemView addGestureRecognizer:tap];
     
-    reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
+    reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
     [self.view addSubview:reportView];
     
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
@@ -57,11 +58,16 @@
     
 }
 
+- (void)selectTime{
+    SelectTimeView *selectTimeView = [SelectTimeView initWithY:DEVICE_H - selectTimeViewH superView:self.view];
+    [selectTimeView addSubviews];
+}
+
 - (void)commitReport{
     
     model.reportWebsiteURL = reportWIFINameTextField.text;
     //    model.reportAcceptNumber = reportWebsiteTypeView.text;
-    model.reportContent = reportContentTextView.text;
+    model.reportTime = [selectTimeItemView timeStr];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];

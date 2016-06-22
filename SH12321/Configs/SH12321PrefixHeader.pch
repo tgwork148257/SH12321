@@ -33,6 +33,8 @@
 #import "ReportItemTextField.h"
 #import "ReportItemTextView.h"
 #include "SelectTypeView.h"
+#import "SelectTimeItemView.h"
+#import "SelectTimeView.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

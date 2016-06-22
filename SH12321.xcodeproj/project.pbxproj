@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190581D1A6C500038EEA1 /* SelectTimeView.m */; };
+		6521905C1D1A718C0038EEA1 /* SelectTimeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */; };
 		657048111D17C8D300D98E92 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F11D17C8D300D98E92 /* MKAnnotationView+WebCache.m */; };
 		657048121D17C8D300D98E92 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F31D17C8D300D98E92 /* NSData+ImageContentType.m */; };
 		657048131D17C8D300D98E92 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F51D17C8D300D98E92 /* SDImageCache.m */; };
@@ -105,6 +107,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		652190571D1A6C500038EEA1 /* SelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeView.h; sourceTree = "<group>"; };
+		652190581D1A6C500038EEA1 /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeView.m; sourceTree = "<group>"; };
+		6521905A1D1A718C0038EEA1 /* SelectTimeItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeItemView.h; sourceTree = "<group>"; };
+		6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeItemView.m; sourceTree = "<group>"; };
 		657047F01D17C8D300D98E92 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		657047F11D17C8D300D98E92 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		657047F21D17C8D300D98E92 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -352,6 +358,10 @@
 				65DDC07D1D191FEA00F02FA3 /* CommonDefine.h */,
 				65DDC0931D19392C00F02FA3 /* SelectTypeView.h */,
 				65DDC0941D19392C00F02FA3 /* SelectTypeView.m */,
+				652190571D1A6C500038EEA1 /* SelectTimeView.h */,
+				652190581D1A6C500038EEA1 /* SelectTimeView.m */,
+				6521905A1D1A718C0038EEA1 /* SelectTimeItemView.h */,
+				6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */,
 				65DDC07E1D19206900F02FA3 /* CommitButton.h */,
 				65DDC07F1D19206900F02FA3 /* CommitButton.m */,
 				65DDC0811D19244600F02FA3 /* ReportItemLabel.h */,
@@ -738,6 +748,7 @@
 				65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */,
 				6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */,
 				65F8CD051D0D00FB008C7763 /* SBJsonStreamParserAdapter.m in Sources */,
+				6521905C1D1A718C0038EEA1 /* SelectTimeItemView.m in Sources */,
 				65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */,
 				65F8CD701D0D346C008C7763 /* ReportListViewController.m in Sources */,
 				65F8CD7D1D0D34A4008C7763 /* NewsHomeCell.m in Sources */,
@@ -764,6 +775,7 @@
 				65F8CD061D0D00FB008C7763 /* SBJsonStreamParserState.m in Sources */,
 				657048201D17C8D300D98E92 /* UIView+WebCacheOperation.m in Sources */,
 				65F8CD261D0D0DCE008C7763 /* AFSecurityPolicy.m in Sources */,
+				652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */,
 				65F8CBB21D07E60E008C7763 /* main.m in Sources */,
 				65F8CD031D0D00FB008C7763 /* SBJsonStreamParser.m in Sources */,
 				65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */,

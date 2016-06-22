@@ -16,5 +16,6 @@
 static const CGFloat reportItemLabelH = 32.0F;
 static const CGFloat reportItemTextFieldH = 32.0F;
 static const CGFloat reportItemTextViewH = 64.0F;
+static const CGFloat selectTimeViewH = 240.0F;
 
 #endif /* CommonDefine_h */
