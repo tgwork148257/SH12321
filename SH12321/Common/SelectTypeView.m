@@ -8,10 +8,11 @@
 
 #import "SelectTypeView.h"
 
-#define viewH    24
-#define imageWH  16
+#define viewH    36
+#define imageWH  24
 
 #define btnTag 223333
+
 
 @implementation SelectTypeView{
     NSArray *titlesArr;
@@ -19,9 +20,14 @@
     NSInteger selectTitleIndex;
 }
 
-- (void)addTitles:(NSArray *)titles y:(CGFloat)y superview:(UIView *)superview{
-    [superview addSubview:self];
-    self.frame = CGRectMake(0, y, DEVICE_W, titles.count * viewH);
++ (SelectTypeView *)initWithY:(CGFloat)y superView:(UIView *)superView{
+    SelectTypeView *view = [[SelectTypeView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
+    [superView addSubview:view];
+    return view;
+}
+
+- (void)addTitles:(NSArray *)titles{
+    self.height = titles.count * viewH;
     titlesArr = titles;
     CGFloat labelX = L_R_EDGE;
     CGFloat labelY = 0;
@@ -36,6 +42,7 @@
         [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
         btn.tag = btnTag + i;
+        btn.backgroundColor = C_RED;
         [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         
         labelY += viewH;
@@ -45,8 +52,11 @@
 
 - (void)btnDidClick:(TGButton *)btn{
     if (!EMPTY_STRING(selectTitleStr)) {
-        for (TGButton *btn in btn.superview.subviews) {
-            btn.selected = NO;
+        for (UIView *view in btn.superview.subviews) {
+            if (view.tag >= btnTag) {
+                TGButton *btn = (TGButton *)view;
+                btn.selected = NO;
+            }
         }
     }
     

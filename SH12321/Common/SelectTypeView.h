@@ -10,4 +10,8 @@
 
 @interface SelectTypeView : UIView
 
++ (SelectTypeView *)initWithY:(CGFloat)y superView:(UIView *)superView;
+
+- (void)addTitles:(NSArray *)titles;
+
 @end
