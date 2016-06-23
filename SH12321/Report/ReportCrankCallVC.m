@@ -39,6 +39,10 @@
     CommitButton *commitBtn;
     
     ReportDataModel *model;
+    
+    NSArray *timeLengthArr;
+    NSArray *crankFormArr;
+    NSArray *crankTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -50,6 +54,9 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
+    timeLengthArr = @[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"];
+    crankFormArr = @[@"响一声就挂",@"自动语音骚扰",@"人工骚扰"];
+    crankTypeArr = @[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"];
     [self addSubviews];
 }
 
@@ -69,15 +76,15 @@
     
     reportCrankFormLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"骚扰形式" superView:reportView];
     reportCrankFormView = [SelectTypeView initWithY:reportCrankFormLabel.y + reportCrankFormLabel.height superView:reportView];
-    [reportCrankFormView addTitles:@[@"响一声就挂",@"自动语音骚扰",@"人工骚扰"]];
+    [reportCrankFormView addTitles:crankFormArr];
     
     reportCrankTypeLabel = [ReportItemLabel initWithY:reportCrankFormView.y + reportCrankFormView.height title:@"骚扰类型" superView:reportView];
     reportCrankTypeView = [SelectTypeView initWithY:reportCrankTypeLabel.y + reportCrankTypeLabel.height superView:reportView];
-    [reportCrankTypeView addTitles:@[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"]];
+    [reportCrankTypeView addTitles:crankTypeArr];
     
     reportCrankTimeLengthLabel = [ReportItemLabel initWithY:reportCrankTypeView.y + reportCrankTypeView.height title:@"通话时长" superView:reportView];
     reportCrankTimeLengthView = [SelectTypeView initWithY:reportCrankTimeLengthLabel.y + reportCrankTimeLengthLabel.height superView:reportView];
-    [reportCrankTimeLengthView addTitles:@[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"]];
+    [reportCrankTimeLengthView addTitles:timeLengthArr];
     
     selectTimeItemView = [SelectItemView initWithY:reportCrankTimeLengthView.y + reportCrankTimeLengthView.height itemStr:@"选择时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
