@@ -8,21 +8,119 @@
 
 #import "ReportCrankCallVC.h"
 
-@interface ReportCrankCallVC ()
+@interface ReportCrankCallVC () <SelectTimeViewDelegate>
 
 @end
 
-@implementation ReportCrankCallVC
+@implementation ReportCrankCallVC{
+    
+    UIScrollView *scrollView;
+    UIView *reportView;
+    ReportItemLabel *reportSendNumberLabel;
+    ReportItemTextField *reportSendNumberTextField;
+    
+    ReportItemLabel *reportAcceptNumberLabel;
+    ReportItemTextField *reportAcceptNumberTextField;
+    
+    ReportItemLabel *reportCrankFormLabel;
+    SelectTypeView *reportCrankFormView;
+    
+    ReportItemLabel *reportCrankTypeLabel;
+    SelectTypeView *reportCrankTypeView;
+    
+    ReportItemLabel *reportCrankTimeLengthLabel;
+    SelectTypeView *reportCrankTimeLengthView;
+    
+    SelectItemView *selectTimeItemView;
+    
+    ReportItemLabel *reportContentLabel;
+    ReportItemTextView *reportContentTextView;
+    
+    CommitButton *commitBtn;
+    
+    ReportDataModel *model;
+}
 
 - (void)viewDidLoad {
     self.navigationTitle = @"举报骚扰电话";
     [super viewDidLoad];
     
+    self.view.backgroundColor = grayBgColor;
+    
+    model = [[ReportDataModel alloc] init];
+    model.reportType = ReportMessage;
+    
+    [self addSubviews];
+}
+
+- (void)addSubviews{
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H + TABBAR_H)];
+    [self.view addSubview:scrollView];
+    
+    reportView = [[UIView alloc] init];
+    reportView.backgroundColor = C_WHITE;
+    [scrollView addSubview:reportView];
+    
+    reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"骚扰电话" superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:nil superView:reportView];
+    
+    reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被骚扰电话" superView:reportView];
+    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:nil superView:reportView];
+    
+    reportCrankFormLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"骚扰形式" superView:reportView];
+    reportCrankFormView = [SelectTypeView initWithY:reportCrankFormLabel.y + reportCrankFormLabel.height superView:reportView];
+    [reportCrankFormView addTitles:@[@"响一声就挂",@"自动语音骚扰",@"人工骚扰"]];
+    
+    reportCrankTypeLabel = [ReportItemLabel initWithY:reportCrankFormView.y + reportCrankFormView.height title:@"骚扰类型" superView:reportView];
+    reportCrankTypeView = [SelectTypeView initWithY:reportCrankTypeLabel.y + reportCrankTypeLabel.height superView:reportView];
+    [reportCrankTypeView addTitles:@[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"]];
+    
+    reportCrankTimeLengthLabel = [ReportItemLabel initWithY:reportCrankTypeView.y + reportCrankTypeView.height title:@"通话时长" superView:reportView];
+    reportCrankTimeLengthView = [SelectTypeView initWithY:reportCrankTimeLengthLabel.y + reportCrankTimeLengthLabel.height superView:reportView];
+    [reportCrankTimeLengthView addTitles:@[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"]];
+    
+    selectTimeItemView = [SelectItemView initWithY:reportCrankTimeLengthView.y + reportCrankTimeLengthView.height itemStr:@"选择时间" superView:reportView];
+    selectTimeItemView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
+    [selectTimeItemView addGestureRecognizer:tap];
+    
+    reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"骚扰内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入骚扰内容" superView:reportView];
+    
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
+    
+    
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 40 superView:scrollView];
+    [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
+    
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
     
 }
 
+- (void)selectTime{
+    SelectTimeView *selectTimeView = [SelectTimeView initWithY:DEVICE_H - selectTimeViewH superView:self.view];
+    selectTimeView.delegate = self;
+    [selectTimeView addSubviews];
+}
+
+- (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
+    NSString *dateTimeStr = [[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:time];
+    [selectTimeItemView addItemStr:dateTimeStr];
+}
+
+
 - (void)commitReport{
     
+    //    model.reportWebsiteURL = reportSendNumberTextField.text;
+    //    model.reportAcceptNumber = reportCrankFormView.text;
+    model.reportTime = [selectTimeItemView itemStr];
+    [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
+        [TGToast showWithText:@"举报成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } fail:^{
+        [TGToast showWithText:@"举报失败，请重试"];
+    }];
 }
+
 
 @end

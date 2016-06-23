@@ -19,7 +19,7 @@
 #import "ReportInfoRevealVC.h"
 #import "ReportBadNewsVC.h"
 #import "ReportInfringmentVC.h"
-#import "ReportOthersVC.h"
+#import "ReportOthersInfoVC.h"
 #import "SHAreasListVC.h"
 
 

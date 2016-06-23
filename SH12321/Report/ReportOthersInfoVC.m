@@ -1,18 +1,18 @@
 //
-//  ReportOthersVC.m
+//  ReportOthersInfoVC.m
 //  SH12321
 //
-//  Created by Tommy on 6/22/16.
+//  Created by Tommy on 6/23/16.
 //  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "ReportOthersVC.h"
+#import "ReportOthersInfoVC.h"
 
-@interface ReportOthersVC ()
+@interface ReportOthersInfoVC ()
 
 @end
 
-@implementation ReportOthersVC
+@implementation ReportOthersInfoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
