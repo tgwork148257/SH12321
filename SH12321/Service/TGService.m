@@ -43,7 +43,7 @@
             [dic setValue:model.reportAcceptNumber forKey:crankCallAcceptNumberKey];
             [dic setValue:@(model.reportType) forKey:crankCallTypeKey];
             [dic setValue:model.reportTime forKey:crankCallTimeKey];
-            [dic setValue:model.reportTimeLength forKey:crankCallLengthKey];
+            [dic setValue:model.reportTimeLengthStr forKey:crankCallLengthKey];
             [dic setValue:model.reportContent forKey:crankCallContentKey];
             
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
@@ -56,7 +56,7 @@
             [dic setValue:model.reportAcceptNumber forKey:scamCallAcceptNumberKey];
             [dic setValue:@(model.reportType) forKey:scamCallTypeKey];
             [dic setValue:model.reportTime forKey:scamCallTimeKey];
-            [dic setValue:model.reportTimeLength forKey:scamCallLengthKey];
+            [dic setValue:model.reportTimeLengthStr forKey:scamCallLengthKey];
             [dic setValue:model.reportContent forKey:scamCallContentKey];
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
             

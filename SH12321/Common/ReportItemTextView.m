@@ -8,6 +8,8 @@
 
 #import "ReportItemTextView.h"
 
+#define placeholderLabelH 24.0F
+
 @implementation ReportItemTextView
 
 + (ReportItemTextView *)initWithY:(CGFloat)y placeholder:(NSString *)placeholder superView:(UIView *)superView{
@@ -16,7 +18,8 @@
     tv.backgroundColor = C_WHITE;
     tv.font = FONTSIZE12;
     tv.textAlignment = NSTextAlignmentLeft;
-//    tv.placeholder = placeholder;
+    TGLabel *placeholderLabel = [TGLabel initWithFrame:CGRectMake(4, 3, MIDDLE_W, placeholderLabelH) text:placeholder textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:tv];
+    placeholderLabel.tag = placeholderLabelTag;
     [superView addSubview:tv];
     
     

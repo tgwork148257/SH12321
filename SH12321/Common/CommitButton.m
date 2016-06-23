@@ -8,7 +8,7 @@
 
 #import "CommitButton.h"
 
-#define btnH 48.F
+#define btnH 32.F
 #define btnW 100.F
 
 @implementation CommitButton

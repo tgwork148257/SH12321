@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReportItemTextView : UITextView
+#define placeholderLabelTag 9887
 
-@property (nonatomic, strong) UILabel *placeholderLabel;
+@interface ReportItemTextView : UITextView 
 
 + (ReportItemTextView *)initWithY:(CGFloat)y placeholder:(NSString *)placeholder superView:(UIView *)superView;
 

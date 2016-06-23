@@ -8,7 +8,7 @@
 
 #import "ReportCrankCallVC.h"
 
-@interface ReportCrankCallVC () <SelectTimeViewDelegate>
+@interface ReportCrankCallVC () <SelectTimeViewDelegate, UITextViewDelegate>
 
 @end
 
@@ -93,15 +93,35 @@
     
     reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"骚扰内容" superView:reportView];
     reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入骚扰内容" superView:reportView];
+    reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
     
+
     
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 40 superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + 64);
     
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    if (!EMPTY_STRING(textView.text)) {
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = YES;
+            }
+        }
+    }else{
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = NO;
+            }
+        }
+    }
 }
 
 - (void)selectTime{
