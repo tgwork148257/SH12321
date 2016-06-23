@@ -22,7 +22,7 @@
     ReportItemLabel *reportWIFIAdressLabel;
     SelectTypeView *reportWebsiteTypeView;
     
-    SelectTimeItemView *selectTimeItemView;
+    SelectItemView *selectTimeItemView;
     
     CommitButton *commitBtn;
     
@@ -56,7 +56,7 @@
     reportWebsiteTypeView = [SelectTypeView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height superView:reportView];
     [reportWebsiteTypeView addTitles:@[@"不良类型1",@"不良类型2",@"不良类型3",@"不良类型4",@"不良类型5"]];
     
-    selectTimeItemView = [SelectTimeItemView initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height superView:reportView];
+    selectTimeItemView = [SelectItemView initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height itemStr:@"选择时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:tap];
@@ -79,7 +79,7 @@
 
 - (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
     NSString *dateTimeStr = [[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:time];
-    [selectTimeItemView addTimeStr:dateTimeStr];
+    [selectTimeItemView addItemStr:dateTimeStr];
 }
 
 
@@ -87,7 +87,7 @@
     
 //    model.reportWebsiteURL = reportWIFINameTextField.text;
     //    model.reportAcceptNumber = reportWebsiteTypeView.text;
-//    model.reportTime = [selectTimeItemView timeStr];
+    model.reportTime = [selectTimeItemView itemStr];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];

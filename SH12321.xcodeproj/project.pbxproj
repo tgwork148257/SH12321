@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190581D1A6C500038EEA1 /* SelectTimeView.m */; };
-		6521905C1D1A718C0038EEA1 /* SelectTimeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */; };
 		6521905F1D1A94D80038EEA1 /* ReportOthersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6521905E1D1A94D80038EEA1 /* ReportOthersVC.m */; };
+		652190621D1B7DA50038EEA1 /* ReportBadNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190611D1B7DA50038EEA1 /* ReportBadNewsVC.m */; };
+		652190651D1B7E080038EEA1 /* ReportInfringmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190641D1B7E080038EEA1 /* ReportInfringmentVC.m */; };
+		652190681D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190671D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m */; };
+		6521906B1D1B80740038EEA1 /* SelectItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6521906A1D1B80740038EEA1 /* SelectItemView.m */; };
 		657048111D17C8D300D98E92 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F11D17C8D300D98E92 /* MKAnnotationView+WebCache.m */; };
 		657048121D17C8D300D98E92 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F31D17C8D300D98E92 /* NSData+ImageContentType.m */; };
 		657048131D17C8D300D98E92 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 657047F51D17C8D300D98E92 /* SDImageCache.m */; };
@@ -110,10 +113,16 @@
 /* Begin PBXFileReference section */
 		652190571D1A6C500038EEA1 /* SelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeView.h; sourceTree = "<group>"; };
 		652190581D1A6C500038EEA1 /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeView.m; sourceTree = "<group>"; };
-		6521905A1D1A718C0038EEA1 /* SelectTimeItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeItemView.h; sourceTree = "<group>"; };
-		6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeItemView.m; sourceTree = "<group>"; };
 		6521905D1D1A94D80038EEA1 /* ReportOthersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportOthersVC.h; sourceTree = "<group>"; };
 		6521905E1D1A94D80038EEA1 /* ReportOthersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportOthersVC.m; sourceTree = "<group>"; };
+		652190601D1B7DA50038EEA1 /* ReportBadNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportBadNewsVC.h; sourceTree = "<group>"; };
+		652190611D1B7DA50038EEA1 /* ReportBadNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportBadNewsVC.m; sourceTree = "<group>"; };
+		652190631D1B7E080038EEA1 /* ReportInfringmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportInfringmentVC.h; sourceTree = "<group>"; };
+		652190641D1B7E080038EEA1 /* ReportInfringmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportInfringmentVC.m; sourceTree = "<group>"; };
+		652190661D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportPhoneNumberIndentificationVC.h; sourceTree = "<group>"; };
+		652190671D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportPhoneNumberIndentificationVC.m; sourceTree = "<group>"; };
+		652190691D1B80740038EEA1 /* SelectItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectItemView.h; sourceTree = "<group>"; };
+		6521906A1D1B80740038EEA1 /* SelectItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectItemView.m; sourceTree = "<group>"; };
 		657047F01D17C8D300D98E92 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		657047F11D17C8D300D98E92 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		657047F21D17C8D300D98E92 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -363,8 +372,8 @@
 				65DDC0941D19392C00F02FA3 /* SelectTypeView.m */,
 				652190571D1A6C500038EEA1 /* SelectTimeView.h */,
 				652190581D1A6C500038EEA1 /* SelectTimeView.m */,
-				6521905A1D1A718C0038EEA1 /* SelectTimeItemView.h */,
-				6521905B1D1A718C0038EEA1 /* SelectTimeItemView.m */,
+				652190691D1B80740038EEA1 /* SelectItemView.h */,
+				6521906A1D1B80740038EEA1 /* SelectItemView.m */,
 				65DDC07E1D19206900F02FA3 /* CommitButton.h */,
 				65DDC07F1D19206900F02FA3 /* CommitButton.m */,
 				65DDC0811D19244600F02FA3 /* ReportItemLabel.h */,
@@ -603,8 +612,14 @@
 				65F8CDB31D0FA7C2008C7763 /* ReportFakeBasicStationVC.m */,
 				65F8CDB51D0FA7E1008C7763 /* ReportEmailVC.h */,
 				65F8CDB61D0FA7E1008C7763 /* ReportEmailVC.m */,
+				652190661D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.h */,
+				652190671D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m */,
 				65DDC0781D19162400F02FA3 /* ReportInfoRevealVC.h */,
 				65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */,
+				652190601D1B7DA50038EEA1 /* ReportBadNewsVC.h */,
+				652190611D1B7DA50038EEA1 /* ReportBadNewsVC.m */,
+				652190631D1B7E080038EEA1 /* ReportInfringmentVC.h */,
+				652190641D1B7E080038EEA1 /* ReportInfringmentVC.m */,
 				6521905D1D1A94D80038EEA1 /* ReportOthersVC.h */,
 				6521905E1D1A94D80038EEA1 /* ReportOthersVC.m */,
 				65F8CD901D0EA106008C7763 /* ReportDataModel.h */,
@@ -752,8 +767,8 @@
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,
 				65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */,
 				6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */,
+				652190651D1B7E080038EEA1 /* ReportInfringmentVC.m in Sources */,
 				65F8CD051D0D00FB008C7763 /* SBJsonStreamParserAdapter.m in Sources */,
-				6521905C1D1A718C0038EEA1 /* SelectTimeItemView.m in Sources */,
 				65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */,
 				65F8CD701D0D346C008C7763 /* ReportListViewController.m in Sources */,
 				65F8CD7D1D0D34A4008C7763 /* NewsHomeCell.m in Sources */,
@@ -792,7 +807,9 @@
 				6570481A1D17C8D300D98E92 /* UIButton+WebCache.m in Sources */,
 				657048141D17C8D300D98E92 /* SDWebImageCompat.m in Sources */,
 				65F8CD7B1D0D34A4008C7763 /* NewsDetailModel.m in Sources */,
+				6521906B1D1B80740038EEA1 /* SelectItemView.m in Sources */,
 				65F8CD431D0D2FF7008C7763 /* TGService.m in Sources */,
+				652190621D1B7DA50038EEA1 /* ReportBadNewsVC.m in Sources */,
 				65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */,
 				65F8CD551D0D33C8008C7763 /* TGViewController.m in Sources */,
 				65DDC07A1D19162400F02FA3 /* ReportInfoRevealVC.m in Sources */,
@@ -806,6 +823,7 @@
 				65F8CD081D0D00FB008C7763 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				65F8CDB71D0FA7E1008C7763 /* ReportEmailVC.m in Sources */,
 				65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */,
+				652190681D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m in Sources */,
 				65F8CD041D0D00FB008C7763 /* SBJsonStreamParserAccumulator.m in Sources */,
 				65F8CD0A1D0D00FB008C7763 /* SBJsonTokeniser.m in Sources */,
 				65F8CD7E1D0D34A4008C7763 /* NewsHomeVC.m in Sources */,
