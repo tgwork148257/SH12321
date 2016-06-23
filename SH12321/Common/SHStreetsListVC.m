@@ -66,6 +66,9 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, cellH) text:[tableviewData objectAtIndex:indexPath.row] textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:cell];
         label.numberOfLines = 1;
+        
+        TGView *view = [TGView initWithFrame:CGRectMake(0, label.y + label.height, MIDDLE_W, 1) superView:cell];
+        view.backgroundColor = C_LINE;
         return cell;
     }else{
         return nil;
@@ -77,8 +80,8 @@
     if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
         if ([self.delegate respondsToSelector:@selector(selectStreet:)]) {
             [self.delegate selectStreet:[tableviewData objectAtIndex:indexPath.row]];
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
