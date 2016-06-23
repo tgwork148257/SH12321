@@ -103,7 +103,8 @@
 - (void)selectStreet{
     if (!EMPTY_STRING(areaStr)) {
         SHStreetsListVC *vc = [[SHStreetsListVC alloc] init];
-        vc.title = areaStr;
+        vc.navigationTitle = areaStr;
+        vc.delegate = self;
         [self.navigationController pushViewController:vc animated:YES];
     }else{
         [TGToast showWithText:@"请先选择区县"];
