@@ -14,6 +14,7 @@
 
 @implementation ReportWIFIVC{
     
+    UIScrollView *scrollView;
     UIView *reportView;
     ReportItemLabel *reportWIFINameLabel;
     ReportItemTextField *reportWIFINameTextField;
@@ -33,8 +34,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = grayBgColor;
-    reportView = [[UIView alloc] init];
-    reportView.backgroundColor = C_WHITE;
+
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
@@ -42,6 +42,13 @@
 }
 
 - (void)addSubviews{
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H + TABBAR_H)];
+    [self.view addSubview:scrollView];
+    
+    reportView = [[UIView alloc] init];
+    reportView.backgroundColor = C_WHITE;
+     [scrollView addSubview:reportView];
+    
     reportWIFINameLabel = [ReportItemLabel initWithY:0 title:@"不良WIFI名称" superView:reportView];
     reportWIFINameTextField = [ReportItemTextField initWithY:reportWIFINameLabel.y + reportWIFINameLabel.height placeholder:nil superView:reportView];
     
@@ -54,11 +61,13 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:tap];
     
-    reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
-    [self.view addSubview:reportView];
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
+   
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 40 superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
+    
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
     
 }
 
