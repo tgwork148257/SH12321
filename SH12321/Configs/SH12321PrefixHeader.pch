@@ -35,6 +35,8 @@
 #include "SelectTypeView.h"
 #import "SelectItemView.h"
 #import "SelectTimeView.h"
+#import "SHAreasListVC.h"
+#import "SHStreetsListVC.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

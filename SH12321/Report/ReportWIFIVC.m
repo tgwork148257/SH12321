@@ -8,7 +8,7 @@
 
 #import "ReportWIFIVC.h"
 
-@interface ReportWIFIVC() <SelectTimeViewDelegate>
+@interface ReportWIFIVC() <SelectTimeViewDelegate, SHAreasListVCDelegate, SHStreetsListVCDelegate, UITextViewDelegate>
 
 @end
 
@@ -20,13 +20,19 @@
     ReportItemTextField *reportWIFINameTextField;
     
     ReportItemLabel *reportWIFIAdressLabel;
-    SelectTypeView *reportWebsiteTypeView;
+    SelectItemView *cityView;
+    SelectItemView *areaView;
+    SelectItemView *streetView;
+    ReportItemTextView *detailAdressTextView;
     
     SelectItemView *selectTimeItemView;
     
     CommitButton *commitBtn;
     
     ReportDataModel *model;
+    
+    NSString *areaStr;
+    NSString *streetStr;
 }
 
 - (void)viewDidLoad {
@@ -53,13 +59,25 @@
     reportWIFINameTextField = [ReportItemTextField initWithY:reportWIFINameLabel.y + reportWIFINameLabel.height placeholder:nil superView:reportView];
     
     reportWIFIAdressLabel = [ReportItemLabel initWithY:reportWIFINameTextField.y + reportWIFINameTextField.height title:@"不良WIFI地址" superView:reportView];
-    reportWebsiteTypeView = [SelectTypeView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height superView:reportView];
-    [reportWebsiteTypeView addTitles:@[@"不良类型1",@"不良类型2",@"不良类型3",@"不良类型4",@"不良类型5"]];
+    cityView = [SelectItemView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height itemStr:@"上海市" superView:reportView];
+    areaView = [SelectItemView initWithY:cityView.y + cityView.height itemStr:@"选择区县" superView:reportView];
+    streetView = [SelectItemView initWithY:areaView.y + areaView.height itemStr:@"选择街道" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:streetView.y + streetView.height placeholder:@"请输入详细地址" superView:reportView];
+    detailAdressTextView.delegate = self;
     
-    selectTimeItemView = [SelectItemView initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height itemStr:@"选择时间" superView:reportView];
+    areaView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *selectAreaTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectArea)];
+    [areaView addGestureRecognizer:selectAreaTap];
+    
+    streetView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *selectStreetTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectStreet)];
+    [streetView addGestureRecognizer:selectStreetTap];
+
+    
+    selectTimeItemView = [SelectItemView initWithY:detailAdressTextView.y + detailAdressTextView.height itemStr:@"选择时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
-    [selectTimeItemView addGestureRecognizer:tap];
+    UITapGestureRecognizer *selectTimeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
+    [selectTimeItemView addGestureRecognizer:selectTimeTap];
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
    
@@ -69,6 +87,32 @@
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
     
+}
+
+- (void)selectArea{
+    SHAreasListVC *vc = [[SHAreasListVC alloc] init];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)backArea:(NSString *)backAreaStr{
+    areaStr = backAreaStr;
+    [areaView addItemStr:backAreaStr];
+}
+
+- (void)selectStreet{
+    if (!EMPTY_STRING(areaStr)) {
+        SHStreetsListVC *vc = [[SHStreetsListVC alloc] init];
+        vc.title = areaStr;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        [TGToast showWithText:@"请先选择区县"];
+    }
+}
+
+- (void)backStreet:(NSString *)backStreetStr{
+    streetStr = backStreetStr;
+    [areaView addItemStr:backStreetStr];
 }
 
 - (void)selectTime{
@@ -82,12 +126,40 @@
     [selectTimeItemView addItemStr:dateTimeStr];
 }
 
+- (void)textViewDidChange:(UITextView *)textView{
+    if (!EMPTY_STRING(textView.text)) {
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = YES;
+            }
+        }
+    }else{
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = NO;
+            }
+        }
+    }
+}
 
 - (void)commitReport{
+    if (EMPTY_STRING(areaStr)) {
+        [TGToast showWithText:@"请选择区县"];
+    }
     
-//    model.reportWebsiteURL = reportWIFINameTextField.text;
-    //    model.reportAcceptNumber = reportWebsiteTypeView.text;
+    if (EMPTY_STRING(streetStr)) {
+        [TGToast showWithText:@"请选择街道"];
+    }
+    
+    if (EMPTY_STRING(detailAdressTextView.text)) {
+        [TGToast showWithText:@"请输入详细地址"];
+    }
+    
+    model.reportName = reportWIFINameTextField.text;
     model.reportTime = [selectTimeItemView itemStr];
+    model.reportAdress = [[areaStr stringByAppendingString:streetStr] stringByAppendingString:detailAdressTextView.text];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];

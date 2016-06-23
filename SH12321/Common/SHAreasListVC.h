@@ -10,7 +10,7 @@
 
 @protocol SHAreasListVCDelegate <NSObject>
 
-- (void)selectArea:(NSString *)areaStr;
+- (void)backArea:(NSString *)backAreaStr;
 
 @end
 

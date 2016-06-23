@@ -51,7 +51,8 @@
     acceptNumberTextField = [ReportItemTextField initWithY:acceptNumberLabel.y + acceptNumberLabel.height placeholder:@"请输入接收短信的号码" superView:reportView];
     
     messageContentLabel = [ReportItemLabel initWithY:acceptNumberTextField.y + acceptNumberTextField.height title:@"短信内容" superView:reportView];
-    messageContentTextView = [ReportItemTextView initWithY:messageContentLabel.y + messageContentLabel.height placeholder:nil superView:reportView];
+    messageContentTextView = [ReportItemTextView initWithY:messageContentLabel.y + messageContentLabel.height placeholder:@"请输入短信内容" superView:reportView];
+    messageContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, messageContentTextView.y + messageContentTextView.height);
     [self.view addSubview:reportView];
@@ -59,6 +60,24 @@
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:self.view];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+    if (!EMPTY_STRING(textView.text)) {
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = YES;
+            }
+        }
+    }else{
+        for (UIView *view in textView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *placeholderLabel = (TGLabel *)view;
+                placeholderLabel.hidden = NO;
+            }
+        }
+    }
 }
 
 - (void)commitReport{

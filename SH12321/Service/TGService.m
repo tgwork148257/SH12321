@@ -80,7 +80,7 @@
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportWebsiteURL forKey:websiteURLKey];
-            [dic setValue:model.reportWebsiteType forKey:websiteTypeKey];
+            [dic setValue:model.reportWebsiteTypeStr forKey:websiteTypeKey];
             [dic setValue:model.reportContent forKey:websiteContentKey];
 
             [TGRequest commitReportCrankCallWithUrlStr:urlStr parameters:dic success:success fail:fail];
@@ -112,7 +112,7 @@
         case ReportFakeBaseStation:
         {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportFakeBasicStationType forKey:fakeBasicStationTypeKey];
+            [dic setValue:model.reportFakeBasicStationTypeStr forKey:fakeBasicStationTypeKey];
             [dic setValue:model.reportAdress forKey:fakeBasicStationAdressKey];
             [dic setValue:model.reportContent forKey:fakeBasicStationContentKey];
             

@@ -71,7 +71,9 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 @property (nonatomic, assign) NSInteger reportScamCallStatus;    //举报诈骗电话形式索引
 
 
-@property (nonatomic, copy) NSString *reportFakeBasicStationType;           //举报伪基站类型
+@property (nonatomic, copy) NSString *reportFakeBasicStationTypeStr;           //举报伪基站类型字符串
+
+@property (nonatomic, assign) NSInteger reportFakeBasicStationType;           //举报伪基站类型索引
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
 

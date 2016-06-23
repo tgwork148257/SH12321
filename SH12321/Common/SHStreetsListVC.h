@@ -10,7 +10,7 @@
 
 @protocol SHStreetsListVCDelegate <NSObject>
 
-- (void)selectStreet:(NSString *)streetStr;
+- (void)backStreet:(NSString *)backStreetStr;
 
 @end
 

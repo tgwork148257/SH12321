@@ -78,8 +78,8 @@
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
-        if ([self.delegate respondsToSelector:@selector(selectArea:)]) {
-            [self.delegate selectArea:[tableviewData objectAtIndex:indexPath.row]];
+        if ([self.delegate respondsToSelector:@selector(backArea:)]) {
+            [self.delegate backArea:[tableviewData objectAtIndex:indexPath.row]];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
