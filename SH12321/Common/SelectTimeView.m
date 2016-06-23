@@ -27,14 +27,17 @@
     NSMutableArray *yearDataArr;
     NSMutableArray *monthDataArr;
     NSMutableArray *dayDataArr;
+    NSMutableArray *timeDataArr;
     
     NSString *selectedYear;
     NSString *selectedMonth;
     NSString *selectedDay;
+    NSString *selectedTime;
     
     NSInteger currentYear;
     NSInteger currentMonth;
     NSInteger currentDay;
+    NSInteger currentTime;
 }
 
 + (SelectTimeView *)initWithY:(CGFloat)y superView:(UIView *)superView{
@@ -53,14 +56,16 @@
     confirmBtn = [TGButton initTitleBtnWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - btnW, 0, btnW, btnH) title:@"确定" titleColor:C_BLUE titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
     [confirmBtn addTarget:self action:@selector(confirmBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
-    
+    currentTime = 0;
     currentDay = [TGUtils currentDayWithDate:[NSDate date]];
     currentMonth = [TGUtils currentMonthWithDate:[NSDate date]];
     currentYear = [TGUtils currentYearWithDate:[NSDate date]];
     
+    
     selectedYear = IntegerToStr([TGUtils currentYearWithDate:[NSDate date]]);
     selectedMonth = [TGUtils dayOrMonthConvertToStr:[TGUtils currentMonthWithDate:[NSDate date]]];
     selectedDay = [TGUtils dayOrMonthConvertToStr:[TGUtils currentDayWithDate:[NSDate date]]];
+    selectedTime = @"0时-1时";
     
     [self initArr];
     
@@ -73,11 +78,12 @@
     [timePickView selectRow:0 inComponent:0 animated:NO];
     [timePickView selectRow:(currentMonth - 1) inComponent:1 animated:NO];
     [timePickView selectRow:(currentDay - 1) inComponent:2 animated:NO];
+    [timePickView selectRow:0 inComponent:3 animated:NO];
 }
 
 - (void)initArr{
     yearDataArr = [[NSMutableArray alloc] init];
-    for (NSInteger i = currentYear ; i < 2050; i ++) {
+    for (NSInteger i = 2000 ; i < 2050; i ++) {
         NSString *str = [NSString stringWithFormat:@"%ld",i];
         [yearDataArr addObject:str];
     }
@@ -103,11 +109,17 @@
         }
         [dayDataArr addObject:str];
     }
+    
+    timeDataArr = [[NSMutableArray alloc] init];
+    for (int i = 0 ; i < 24; i ++) {
+        NSString *str = [NSString stringWithFormat:@"%d时-%d时",i, (i+1)];
+        [timeDataArr addObject:str];
+    }
 }
 
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
+    return 4;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -117,6 +129,22 @@
         return monthDataArr.count;
     }else if(component == 2){
         return dayDataArr.count;
+    }else if(component == 3){
+        return timeDataArr.count;
+    }else{
+        return 0;
+    }
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    if (component == 0) {
+        return DEVICE_W*3/10;
+    }else if(component == 1){
+        return DEVICE_W*2/10;
+    }else if(component == 2){
+        return DEVICE_W*2/10;
+    }else if(component == 3){
+        return DEVICE_W*3/10;
     }else{
         return 0;
     }
@@ -129,6 +157,8 @@
         return [monthDataArr objectAtIndex:row];
     }else if(component == 2){
         return [dayDataArr objectAtIndex:row];
+    }else if(component == 3){
+        return [timeDataArr objectAtIndex:row];
     }else{
         return nil;
     }
@@ -141,6 +171,8 @@
         selectedMonth = [monthDataArr objectAtIndex:row];
     }else if(component == 2){
         selectedDay = [dayDataArr objectAtIndex:row];
+    }else if(component == 3){
+        selectedTime = [timeDataArr objectAtIndex:row];
     }
 }
 
@@ -152,7 +184,7 @@
 - (void)confirmBtnDidClick{
 //    if ([self isDateSettingCorrect]) {
         if ([self.delegate respondsToSelector:@selector(selectTimeWithYear:month:day:time:)]) {
-            [self.delegate selectTimeWithYear:selectedYear month:selectedMonth day:selectedDay time:@"7:00"];
+            [self.delegate selectTimeWithYear:selectedYear month:selectedMonth day:selectedDay time:selectedTime];
             [self removeFromSuperview];;
         }
 //    }else{
