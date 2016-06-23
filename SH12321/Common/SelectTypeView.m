@@ -35,8 +35,11 @@
     CGFloat btnY = (viewH - imageWH)/2;
     for (NSInteger i=0; i < titles.count; i ++) {
         NSString *title = [titles objectAtIndex:i];
-        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self];
+        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH - 1) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self];
         label.numberOfLines = 1;
+        
+        TGView *line = [TGView initWithFrame:CGRectMake(0, label.y + label.height, DEVICE_W, 1) superView:self];
+        line.backgroundColor = C_LINE;
         
         TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, imageWH, imageWH) superView:self];
         [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];

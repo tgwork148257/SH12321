@@ -28,8 +28,8 @@
     ReportItemLabel *reportCrankTypeLabel;
     SelectTypeView *reportCrankTypeView;
     
-    ReportItemLabel *reportCrankTimeLengthLabel;
-    SelectTypeView *reportCrankTimeLengthView;
+    ReportItemLabel *reportTimeLengthLabel;
+    SelectTypeView *reportTimeLengthView;
     
     SelectItemView *selectTimeItemView;
     
@@ -69,10 +69,10 @@
     [scrollView addSubview:reportView];
     
     reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"骚扰电话" superView:reportView];
-    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:nil superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"请填写骚扰电话号码" superView:reportView];
     
     reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被骚扰电话" superView:reportView];
-    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:nil superView:reportView];
+    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:@"请填写被骚扰电话号码" superView:reportView];
     
     reportCrankFormLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"骚扰形式" superView:reportView];
     reportCrankFormView = [SelectTypeView initWithY:reportCrankFormLabel.y + reportCrankFormLabel.height superView:reportView];
@@ -82,11 +82,11 @@
     reportCrankTypeView = [SelectTypeView initWithY:reportCrankTypeLabel.y + reportCrankTypeLabel.height superView:reportView];
     [reportCrankTypeView addTitles:crankTypeArr];
     
-    reportCrankTimeLengthLabel = [ReportItemLabel initWithY:reportCrankTypeView.y + reportCrankTypeView.height title:@"通话时长" superView:reportView];
-    reportCrankTimeLengthView = [SelectTypeView initWithY:reportCrankTimeLengthLabel.y + reportCrankTimeLengthLabel.height superView:reportView];
-    [reportCrankTimeLengthView addTitles:timeLengthArr];
+    reportTimeLengthLabel = [ReportItemLabel initWithY:reportCrankTypeView.y + reportCrankTypeView.height title:@"通话时长" superView:reportView];
+    reportTimeLengthView = [SelectTypeView initWithY:reportTimeLengthLabel.y + reportTimeLengthLabel.height superView:reportView];
+    [reportTimeLengthView addTitles:timeLengthArr];
     
-    selectTimeItemView = [SelectItemView initWithY:reportCrankTimeLengthView.y + reportCrankTimeLengthView.height itemStr:@"选择时间" superView:reportView];
+    selectTimeItemView = [SelectItemView initWithY:reportTimeLengthView.y + reportTimeLengthView.height itemStr:@"选择时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:tap];
@@ -99,10 +99,10 @@
     
 
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 40 superView:scrollView];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + 64);
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnBottomGap);
     
 }
 
@@ -141,7 +141,7 @@
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
     model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
     model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];
-    model.reportTimeLength = [reportCrankTimeLengthView getSelectIndex];
+    model.reportTimeLength = [reportTimeLengthView getSelectIndex];
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

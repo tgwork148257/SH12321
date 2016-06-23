@@ -23,6 +23,8 @@
     CommitButton *commitBtn;
     
     ReportDataModel *model;
+    
+    NSArray *reportTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -35,24 +37,26 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
+    reportTypeArr = @[@"淫秽色情",@"钓鱼诈骗",@"反动及政治敏感",@"其他"];
+    
     [self addSubviews];
 }
 
 - (void)addSubviews{
     websiteURLLabel = [ReportItemLabel initWithY:0 title:@"不良网址" superView:reportView];
-    websiteURLTextField = [ReportItemTextField initWithY:websiteURLLabel.y + websiteURLLabel.height placeholder:nil superView:reportView];
+    websiteURLTextField = [ReportItemTextField initWithY:websiteURLLabel.y + websiteURLLabel.height placeholder:@"请填写不良网址" superView:reportView];
     
     reportWebsiteTypeLabel = [ReportItemLabel initWithY:websiteURLTextField.y + websiteURLTextField.height title:@"不良类型" superView:reportView];
     reportWebsiteTypeView = [SelectTypeView initWithY:reportWebsiteTypeLabel.y + reportWebsiteTypeLabel.height superView:reportView];
-    [reportWebsiteTypeView addTitles:@[@"不良类型1",@"不良类型2",@"不良类型3",@"不良类型4",@"不良类型5"]];
+    [reportWebsiteTypeView addTitles:reportTypeArr];
     
     reportContentLabel = [ReportItemLabel initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height title:@"不良网站内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:nil superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请填写不良网站内容" superView:reportView];
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
     [self.view addSubview:reportView];
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:self.view];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -60,7 +64,7 @@
 - (void)commitReport{
     
     model.reportWebsiteURL = websiteURLTextField.text;
-//    model.reportAcceptNumber = reportWebsiteTypeView.text;
+    model.reportWebsiteType = [reportWebsiteTypeView getSelectIndex];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];

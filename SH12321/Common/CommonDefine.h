@@ -12,10 +12,13 @@
 #define grayBgColor  [TGManager colorWithString:@"EEEEEE"] //灰色背景
 #define commitBtnBgColor greenBgColor //提交按钮背景
 #define greenBgColor C_GREEN
+#define placeholderTextColor grayBgColor
 
 static const CGFloat reportItemLabelH = 32.0F;
 static const CGFloat reportItemTextFieldH = 32.0F;
 static const CGFloat reportItemTextViewH = 64.0F;
 static const CGFloat selectTimeViewH = 240.0F;
+static const CGFloat commitBtnTopGap = 40.0F;
+static const CGFloat commitBtnBottomGap = 64.0F;
 
 #endif /* CommonDefine_h */

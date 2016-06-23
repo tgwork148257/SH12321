@@ -13,12 +13,12 @@
 @implementation ReportItemTextView
 
 + (ReportItemTextView *)initWithY:(CGFloat)y placeholder:(NSString *)placeholder superView:(UIView *)superView{
-    ReportItemTextView *tv = [[ReportItemTextView alloc] initWithFrame:CGRectMake(L_R_EDGE, y, MIDDLE_W, reportItemTextViewH)];
+    ReportItemTextView *tv = [[ReportItemTextView alloc] initWithFrame:CGRectMake(L_R_EDGE - 4, y, MIDDLE_W, reportItemTextViewH)];
     tv.textColor = C_BLACK;
     tv.backgroundColor = C_WHITE;
     tv.font = FONTSIZE12;
     tv.textAlignment = NSTextAlignmentLeft;
-    TGLabel *placeholderLabel = [TGLabel initWithFrame:CGRectMake(4, 3, MIDDLE_W, placeholderLabelH) text:placeholder textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:tv];
+    TGLabel *placeholderLabel = [TGLabel initWithFrame:CGRectMake(4, 3, MIDDLE_W, placeholderLabelH) text:placeholder textColor:placeholderTextColor textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:tv];
     placeholderLabel.tag = placeholderLabelTag;
     [superView addSubview:tv];
     

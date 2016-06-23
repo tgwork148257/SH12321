@@ -48,7 +48,9 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 
 @property (nonatomic, copy) NSString *reportWebsiteURL;         //举报网站URL
 
-@property (nonatomic, copy) NSString *reportWebsiteType;         //举报网站类型
+@property (nonatomic, copy) NSString *reportWebsiteTypeStr;         //举报网站类型字符串
+
+@property (nonatomic, assign) NSInteger reportWebsiteType;         //举报网站类型
 
 
 @property (nonatomic, copy) NSString *reportCrankCallTypeStr;     //举报骚扰电话类型字符串
