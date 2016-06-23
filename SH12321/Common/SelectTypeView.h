@@ -14,4 +14,9 @@
 
 - (void)addTitles:(NSArray *)titles;
 
+- (NSInteger)getSelectIndex;
+
+- (NSString *)getSelectTypeStr;
+
+
 @end

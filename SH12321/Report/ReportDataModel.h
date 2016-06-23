@@ -36,11 +36,14 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 
 @property (nonatomic, copy) NSString *reportTime;           //举报时间
 
-@property (nonatomic, copy) NSString *reportTimeLength;     //举报时长
 
 @property (nonatomic, copy) NSString *reportAppSource;       //举报App来源
 
 @property (nonatomic, copy) NSString *reportName;           //举报名称 (App, WIFI, 伪基站)
+
+@property (nonatomic, assign) NSInteger reportTimeLength;     //举报时长索引
+
+@property (nonatomic, copy) NSString *reportTimeLengthStr;     //举报时长字符串
 
 
 @property (nonatomic, copy) NSString *reportWebsiteURL;         //举报网站URL
@@ -48,9 +51,22 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 @property (nonatomic, copy) NSString *reportWebsiteType;         //举报网站类型
 
 
-@property (nonatomic, copy) NSString *reportCrankCallType;     //举报骚扰电话类型
+@property (nonatomic, copy) NSString *reportCrankCallTypeStr;     //举报骚扰电话类型字符串
 
-@property (nonatomic, copy) NSString *reportCrankCallStatus;    //举报骚扰电话形式
+@property (nonatomic, copy) NSString *reportCrankCallStatusStr;    //举报骚扰电话形式字符串
+
+@property (nonatomic, assign) NSInteger reportCrankCallType;     //举报骚扰电话类型索引
+
+@property (nonatomic, assign) NSInteger reportCrankCallStatus;    //举报骚扰电话形式索引
+
+
+@property (nonatomic, copy) NSString *reportScamCallTypeStr;     //举报诈骗电话类型字符串
+
+@property (nonatomic, copy) NSString *reportScamCallStatusStr;    //举报诈骗电话形式字符串
+
+@property (nonatomic, assign) NSInteger reportScamCallType;     //举报诈骗电话类型索引
+
+@property (nonatomic, assign) NSInteger reportScamCallStatus;    //举报诈骗电话形式索引
 
 
 @property (nonatomic, copy) NSString *reportFakeBasicStationType;           //举报伪基站类型

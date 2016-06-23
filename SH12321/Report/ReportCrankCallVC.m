@@ -110,10 +110,13 @@
 
 
 - (void)commitReport{
-    
-    //    model.reportWebsiteURL = reportSendNumberTextField.text;
-    //    model.reportAcceptNumber = reportCrankFormView.text;
+    model.reportSendNumber = reportSendNumberTextField.text;
+    model.reportAcceptNumber = reportAcceptNumberTextField.text;
+    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
+    model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];
+    model.reportTimeLength = [reportCrankTimeLengthView getSelectIndex];
     model.reportTime = [selectTimeItemView itemStr];
+    model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];
