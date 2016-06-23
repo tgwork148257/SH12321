@@ -41,18 +41,18 @@
 
 - (void)addSubviews{
     AppNameLabel = [ReportItemLabel initWithY:0 title:@"不良App名称" superView:reportView];
-    AppNameTextField = [ReportItemTextField initWithY:AppNameLabel.y + AppNameLabel.height placeholder:nil superView:reportView];
+    AppNameTextField = [ReportItemTextField initWithY:AppNameLabel.y + AppNameLabel.height placeholder:@"请输入不良App名称" superView:reportView];
     
     AppSourceLabel = [ReportItemLabel initWithY:AppNameTextField.y + AppNameTextField.height title:@"不良App来源" superView:reportView];
-    AppSourceTextField = [ReportItemTextField initWithY:AppSourceLabel.y + AppSourceLabel.height placeholder:nil superView:reportView];
+    AppSourceTextField = [ReportItemTextField initWithY:AppSourceLabel.y + AppSourceLabel.height placeholder:@"请输入不良App来源" superView:reportView];
     
     reportContentLabel = [ReportItemLabel initWithY:AppSourceTextField.y + AppSourceTextField.height title:@"不良App描述" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:nil superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入不良App描述" superView:reportView];
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
     [self.view addSubview:reportView];
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:self.view];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
 }

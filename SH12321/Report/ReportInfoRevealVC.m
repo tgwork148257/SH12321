@@ -40,12 +40,12 @@
 - (void)addSubviews{
     
     reportContentLabel = [ReportItemLabel initWithY:0 title:@"个人信息泄露" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:nil superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入个人信息泄露详情" superView:reportView];
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
     [self.view addSubview:reportView];
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 20 superView:self.view];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:self.view];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
 }

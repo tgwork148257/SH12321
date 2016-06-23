@@ -64,7 +64,7 @@
     reportView.frame = CGRectMake(0, 0, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
    
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + 40 superView:scrollView];
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
