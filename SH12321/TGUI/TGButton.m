@@ -14,7 +14,7 @@
 + (TGButton *)initWithFrame:(CGRect)frame superView:(UIView *)superView{
     TGButton *button = [TGButton buttonWithType:UIButtonTypeCustom];
     button.frame = frame;
-    button.backgroundColor = [UIColor clearColor];
+    button.backgroundColor = [UIColor whiteColor];
     [button setTitle:nil forState:UIControlStateNormal];
     [button setBackgroundImage:nil forState:UIControlStateNormal];
     [superView addSubview:button];

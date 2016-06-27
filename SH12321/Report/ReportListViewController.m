@@ -32,6 +32,8 @@
 #define imageViewH              100
 #define imageviewToLabelGap     5
 #define labelH                  30
+#define pageViewH               30
+#define pageBtnWH               10
 
 #define imageStrWithIndex(index)  ([NSString stringWithFormat:@"%ld",((long)index)])
 
@@ -41,7 +43,13 @@
 @end
 
 @implementation ReportListViewController{
-    UIView *reportView;
+    UIView *reportFirstPageView;
+    UIView *reportSecondPageView;
+    
+    UIView *pageView;
+    TGButton *firstPageBtn;
+    TGButton *secondPageBtn;
+    
     NSArray *labelArr;
     
     
@@ -57,13 +65,38 @@
     [super viewDidLoad];
 //    self.leftBtn.hidden = YES;
     
-    labelArr = @[@"垃圾短信",@"诈骗电话",@"骚扰电话",@"垃圾网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"信息泄露"];
+    labelArr = @[@"垃圾短信",@"诈骗电话",@"骚扰电话",@"垃圾网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"信息泄露",@"其他举报",@"其他举报",@"其他举报",@"其他举报"];
     [self addViews];
 }
 
 - (void)addViews{
-    reportView = [[UIView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H)];
-    [self.view addSubview:reportView];
+    reportFirstPageView = [[UIView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H - pageViewH)];
+    reportSecondPageView = [[UIView alloc] initWithFrame:reportFirstPageView.frame];
+    reportSecondPageView.hidden = YES;
+    
+    [self.view addSubview:reportFirstPageView];
+    [self.view addSubview:reportSecondPageView];
+    
+    reportFirstPageView.userInteractionEnabled = YES;
+    reportSecondPageView.userInteractionEnabled = YES;
+    UISwipeGestureRecognizer *firstPageSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(firstPageSwipe:)];
+    firstPageSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [reportFirstPageView addGestureRecognizer:firstPageSwipe];
+    
+    UISwipeGestureRecognizer *secondPageSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(secondPageSwipe:)];
+    [reportSecondPageView addGestureRecognizer:secondPageSwipe];
+    secondPageSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    
+    pageView = [[UIView alloc] initWithFrame:CGRectMake(0, DEVICE_H - pageViewH - TABBAR_H, DEVICE_W, pageViewH)];
+    [self.view addSubview:pageView];
+    CGFloat pageBtnY = (pageViewH - pageBtnWH )/2;
+    firstPageBtn = [TGButton initWithFrame:CGRectMake(DEVICE_W/2 - 10 - pageBtnWH, pageBtnY, pageBtnWH, pageBtnWH) superView:pageView];
+    secondPageBtn = [TGButton initWithFrame:CGRectMake(DEVICE_W/2 + 10, pageBtnY, pageBtnWH, pageBtnWH) superView:pageView];
+    firstPageBtn.backgroundColor = C_RED;
+    
+    [firstPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_RED];
+    [secondPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_RED];
     
     CGFloat x = 0;
     CGFloat y = 0;
@@ -84,7 +117,7 @@
         
         [view addSubview:imageView];
         [view addSubview:label];
-        [reportView addSubview:view];
+        [reportFirstPageView addSubview:view];
         
         if ((i + 1 )%3 == 0) {
             x = 0;
@@ -93,6 +126,52 @@
         }
         y = viewH * ((i + 1)/3);
     }
+    
+    x = 0;
+    y = 0;
+    for (NSInteger i = 9; i < 13; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, y, viewW, viewH)];
+        view.tag  = i;
+        view.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToReportVC:)];
+        [view addGestureRecognizer:tap];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(imageViewLeft, imageViewTop, iamgeViewW, imageViewH)];
+        imageView.image = [UIImage imageNamed:imageStrWithIndex(i)];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y + imageView.frame.size.height + imageviewToLabelGap, viewW, labelH)];
+        label.text = labelArr[i];
+        label.textAlignment  = NSTextAlignmentCenter;
+        label.textColor = C_BLACK;
+        
+        [view addSubview:imageView];
+        [view addSubview:label];
+        [reportSecondPageView addSubview:view];
+        
+        if ((i + 1 )%3 == 0) {
+            x = 0;
+        }else{
+            x += viewW;
+        }
+        y = viewH * (((i - 9) + 1)/3);
+    }
+}
+
+
+- (void)firstPageSwipe:(UISwipeGestureRecognizer *)tap{
+    reportFirstPageView.hidden = YES;
+    reportSecondPageView.hidden = NO;
+    
+    firstPageBtn.backgroundColor = C_WHITE;
+    secondPageBtn.backgroundColor = C_RED;
+}
+
+- (void)secondPageSwipe:(UISwipeGestureRecognizer *)tap{
+    reportFirstPageView.hidden = NO;
+    reportSecondPageView.hidden = YES;
+    
+    firstPageBtn.backgroundColor = C_RED;
+    secondPageBtn.backgroundColor = C_WHITE;
 }
 
 - (void)jumpToReportVC:(UITapGestureRecognizer *)tap{
