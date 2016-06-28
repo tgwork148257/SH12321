@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SelectTypeViewDelegate <NSObject>
+
+- (void)selectTypeStr:(NSString *)str;
+
+@end
+
 @interface SelectTypeView : UIView
+
+@property (nonatomic, weak) id<SelectTypeViewDelegate> delegate;
 
 + (SelectTypeView *)initWithY:(CGFloat)y superView:(UIView *)superView;
 

@@ -8,7 +8,7 @@
 
 #import "ReportCrankCallVC.h"
 
-@interface ReportCrankCallVC () <SelectTimeViewDelegate, UITextViewDelegate>
+@interface ReportCrankCallVC () <SelectTimeViewDelegate, UITextViewDelegate, SelectTypeViewDelegate>
 
 @end
 
@@ -77,6 +77,7 @@
     reportCrankFormLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"骚扰形式" superView:reportView];
     reportCrankFormView = [SelectTypeView initWithY:reportCrankFormLabel.y + reportCrankFormLabel.height superView:reportView];
     [reportCrankFormView addTitles:crankFormArr];
+    reportCrankFormView.delegate = self;
     
     reportCrankTypeLabel = [ReportItemLabel initWithY:reportCrankFormView.y + reportCrankFormView.height title:@"骚扰类型" superView:reportView];
     reportCrankTypeView = [SelectTypeView initWithY:reportCrankTypeLabel.y + reportCrankTypeLabel.height superView:reportView];
@@ -122,6 +123,41 @@
             }
         }
     }
+}
+
+- (void)selectTypeStr:(NSString *)str{
+    if ([str isEqualToString:[crankFormArr objectAtIndex:0]]) {
+        reportCrankTypeLabel.hidden = YES;
+        reportCrankTypeView.hidden = YES;
+        
+        reportTimeLengthLabel.hidden = YES;
+        reportTimeLengthView.hidden = YES;
+        
+        selectTimeItemView.hidden = YES;
+        
+        reportContentLabel.hidden = YES;
+        reportContentTextView.hidden = YES;
+        
+        reportView.height = reportCrankFormView.y + reportCrankFormView.height;
+        
+    }else{
+        reportCrankTypeLabel.hidden = NO;
+        reportCrankTypeView.hidden = NO;
+        
+        reportTimeLengthLabel.hidden = NO;
+        reportTimeLengthView.hidden = NO;
+        
+        selectTimeItemView.hidden = NO;
+        
+        reportContentLabel.hidden = NO;
+        reportContentTextView.hidden = NO;
+        
+        reportView.height = reportContentTextView.y + reportContentTextView.height;
+    }
+    
+    commitBtn.y = reportView.y + reportView.height + commitBtnTopGap;
+    
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnBottomGap);
 }
 
 - (void)selectTime{

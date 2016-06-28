@@ -60,6 +60,10 @@
     selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
     btn.selected = YES;
     
+    if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
+        [self.delegate selectTypeStr:selectTitleStr];
+    }
+    
 }
 - (NSInteger)getSelectIndex{
     return selectTitleIndex;
