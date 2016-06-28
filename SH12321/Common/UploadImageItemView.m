@@ -13,7 +13,8 @@
 #define imageViewH viewH
 
 #define iconW 24
-#define iconH viewH
+#define iconH 24
+#define gap 24
 
 #define itemLabelTag    443434
 #define imageViewTag    443435
@@ -23,14 +24,17 @@
 
 + (UploadImageItemView *)initWithY:(CGFloat)y title:(NSString *)title superView:(UIView *)superView{
     UploadImageItemView *view = [[UploadImageItemView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
-    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW - iconW, viewH) text:title textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW - iconW - gap, viewH) text:title textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     
     UIImageView *uploadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
     uploadImageView.tag = imageViewTag;
+    [view addSubview:uploadImageView];
     
-    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(uploadImageView.x + uploadImageView.width, 0, iconW, iconH)];
+    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(uploadImageView.x + uploadImageView.width + gap, (viewH - iconH)/2, iconW, iconH)];
     icon.backgroundColor = C_RED;
+    [view addSubview:icon];
+    
     [superView addSubview:view];
     return view;
 }
