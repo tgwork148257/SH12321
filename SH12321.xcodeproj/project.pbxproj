@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */; };
+		65199FFA1D2257C700C47DD4 /* SHIllegalReasonListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF91D2257C700C47DD4 /* SHIllegalReasonListVC.m */; };
+		65199FFD1D225A1800C47DD4 /* UploadImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */; };
 		652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190581D1A6C500038EEA1 /* SelectTimeView.m */; };
 		652190621D1B7DA50038EEA1 /* ReportBadNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190611D1B7DA50038EEA1 /* ReportBadNewsVC.m */; };
 		652190651D1B7E080038EEA1 /* ReportInfringmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190641D1B7E080038EEA1 /* ReportInfringmentVC.m */; };
@@ -114,6 +116,10 @@
 /* Begin PBXFileReference section */
 		65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperatorsListVC.h; sourceTree = "<group>"; };
 		65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperatorsListVC.m; sourceTree = "<group>"; };
+		65199FF81D2257C700C47DD4 /* SHIllegalReasonListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHIllegalReasonListVC.h; sourceTree = "<group>"; };
+		65199FF91D2257C700C47DD4 /* SHIllegalReasonListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHIllegalReasonListVC.m; sourceTree = "<group>"; };
+		65199FFB1D225A1800C47DD4 /* UploadImageItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageItemView.h; sourceTree = "<group>"; };
+		65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageItemView.m; sourceTree = "<group>"; };
 		652190571D1A6C500038EEA1 /* SelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeView.h; sourceTree = "<group>"; };
 		652190581D1A6C500038EEA1 /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeView.m; sourceTree = "<group>"; };
 		652190601D1B7DA50038EEA1 /* ReportBadNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportBadNewsVC.h; sourceTree = "<group>"; };
@@ -385,12 +391,16 @@
 				65DDC0851D19278400F02FA3 /* ReportItemTextField.m */,
 				65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */,
 				65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */,
+				65199FFB1D225A1800C47DD4 /* UploadImageItemView.h */,
+				65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */,
 				65DDC0901D19337700F02FA3 /* SHAreasListVC.h */,
 				65DDC0911D19337700F02FA3 /* SHAreasListVC.m */,
 				65DDC08D1D19335800F02FA3 /* SHStreetsListVC.h */,
 				65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */,
 				65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */,
 				65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */,
+				65199FF81D2257C700C47DD4 /* SHIllegalReasonListVC.h */,
+				65199FF91D2257C700C47DD4 /* SHIllegalReasonListVC.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -779,6 +789,8 @@
 				65F8CD701D0D346C008C7763 /* ReportListViewController.m in Sources */,
 				65F8CD7D1D0D34A4008C7763 /* NewsHomeCell.m in Sources */,
 				65F8CDB41D0FA7C2008C7763 /* ReportFakeBasicStationVC.m in Sources */,
+				65199FFA1D2257C700C47DD4 /* SHIllegalReasonListVC.m in Sources */,
+				65199FFD1D225A1800C47DD4 /* UploadImageItemView.m in Sources */,
 				65F8CD2A1D0D0DCE008C7763 /* AFURLSessionManager.m in Sources */,
 				65F8CD651D0D3442008C7763 /* TGManager.m in Sources */,
 				6570481D1D17C8D300D98E92 /* UIImage+WebP.m in Sources */,

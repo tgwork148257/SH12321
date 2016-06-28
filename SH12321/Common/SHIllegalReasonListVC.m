@@ -1,20 +1,20 @@
 //
-//  SHOperatorsListVC.m
+//  SHIllegalReasonListVC.m
 //  SH12321
 //
 //  Created by Tommy on 6/28/16.
 //  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "SHOperatorsListVC.h"
+#import "SHIllegalReasonListVC.h"
 
 #define cellH 64.0F
 
-@interface SHOperatorsListVC () <UITableViewDelegate, UITableViewDataSource>
+@interface SHIllegalReasonListVC () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation SHOperatorsListVC{
+@implementation SHIllegalReasonListVC{
     UITableView *tableview;
 }
 
@@ -75,8 +75,8 @@
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (!EMPTY_ARR(_tableviewData) && _tableviewData.count > indexPath.row) {
-        if ([self.delegate respondsToSelector:@selector(backOperators:)]) {
-            [self.delegate backOperators:[_tableviewData objectAtIndex:indexPath.row]];
+        if ([self.delegate respondsToSelector:@selector(backIllegalReason:)]) {
+            [self.delegate backIllegalReason:[_tableviewData objectAtIndex:indexPath.row]];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
