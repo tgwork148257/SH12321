@@ -11,6 +11,7 @@
 #import "SHIllegalReasonListVC.h"
 #import "UploadImageItemView.h"
 
+
 @interface ReportPhoneNumberIndentificationVC () <SelectTimeViewDelegate, UITextViewDelegate, SelectTypeViewDelegate, SHOperatorsListVCDelegate, SHIllegalReasonListVCDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, SHAreasListVCDelegate>
 
 @end
@@ -39,13 +40,13 @@
     SelectItemView *streetView;
     ReportItemTextView *detailAdressTextView;
     
-    ReportItemLabel *reportInternetStoreLabel;
-    ReportItemTextField *reportInternetStoreTextField;
+    ReportItemLabel *reportStoreLabel;
+    ReportItemTextField *reportStoreTextField;
     
     ReportItemLabel *reportTimeLengthLabel;
     SelectTypeView *reportTimeLengthView;
     
-    UploadImageItemView *orderUploadImageItemView;
+    UploadImageItemView *storeUploadImageItemView;
     
     UploadImageItemView *ownUploadImageItemView;
     
@@ -60,6 +61,8 @@
     NSArray *internetStoreIllegalReasonArr;
     NSArray *entityStoreIllegalReasonArr;
     NSArray *crankTypeArr;
+    
+    BOOL isClickStoreImageItemView;
 }
 
 - (void)viewDidLoad {
@@ -128,15 +131,15 @@
     detailAdressTextView.delegate = self;
     
     
-    reportInternetStoreLabel = [ReportItemLabel initWithY:detailAdressTextView.y + detailAdressTextView.height title:@"网店或者实体店名称" superView:reportView];
-    reportInternetStoreTextField = [ReportItemTextField initWithY:reportInternetStoreLabel.y + reportInternetStoreLabel.height placeholder:@"请填写网店或者实体店名称" superView:reportView];
+    reportStoreLabel = [ReportItemLabel initWithY:detailAdressTextView.y + detailAdressTextView.height title:@"实体店或者网店名称" superView:reportView];
+    reportStoreTextField = [ReportItemTextField initWithY:reportStoreLabel.y + reportStoreLabel.height placeholder:@"请填写实体店或者实网店名称" superView:reportView];
     
-    orderUploadImageItemView = [UploadImageItemView initWithY:reportInternetStoreTextField.y + reportInternetStoreTextField.height title:@"订单确认照片" superView:reportView];
-    orderUploadImageItemView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *orderUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(orderUploadImageItemViewTap)];
-    [orderUploadImageItemView addGestureRecognizer:orderUploadImageItemViewTap];
+    storeUploadImageItemView = [UploadImageItemView initWithY:reportStoreTextField.y + reportStoreTextField.height title:@"实体店或者订单确认照片" superView:reportView];
+    storeUploadImageItemView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *storeUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(storeUploadImageItemViewTap)];
+    [storeUploadImageItemView addGestureRecognizer:storeUploadImageItemViewTap];
     
-    ownUploadImageItemView = [UploadImageItemView initWithY:orderUploadImageItemView.y + orderUploadImageItemView.height title:@"本人持卡照片" superView:reportView];
+    ownUploadImageItemView = [UploadImageItemView initWithY:storeUploadImageItemView.y + storeUploadImageItemView.height title:@"本人持卡照片" superView:reportView];
     ownUploadImageItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *ownUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ownUploadImageItemViewTap)];
     [ownUploadImageItemView addGestureRecognizer:ownUploadImageItemViewTap];
@@ -178,30 +181,53 @@
 
 - (void)selectTypeStr:(NSString *)str{
     if ([str isEqualToString:[storeTypeArr objectAtIndex:0]]) {
+        reportStoreNameLabel.text = @"实体店名称";
+        reportStoreLabel.text = @"实体店地址";
+        reportStoreTextField.placeholder = @"请填写实体店地址";
+        reportStoreNameTextField.placeholder = @"请填写实体店名称";
+        [storeUploadImageItemView addTitle:@"实体店照片"];
         
-        reportTimeLengthLabel.hidden = YES;
-        reportTimeLengthView.hidden = YES;
+        reportEntityStoreAdressLabel.hidden = YES;
         
-        selectTimeItemView.hidden = YES;
+        cityView.hidden = YES;
         
-        reportContentLabel.hidden = YES;
-        reportContentTextView.hidden = YES;
+        areaView.hidden = YES;
         
-        reportView.height = reportContentTextView.y + reportContentTextView.height;
+        streetView.hidden = YES;
+        detailAdressTextView.hidden = YES;
+        
+        reportStoreLabel.y = reportEntityStoreAdressLabel.y;
         
     }else{
+        reportStoreNameLabel.text = @"网店名称";
+        reportStoreLabel.text = @"网店地址";
+        reportStoreTextField.placeholder = @"请填写网店地址";
+        reportStoreNameTextField.placeholder = @"请填写网店名称";
+        [storeUploadImageItemView addTitle:@"订单确认照片"];
         
+        reportEntityStoreAdressLabel.hidden = NO;
         
-        reportTimeLengthLabel.hidden = NO;
-        reportTimeLengthView.hidden = NO;
+        cityView.hidden = NO;
         
-        selectTimeItemView.hidden = NO;
+        areaView.hidden = NO;
         
-        reportContentLabel.hidden = NO;
-        reportContentTextView.hidden = NO;
+        streetView.hidden = NO;
+        detailAdressTextView.hidden = NO;
         
-        reportView.height = reportContentTextView.y + reportContentTextView.height;
+        reportStoreLabel.y = detailAdressTextView.y + detailAdressTextView.height;
     }
+    
+    reportStoreTextField.y = reportStoreLabel.y + reportStoreLabel.height;
+    
+    storeUploadImageItemView.y = reportStoreTextField.y + reportStoreTextField.height;
+    
+    ownUploadImageItemView.y = storeUploadImageItemView.y + storeUploadImageItemView.height;
+    
+    reportContentLabel.y = ownUploadImageItemView.y + ownUploadImageItemView.height;
+    
+    reportContentTextView.y = reportContentLabel.y + reportContentLabel.height;
+    
+    reportView.height = reportContentTextView.y + reportContentTextView.height;
     
     commitBtn.y = reportView.y + reportView.height + commitBtnTopGap;
     
@@ -221,6 +247,10 @@
 
 #pragma mark - select illegal reason
 - (void)selectIllegalReason{
+    if (EMPTY_STRING([reportStoreTypeView getSelectTypeStr])) {
+        [TGToast showWithText:@"请先选择举报类型"];
+        return;
+    }
     SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
     
     if ([reportStoreTypeView getSelectIndex] == 0) {
@@ -277,14 +307,49 @@
     }];
 }
 
-- (void)orderUploadImageItemViewTap{
+- (void)storeUploadImageItemViewTap{
     UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
     [ac showInView:self.view];
+    isClickStoreImageItemView = YES;
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [self startCameraControllerFromViewController: self
+//                                        usingDelegate: self];
+//    }];
+//    UIAlertAction *localPhotosAction = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+//        
+//        //指定源类型前，检查图片源是否可用
+//        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+//            //指定源的类型
+//            //        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//            
+//            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//            
+//            //在选定图片之前，用户可以简单编辑要选的图片。包括上下移动改变图片的选取范围，用手捏合动作改变图片的大小等。
+//            imagePicker.allowsEditing = YES;
+//            
+//            //实现委托，委托必须实现UIImagePickerControllerDelegate协议，来对用户在图片选取器中的动作
+//            imagePicker.delegate = self;
+//            
+//            //设置完iamgePicker后，就可以启动了。用以下方法将图像选取器的视图“推”出来
+//            [self presentViewController:imagePicker animated:YES completion:^{ }];
+//        }else{
+//            UIAlertView *alert =[[UIAlertView alloc] initWithTitle:nil message:@"相机不能用" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+//            [alert show];
+//        }
+//    }];
+//    [alertController addAction:cancelAction];
+//    [alertController addAction:cameraAction];
+//    [alertController addAction:localPhotosAction];
+//    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)ownUploadImageItemViewTap{
     UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
     [ac showInView:self.view];
+    isClickStoreImageItemView = NO;
 }
 
 #pragma mark -- actionSheet delegate
@@ -355,15 +420,17 @@
 
 //用户点击选取器中的“choose”按钮时被调用，告知委托对象，选取操作已经完成，同时将返回选取图片的实例
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
-//    uploadImage = image;
-//    friendsPicImageView.image = image;
+    if (isClickStoreImageItemView == YES) {
+        [storeUploadImageItemView addImageView:image];
+    }else{
+        [ownUploadImageItemView addImageView:image];
+    }
 //    [self uploadPicAndCreateCommunity];
     [picker dismissViewControllerAnimated:YES completion:^{}];
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
     }
 }
-
 
 
 @end

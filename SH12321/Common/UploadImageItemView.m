@@ -27,7 +27,7 @@
     label.tag = itemLabelTag;
     
     UIImageView *uploadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
-    label.tag = imageViewTag;
+    uploadImageView.tag = imageViewTag;
     
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(uploadImageView.x + uploadImageView.width, 0, iconW, iconH)];
     icon.backgroundColor = C_RED;
@@ -40,6 +40,15 @@
         if (view.tag == imageViewTag) {
             UIImageView *imageView = (UIImageView *)view;
             imageView.image = image;
+        }
+    }
+}
+
+- (void)addTitle:(NSString *)title{
+    for (UIView *view in self.subviews) {
+        if (view.tag == itemLabelTag) {
+            TGLabel *label = (TGLabel *)view;
+            label.text = title;
         }
     }
 }

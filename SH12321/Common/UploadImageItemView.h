@@ -14,5 +14,7 @@
 
 - (void)addImageView:(UIImage *)image;
 
+- (void)addTitle:(NSString *)title;
+
 
 @end
