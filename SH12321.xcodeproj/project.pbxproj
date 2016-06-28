@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */; };
 		652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190581D1A6C500038EEA1 /* SelectTimeView.m */; };
 		652190621D1B7DA50038EEA1 /* ReportBadNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190611D1B7DA50038EEA1 /* ReportBadNewsVC.m */; };
 		652190651D1B7E080038EEA1 /* ReportInfringmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 652190641D1B7E080038EEA1 /* ReportInfringmentVC.m */; };
@@ -111,6 +112,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperatorsListVC.h; sourceTree = "<group>"; };
+		65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperatorsListVC.m; sourceTree = "<group>"; };
 		652190571D1A6C500038EEA1 /* SelectTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeView.h; sourceTree = "<group>"; };
 		652190581D1A6C500038EEA1 /* SelectTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeView.m; sourceTree = "<group>"; };
 		652190601D1B7DA50038EEA1 /* ReportBadNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportBadNewsVC.h; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				65DDC0911D19337700F02FA3 /* SHAreasListVC.m */,
 				65DDC08D1D19335800F02FA3 /* SHStreetsListVC.h */,
 				65DDC08E1D19335800F02FA3 /* SHStreetsListVC.m */,
+				65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */,
+				65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -764,6 +769,7 @@
 				657048131D17C8D300D98E92 /* SDImageCache.m in Sources */,
 				65F8CD271D0D0DCE008C7763 /* AFURLConnectionOperation.m in Sources */,
 				65F8CD861D0D34D8008C7763 /* LoginVC.m in Sources */,
+				65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */,
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,
 				65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */,
 				6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */,
