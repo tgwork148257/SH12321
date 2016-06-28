@@ -11,7 +11,7 @@
 #import "SHIllegalReasonListVC.h"
 #import "UploadImageItemView.h"
 
-@interface ReportPhoneNumberIndentificationVC () <SelectTimeViewDelegate, UITextViewDelegate, SelectTypeViewDelegate, SHOperatorsListVCDelegate, SHIllegalReasonListVCDelegate>
+@interface ReportPhoneNumberIndentificationVC () <SelectTimeViewDelegate, UITextViewDelegate, SelectTypeViewDelegate, SHOperatorsListVCDelegate, SHIllegalReasonListVCDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, SHAreasListVCDelegate>
 
 @end
 
@@ -106,7 +106,7 @@
     reportPhoneNumberLabel = [ReportItemLabel initWithY:reportStoreNameTextField.y + reportStoreNameTextField.height title:@"手机号码" superView:reportView];
     reportPhoneNumberTextField = [ReportItemTextField initWithY:reportPhoneNumberLabel.y + reportPhoneNumberLabel.height placeholder:@"请填写购买的手机号码" superView:reportView];
     
-    selectTimeItemView = [SelectItemView initWithY:reportPhoneNumberLabel.y + reportPhoneNumberLabel.height itemStr:@"选择购卡时间" superView:reportView];
+    selectTimeItemView = [SelectItemView initWithY:reportPhoneNumberTextField.y + reportPhoneNumberTextField.height itemStr:@"选择购卡时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectTimeItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:selectTimeItemViewTap];
@@ -119,6 +119,10 @@
     reportEntityStoreAdressLabel = [ReportItemLabel initWithY:selectOperatorsItemView.y + selectOperatorsItemView.height title:@"实体店地址" superView:reportView];
     cityView = [SelectItemView initWithY:reportEntityStoreAdressLabel.y + reportEntityStoreAdressLabel.height itemStr:@"上海市" superView:reportView];
     areaView = [SelectItemView initWithY:cityView.y + cityView.height itemStr:@"选择区县" superView:reportView];
+    areaView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *areaViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(areaViewTap)];
+    [areaView addGestureRecognizer:areaViewTap];
+    
     streetView = [SelectItemView initWithY:areaView.y + areaView.height itemStr:@"选择街道" superView:reportView];
     detailAdressTextView = [ReportItemTextView initWithY:streetView.y + streetView.height placeholder:@"请输入详细地址" superView:reportView];
     detailAdressTextView.delegate = self;
@@ -132,13 +136,13 @@
     UITapGestureRecognizer *orderUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(orderUploadImageItemViewTap)];
     [orderUploadImageItemView addGestureRecognizer:orderUploadImageItemViewTap];
     
-    ownUploadImageItemView = [UploadImageItemView initWithY:reportInternetStoreTextField.y + reportInternetStoreTextField.height title:@"订单确认照片" superView:reportView];
+    ownUploadImageItemView = [UploadImageItemView initWithY:orderUploadImageItemView.y + orderUploadImageItemView.height title:@"本人持卡照片" superView:reportView];
     ownUploadImageItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *ownUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ownUploadImageItemViewTap)];
     [ownUploadImageItemView addGestureRecognizer:ownUploadImageItemViewTap];
     
     
-    reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"骚扰内容" superView:reportView];
+    reportContentLabel = [ReportItemLabel initWithY:ownUploadImageItemView.y + ownUploadImageItemView.height title:@"骚扰内容" superView:reportView];
     reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入骚扰内容" superView:reportView];
     reportContentTextView.delegate = self;
     
@@ -171,32 +175,6 @@
     }
 }
 
-- (void)selectIllegalReason{
-    SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
-    
-    if ([reportStoreTypeView getSelectIndex] == 0) {
-        vc.tableviewData = entityStoreIllegalReasonArr;
-    }else{
-        vc.tableviewData = internetStoreIllegalReasonArr;
-    }
-    
-    vc.delegate = self;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)selectOperatorsTap{
-    SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
-    vc.delegate = self;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)orderUploadImageItemViewTap{
-    
-}
-
-- (void)ownUploadImageItemViewTap{
-    
-}
 
 - (void)selectTypeStr:(NSString *)str{
     if ([str isEqualToString:[storeTypeArr objectAtIndex:0]]) {
@@ -212,7 +190,7 @@
         reportView.height = reportContentTextView.y + reportContentTextView.height;
         
     }else{
-
+        
         
         reportTimeLengthLabel.hidden = NO;
         reportTimeLengthView.hidden = NO;
@@ -230,6 +208,47 @@
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnBottomGap);
 }
 
+#pragma mark - Select Area
+- (void)areaViewTap{
+    SHAreasListVC *vc = [[SHAreasListVC alloc] init];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)backArea:(NSString *)backAreaStr{
+    [areaView addItemStr:backAreaStr];
+}
+
+#pragma mark - select illegal reason
+- (void)selectIllegalReason{
+    SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
+    
+    if ([reportStoreTypeView getSelectIndex] == 0) {
+        vc.tableviewData = entityStoreIllegalReasonArr;
+    }else{
+        vc.tableviewData = internetStoreIllegalReasonArr;
+    }
+    
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)backIllegalReason:(NSString *)backReasonStr{
+    [selectIllegalReasonItemView addItemStr:backReasonStr];
+}
+
+#pragma mark - select Operators
+- (void)selectOperatorsTap{
+    SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)backOperators:(NSString *)backOperatorsStr{
+    [selectOperatorsItemView addItemStr:backOperatorsStr];
+}
+
+#pragma mark - select Time
 - (void)selectTime{
     SelectTimeView *selectTimeView = [SelectTimeView initWithY:DEVICE_H - selectTimeViewH superView:self.view];
     selectTimeView.delegate = self;
@@ -257,6 +276,94 @@
         [TGToast showWithText:@"举报失败，请重试"];
     }];
 }
+
+- (void)orderUploadImageItemViewTap{
+    UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
+    [ac showInView:self.view];
+}
+
+- (void)ownUploadImageItemViewTap{
+    UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
+    [ac showInView:self.view];
+}
+
+#pragma mark -- actionSheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0://拍照
+        {
+            [self startCameraControllerFromViewController: self
+                                            usingDelegate: self];
+            break;
+        }
+        case 1://本地相册
+        {
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            
+            //指定源类型前，检查图片源是否可用
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+                //指定源的类型
+                //        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                
+                imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                
+                //在选定图片之前，用户可以简单编辑要选的图片。包括上下移动改变图片的选取范围，用手捏合动作改变图片的大小等。
+                imagePicker.allowsEditing = YES;
+                
+                //实现委托，委托必须实现UIImagePickerControllerDelegate协议，来对用户在图片选取器中的动作
+                imagePicker.delegate = self;
+                
+                //设置完iamgePicker后，就可以启动了。用以下方法将图像选取器的视图“推”出来
+                [self presentViewController:imagePicker animated:YES completion:^{ }];
+            }else{
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:nil message:@"相机不能用" delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+                [alert show];
+            }
+            break;
+        }
+        case 2: //取消
+            break;
+        default:
+            break;
+    }
+}
+
+- (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
+                                   usingDelegate: (id <UIImagePickerControllerDelegate,
+                                                   UINavigationControllerDelegate>) delegate{
+    // here, check the device is available  or not
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil)|| (controller == nil)) return NO;
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    cameraUI.allowsEditing = YES;    //是否在拍照时让编辑
+    cameraUI.delegate = delegate;
+    [controller presentViewController:cameraUI animated:YES completion:^{}];
+    return YES;
+}
+
+#pragma  mark UIImagePickerControllerDelegate协议的方法
+//用户点击图像选取器中的“cancel”按钮时被调用，这说明用户想要中止选取图像的操作
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+}
+
+//用户点击选取器中的“choose”按钮时被调用，告知委托对象，选取操作已经完成，同时将返回选取图片的实例
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+//    uploadImage = image;
+//    friendsPicImageView.image = image;
+//    [self uploadPicAndCreateCommunity];
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
+    }
+}
+
 
 
 @end
