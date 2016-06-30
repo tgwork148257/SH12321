@@ -35,9 +35,7 @@
     SelectItemView *selectOperatorsItemView;
     
     ReportItemLabel *reportEntityStoreAdressLabel;
-    SelectItemView *cityView;
     SelectItemView *areaView;
-    SelectItemView *streetView;
     ReportItemTextView *detailAdressTextView;
     
     ReportItemLabel *reportStoreLabel;
@@ -120,14 +118,12 @@
     [selectOperatorsItemView addGestureRecognizer:selectOperatorsTap];
     
     reportEntityStoreAdressLabel = [ReportItemLabel initWithY:selectOperatorsItemView.y + selectOperatorsItemView.height title:@"实体店地址" superView:reportView];
-    cityView = [SelectItemView initWithY:reportEntityStoreAdressLabel.y + reportEntityStoreAdressLabel.height itemStr:@"上海市" superView:reportView];
-    areaView = [SelectItemView initWithY:cityView.y + cityView.height itemStr:@"选择区县" superView:reportView];
+    areaView = [SelectItemView initWithY:reportEntityStoreAdressLabel.y + reportEntityStoreAdressLabel.height itemStr:@"选择区县" superView:reportView];
     areaView.userInteractionEnabled = YES;
     UITapGestureRecognizer *areaViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(areaViewTap)];
     [areaView addGestureRecognizer:areaViewTap];
     
-    streetView = [SelectItemView initWithY:areaView.y + areaView.height itemStr:@"选择街道" superView:reportView];
-    detailAdressTextView = [ReportItemTextView initWithY:streetView.y + streetView.height placeholder:@"请输入详细地址" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:@"请输入详细地址" superView:reportView];
     detailAdressTextView.delegate = self;
     
     
@@ -189,11 +185,8 @@
         
         reportEntityStoreAdressLabel.hidden = YES;
         
-        cityView.hidden = YES;
-        
         areaView.hidden = YES;
         
-        streetView.hidden = YES;
         detailAdressTextView.hidden = YES;
         
         reportStoreLabel.y = reportEntityStoreAdressLabel.y;
@@ -207,11 +200,8 @@
         
         reportEntityStoreAdressLabel.hidden = NO;
         
-        cityView.hidden = NO;
-        
         areaView.hidden = NO;
         
-        streetView.hidden = NO;
         detailAdressTextView.hidden = NO;
         
         reportStoreLabel.y = detailAdressTextView.y + detailAdressTextView.height;

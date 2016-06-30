@@ -8,7 +8,7 @@
 
 #import "ReportWIFIVC.h"
 
-@interface ReportWIFIVC() <SelectTimeViewDelegate, SHAreasListVCDelegate, SHStreetsListVCDelegate, UITextViewDelegate>
+@interface ReportWIFIVC() <SelectTimeViewDelegate, SHAreasListVCDelegate, UITextViewDelegate>
 
 @end
 
@@ -20,9 +20,7 @@
     ReportItemTextField *reportWIFINameTextField;
     
     ReportItemLabel *reportWIFIAdressLabel;
-    SelectItemView *cityView;
     SelectItemView *areaView;
-    SelectItemView *streetView;
     ReportItemTextView *detailAdressTextView;
     
     SelectItemView *selectTimeItemView;
@@ -59,20 +57,13 @@
     reportWIFINameTextField = [ReportItemTextField initWithY:reportWIFINameLabel.y + reportWIFINameLabel.height placeholder:nil superView:reportView];
     
     reportWIFIAdressLabel = [ReportItemLabel initWithY:reportWIFINameTextField.y + reportWIFINameTextField.height title:@"不良WIFI地址" superView:reportView];
-    cityView = [SelectItemView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height itemStr:@"上海市" superView:reportView];
-    areaView = [SelectItemView initWithY:cityView.y + cityView.height itemStr:@"选择区县" superView:reportView];
-    streetView = [SelectItemView initWithY:areaView.y + areaView.height itemStr:@"选择街道" superView:reportView];
-    detailAdressTextView = [ReportItemTextView initWithY:streetView.y + streetView.height placeholder:@"请输入详细地址" superView:reportView];
+    areaView = [SelectItemView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height itemStr:@"选择区县" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:@"请输入详细地址" superView:reportView];
     detailAdressTextView.delegate = self;
     
     areaView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectAreaTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectArea)];
     [areaView addGestureRecognizer:selectAreaTap];
-    
-    streetView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *selectStreetTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectStreet)];
-    [streetView addGestureRecognizer:selectStreetTap];
-
     
     selectTimeItemView = [SelectItemView initWithY:detailAdressTextView.y + detailAdressTextView.height itemStr:@"选择时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
@@ -98,22 +89,6 @@
 - (void)backArea:(NSString *)backAreaStr{
     areaStr = backAreaStr;
     [areaView addItemStr:backAreaStr];
-}
-
-- (void)selectStreet{
-    if (!EMPTY_STRING(areaStr)) {
-        SHStreetsListVC *vc = [[SHStreetsListVC alloc] init];
-        vc.navigationTitle = areaStr;
-        vc.delegate = self;
-        [self.navigationController pushViewController:vc animated:YES];
-    }else{
-        [TGToast showWithText:@"请先选择区县"];
-    }
-}
-
-- (void)backStreet:(NSString *)backStreetStr{
-    streetStr = backStreetStr;
-    [areaView addItemStr:backStreetStr];
 }
 
 - (void)selectTime{
