@@ -69,13 +69,13 @@
     
     [self initArr];
     
-    timePickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, topView.y + topView.height, DEVICE_W, 320)];
+    timePickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, topView.y + topView.height, DEVICE_W, selectTimeViewH - topViewH)];
     timePickView.delegate = self;
     timePickView.dataSource = self;
     [self addSubview:timePickView];
     
     
-    [timePickView selectRow:0 inComponent:0 animated:NO];
+    [timePickView selectRow:(currentYear - 2000 - 1) inComponent:0 animated:NO];
     [timePickView selectRow:(currentMonth - 1) inComponent:1 animated:NO];
     [timePickView selectRow:(currentDay - 1) inComponent:2 animated:NO];
     [timePickView selectRow:0 inComponent:3 animated:NO];
