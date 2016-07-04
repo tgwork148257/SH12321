@@ -43,6 +43,7 @@
 		65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0941D19392C00F02FA3 /* SelectTypeView.m */; };
 		65EC908A1D29FC09004D12B9 /* DetailTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC90891D29FC09004D12B9 /* DetailTypeView.m */; };
 		65EC908D1D2A0127004D12B9 /* DetailItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC908C1D2A0127004D12B9 /* DetailItemView.m */; };
+		65EC90901D2A29F5004D12B9 /* ReportRecordDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65EC908F1D2A29F5004D12B9 /* ReportRecordDetailVC.m */; };
 		65F8CBB21D07E60E008C7763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB11D07E60E008C7763 /* main.m */; };
 		65F8CBB51D07E60E008C7763 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB41D07E60E008C7763 /* AppDelegate.m */; };
 		65F8CBB81D07E60E008C7763 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CBB71D07E60E008C7763 /* ViewController.m */; };
@@ -94,7 +95,6 @@
 		65F8CD7E1D0D34A4008C7763 /* NewsHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD7A1D0D34A4008C7763 /* NewsHomeVC.m */; };
 		65F8CD861D0D34D8008C7763 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD811D0D34D8008C7763 /* LoginVC.m */; };
 		65F8CD871D0D34D8008C7763 /* MeHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD831D0D34D8008C7763 /* MeHomeVC.m */; };
-		65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */; };
 		65F8CD8B1D0D4007008C7763 /* ReportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */; };
 		65F8CD8E1D0E5257008C7763 /* TGRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD8D1D0E5257008C7763 /* TGRequest.m */; };
 		65F8CD921D0EA106008C7763 /* ReportDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CD911D0EA106008C7763 /* ReportDataModel.m */; };
@@ -191,6 +191,8 @@
 		65EC90891D29FC09004D12B9 /* DetailTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTypeView.m; sourceTree = "<group>"; };
 		65EC908B1D2A0127004D12B9 /* DetailItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailItemView.h; sourceTree = "<group>"; };
 		65EC908C1D2A0127004D12B9 /* DetailItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailItemView.m; sourceTree = "<group>"; };
+		65EC908E1D2A29F5004D12B9 /* ReportRecordDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordDetailVC.h; sourceTree = "<group>"; };
+		65EC908F1D2A29F5004D12B9 /* ReportRecordDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordDetailVC.m; sourceTree = "<group>"; };
 		65F8CBAD1D07E60E008C7763 /* SH12321.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SH12321.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8CBB11D07E60E008C7763 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65F8CBB31D07E60E008C7763 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -296,8 +298,6 @@
 		65F8CD811D0D34D8008C7763 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		65F8CD821D0D34D8008C7763 /* MeHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeHomeVC.h; sourceTree = "<group>"; };
 		65F8CD831D0D34D8008C7763 /* MeHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeHomeVC.m; sourceTree = "<group>"; };
-		65F8CD841D0D34D8008C7763 /* ReportRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordModel.h; sourceTree = "<group>"; };
-		65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordModel.m; sourceTree = "<group>"; };
 		65F8CD891D0D4007008C7763 /* ReportRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordCell.h; sourceTree = "<group>"; };
 		65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordCell.m; sourceTree = "<group>"; };
 		65F8CD8C1D0E5257008C7763 /* TGRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRequest.h; sourceTree = "<group>"; };
@@ -675,10 +675,10 @@
 				65F8CD811D0D34D8008C7763 /* LoginVC.m */,
 				65F8CD821D0D34D8008C7763 /* MeHomeVC.h */,
 				65F8CD831D0D34D8008C7763 /* MeHomeVC.m */,
-				65F8CD841D0D34D8008C7763 /* ReportRecordModel.h */,
-				65F8CD851D0D34D8008C7763 /* ReportRecordModel.m */,
 				65F8CD891D0D4007008C7763 /* ReportRecordCell.h */,
 				65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */,
+				65EC908E1D2A29F5004D12B9 /* ReportRecordDetailVC.h */,
+				65EC908F1D2A29F5004D12B9 /* ReportRecordDetailVC.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -792,6 +792,7 @@
 				65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */,
 				65F8CD091D0D00FB008C7763 /* SBJsonStreamWriterState.m in Sources */,
 				65DDC0951D19392C00F02FA3 /* SelectTypeView.m in Sources */,
+				65EC90901D2A29F5004D12B9 /* ReportRecordDetailVC.m in Sources */,
 				6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */,
 				652190651D1B7E080038EEA1 /* ReportInfringmentVC.m in Sources */,
 				65F8CD051D0D00FB008C7763 /* SBJsonStreamParserAdapter.m in Sources */,
@@ -851,7 +852,6 @@
 				65DDC0921D19337700F02FA3 /* SHAreasListVC.m in Sources */,
 				65F8CD081D0D00FB008C7763 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				65F8CDB71D0FA7E1008C7763 /* ReportEmailVC.m in Sources */,
-				65F8CD881D0D34D8008C7763 /* ReportRecordModel.m in Sources */,
 				652190681D1B7E5E0038EEA1 /* ReportPhoneNumberIndentificationVC.m in Sources */,
 				65F8CD041D0D00FB008C7763 /* SBJsonStreamParserAccumulator.m in Sources */,
 				65F8CD0A1D0D00FB008C7763 /* SBJsonTokeniser.m in Sources */,

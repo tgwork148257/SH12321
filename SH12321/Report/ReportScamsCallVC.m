@@ -37,8 +37,6 @@
     
     ReportDataModel *model;
     
-    NSArray *timeLengthArr;
-    NSArray *crankTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -50,8 +48,7 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
-    timeLengthArr = @[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"];
-    crankTypeArr = @[@"中奖诈骗",@"金融类诈骗",@"冒充公检法",@"冒充领导",@"网购类诈骗",@"其他"];
+
     [self addSubviews];
 }
 
@@ -71,7 +68,7 @@
     
     reportScamTypeLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"诈骗类型" superView:reportView];
     reportScamTypeView = [SelectTypeView initWithY:reportScamTypeLabel.y + reportScamTypeLabel.height superView:reportView];
-    [reportScamTypeView addTitles:crankTypeArr];
+    [reportScamTypeView addTitles:scamTypeArr];
     
     reportTimeLengthLabel = [ReportItemLabel initWithY:reportScamTypeView.y + reportScamTypeView.height title:@"通话时长" superView:reportView];
     reportTimeLengthView = [SelectTypeView initWithY:reportTimeLengthLabel.y + reportTimeLengthLabel.height superView:reportView];

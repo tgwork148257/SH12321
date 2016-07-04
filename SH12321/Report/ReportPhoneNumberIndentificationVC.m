@@ -55,11 +55,6 @@
     
     ReportDataModel *model;
     
-    NSArray *storeTypeArr;
-    NSArray *internetStoreIllegalReasonArr;
-    NSArray *entityStoreIllegalReasonArr;
-    NSArray *crankTypeArr;
-    
     BOOL isClickStoreImageItemView;
 }
 
@@ -72,14 +67,7 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
-    storeTypeArr = @[@"实体店",@"网店"];
-    internetStoreIllegalReasonArr = @[@"配送已激活卡，预选号环节不要求上传身份证扫描信息",
-                                      @"配送已激活卡，预选号环节未对上传身份信息联网核验",
-                                      @"配送已激活卡，物流环节未确认'人、证、网上提交信息一致",
-                                      @"配送未激活卡，收卡后未上传或未联网核验本人身份信息",
-                                      @"无授权代理标志"];
-    entityStoreIllegalReasonArr = @[@"无需本人身份证原件即售卡",@"无二代证识别设备",@"无统一的授权代理标志"];
-    crankTypeArr = @[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"];
+
     [self addSubviews];
 }
 

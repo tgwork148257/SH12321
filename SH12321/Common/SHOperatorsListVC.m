@@ -22,51 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _tableviewData = @[@"阿里",
-                       @"爱施德",
-                       @"巴士在线",
-                       @"北京青牛",
-                       @"长江",
-                       @"二六三",
-                       @"分享在线",
-                       @"凤凰石",
-                       @"凤凰资产",
-                       @"富士康",
-                       @"海尔",
-                       @"广州博元",
-                       @"国美",
-                       @"海信",
-                       @"合一信息",
-                       @"恒大和",
-                       @"红豆集团",
-                       @"华翔联信",
-                       @"话机世界",
-                       @"京东",
-                       @"朗玛",
-                       @"乐语",
-                       @"连连",
-                       @"鹏博士",
-                       @"民生电子",
-                       @"平安通信",
-                       @"日日顺",
-                       @"三五互联",
-                       @"世纪互联",
-                       @"苏宁",
-                       @"苏州蜗牛",
-                       @"天音",
-                       @"万网",
-                       @"小米",
-                       @"星美",
-                       @"银盛支付",
-                       @"用友",
-                       @"远特",
-                       @"中期",
-                       @"中兴视通",
-                       @"中邮世纪",
-                       @"中国移动",
-                       @"中国联通",
-                       @"中国电信",];
-    
     [self addTableView];
 }
 
@@ -84,8 +39,8 @@
 
 #pragma mark - cell 数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (!EMPTY_ARR(_tableviewData)) {
-        return _tableviewData.count;
+    if (!EMPTY_ARR(operatorsData)) {
+        return operatorsData.count;
     }else{
         return 0;
     }
@@ -93,7 +48,7 @@
 
 #pragma mark - 计算cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(_tableviewData) && _tableviewData.count > indexPath.row) {
+    if (!EMPTY_ARR(operatorsData) && operatorsData.count > indexPath.row) {
         return cellH;
     }else{
         return 0;
@@ -104,11 +59,11 @@
 
 #pragma mark - build cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(_tableviewData) && _tableviewData.count > indexPath.row ) {
+    if (!EMPTY_ARR(operatorsData) && operatorsData.count > indexPath.row ) {
         static NSString *str = @"TableViewCell";
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, cellH - 1) text:[_tableviewData objectAtIndex:indexPath.row] textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:cell];
+        TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, cellH - 1) text:[operatorsData objectAtIndex:indexPath.row] textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:cell];
         label.numberOfLines = 1;
         TGView *view = [TGView initWithFrame:CGRectMake(0, label.y + label.height, MIDDLE_W, 1) superView:cell];
         view.backgroundColor = C_LINE;
@@ -120,9 +75,9 @@
 
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(_tableviewData) && _tableviewData.count > indexPath.row) {
+    if (!EMPTY_ARR(operatorsData) && operatorsData.count > indexPath.row) {
         if ([self.delegate respondsToSelector:@selector(backOperators:)]) {
-            [self.delegate backOperators:[_tableviewData objectAtIndex:indexPath.row]];
+            [self.delegate backOperators:[operatorsData objectAtIndex:indexPath.row]];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

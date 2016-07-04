@@ -27,6 +27,9 @@
     CGRect contentLabelRect = CGRectMake(titleLabel.x + titleLabel.width, titleLabel.y , 100, labelH);
     
     contentLabelRect = [TGManager rectWithString:content attrDic:@{NSFontAttributeName:F_TEXT} size:contentLabelRect.size];
+    if (contentLabelRect.size.height > 20) {
+        
+    }
     TGLabel *contentLabel = [TGLabel initWithFrame:contentLabelRect text:title textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     
     view.height = contentLabel.y + contentLabel.height;

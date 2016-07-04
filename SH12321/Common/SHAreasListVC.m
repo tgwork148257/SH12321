@@ -16,13 +16,12 @@
 
 @implementation SHAreasListVC{
     UITableView *tableview;
-    NSArray *tableviewData;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    tableviewData = @[@"黄浦区",@"徐汇区",@"长宁区",@"静安区",@"虹口区",@"普陀区",@"杨浦区",@"闵行区",@"浦东区",@"宝山区",@"金山区",@"嘉定区",@"奉贤区",@"松江区",@"青浦区",@"崇明县"];
+
     [self addTableView];
 }
 
@@ -40,8 +39,8 @@
 
 #pragma mark - cell 数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (!EMPTY_ARR(tableviewData)) {
-        return tableviewData.count;
+    if (!EMPTY_ARR(areaData)) {
+        return areaData.count;
     }else{
         return 0;
     }
@@ -49,8 +48,8 @@
 
 #pragma mark - 计算cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
-        //        NewsDetailModel *model = [tableviewData objectAtIndex:indexPath.row];
+    if (!EMPTY_ARR(areaData) && areaData.count > indexPath.row) {
+        //        NewsDetailModel *model = [areaData objectAtIndex:indexPath.row];
         return cellH;
     }else{
         return 0;
@@ -61,11 +60,11 @@
 
 #pragma mark - build cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row ) {
+    if (!EMPTY_ARR(areaData) && areaData.count > indexPath.row ) {
         static NSString *str = @"TableViewCell";
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, cellH - 1) text:[tableviewData objectAtIndex:indexPath.row] textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:cell];
+        TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, cellH - 1) text:[areaData objectAtIndex:indexPath.row] textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:cell];
         label.numberOfLines = 1;
         TGView *view = [TGView initWithFrame:CGRectMake(0, label.y + label.height, MIDDLE_W, 1) superView:cell];
         view.backgroundColor = C_LINE;
@@ -77,9 +76,9 @@
 
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
+    if (!EMPTY_ARR(areaData) && areaData.count > indexPath.row) {
         if ([self.delegate respondsToSelector:@selector(backArea:)]) {
-            [self.delegate backArea:[tableviewData objectAtIndex:indexPath.row]];
+            [self.delegate backArea:[areaData objectAtIndex:indexPath.row]];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

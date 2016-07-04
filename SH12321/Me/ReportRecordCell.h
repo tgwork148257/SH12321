@@ -7,10 +7,9 @@
 //
 
 #import "TGTableViewCell.h"
-#import "ReportRecordModel.h"
 
 @interface ReportRecordCell : TGTableViewCell
 
-@property (nonatomic, strong) ReportRecordModel *model;
+@property (nonatomic, strong) ReportDataModel *model;
 
 @end

@@ -32,7 +32,6 @@
     NSString *areaStr;
     NSString *streetStr;
     
-    NSArray *fakeBasicStationTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -44,7 +43,7 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
-    fakeBasicStationTypeArr = @[@"短信",@"电话"];
+    
     
     [self addSubviews];
 }

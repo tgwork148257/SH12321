@@ -28,7 +28,6 @@
     
     ReportDataModel *model;
     
-    NSArray *reportTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -41,7 +40,7 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
-    reportTypeArr = @[@"淫秽色情",@"钓鱼诈骗",@"反动及政治敏感",@"其他"];
+    
     
     [self addSubviews];
 }
@@ -52,7 +51,7 @@
     
     reportWebsiteTypeLabel = [ReportItemLabel initWithY:websiteURLTextField.y + websiteURLTextField.height title:@"不良类型" superView:reportView];
     reportWebsiteTypeView = [SelectTypeView initWithY:reportWebsiteTypeLabel.y + reportWebsiteTypeLabel.height superView:reportView];
-    [reportWebsiteTypeView addTitles:reportTypeArr];
+    [reportWebsiteTypeView addTitles:websiteTypeArr];
     
     reportContentLabel = [ReportItemLabel initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height title:@"不良网站内容" superView:reportView];
     reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请填写不良网站内容" superView:reportView];

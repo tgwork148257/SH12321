@@ -40,9 +40,6 @@
     
     ReportDataModel *model;
     
-    NSArray *timeLengthArr;
-    NSArray *crankFormArr;
-    NSArray *crankTypeArr;
 }
 
 - (void)viewDidLoad {
@@ -54,9 +51,7 @@
     model = [[ReportDataModel alloc] init];
     model.reportType = ReportMessage;
     
-    timeLengthArr = @[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"];
-    crankFormArr = @[@"响一声就挂",@"自动语音骚扰",@"人工骚扰"];
-    crankTypeArr = @[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"];
+
     [self addSubviews];
 }
 

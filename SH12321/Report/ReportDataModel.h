@@ -59,9 +59,23 @@
 
 @property (nonatomic, assign) NSInteger reportFakeBasicStationType;           //举报伪基站类型索引
 
+
+
 @property (nonatomic, copy) NSString *reportStoreTypeStr;           //举报实体店或者网店字符串
 
 @property (nonatomic, assign) NSInteger reportStoreType;           //举报实体店或者网店索引
+
+@property (nonatomic, assign) NSInteger reportReasonType;         //违规原因类型
+
+@property (nonatomic, copy) NSString *reportReasonTypeStr;         //违规原因类型字符串
+
+@property (nonatomic, assign) NSInteger reportOperatorsType;     //运营商类型
+
+@property (nonatomic, copy) NSString *reportOperatorsTypeStr;     //运营商类型字符串
+
+@property (nonatomic, copy) NSString *reportNumber;               //举报手机的手机号码
+
+
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
 

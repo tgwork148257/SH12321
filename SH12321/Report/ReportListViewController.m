@@ -60,6 +60,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self showTabbar];
+}
+
 - (void)viewDidLoad {
     self.navigationTitle = @"举报";
     [super viewDidLoad];

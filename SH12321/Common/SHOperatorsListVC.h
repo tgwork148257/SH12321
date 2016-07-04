@@ -18,6 +18,4 @@
 
 @property (nonatomic, weak) id<SHOperatorsListVCDelegate> delegate;
 
-@property (nonatomic, strong) NSArray *tableviewData;
-
 @end
