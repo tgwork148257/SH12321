@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65042F7F1D2A3A11003B08F9 /* MeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65042F7E1D2A3A11003B08F9 /* MeItemView.m */; };
+		65042F821D2A3F0B003B08F9 /* ReportRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65042F811D2A3F0B003B08F9 /* ReportRecordListVC.m */; };
 		65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */; };
 		65199FFA1D2257C700C47DD4 /* SHIllegalReasonListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF91D2257C700C47DD4 /* SHIllegalReasonListVC.m */; };
 		65199FFD1D225A1800C47DD4 /* UploadImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */; };
@@ -116,6 +118,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65042F7D1D2A3A11003B08F9 /* MeItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeItemView.h; sourceTree = "<group>"; };
+		65042F7E1D2A3A11003B08F9 /* MeItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeItemView.m; sourceTree = "<group>"; };
+		65042F801D2A3F0B003B08F9 /* ReportRecordListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordListVC.h; sourceTree = "<group>"; };
+		65042F811D2A3F0B003B08F9 /* ReportRecordListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportRecordListVC.m; sourceTree = "<group>"; };
 		65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperatorsListVC.h; sourceTree = "<group>"; };
 		65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperatorsListVC.m; sourceTree = "<group>"; };
 		65199FF81D2257C700C47DD4 /* SHIllegalReasonListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHIllegalReasonListVC.h; sourceTree = "<group>"; };
@@ -675,6 +681,10 @@
 				65F8CD811D0D34D8008C7763 /* LoginVC.m */,
 				65F8CD821D0D34D8008C7763 /* MeHomeVC.h */,
 				65F8CD831D0D34D8008C7763 /* MeHomeVC.m */,
+				65042F7D1D2A3A11003B08F9 /* MeItemView.h */,
+				65042F7E1D2A3A11003B08F9 /* MeItemView.m */,
+				65042F801D2A3F0B003B08F9 /* ReportRecordListVC.h */,
+				65042F811D2A3F0B003B08F9 /* ReportRecordListVC.m */,
 				65F8CD891D0D4007008C7763 /* ReportRecordCell.h */,
 				65F8CD8A1D0D4007008C7763 /* ReportRecordCell.m */,
 				65EC908E1D2A29F5004D12B9 /* ReportRecordDetailVC.h */,
@@ -778,6 +788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65042F7F1D2A3A11003B08F9 /* MeItemView.m in Sources */,
 				657048171D17C8D300D98E92 /* SDWebImageDownloaderOperation.m in Sources */,
 				65F8CD531D0D33C8008C7763 /* TGTableViewCell.m in Sources */,
 				65F8CD671D0D3442008C7763 /* TGUtils.m in Sources */,
@@ -872,6 +883,7 @@
 				65F8CDAE1D0FA78B008C7763 /* ReportAppVC.m in Sources */,
 				6570481B1D17C8D300D98E92 /* UIImage+GIF.m in Sources */,
 				65F8CD071D0D00FB008C7763 /* SBJsonStreamWriter.m in Sources */,
+				65042F821D2A3F0B003B08F9 /* ReportRecordListVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

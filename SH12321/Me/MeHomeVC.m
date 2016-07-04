@@ -8,14 +8,24 @@
 
 #import "MeHomeVC.h"
 #import "ReportRecordCell.h"
+#import "MeItemView.h"
+#import "ReportRecordListVC.h"
 
-@interface MeHomeVC () <UITableViewDataSource, UITableViewDelegate>
+@interface MeHomeVC ()
 
 @end
 
 @implementation MeHomeVC{
-    UITableView *meHomeTableView;
-    NSMutableArray *cellDataArr;
+    
+    UIScrollView *scrollView;
+    UIView *reportView;
+    MeItemView *myReportView;
+    ReportItemLabel *aboutOursLabel;
+    MeItemView *wechatView;
+    MeItemView *websiteView;
+    MeItemView *phoneView;
+    MeItemView *adviceView;
+    
 }
 
 - (void)viewDidLoad{
@@ -23,90 +33,37 @@
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
     
-    cellDataArr = [[NSMutableArray alloc] init];
+    [self addSubviews];
+}
+
+- (void)addSubviews{
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H + TABBAR_H)];
+    [self.view addSubview:scrollView];
     
-    [self addTableView];
-}
-
-#pragma mark -- 增加tableview
-- (void)addTableView{
-    meHomeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H) style:UITableViewStyleGrouped];
-    meHomeTableView.delegate = self;
-    meHomeTableView.dataSource = self;
-    meHomeTableView.backgroundColor = C_WHITE;
-    meHomeTableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:meHomeTableView];
-    // 添加动效视图
-
+    reportView = [[UIView alloc] init];
+    reportView.backgroundColor = C_WHITE;
+    [scrollView addSubview:reportView];
     
-    if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+    myReportView = [MeItemView initWithY:0 itemStr:@"我的举报" superView:reportView];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToReportList)];
+    myReportView.userInteractionEnabled = YES;
+    [myReportView addGestureRecognizer:tap];
+    
+    aboutOursLabel = [ReportItemLabel initWithY:myReportView.y + myReportView.height title:@"关于我们" superView:reportView];
+    wechatView = [MeItemView initWithY:aboutOursLabel.y + aboutOursLabel.height itemStr:@"官方微信" superView:reportView];
+    websiteView = [MeItemView initWithY:wechatView.y + wechatView.height itemStr:@"官方网站" superView:reportView];
+    phoneView = [MeItemView initWithY:websiteView.y + websiteView.height itemStr:@"举报电话" superView:reportView];
+    adviceView = [MeItemView initWithY:phoneView.y + phoneView.height itemStr:@"投诉建议" superView:reportView];
+    
+    
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, adviceView.y + adviceView.height);
+    
+    scrollView.contentSize = CGSizeMake(DEVICE_W, reportView.y + reportView.height);
 }
 
-#pragma mark - 计算headView高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return [meHomeTopView viewHeightWithModel:self.meHomeModel];
-    return 0;
+- (void)jumpToReportList{
+    ReportRecordListVC *vc = [[ReportRecordListVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-#pragma mark - build headview
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    meHomeTopView = [[meHomeTopView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, [meHomeTopView viewHeightWithModel:self.meHomeModel])];
-//    meHomeTopView.meHomeModel = self.meHomeModel;
-//    meHomeTopView.userListArr = friendsUserListDataArr;
-//    [meHomeTopView addSubviews];
-//    
-//    return meHomeTopView;
-    return nil;
-}
-
-#pragma mark - 计算footerView高度
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.1;
-}
-
-#pragma mark - cell 数量
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (!EMPTY_ARR(cellDataArr)) {
-        return cellDataArr.count;
-    }else{
-        return 0;
-    }
-}
-
-#pragma mark - 计算cell高度
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [ReportRecordCell cellHeight];
-}
-
-#pragma mark - build cell
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row ) {
-        static NSString *str = @"ReportRecordCell";
-        ReportRecordCell *cell = [[ReportRecordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        cell.friendsPostCellDelegate = self;
-        cell.model = [cellDataArr objectAtIndex:indexPath.row];
-        [cell buildCell];
-        return cell;
-    }else{
-        return nil;
-    }
-}
-
-#pragma mark -- 点击cell
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
-//        PostDetialViewController *vc = [[PostDetialViewController alloc] init];
-//        PostDetailModel *model = [cellDataArr objectAtIndex:indexPath.row];
-//        vc.blogID = model.blog_id;
-//        vc.indexRow = indexPath.row;
-//        vc.postDetailBackDataDelegate = self;
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }
-}
-
-
 
 @end
