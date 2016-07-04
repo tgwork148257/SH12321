@@ -53,7 +53,13 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 #define grayBgColor  [TGManager colorWithString:@"EEEEEE"] //灰色背景
 #define commitBtnBgColor greenBgColor //提交按钮背景
 #define greenBgColor C_GREEN
+#define redTextColor [TGManager colorWithString:@"ff5a00"]
 #define placeholderTextColor grayBgColor
+
+#define C_LABEL [TGManager colorWithString:@"707070"]
+#define C_INPUT [TGManager colorWithString:@"b7b7b7"]
+
+#define F_TEXT FONTSIZE15
 
 static const CGFloat reportItemLabelH = 40.0F;
 static const CGFloat reportItemTextFieldH = 35.0F;
@@ -63,13 +69,12 @@ static const CGFloat commitBtnTopGap = 40.0F;
 static const CGFloat commitBtnBottomGap = 64.0F;
 
 
-static const NSString *sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
-static const NSString *failureShowStr = @"提交失败，请重新提交或者检查网络";
+static NSString *const sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
+static NSString *const failureShowStr = @"提交失败，请重新提交或者检查网络";
 
-#define C_LABEL [TGManager colorWithString:@"707070"]
-#define C_INPUT [TGManager colorWithString:@"b7b7b7"]
-
-#define F_TEXT FONTSIZE15
+static  NSString *const nextIconImageStr = @"我们已经收到你的举报，谢谢你的参与";
+static  NSString *const selectNormalIconImageStr = @"提交失败，请重新提交或者检查网络";
+static  NSString *const selectSelectedIconImageStr = @"提交失败，请重新提交或者检查网络";
 
 
 #endif /* CommonDefine_h */

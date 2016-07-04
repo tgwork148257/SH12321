@@ -18,7 +18,7 @@
     btn.backgroundColor = commitBtnBgColor;
     [btn setTitle:@"提交" forState:UIControlStateNormal];
     [btn setTitleColor:C_WHITE forState:UIControlStateNormal];
-    btn.titleLabel.font = FONTSIZE14;
+    btn.titleLabel.font = FONTSIZE15;
     [superView addSubview:btn];
     
     return btn;

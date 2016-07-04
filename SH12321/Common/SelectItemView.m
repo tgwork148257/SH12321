@@ -23,9 +23,9 @@
     label.tag = itemLabelTag;
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
     if ([itemStr isEqualToString:@"选择时间"]) {
-        icon.image = [UIImage imageNamed:@""];
+        icon.image = [UIImage imageNamed:nextIconImageStr];
     }else{
-        icon.image = [UIImage imageNamed:@""];
+        icon.image = [UIImage imageNamed:selectNormalIconImageStr];
     }
     
     icon.backgroundColor = C_RED;

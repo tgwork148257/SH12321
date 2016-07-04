@@ -42,8 +42,8 @@
         line.backgroundColor = C_LINE;
         
         TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, imageWH, imageWH) superView:self];
-        [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
+        [btn setImage:[UIImage imageNamed:selectNormalIconImageStr] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:selectSelectedIconImageStr] forState:UIControlStateSelected];
         btn.tag = btnTag + i;
         btn.backgroundColor = C_RED;
         [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
