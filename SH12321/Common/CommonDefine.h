@@ -50,9 +50,9 @@ typedef NS_ENUM(NSInteger, ReportDataType){
                                 @"中期",@"中兴视通",@"中邮世纪",@"中国移动",@"中国联通",@"中国电信"]
 
 
-#define grayBgColor  [TGManager colorWithString:@"EEEEEE"] //灰色背景
-#define commitBtnBgColor greenBgColor //提交按钮背景
-#define greenBgColor C_GREEN
+#define grayBgColor  [TGManager colorWithString:@"EEEEEE"]      //灰色背景
+#define commitBtnBgColor [TGManager colorWithString:@"3DCE3D"]  //提交按钮背景
+#define greenBgColor C_GREEN                                    //绿色背景
 #define redTextColor [TGManager colorWithString:@"ff5a00"]
 #define placeholderTextColor grayBgColor
 
