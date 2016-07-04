@@ -14,9 +14,9 @@
     ReportItemLabel *label = [[ReportItemLabel alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, reportItemLabelH)];
     label.backgroundColor = commitBtnBgColor;
     label.text = [NSString stringWithFormat:@"    %@",title];
-    label.textColor = C_BLACK;
+    label.textColor = C_LABEL;
     label.backgroundColor = grayBgColor;
-    label.font = FONTSIZE12;
+    label.font = F_TEXT;
     label.textAlignment = NSTextAlignmentLeft;
     [superView addSubview:label];
     

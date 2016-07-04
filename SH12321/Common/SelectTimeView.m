@@ -56,7 +56,6 @@
     confirmBtn = [TGButton initTitleBtnWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - btnW, 0, btnW, btnH) title:@"确定" titleColor:C_BLUE titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
     [confirmBtn addTarget:self action:@selector(confirmBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
-    
     currentTime = 0;
     currentDay = [TGUtils currentDayWithDate:[NSDate date]];
     currentMonth = [TGUtils currentMonthWithDate:[NSDate date]];

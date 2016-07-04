@@ -8,8 +8,8 @@
 
 #import "SelectItemView.h"
 
-#define viewH 48
-#define imageViewW 24
+#define viewH 35
+#define imageViewW 15
 #define imageViewH viewH
 
 #define itemLabelTag    443434
@@ -19,7 +19,7 @@
 
 + (SelectItemView *)initWithY:(CGFloat)y itemStr:(NSString *)itemStr superView:(UIView *)superView{
     SelectItemView *view = [[SelectItemView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
-    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW, viewH) text:itemStr textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
     if ([itemStr isEqualToString:@"选择时间"]) {
