@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 
 static const CGFloat reportItemLabelH = 40.0F;
 static const CGFloat reportItemTextFieldH = 35.0F;
-static const CGFloat reportItemTextViewH = 70.0F;
+static const CGFloat reportItemTextViewH = 80.0F;
 static const CGFloat selectTimeViewH = 240.0F;
 static const CGFloat commitBtnTopGap = 40.0F;
 static const CGFloat commitBtnBottomGap = 64.0F;
