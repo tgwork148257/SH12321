@@ -8,8 +8,8 @@
 
 #import "SelectTypeView.h"
 
-#define viewH    36
-#define imageWH  24
+#define viewH    35
+#define imageWH  15
 
 #define btnTag 223333
 

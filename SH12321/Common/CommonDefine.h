@@ -9,6 +9,24 @@
 #ifndef CommonDefine_h
 #define CommonDefine_h
 
+typedef NS_ENUM(NSInteger, ReportDataType){
+    ReportCrankCall = 0,                //举报骚扰电话
+    ReportScamCall,                     //举报诈骗电话
+    ReportMessage,                      //举报短信
+    ReportWIFI,                         //举报WIFI
+    ReportEmail,                        //举报邮件
+    ReportWebsite,                      //举报网站
+    ReportApp,                          //举报APP
+    ReportFakeBaseStation,              //举报伪基站
+    ReportPhoneNumberIndentification,   //举报手机实名制
+    ReportInfoReveal,                   //举报个人信息泄露
+    ReportBadNews,                      //举报不良舆情
+    ReportInfringment,                  //举报知识产权侵权
+    ReportOthersVC,                     //举报其他
+};
+
+
+
 #define grayBgColor  [TGManager colorWithString:@"EEEEEE"] //灰色背景
 #define commitBtnBgColor greenBgColor //提交按钮背景
 #define greenBgColor C_GREEN
