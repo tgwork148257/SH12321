@@ -9,8 +9,7 @@
 #import "SelectItemView.h"
 
 #define viewH 35
-#define imageViewW 15
-#define imageViewH viewH
+#define imageViewWH 15
 
 #define itemLabelTag    443434
 #define iconTag         443435
@@ -19,15 +18,15 @@
 
 + (SelectItemView *)initWithY:(CGFloat)y itemStr:(NSString *)itemStr superView:(UIView *)superView{
     SelectItemView *view = [[SelectItemView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
-    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewWH, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
-    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
+    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, (viewH - imageViewWH)/2, imageViewWH, imageViewWH)];
     if ([itemStr isEqualToString:@"选择时间"]) {
         icon.image = [UIImage imageNamed:nextIconImageStr];
     }else{
         icon.image = [UIImage imageNamed:selectNormalIconImageStr];
     }
-    
+    [view addSubview:icon];
     [superView addSubview:view];
     return view;
 }

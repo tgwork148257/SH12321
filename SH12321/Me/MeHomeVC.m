@@ -32,7 +32,7 @@
     self.navigationTitle = @"我";
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
-    
+        
     [self addSubviews];
 }
 

@@ -14,7 +14,7 @@
 
 
 
-@interface AppDelegate () <UITabBarControllerDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -42,11 +42,6 @@
     reportListVC.tabBarItem.title= @"举报";
     [reportListVC.tabBarItem setTitleTextAttributes:@{C_LABEL: NSForegroundColorAttributeName} forState:UIControlStateNormal];
     [reportListVC.tabBarItem setTitleTextAttributes:@{greenBgColor: NSForegroundColorAttributeName} forState:UIControlStateSelected];
-//    //未选中字体颜色
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:C_LABEL} forState:UIControlStateNormal];
-//    //选中字体颜色
-//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:greenBgColor} forState:UIControlStateSelected];
-    
     
     NewsHomeVC *newsHomeVC = [[NewsHomeVC alloc] init];
     newsHomeVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_news_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -56,19 +51,19 @@
     [newsHomeVC.tabBarItem setTitleTextAttributes:@{greenBgColor: NSForegroundColorAttributeName} forState:UIControlStateSelected];
 
     MeHomeVC *meHomeVC = [[MeHomeVC alloc] init];
-//    meHomeVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_me_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    meHomeVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    meHomeVC.tabBarItem.title = @"我";
-//    [meHomeVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: C_LABEL} forState:UIControlStateNormal];
-//    [meHomeVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: C_BLACK} forState:UIControlStateSelected];
+    meHomeVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_me_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    meHomeVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    meHomeVC.tabBarItem.title = @"我";
+//    [meHomeVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: greenBgColor} forState:UIControlStateNormal];
+//    [meHomeVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: C_BLUE} forState:UIControlStateSelected];
     
-    UITabBarItem *loginItem = [[UITabBarItem alloc]initWithTitle:@"我" image:[UIImage imageNamed:@"tabbar_me_normal"] tag:3];
-    loginItem.selectedImage = [[UIImage imageNamed:@"tabbar_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    meHomeVC.tabBarItem = loginItem;
+//    UITabBarItem *loginItem = [[UITabBarItem alloc]initWithTitle:@"我" image:[UIImage imageNamed:@"tabbar_me_normal"] tag:2];
+//    loginItem.selectedImage = [[UIImage imageNamed:@"tabbar_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    meHomeVC.tabBarItem = loginItem;
     
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:C_LABEL, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:greenBgColor,NSForegroundColorAttributeName, nil]forState:UIControlStateSelected];
-    [[UITabBar appearance] setTintColor:greenBgColor];
+//    [UITabBarItem.appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:C_BLUE, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+//    [UITabBarItem.appearance setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:C_BLUE,NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+//    [[UITabBar appearance] setTintColor:greenBgColor];
     
     //UITabBar
     reportHomeNavC = [[UINavigationController alloc] initWithRootViewController:reportListVC];
@@ -84,24 +79,14 @@
         reportHomeNavC = [[UINavigationController alloc] initWithRootViewController:loginVC];
     }
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     UITabBarController *tabbar = [[UITabBarController alloc] init];
     tabbar.viewControllers = @[reportHomeNavC, newsHomeNavC,meHomeNavC];
-    tabbar.delegate = self;
     self.window.rootViewController = tabbar;
     [self.window makeKeyAndVisible];
-    
 }
 
-#pragma mark  tabBarController Delegate
--(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-    UIViewController *tbselect = tabBarController.selectedViewController;
-    if([tbselect isEqual:viewController]){
-        return NO;
-    }
-    return YES;
-}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

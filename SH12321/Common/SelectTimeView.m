@@ -138,13 +138,13 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
     if (component == 0) {
-        return DEVICE_W*3/10;
+        return DEVICE_W*4/20;
     }else if(component == 1){
-        return DEVICE_W*2/10;
+        return DEVICE_W*4/20;
     }else if(component == 2){
-        return DEVICE_W*2/10;
+        return DEVICE_W*4/20;
     }else if(component == 3){
-        return DEVICE_W*3/10;
+        return DEVICE_W*7/20;
     }else{
         return 0;
     }
