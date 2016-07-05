@@ -53,7 +53,15 @@
 }
 
 - (void)btnDidClick:(TGButton *)btn{
-    if (!EMPTY_STRING(selectTitleStr))
+//    if (!EMPTY_STRING(selectTitleStr))
+    
+    for (int i = 0; i < btn.superview.subviews.count; i++) {
+        UIView *view = btn.superview.subviews[i];
+        if (view.tag >= btnTag ) {
+            TGButton *b = (TGButton *)view;
+            b.selected = NO;
+        }
+    }
     
     selectTitleIndex = btn.tag - btnTag;
     selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
