@@ -28,7 +28,6 @@
         icon.image = [UIImage imageNamed:selectNormalIconImageStr];
     }
     
-    icon.backgroundColor = C_RED;
     [superView addSubview:view];
     return view;
 }

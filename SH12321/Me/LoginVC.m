@@ -54,7 +54,7 @@
 
 - (void)addSubviews{
     logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake((DEVICE_W - logoW)/2, Y, logoW, logoH)];
-    logoImageView.image = [UIImage imageNamed:@""];
+    logoImageView.image = [UIImage imageNamed:@"app_logo"];
     [self.view addSubview:logoImageView];
     
     titleLabel = [TGLabel initWithFrame:CGRectMake(0, logoImageView.y + logoImageView.height + 50, MIDDLE_W, 32) text:@"上海12321举报受理中心" textColor:C_BLACK textFont:FONTSIZE20 textAlignment:NSTextAlignmentCenter superView:self.view];
@@ -74,6 +74,7 @@
     [verifyCodeView addSubview:preverifyCodeView];
     
     preverifyCodeImageView = [[UIImageView alloc] initWithFrame:CGRectMake((labelW - preverifyCodeImageViewWH)/2, (viewH - preverifyCodeImageViewWH)/2, preverifyCodeImageViewWH, preverifyCodeImageViewWH)];
+    preverifyCodeImageView.image = [UIImage imageNamed:@"login_phone"];
     [preverifyCodeView addSubview:preverifyCodeImageView];
     
     verifyCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(preverifyCodeView.x + preverifyCodeView.width, 0, 100, viewH)];

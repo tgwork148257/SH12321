@@ -49,6 +49,9 @@ typedef NS_ENUM(NSInteger, ReportDataType){
                                 @"平安通信",@"日日顺",@"三五互联",@"世纪互联",@"苏宁",@"苏州蜗牛",@"天音",@"万网",@"小米",@"星美",@"银盛支付",@"用友",@"远特",\
                                 @"中期",@"中兴视通",@"中邮世纪",@"中国移动",@"中国联通",@"中国电信"]
 
+#define reportIconArr @[@"report_message",@"report_scamcall",@"report_crankcall",@"report_website",@"report_email",@"report_app",\
+    @"report_fake_station",@"report_wifi",@"report_sim",@"report_userInfo",@"report_badnews",@"report_infringement",@"report_others"]
+
 
 #define grayBgColor  [TGManager colorWithString:@"EEEEEE"]      //灰色背景
 #define commitBtnBgColor [TGManager colorWithString:@"3DCE3D"]  //提交按钮背景
@@ -72,9 +75,9 @@ static const CGFloat commitBtnBottomGap = 64.0F;
 static NSString *const sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
 static NSString *const failureShowStr = @"提交失败，请重新提交或者检查网络";
 
-static  NSString *const nextIconImageStr = @"我们已经收到你的举报，谢谢你的参与";
-static  NSString *const selectNormalIconImageStr = @"提交失败，请重新提交或者检查网络";
-static  NSString *const selectSelectedIconImageStr = @"提交失败，请重新提交或者检查网络";
+static  NSString *const nextIconImageStr = @"next_icon";
+static  NSString *const selectNormalIconImageStr = @"type_normal";
+static  NSString *const selectSelectedIconImageStr = @"type_selected";
 
 
 #endif /* CommonDefine_h */

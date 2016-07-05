@@ -28,14 +28,14 @@
 #define viewH                   150
 #define imageViewLeft           (viewW - iamgeViewW)/2
 #define imageViewTop            20
-#define iamgeViewW              100
-#define imageViewH              100
+#define iamgeViewW              60
+#define imageViewH              60
 #define imageviewToLabelGap     5
 #define labelH                  30
 #define pageViewH               30
 #define pageBtnWH               10
 
-#define imageStrWithIndex(index)  ([NSString stringWithFormat:@"%ld",((long)index)])
+#define imageStrWithIndex(index)  ([reportIconArr objectAtIndex:index])
 
 
 @interface ReportListViewController ()
@@ -58,6 +58,7 @@
 - (void)leftBtnDidClick{
     SHAreasListVC *vc = [[SHAreasListVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -98,10 +99,10 @@
     CGFloat pageBtnY = (pageViewH - pageBtnWH )/2;
     firstPageBtn = [TGButton initWithFrame:CGRectMake(DEVICE_W/2 - 10 - pageBtnWH, pageBtnY, pageBtnWH, pageBtnWH) superView:pageView];
     secondPageBtn = [TGButton initWithFrame:CGRectMake(DEVICE_W/2 + 10, pageBtnY, pageBtnWH, pageBtnWH) superView:pageView];
-    firstPageBtn.backgroundColor = C_RED;
+    firstPageBtn.backgroundColor = C_LABEL;
     
-    [firstPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_RED];
-    [secondPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_RED];
+    [firstPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_LABEL];
+    [secondPageBtn addBorderWithRadius:pageBtnWH/2 borderColor:C_LABEL];
     
     CGFloat x = 0;
     CGFloat y = 0;
@@ -168,14 +169,14 @@
     reportSecondPageView.hidden = NO;
     
     firstPageBtn.backgroundColor = C_WHITE;
-    secondPageBtn.backgroundColor = C_RED;
+    secondPageBtn.backgroundColor = C_LABEL;
 }
 
 - (void)secondPageSwipe:(UISwipeGestureRecognizer *)tap{
     reportFirstPageView.hidden = NO;
     reportSecondPageView.hidden = YES;
     
-    firstPageBtn.backgroundColor = C_RED;
+    firstPageBtn.backgroundColor = C_LABEL;
     secondPageBtn.backgroundColor = C_WHITE;
 }
 

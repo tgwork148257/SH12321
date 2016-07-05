@@ -50,10 +50,10 @@
 - (void)addSubviews{
     topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, topViewH)];
     [self addSubview:topView];
-    cancelBtn = [TGButton initTitleBtnWithFrame:CGRectMake(L_R_EDGE, 0, btnW, btnH) title:@"取消" titleColor:C_RED titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
+    cancelBtn = [TGButton initTitleBtnWithFrame:CGRectMake(L_R_EDGE, 0, btnW, btnH) title:@"取消" titleColor:C_LABEL titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
     [cancelBtn addTarget:self action:@selector(cancelBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
-    confirmBtn = [TGButton initTitleBtnWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - btnW, 0, btnW, btnH) title:@"确定" titleColor:C_BLUE titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
+    confirmBtn = [TGButton initTitleBtnWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - btnW, 0, btnW, btnH) title:@"确定" titleColor:C_LABEL titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:topView];
     [confirmBtn addTarget:self action:@selector(confirmBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
     currentTime = 0;

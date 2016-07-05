@@ -32,7 +32,6 @@
     [view addSubview:uploadImageView];
     
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(uploadImageView.x + uploadImageView.width + gap, (viewH - iconH)/2, iconW, iconH)];
-    icon.backgroundColor = C_RED;
     [view addSubview:icon];
     
     [superView addSubview:view];

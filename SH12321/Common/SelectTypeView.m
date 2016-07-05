@@ -45,7 +45,6 @@
         [btn setImage:[UIImage imageNamed:selectNormalIconImageStr] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:selectSelectedIconImageStr] forState:UIControlStateSelected];
         btn.tag = btnTag + i;
-        btn.backgroundColor = C_RED;
         [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         
         labelY += viewH;

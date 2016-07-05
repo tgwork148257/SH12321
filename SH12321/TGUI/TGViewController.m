@@ -105,7 +105,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     
     _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _rightBtn.frame = CGRectMake(0, 0, 48, 48);
-    [_rightBtn setTitleColor:C_RED forState:UIControlStateNormal];
+    [_rightBtn setTitleColor:C_BLACK forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = FONTSIZE14;
     [_rightBtn addTarget:self action:@selector(rightBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:_rightBtn];
@@ -152,7 +152,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     noNetworkLabel.attributedText = titleAttributedString;
     noNetworkLabel.textAlignment = NSTextAlignmentCenter;
     
-    noNetworkButton = [TGButton initTitleBtnWithFrame:CGRectMake(0, noNetworkLabel.height + noNetworkLabel.y, noNetworkLabel.width, 60) title:@"重试一下" titleColor:C_RED titleFont:[UIFont systemFontOfSize:14.0f] backgroundColor:[UIColor whiteColor] superView:noNetworkWhiteView];
+    noNetworkButton = [TGButton initTitleBtnWithFrame:CGRectMake(0, noNetworkLabel.height + noNetworkLabel.y, noNetworkLabel.width, 60) title:@"重试一下" titleColor:C_BLACK titleFont:[UIFont systemFontOfSize:14.0f] backgroundColor:[UIColor whiteColor] superView:noNetworkWhiteView];
     [noNetworkButton addTarget:self action:@selector(noNetworkButtonAction) forControlEvents:UIControlEventTouchUpInside];
     noNetworkButton.layer.borderColor = C_BLUE.CGColor;
     noNetworkButton.layer.borderWidth = 0.5f;

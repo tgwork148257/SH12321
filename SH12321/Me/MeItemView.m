@@ -37,23 +37,23 @@
         rightIcon.image = [UIImage imageNamed:@""];
         [view addSubview:rightIcon];
         
-        leftIconStr = @"";
+        leftIconStr = @"me_report_record";
     }else if([itemStr isEqualToString:@"官方微信"]){
         
         rightLabelStr = @"上海12321举报中心";
-        leftIconStr = @"";
+        leftIconStr = @"official_wechat";
     }else if([itemStr isEqualToString:@"官方网站"]){
         
         rightLabelStr = @"www.sh12321.com";
-        leftIconStr = @"";
+        leftIconStr = @"official_website";
     }else if([itemStr isEqualToString:@"举报电话"]){
         
         rightLabelStr = @"021-12321";
-        leftIconStr = @"";
+        leftIconStr = @"official_phone";
     }else if([itemStr isEqualToString:@"投诉建议"]){
         
         rightLabelStr = @"021-64031915";
-        leftIconStr = @"";
+        leftIconStr = @"official_phone";
     }
     
     rightLabel.text = rightLabelStr;
