@@ -7,15 +7,22 @@
 //
 
 #import "LoginVC.h"
+#import "ReportListViewController.h"
 
-#define Y  200
+#define Y  100
 #define viewH  45
-#define loginBtnW 300
+#define loginBtnW 280
 #define loginBtnH 35
 
-#define labelW 100
+#define labelW 88
+
+#define sendVerifyCodeBtnW 64
 
 #define preverifyCodeImageViewWH 25
+
+#define lineW loginBtnW
+
+#define gap 36
 
 
 #define logoW 79
@@ -32,12 +39,14 @@
     UIView *phoneNumberView;
     TGLabel *prePhoneNumberLabel;
     UITextField *phoneNumberTextField;
+    TGView *phoneNumberLine;
     
     UIView *verifyCodeView;
     UIView *preverifyCodeView;
     UIImageView *preverifyCodeImageView;
     UITextField *verifyCodeTextField;
     TGButton *sendVerifyCodeBtn;
+    TGView *verifyCodeLine;
     
     TGButton *loginBtn;
     
@@ -48,6 +57,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     timeUpdate = 60;
+    [self hiddenTabbar];
     
     [self addSubviews];
 }
@@ -57,16 +67,20 @@
     logoImageView.image = [UIImage imageNamed:@"app_logo"];
     [self.view addSubview:logoImageView];
     
-    titleLabel = [TGLabel initWithFrame:CGRectMake(0, logoImageView.y + logoImageView.height + 50, MIDDLE_W, 32) text:@"上海12321举报受理中心" textColor:C_BLACK textFont:FONTSIZE20 textAlignment:NSTextAlignmentCenter superView:self.view];
+    titleLabel = [TGLabel initWithFrame:CGRectMake(0, logoImageView.y + logoImageView.height + gap, MIDDLE_W, 32) text:@"上海12321举报受理中心" textColor:C_BLACK textFont:FONTSIZE20 textAlignment:NSTextAlignmentCenter superView:self.view];
     
-    phoneNumberView = [[UIView alloc] initWithFrame:CGRectMake(L_R_EDGE, titleLabel.y + titleLabel.height, DEVICE_W, viewH)];
+    phoneNumberView = [[UIView alloc] initWithFrame:CGRectMake(L_R_EDGE, titleLabel.y + titleLabel.height + gap, DEVICE_W, viewH)];
     [self.view addSubview:phoneNumberView];
     prePhoneNumberLabel = [TGLabel initWithFrame:CGRectMake(0, 0, labelW, viewH) text:@"+86" textColor:C_BLACK textFont:FONTSIZE16 textAlignment:NSTextAlignmentCenter superView:phoneNumberView];
     phoneNumberTextField = [[UITextField alloc] initWithFrame:CGRectMake(prePhoneNumberLabel.x + prePhoneNumberLabel.width, 0, MIDDLE_W - prePhoneNumberLabel.width, viewH)];
-    phoneNumberTextField.borderStyle = UITextBorderStyleLine;
+    phoneNumberTextField.borderStyle = UITextBorderStyleNone;
     phoneNumberTextField.font = FONTSIZE16;
     phoneNumberTextField.placeholder = @"手机号";
     [phoneNumberView addSubview:phoneNumberTextField];
+    
+    CGFloat lineX = (MIDDLE_W - lineW)/2;
+    phoneNumberLine = [TGView initWithFrame:CGRectMake(lineX, viewH - 1, lineW, 1) superView:phoneNumberView];
+    phoneNumberLine.backgroundColor = C_LINE;
     
     verifyCodeView = [[UIView alloc] initWithFrame:CGRectMake(L_R_EDGE, phoneNumberView.y + phoneNumberView.height, MIDDLE_W, viewH)];
     [self.view addSubview:verifyCodeView];
@@ -77,17 +91,20 @@
     preverifyCodeImageView.image = [UIImage imageNamed:@"login_phone"];
     [preverifyCodeView addSubview:preverifyCodeImageView];
     
-    verifyCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(preverifyCodeView.x + preverifyCodeView.width, 0, 100, viewH)];
+    verifyCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(preverifyCodeView.x + preverifyCodeView.width, 0, MIDDLE_W - sendVerifyCodeBtnW - preverifyCodeView.width - 36, viewH)];
     verifyCodeTextField.font = FONTSIZE16;
     verifyCodeTextField.placeholder = @"验证码";
-    verifyCodeTextField.borderStyle = UITextBorderStyleBezel;
+    verifyCodeTextField.borderStyle = UITextBorderStyleNone;
     [verifyCodeView addSubview:verifyCodeTextField];
     
-    sendVerifyCodeBtn = [TGButton initTitleBtnWithFrame:CGRectMake(0, 0, MIDDLE_W - preverifyCodeView.width - preverifyCodeView.width, viewH) title:@"获取验证码" titleColor:C_BLACK titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:verifyCodeView];
+    sendVerifyCodeBtn = [TGButton initTitleBtnWithFrame:CGRectMake(verifyCodeTextField.x + verifyCodeTextField.width, 0, sendVerifyCodeBtnW, viewH) title:@"获取验证码" titleColor:C_BLACK titleFont:FONTSIZE12 backgroundColor:C_WHITE superView:verifyCodeView];
     sendVerifyCodeBtn.backgroundColor = C_WHITE;
     [sendVerifyCodeBtn addTarget:self action:@selector(sendVerifyCodeBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
-    loginBtn = [TGButton initTitleBtnWithFrame:CGRectMake((DEVICE_W - loginBtnW)/2, verifyCodeView.y + verifyCodeView.height + 43, loginBtnW, loginBtnH) title:@"登录" titleColor:C_WHITE titleFont:FONTSIZE16 backgroundColor:nil superView:self.view];
+    verifyCodeLine = [TGView initWithFrame:CGRectMake(lineX, viewH - 1, lineW, 1) superView:verifyCodeView];
+    verifyCodeLine.backgroundColor = C_LINE;
+    
+    loginBtn = [TGButton initTitleBtnWithFrame:CGRectMake((DEVICE_W - loginBtnW)/2, verifyCodeView.y + verifyCodeView.height + gap, loginBtnW, loginBtnH) title:@"登录" titleColor:C_WHITE titleFont:FONTSIZE16 backgroundColor:nil superView:self.view];
     loginBtn.backgroundColor = greenBgColor;
     [loginBtn addTarget:self action:@selector(loginBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
@@ -115,6 +132,9 @@
 
 - (void)loginBtnDidClick{
     
+    
+    
+    [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
 }
 
 @end

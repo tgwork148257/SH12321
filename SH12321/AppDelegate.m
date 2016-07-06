@@ -70,7 +70,7 @@
     reportHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[ReportListViewController alloc] init]];
     newsHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[NewsHomeVC alloc] init]];
     meHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[MeHomeVC alloc] init]];
-    if (0/*[MMCommonManager isUserLogin] == NO*/) {
+    if (1/*[MMCommonManager isUserLogin] == NO*/) {
         LoginVC *loginVC = [[LoginVC alloc] init];
 //        loginVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_report_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //        loginVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_report_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -92,7 +92,7 @@
     
     reportHomeTabBarItem.image = [[UIImage imageNamed:@"tabbar_report_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     reportHomeTabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_report_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    reportHomeTabBarItem.title= @"举报";
+    reportHomeTabBarItem.title= @"举报";  
 //    [reportHomeTabBarItem setTitleTextAttributes:@{C_LABEL: NSForegroundColorAttributeName} forState:UIControlStateNormal];
 //    [reportHomeTabBarItem setTitleTextAttributes:@{C_GREEN: NSForegroundColorAttributeName} forState:UIControlStateSelected];
     
