@@ -86,7 +86,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     _navigationView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, navigationViewWidth, navigationViewHeight)];
     _navigationLabel = [[UILabel alloc] initWithFrame:CGRectMake((navigationViewWidth - navigationLabelRect.size.width)/2, 0, navigationLabelRect.size.width, navigationViewHeight)];
     _navigationLabel.textAlignment = NSTextAlignmentCenter;
-    _navigationLabel.textColor = [UIColor blackColor];
+    _navigationLabel.textColor = C_WHITE;
     _navigationLabel.font = FONTSIZE17;
     _navigationLabel.text = self.navigationTitle;
     [_navigationView addSubview:_navigationLabel];
