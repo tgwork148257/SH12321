@@ -81,14 +81,13 @@
 }
 
 - (void)commitReport{
-    
-    if (![TGUtils isNumber:AppNameTextField.text]) {
-        [TGToast showWithText:@"发送号码输入错误"];
+    if (EMPTY_STRING(AppNameTextField.text)) {
+        [TGToast showWithText:@"请输入App名称"];
         return;
     }
     
     if (![TGUtils isNumber:AppSourceTextField.text]) {
-        [TGToast showWithText:@"接收号码输入错误"];
+        [TGToast showWithText:@"请输入App来源"];
         return;
     }
     

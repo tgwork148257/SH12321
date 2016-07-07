@@ -30,8 +30,6 @@
     ReportDataModel *model;
     
     NSString *areaStr;
-    NSString *streetStr;
-    
 }
 
 - (void)viewDidLoad {
@@ -129,19 +127,22 @@
 - (void)commitReport{
     if (EMPTY_STRING(areaStr)) {
         [TGToast showWithText:@"请选择区县"];
+        return;
     }
-    
-    if (EMPTY_STRING(streetStr)) {
-        [TGToast showWithText:@"请选择街道"];
-    }
+
     
     if (EMPTY_STRING(detailAdressTextView.text)) {
         [TGToast showWithText:@"请输入详细地址"];
+        return;
+    }
+    
+    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+        [TGToast showWithText:@"请选择时间"];
     }
     
     model.reportFakeBasicStationTypeStr = [reportFakeBasicStationView getSelectTypeStr];
     model.reportTime = [selectTimeItemView itemStr];
-    model.reportAdress = [[areaStr stringByAppendingString:streetStr] stringByAppendingString:detailAdressTextView.text];
+    model.reportAdress = [areaStr stringByAppendingString:detailAdressTextView.text];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];

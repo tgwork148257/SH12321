@@ -23,4 +23,8 @@
     return label;
 }
 
+- (void)addText:(NSString *)text{
+    self.text = [NSString stringWithFormat:@"    %@",text];
+}
+
 @end

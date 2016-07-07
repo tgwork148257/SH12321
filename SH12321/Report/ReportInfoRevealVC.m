@@ -71,6 +71,11 @@
 
 - (void)commitReport{
     
+    if (EMPTY_STRING(reportContentTextView.text)) {
+        [TGToast showWithText:@"请输入举报内容"];
+        return;
+    }
+    
 //    model.reportWebsiteURL = reportWIFINameTextField.text;
     //    model.reportAcceptNumber = reportWebsiteTypeView.text;
     model.reportContent = reportContentTextView.text;

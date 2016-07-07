@@ -11,7 +11,7 @@
 
 static NSString *const crankCallSendNumberKey    = @"crankCallSendNumberKey";    //骚扰电话Key
 static NSString *const crankCallAcceptNumberKey  = @"crankCallAcceptNumberKey";    //被骚扰电话Key
-static NSString *const crankCallTypeKey          = @"scamTypeKey";    //骚扰类型Key
+static NSString *const crankCallTypeKey          = @"scamTypeKey";                  //骚扰类型Key
 static NSString *const crankCallLengthKey        = @"crankCallLengthKey";    //骚扰电话时间长度Key
 static NSString *const crankCallTimeKey          = @"crankCallTimeKey";    //骚扰电话时间Key
 static NSString *const crankCallContentKey       = @"scamCallContentKey";    //骚扰电话内容Key

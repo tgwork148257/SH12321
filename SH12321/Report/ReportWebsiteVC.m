@@ -84,6 +84,15 @@
 }
 
 - (void)commitReport{
+    if (EMPTY_STRING(websiteURLTextField.text)) {
+        [TGToast showWithText:@"请输入网址"];
+        return;
+    }
+    
+    if (EMPTY_STRING(websiteURLTextField.text)) {
+        [TGToast showWithText:@"请输入网址"];
+        return;
+    }
     
     model.reportWebsiteURL = websiteURLTextField.text;
     model.reportWebsiteType = [reportWebsiteTypeView getSelectIndex];

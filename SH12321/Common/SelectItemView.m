@@ -21,7 +21,7 @@
     TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewWH, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, (viewH - imageViewWH)/2, imageViewWH, imageViewWH)];
-    if ([itemStr isEqualToString:@"选择时间"]) {
+    if ([itemStr isEqualToString:@"选择时间"] || [itemStr isEqualToString:@"选择区县"]) {
         icon.image = [UIImage imageNamed:nextIconImageStr];
     }else{
         icon.image = [UIImage imageNamed:selectNormalIconImageStr];

@@ -125,6 +125,26 @@
 
 
 - (void)commitReport{
+    if (EMPTY_STRING(reportSendNumberTextField.text)) {
+        [TGToast showWithText:@"请输入发送号码"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportAcceptNumberTextField.text)) {
+        [TGToast showWithText:@"请输入接收号码"];
+        return;
+    }
+    
+    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+        [TGToast showWithText:@"请填写时间"];
+        return;
+    }
+    
+    if (EMPTY_STRING([reportTimeLengthView getSelectTypeStr])) {
+        [TGToast showWithText:@"请填写时长"];
+        return;
+    }
+    
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
     model.reportScamCallType = [reportScamTypeView getSelectIndex];

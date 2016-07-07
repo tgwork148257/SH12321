@@ -165,8 +165,8 @@
 
 - (void)selectTypeStr:(NSString *)str{
     if ([str isEqualToString:[storeTypeArr objectAtIndex:0]]) {
-        reportStoreNameLabel.text = @"实体店名称";
-        reportStoreLabel.text = @"实体店地址";
+        [reportStoreNameLabel addText:@"实体店名称"];
+        [reportStoreLabel addText:@"实体店地址"];
         reportStoreTextField.placeholder = @"请填写实体店地址";
         reportStoreNameTextField.placeholder = @"请填写实体店名称";
         [storeUploadImageItemView addTitle:@"实体店照片"];
@@ -180,8 +180,8 @@
         reportStoreLabel.y = reportEntityStoreAdressLabel.y;
         
     }else{
-        reportStoreNameLabel.text = @"网店名称";
-        reportStoreLabel.text = @"网店地址";
+        [reportStoreNameLabel addText:@"网店名称"];
+        [reportStoreLabel addText:@"网店地址"];
         reportStoreTextField.placeholder = @"请填写网店地址";
         reportStoreNameTextField.placeholder = @"请填写网店名称";
         [storeUploadImageItemView addTitle:@"订单确认照片"];
@@ -270,6 +270,27 @@
 
 
 - (void)commitReport{
+//    if (EMPTY_STRING(reportStoreNameTextField.text)) {
+//        [TGToast showWithText:@"请输入举报店名称"];
+//        return;
+//    }
+    
+    if (EMPTY_STRING(reportPhoneNumberTextField.text)) {
+        [TGToast showWithText:@"请输入举报号码"];
+        return;
+    }
+    
+    
+    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+        [TGToast showWithText:@"请选择举报时间"];
+        return;
+    }
+    
+    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+        [TGToast showWithText:@"请选择举报时间"];
+        return;
+    }
+    
     model.reportStoreType = [reportStoreTypeView getSelectIndex];
     model.reportName = reportStoreNameTextField.text;
 //    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];

@@ -33,7 +33,7 @@
     CGFloat labelY = 0;
     CGFloat btnX = DEVICE_W - L_R_EDGE - imageWH;
     CGFloat btnY = (viewH - imageWH)/2;
-    for (NSInteger i=0; i < titles.count; i ++) {
+    for (NSInteger i = 0; i < titles.count; i ++) {
         NSString *title = [titles objectAtIndex:i];
         TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH - 1) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self];
         label.numberOfLines = 1;
@@ -46,15 +46,22 @@
         [btn setImage:[UIImage imageNamed:selectSelectedIconImageStr] forState:UIControlStateSelected];
         btn.tag = btnTag + i;
         [btn addTarget:self action:@selector(btnDidClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+        if (i == 0 ) {
+            btn.selected = YES;
+            selectTitleIndex = btn.tag - btnTag;
+            selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+            if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
+                [self.delegate selectTypeStr:selectTitleStr];
+            }
+        }
         
         labelY += viewH;
         btnY += viewH;
     }
 }
 
-- (void)btnDidClick:(TGButton *)btn{
-//    if (!EMPTY_STRING(selectTitleStr))
-    
+- (void)btnDidClick:(TGButton *)btn{    
     for (int i = 0; i < btn.superview.subviews.count; i++) {
         UIView *view = btn.superview.subviews[i];
         if (view.tag >= btnTag ) {
@@ -70,7 +77,6 @@
     if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
         [self.delegate selectTypeStr:selectTitleStr];
     }
-    
 }
 - (NSInteger)getSelectIndex{
     return selectTitleIndex;

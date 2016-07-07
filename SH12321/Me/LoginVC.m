@@ -74,6 +74,7 @@
     prePhoneNumberLabel = [TGLabel initWithFrame:CGRectMake(0, 0, labelW, viewH) text:@"+86" textColor:C_BLACK textFont:FONTSIZE16 textAlignment:NSTextAlignmentCenter superView:phoneNumberView];
     phoneNumberTextField = [[UITextField alloc] initWithFrame:CGRectMake(prePhoneNumberLabel.x + prePhoneNumberLabel.width, 0, MIDDLE_W - prePhoneNumberLabel.width, viewH)];
     phoneNumberTextField.borderStyle = UITextBorderStyleNone;
+    phoneNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
     phoneNumberTextField.font = FONTSIZE16;
     phoneNumberTextField.placeholder = @"手机号";
     [phoneNumberView addSubview:phoneNumberTextField];
@@ -94,6 +95,7 @@
     verifyCodeTextField = [[UITextField alloc] initWithFrame:CGRectMake(preverifyCodeView.x + preverifyCodeView.width, 0, MIDDLE_W - sendVerifyCodeBtnW - preverifyCodeView.width - 36, viewH)];
     verifyCodeTextField.font = FONTSIZE16;
     verifyCodeTextField.placeholder = @"验证码";
+    verifyCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
     verifyCodeTextField.borderStyle = UITextBorderStyleNone;
     [verifyCodeView addSubview:verifyCodeTextField];
     
@@ -131,7 +133,15 @@
 
 
 - (void)loginBtnDidClick{
+    if (![TGUtils isNumber:phoneNumberTextField.text]) {
+        [TGToast showWithText:@"手机号输入不正确"];
+        return;
+    }
     
+    if (![TGUtils isNumber:verifyCodeTextField.text]) {
+        [TGToast showWithText:@"验证码输入不正确"];
+        return;
+    }
     
     
     [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];

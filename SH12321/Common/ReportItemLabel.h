@@ -12,4 +12,6 @@
 
 + (ReportItemLabel *)initWithY:(CGFloat)y title:(NSString *)title superView:(UIView *)superView;
 
+- (void)addText:(NSString *)text;
+
 @end
