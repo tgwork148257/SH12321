@@ -88,4 +88,7 @@ typedef void (^InfoBlock) ();
                                 textFont:(UIFont *)font
                                textColor:(UIColor *)color;
 
+#pragma mark -- token
++ (NSString *)getServerToken;
++ (void)saveServerToken:(NSString *)token;
 @end

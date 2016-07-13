@@ -290,4 +290,16 @@
 }
 
 
+#pragma mark - server toekn 
++ (NSString *)getServerToken{
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:serverTokenKey];
+    return token;
+}
+
+
++ (void)saveServerToken:(NSDictionary *)tokenDic{
+    NSString *token = [tokenDic objectForKey:serverTokenKey];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:serverTokenKey];
+}
+
 @end

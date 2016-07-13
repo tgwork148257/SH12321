@@ -18,23 +18,18 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
-    
-//    NSDictionary *dict = @{@"format":@"json"};
+
     
     // 网络访问是异步的,回调是主线程的,因此程序员不用管在主线程更新UI的事情
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject) {
-        
         if(success) {
             success(responseObject);
         }
-        
     }failure:^(AFHTTPRequestOperation*operation,NSError*error){
         NSLog(@"%@",error);
-        
         if(fail){
             fail();
         }
-        
     }];
 }
 
@@ -85,8 +80,6 @@
         NSLog(@"Error: %@", error);
     }];
     
-    
-    
 //    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject){
 //        
 //        //        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
@@ -132,8 +125,8 @@
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
-#pragma mark -- 举报骚扰电话接口
-+ (void)getDeviceTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
+#pragma mark -- server token
++ (void)getServerTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_TOKEN];
     NSString *device_token = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSDictionary *parameters = @{@"app_version":@"1.0",

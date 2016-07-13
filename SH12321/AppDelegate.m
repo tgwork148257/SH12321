@@ -28,15 +28,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if (EMPTY_STRING([TGUtils getServerToken])) {
+        [TGRequest getServerTokenSuccess:^(id responseObject) {
+            [TGUtils saveServerToken:responseObject];
+        } fail:nil];
+    }
+   
     
-   [TGRequest TestAFN];
-    
-    [TGRequest getDeviceTokenSuccess:^(id responseObject) {
-        [TGToast showWithText:@"举报成功"];
-//        [self.navigationController popViewControllerAnimated:YES];
-    } fail:^{
-        [TGToast showWithText:@"举报失败，请重试"];
-    }];
+//    [TGRequest getServerTokenSuccess:^(id responseObject) {
+//        [TGToast showWithText:@"举报成功"];
+////        [self.navigationController popViewControllerAnimated:YES];
+//    } fail:^{
+//        [TGToast showWithText:@"举报失败，请重试"];
+//    }];
     
     [self addTabbarAndNavigationBar];
     return YES;

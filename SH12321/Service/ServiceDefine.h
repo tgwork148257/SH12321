@@ -9,6 +9,8 @@
 #ifndef ServiceDefine_h
 #define ServiceDefine_h
 
+static NSString *const serverTokenKey    = @"token";    //服务端返回token
+
 static NSString *const crankCallSendNumberKey    = @"crankCallSendNumberKey";    //骚扰电话Key
 static NSString *const crankCallAcceptNumberKey  = @"crankCallAcceptNumberKey";    //被骚扰电话Key
 static NSString *const crankCallTypeKey          = @"scamTypeKey";                  //骚扰类型Key
