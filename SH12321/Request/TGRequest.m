@@ -8,6 +8,7 @@
 
 #import "TGRequest.h"
 #import "AFNetworking.h"
+#import "ServiceConfig.h"
 
 @implementation TGRequest
 
@@ -18,10 +19,10 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
     
-    NSDictionary *dict = @{@"format":@"json"};
+//    NSDictionary *dict = @{@"format":@"json"};
     
     // 网络访问是异步的,回调是主线程的,因此程序员不用管在主线程更新UI的事情
-    [manager GET:url parameters:dict success:^(AFHTTPRequestOperation* operation,id responseObject) {
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject) {
         
         if(success) {
             success(responseObject);
@@ -74,32 +75,42 @@
     
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
-    // 设置返回格式
+//    // 设置返回格式
+//    
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject){
-        
-        //        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        
-        if(success){
-            success(responseObject);
-        }
-    }failure:^(AFHTTPRequestOperation* operation,NSError* error){
-        NSLog(@"%@",error);
-        
-        if(fail){
-            
-            fail();
-        }
+    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
     }];
+    
+    
+    
+//    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject){
+//        
+//        //        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+//        
+//        if(success){
+//            success(responseObject);
+//        }
+//    }failure:^(AFHTTPRequestOperation* operation,NSError* error){
+//        NSLog(@"%@",error);
+//        
+//        if(fail){
+//            
+//            fail();
+//        }
+//    }];
 }
 
 +(void)TestAFN{
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSURL *URL = [NSURL URLWithString:@"http://httpbin.org/get"];
+//    NSURL *URL = [NSURL URLWithString:@"http://httpbin.org/get"];
+    NSURL *URL = [NSURL URLWithString:@"http://www.66liuliang.com/12321/index.php/App/getToken"];
+
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
@@ -115,8 +126,19 @@
 
 
 /************************************接口************************************/
+
 #pragma mark -- 举报骚扰电话接口
 + (void)commitReportCrankCallWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
+
+#pragma mark -- 举报骚扰电话接口
++ (void)getDeviceTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_TOKEN];
+    NSString *device_token = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSDictionary *parameters = @{@"app_version":@"1.0",
+                                @"server_version":@"iOS",
+                                 @"appid":device_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 

@@ -14,6 +14,7 @@
 
 
 
+
 @interface AppDelegate ()
 
 @end
@@ -27,6 +28,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+   [TGRequest TestAFN];
+    
+    [TGRequest getDeviceTokenSuccess:^(id responseObject) {
+        [TGToast showWithText:@"举报成功"];
+//        [self.navigationController popViewControllerAnimated:YES];
+    } fail:^{
+        [TGToast showWithText:@"举报失败，请重试"];
+    }];
+    
     [self addTabbarAndNavigationBar];
     return YES;
 }

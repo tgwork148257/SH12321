@@ -12,11 +12,12 @@
 @interface TGRequest : NSObject
 
 
-+ (void)getDeviceToken;
+
 
 +(void)TestAFN;
 
-
+#pragma mark -- 获取服务端token
++ (void)getDeviceTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 举报骚扰电话接口
 + (void)commitReportCrankCallWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail;

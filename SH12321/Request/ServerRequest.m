@@ -13,7 +13,6 @@
 #import "AFNetworking.h"
 
 
-
 // 获取文章列表
 #define IOS_CLIENT_KEY @"5469a1629bbe4"
 #define IOS_MD5_SECRET @"7aceb00416a6047810e63b7c7b1eafc9"
@@ -153,12 +152,12 @@
 //}
 //
 //
-//#pragma mark  -- 获取服务端token
-///*
-// device_token	设备唯一标识	  Str	客户端手机的唯一标识	不可为空        214f we2e1
-// device_os      客户端系统版本	  Str	客户端手机的系统版本	不可为空        8.4.1
-// app_version	App版本号	      Str	客户端的版本          不可为空        1.1.0
-// */
+#pragma mark  -- 获取服务端token
+/*
+ device_token	设备唯一标识	  Str	客户端手机的唯一标识	不可为空        214f we2e1
+ device_os      客户端系统版本	  Str	客户端手机的系统版本	不可为空        8.4.1
+ app_version	App版本号	      Str	客户端的版本          不可为空        1.1.0
+ */
 //+(void)getInstallDeviceToken {
 //    NSString *device_token = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
 //    NSString *device_os = [[UIDevice currentDevice] systemVersion];
@@ -166,9 +165,10 @@
 //    NSString *currentVersion = [infoDic objectForKey:@"CFBundleShortVersionString"];
 //    NSString *app_version = currentVersion;
 //    
-//    NSString *str = MM_COMMUNITY_APP_API;
-//    NSString *urlStr = [NSString stringWithFormat:@"%@%@",str,PORT_DEVICE_CLIENT_INSTALL_TOKEN];
-//    
+////    NSString *str = MM_COMMUNITY_APP_API;
+////    NSString *urlStr = [NSString stringWithFormat:@"%@%@",str,PORT_DEVICE_CLIENT_INSTALL_TOKEN];
+//    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_TOKEN];
+//
 //    // 当前时间戳
 //    long nowTime = time(NULL);
 //    
@@ -179,7 +179,7 @@
 //    [dic setObject:app_version forKey:@"app_version"];
 //    [dic setObject:[NSString stringWithFormat:@"%ld", nowTime] forKey:@"time"];
 //    
-//    NSString *sign = [self createMd5Sign:dic];
+////    NSString *sign = [self createMd5Sign:dic];
 //    
 //
 //    
@@ -190,8 +190,8 @@
 //    [request setPostValue:device_token  forKey:@"device_token"];
 //    [request setPostValue:device_os     forKey:@"device_os"];
 //    [request setPostValue:[NSNumber numberWithLong:nowTime]     forKey:@"time"];
-//    [request setPostValue:sign          forKey:@"sign"] ;
-//    [request addRequestHeader:HTTP_VERSION_KEY value:HTTP_VERSION_VALUE];
+////    [request setPostValue:sign          forKey:@"sign"] ;
+////    [request addRequestHeader:HTTP_VERSION_KEY value:HTTP_VERSION_VALUE];
 //    [request startSynchronous];
 //    [request requestFinished];
 //    
@@ -206,7 +206,7 @@
 //            NSDictionary *dic = [dictionary objectForKey:@"data"];
 //            NSString *token = [dic objectForKey:@"token"];
 //            NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-//            [user setObject:token forKey:EQUIPMENT_TOKEN];
+////            [user setObject:token forKey:EQUIPMENT_TOKEN];
 //        }
 //    }else{
 //        NSLog(@"获取服务端token失败");
