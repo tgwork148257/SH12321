@@ -49,6 +49,7 @@
     TGView *verifyCodeLine;
     
     TGButton *loginBtn;
+    NSString *verifyCode;
     
     NSTimer *timer;
     NSInteger timeUpdate;
@@ -113,8 +114,20 @@
 }
 
 - (void)sendVerifyCodeBtnDidClick{
+    if (![TGUtils isNumber:phoneNumberTextField.text]) {
+        [TGToast showWithText:@"手机号输入不正确"];
+        return;
+    }
+    
     sendVerifyCodeBtn.userInteractionEnabled = NO;
     timer =  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    
+    [TGRequest getVerificationCodeWithNumber:phoneNumberTextField.text success:^(id responseObject) {
+        [TGToast showWithText:@"验证码已发送，请查收"];
+        verifyCode = [responseObject objectForKey:phoneVerificationCodeKey];
+    } fail:^{
+        [TGToast showWithText:@"发送验证码失败，请查收"];
+    }];
 }
 
 - (void)updateTimer{
@@ -133,18 +146,18 @@
 
 
 - (void)loginBtnDidClick{
-    if (![TGUtils isNumber:phoneNumberTextField.text]) {
-        [TGToast showWithText:@"手机号输入不正确"];
-        return;
-    }
-    
-    if (![TGUtils isNumber:verifyCodeTextField.text]) {
+    if (![verifyCode isEqualToString:verifyCodeTextField.text] ) {
         [TGToast showWithText:@"验证码输入不正确"];
         return;
+    }else{
+        [TGRequest getUserTokenWithNumber:phoneNumberTextField.text code:verifyCode success:^(id responseObject) {
+            [TGToast showWithText:@"登录成功"];
+            [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
+            [TGUtils saveServerToken:responseObject];
+        } fail:^{
+            [TGToast showWithText:@"登录失败，请重试"];
+        }];
     }
-    
-    
-    [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
 }
 
 @end

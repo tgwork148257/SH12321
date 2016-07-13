@@ -140,7 +140,7 @@
         [TGToast showWithText:@"请选择时间"];
     }
     
-    model.reportFakeBasicStationTypeStr = [reportFakeBasicStationView getSelectTypeStr];
+    model.reportFakeBasicStationTypeStr = [reportFakeBasicStationView getSelectStr];
     model.reportTime = [selectTimeItemView itemStr];
     model.reportAdress = [areaStr stringByAppendingString:detailAdressTextView.text];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

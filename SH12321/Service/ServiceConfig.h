@@ -17,6 +17,10 @@ static NSString * const APP_API_BASIC_URL_TEST = @"http://www.66liuliang.com/123
 
 static NSString * const GET_TOKEN = @"App/getToken";
 
+static NSString * const GET_CODE = @"App/getCode";
+
+static NSString * const GET_USER_TOKEN = @"App/getUserToken";
+
 static NSString * const COMMIT_REPORT_CRANK_CALL = @"http://api.jason.orz.meimi.me/";
 
 static NSString * const COMMIT_REPORT_SCRAM_CALL = @"http://api.jason.orz.meimi.me/";

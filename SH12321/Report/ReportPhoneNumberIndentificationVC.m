@@ -225,7 +225,7 @@
 
 #pragma mark - select illegal reason
 - (void)selectIllegalReason{
-    if (EMPTY_STRING([reportStoreTypeView getSelectTypeStr])) {
+    if (EMPTY_STRING([reportStoreTypeView getSelectStr])) {
         [TGToast showWithText:@"请先选择举报类型"];
         return;
     }

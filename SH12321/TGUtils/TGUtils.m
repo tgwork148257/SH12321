@@ -302,4 +302,20 @@
     [[NSUserDefaults standardUserDefaults] setObject:token forKey:serverTokenKey];
 }
 
+#pragma mark - user toekn
++ (NSString *)getUserToken{
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:userTokenKey];
+    return token;
+}
+
+
++ (void)saveUserToken:(NSDictionary *)tokenDic{
+    NSString *token = [tokenDic objectForKey:userTokenKey];
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:userTokenKey];
+}
+
++ (BOOL)isUserLogin{
+    return !EMPTY_STRING([TGUtils getUserToken]);
+}
+
 @end

@@ -50,9 +50,7 @@
     TGButton *firstPageBtn;
     TGButton *secondPageBtn;
     
-    NSArray *labelArr;
-    
-    
+    NSArray *labelArr;  
 }
 
 - (void)leftBtnDidClick{
@@ -69,7 +67,7 @@
 - (void)viewDidLoad {
     self.navigationTitle = @"选择举报类别";
     [super viewDidLoad];
-//    self.leftBtn.hidden = YES;
+    self.leftBtn.hidden = YES;
     
     labelArr = @[@"不良短信",@"诈骗电话",@"骚扰电话",@"不良网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"手机实名制",@"个人信息泄露",@"不良舆情",@"知识产权侵权",@"其他举报"];
     [self addViews];

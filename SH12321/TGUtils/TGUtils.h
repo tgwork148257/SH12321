@@ -91,4 +91,10 @@ typedef void (^InfoBlock) ();
 #pragma mark -- token
 + (NSString *)getServerToken;
 + (void)saveServerToken:(NSString *)token;
+
+#pragma mark - user toekn
++ (NSString *)getUserToken;
++ (void)saveUserToken:(NSDictionary *)tokenDic;
+
++ (BOOL)isUserLogin;
 @end

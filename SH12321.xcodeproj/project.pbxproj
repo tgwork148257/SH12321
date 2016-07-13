@@ -83,8 +83,6 @@
 		65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBC1D07E60E008C7763 /* Assets.xcassets */; };
 		65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CBBE1D07E60E008C7763 /* LaunchScreen.storyboard */; };
 		65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC831D0CFE7F008C7763 /* MyMD5.m */; };
-		65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */; };
-		65F8CC901D0CFEE7008C7763 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CC8D1D0CFEE7008C7763 /* ServerRequest.m */; };
 		65F8CD011D0D00FB008C7763 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CCE91D0D00FB008C7763 /* NSObject+SBJson.m */; };
 		65F8CD021D0D00FB008C7763 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CCEC1D0D00FB008C7763 /* SBJsonParser.m */; };
 		65F8CD031D0D00FB008C7763 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CCEE1D0D00FB008C7763 /* SBJsonStreamParser.m */; };
@@ -262,11 +260,6 @@
 		65F8CBC11D07E60E008C7763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65F8CC821D0CFE7F008C7763 /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
 		65F8CC831D0CFE7F008C7763 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
-		65F8CC891D0CFEE7008C7763 /* RequestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
-		65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequsetData.h; sourceTree = "<group>"; };
-		65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequsetData.m; sourceTree = "<group>"; };
-		65F8CC8C1D0CFEE7008C7763 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
-		65F8CC8D1D0CFEE7008C7763 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		65F8CC921D0CFF98008C7763 /* SH12321PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SH12321PrefixHeader.pch; sourceTree = "<group>"; };
 		65F8CCE81D0D00FB008C7763 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		65F8CCE91D0D00FB008C7763 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -537,11 +530,6 @@
 		65F8CC851D0CFEBE008C7763 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				65F8CC891D0CFEE7008C7763 /* RequestUrl.h */,
-				65F8CC8A1D0CFEE7008C7763 /* RequsetData.h */,
-				65F8CC8B1D0CFEE7008C7763 /* RequsetData.m */,
-				65F8CC8C1D0CFEE7008C7763 /* ServerRequest.h */,
-				65F8CC8D1D0CFEE7008C7763 /* ServerRequest.m */,
 				65F8CD8C1D0E5257008C7763 /* TGRequest.h */,
 				65F8CD8D1D0E5257008C7763 /* TGRequest.m */,
 			);
@@ -914,7 +902,6 @@
 				65F8CD871D0D34D8008C7763 /* MeHomeVC.m in Sources */,
 				65F8CD221D0D0DCE008C7763 /* AFHTTPRequestOperation.m in Sources */,
 				65F8CD561D0D33C8008C7763 /* UIView+Extension.m in Sources */,
-				65F8CC901D0CFEE7008C7763 /* ServerRequest.m in Sources */,
 				657048181D17C8D300D98E92 /* SDWebImageManager.m in Sources */,
 				65F8CD7C1D0D34A4008C7763 /* NewsDetailsVC.m in Sources */,
 				65F8CD061D0D00FB008C7763 /* SBJsonStreamParserState.m in Sources */,
@@ -939,7 +926,6 @@
 				65F8CD551D0D33C8008C7763 /* TGViewController.m in Sources */,
 				65DDC07A1D19162400F02FA3 /* ReportInfoRevealVC.m in Sources */,
 				65DDC0861D19278400F02FA3 /* ReportItemTextField.m in Sources */,
-				65F8CC8F1D0CFEE7008C7763 /* RequsetData.m in Sources */,
 				6570481E1D17C8D300D98E92 /* UIImageView+HighlightedWebCache.m in Sources */,
 				65DDC08F1D19335800F02FA3 /* SHStreetsListVC.m in Sources */,
 				65F8CD241D0D0DCE008C7763 /* AFHTTPSessionManager.m in Sources */,

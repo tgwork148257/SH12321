@@ -85,7 +85,7 @@
     reportHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[ReportListViewController alloc] init]];
     newsHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[NewsHomeVC alloc] init]];
     meHomeNavC = [[UINavigationController alloc] initWithRootViewController:[[MeHomeVC alloc] init]];
-    if (1/*[MMCommonManager isUserLogin] == NO*/) {
+    if (![TGUtils isUserLogin]) {
         LoginVC *loginVC = [[LoginVC alloc] init];
 //        loginVC.tabBarItem.image=[[UIImage imageNamed:@"tabbar_report_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //        loginVC.tabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_report_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

@@ -24,7 +24,7 @@
 
 - (NSInteger)getSelectIndex;
 
-- (NSString *)getSelectTypeStr;
+- (NSString *)getSelectStr;
 
 
 @end

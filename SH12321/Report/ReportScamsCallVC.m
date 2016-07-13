@@ -140,7 +140,7 @@
         return;
     }
     
-    if (EMPTY_STRING([reportTimeLengthView getSelectTypeStr])) {
+    if (EMPTY_STRING([reportTimeLengthView getSelectStr])) {
         [TGToast showWithText:@"请填写时长"];
         return;
     }

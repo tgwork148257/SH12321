@@ -119,21 +119,41 @@
 
 
 /************************************接口************************************/
+#pragma mark -- server token
++ (void)getServerTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_TOKEN];
+    NSString *device_token = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSDictionary *parameters = @{@"app_version":@"1.0",
+                                 @"server_version":@"iOS",
+                                 @"appid":device_token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
+
+#pragma mark -- 获取手机验证码
++ (void)getVerificationCodeWithNumber:(NSString *)phoneNumber success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_CODE];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"mobile":phoneNumber,
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
+
+#pragma mark -- 获取用户token
++ (void)getUserTokenWithNumber:(NSString *)phoneNumber code:(NSString *)code success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_USER_TOKEN];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"mobile":phoneNumber,
+                                 @"code":code,
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
 #pragma mark -- 举报骚扰电话接口
 + (void)commitReportCrankCallWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail{
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
-#pragma mark -- server token
-+ (void)getServerTokenSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_TOKEN];
-    NSString *device_token = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    NSDictionary *parameters = @{@"app_version":@"1.0",
-                                @"server_version":@"iOS",
-                                 @"appid":device_token};
-    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
-}
+
 
 
 
