@@ -137,6 +137,7 @@
         return;
     }
     
+    model.reportType = ReportWIFI;
     model.reportName = reportWIFINameTextField.text;
     model.reportTime = [selectTimeItemView itemStr];
     model.reportAdress = [areaStr stringByAppendingString:detailAdressTextView.text];

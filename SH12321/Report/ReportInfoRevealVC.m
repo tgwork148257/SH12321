@@ -76,8 +76,7 @@
         return;
     }
     
-//    model.reportWebsiteURL = reportWIFINameTextField.text;
-    //    model.reportAcceptNumber = reportWebsiteTypeView.text;
+    model.reportType = ReportInfoReveal;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];

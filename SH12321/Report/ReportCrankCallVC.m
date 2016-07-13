@@ -190,6 +190,7 @@
         return;
     }
     
+    model.reportType = ReportCrankCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
     model.reportCrankCallTypeStr = [reportCrankTypeView getSelectStr];

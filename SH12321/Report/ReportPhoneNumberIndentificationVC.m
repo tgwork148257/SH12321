@@ -291,11 +291,12 @@
         return;
     }
     
-    model.reportStoreType = [reportStoreTypeView getSelectIndex];
+    model.reportType = ReportPhoneNumberIndentification;
+    model.reportStoreTypeStr = [reportStoreTypeView getSelectStr];
     model.reportName = reportStoreNameTextField.text;
 //    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
 //    model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];
-    model.reportTimeLength = [reportTimeLengthView getSelectIndex];
+    model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

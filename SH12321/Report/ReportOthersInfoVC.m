@@ -75,6 +75,7 @@
         return;
     }
     
+    model.reportType = ReportOthersVC;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];

@@ -25,8 +25,6 @@
 
 @property (nonatomic, copy) NSString *reportName;           //举报名称 (App, WIFI, 伪基站)
 
-@property (nonatomic, assign) NSInteger reportTimeLength;     //举报时长索引
-
 @property (nonatomic, copy) NSString *reportTimeLengthStr;     //举报时长字符串
 
 
@@ -34,42 +32,23 @@
 
 @property (nonatomic, copy) NSString *reportWebsiteTypeStr;         //举报网站类型字符串
 
-@property (nonatomic, assign) NSInteger reportWebsiteType;         //举报网站类型
-
 
 @property (nonatomic, copy) NSString *reportCrankCallTypeStr;     //举报骚扰电话类型字符串
 
 @property (nonatomic, copy) NSString *reportCrankCallStatusStr;    //举报骚扰电话形式字符串
-
-@property (nonatomic, assign) NSInteger reportCrankCallType;     //举报骚扰电话类型索引
-
-@property (nonatomic, assign) NSInteger reportCrankCallStatus;    //举报骚扰电话形式索引
 
 
 @property (nonatomic, copy) NSString *reportScamCallTypeStr;     //举报诈骗电话类型字符串
 
 @property (nonatomic, copy) NSString *reportScamCallStatusStr;    //举报诈骗电话形式字符串
 
-@property (nonatomic, assign) NSInteger reportScamCallType;     //举报诈骗电话类型索引
-
-@property (nonatomic, assign) NSInteger reportScamCallStatus;    //举报诈骗电话形式索引
-
 
 @property (nonatomic, copy) NSString *reportFakeBasicStationTypeStr;           //举报伪基站类型字符串
-
-@property (nonatomic, assign) NSInteger reportFakeBasicStationType;           //举报伪基站类型索引
-
 
 
 @property (nonatomic, copy) NSString *reportStoreTypeStr;           //举报实体店或者网店字符串
 
-@property (nonatomic, assign) NSInteger reportStoreType;           //举报实体店或者网店索引
-
-@property (nonatomic, assign) NSInteger reportReasonType;         //违规原因类型
-
 @property (nonatomic, copy) NSString *reportReasonTypeStr;         //违规原因类型字符串
-
-@property (nonatomic, assign) NSInteger reportOperatorsType;     //运营商类型
 
 @property (nonatomic, copy) NSString *reportOperatorsTypeStr;     //运营商类型字符串
 

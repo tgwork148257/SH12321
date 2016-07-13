@@ -21,19 +21,35 @@ static NSString * const GET_CODE = @"App/getCode";
 
 static NSString * const GET_USER_TOKEN = @"App/getUserToken";
 
-static NSString * const COMMIT_REPORT_CRANK_CALL = @"http://api.jason.orz.meimi.me/";
 
-static NSString * const COMMIT_REPORT_SCRAM_CALL = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_CRANK_CALL = @"App/harassMobile";
 
-static NSString * const COMMIT_REPORT_MESSAGE = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_SCRAM_CALL = @"App/cheatMobile";
 
-static NSString * const COMMIT_REPORT_WEBSITE = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_MESSAGE = @"App/reportMessage";
 
-static NSString * const COMMIT_REPORT_WIFI = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_WEBSITE = @"App/reportWebsite";
 
-static NSString * const COMMIT_REPORT_APP = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_WIFI = @"App/reportWifi";
 
-static NSString * const COMMIT_REPORT_FAKE_BASIC_STATION = @"http://api.jason.orz.meimi.me/";
+static NSString * const COMMIT_REPORT_EMAIL = @"App/";
+
+static NSString * const COMMIT_REPORT_APP = @"App/reportApp";
+
+static NSString * const COMMIT_REPORT_FAKE_BASIC_STATION = @"App/reportBaseStation";
+
+static NSString * const COMMIT_REPORT_PHONE_NUMBER_IDENTIFICATION = @"App/reportRealName";
+
+static NSString * const COMMIT_REPORT_INFO_REVEAL = @"App/messageOut";
+
+static NSString * const COMMIT_REPORT_BAD_NEWS = @"App/reportOpinion";
+
+static NSString * const COMMIT_REPORT_FRIGMENT = @"App/reportIPR";
+
+static NSString * const COMMIT_REPORT_OTHERS = @"App/reportOthers";
+
+
+
 
 
 #endif /* ServiceConfig_h */

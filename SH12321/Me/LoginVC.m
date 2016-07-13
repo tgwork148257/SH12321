@@ -153,7 +153,7 @@
         [TGRequest getUserTokenWithNumber:phoneNumberTextField.text code:verifyCode success:^(id responseObject) {
             [TGToast showWithText:@"登录成功"];
             [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
-            [TGUtils saveServerToken:responseObject];
+            [TGUtils saveUserToken:responseObject];
         } fail:^{
             [TGToast showWithText:@"登录失败，请重试"];
         }];

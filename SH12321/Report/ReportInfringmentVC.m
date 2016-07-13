@@ -71,10 +71,10 @@
 - (void)commitReport{
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请输入举报内容"];
+        [TGToast showWithText:@"请输入侵权内容"];
         return;
     }
-    
+    model.reportType = ReportInfringment;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];

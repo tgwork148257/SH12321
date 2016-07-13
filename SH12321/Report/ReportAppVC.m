@@ -91,6 +91,7 @@
         return;
     }
     
+    model.reportType = ReportApp;
     model.reportSendNumber = AppNameTextField.text;
     model.reportAcceptNumber = AppSourceTextField.text;
     model.reportContent = reportContentTextView.text;

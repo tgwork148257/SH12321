@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SH12321/Request/TGRequest.m"
-            timestampString = "490080474.786773"
+            filePath = "SH12321/Service/TGService.m"
+            timestampString = "490086524.244231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "+getVerificationCodeWithNumber:success:fail:"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-commitReportWithData:success:fail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SH12321/TGUtils/TGUtils.m"
+            timestampString = "490086226.981959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "+getUserToken"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

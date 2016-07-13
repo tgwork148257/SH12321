@@ -145,10 +145,11 @@
         return;
     }
     
+    model.reportType = ReportScamCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
-    model.reportScamCallType = [reportScamTypeView getSelectIndex];
-    model.reportTimeLength = [reportTimeLengthView getSelectIndex];
+    model.reportScamCallTypeStr = [reportScamTypeView getSelectStr];
+    model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

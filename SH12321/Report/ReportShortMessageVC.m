@@ -92,6 +92,7 @@
         return;
     }
     
+    model.reportType = ReportMessage;
     model.reportSendNumber = sendNumberTextField.text;
     model.reportAcceptNumber = acceptNumberTextField.text;
     model.reportContent = messageContentTextView.text;
