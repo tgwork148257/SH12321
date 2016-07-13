@@ -35,12 +35,12 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_CRANK_CALL];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportSendNumber forKey:crankCallSendNumberKey];
-            [dic setValue:model.reportAcceptNumber forKey:crankCallAcceptNumberKey];
-            [dic setValue:model.reportCrankCallTypeStr forKey:crankCallTypeKey];
+            [dic setValue:model.reportSendNumber forKey:sendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:acceptNumberKey];
+            [dic setValue:model.reportTypeStr forKey:typeKey];
             [dic setValue:model.reportCrankCallStatusStr forKey:crankCallStatusKey];
-            [dic setValue:model.reportTime forKey:crankCallTimeKey];
-            [dic setValue:model.reportTimeLengthStr forKey:crankCallLengthKey];
+            [dic setValue:model.reportTime forKey:callTimeKey];
+            [dic setValue:model.reportTimeLengthStr forKey:callLengthKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -51,11 +51,11 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_SCRAM_CALL];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportSendNumber forKey:scamCallSendNumberKey];
-            [dic setValue:model.reportAcceptNumber forKey:scamCallAcceptNumberKey];
-            [dic setValue:@(model.reportType) forKey:scamCallTypeKey];
-            [dic setValue:model.reportTime forKey:scamCallTimeKey];
-            [dic setValue:model.reportTimeLengthStr forKey:scamCallLengthKey];
+            [dic setValue:model.reportSendNumber forKey:sendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:acceptNumberKey];
+            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTime forKey:callTimeKey];
+            [dic setValue:model.reportTimeLengthStr forKey:callLengthKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -66,8 +66,8 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_MESSAGE];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportSendNumber forKey:messageSendNumberKey];
-            [dic setValue:model.reportAcceptNumber forKey:messageAcceptNumberKey];
+            [dic setValue:model.reportSendNumber forKey:sendNumberKey];
+            [dic setValue:model.reportAcceptNumber forKey:acceptNumberKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -80,7 +80,7 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_WEBSITE];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportWebsiteURL forKey:websiteURLKey];
-            [dic setValue:model.reportWebsiteTypeStr forKey:websiteTypeKey];
+            [dic setValue:model.reportTypeStr forKey:typeKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
 
@@ -92,8 +92,8 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_WIFI];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportName forKey:WIFINameKey];
-            [dic setValue:model.reportAdress forKey:WIFIAdressKey];
+            [dic setValue:model.reportName forKey:nameKey];
+            [dic setValue:model.reportAdress forKey:adressKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -107,7 +107,7 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_APP];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportName forKey:AppNameKey];
+            [dic setValue:model.reportName forKey:nameKey];
             [dic setValue:model.reportAppSource forKey:AppSourceKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
@@ -120,8 +120,8 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_FAKE_BASIC_STATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportFakeBasicStationTypeStr forKey:fakeBasicStationTypeKey];
-            [dic setValue:model.reportAdress forKey:fakeBasicStationAdressKey];
+            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportAdress forKey:adressKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -134,14 +134,14 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_PHONE_NUMBER_IDENTIFICATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportStoreTypeStr forKey:storeTypeNameKey];
-            [dic setValue:model.reportAdress forKey:storeAdressKey];
-            [dic setValue:model.reportName forKey:storeNameKey];
-            [dic setValue:model.reportNumber forKey:buyNumberKey];
+            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportAdress forKey:adressKey];
+            [dic setValue:model.reportName forKey:nameKey];
+            [dic setValue:model.reportBuyNumber forKey:buyNumberKey];
             [dic setValue:model.reportTime forKey:buyTimeKey];
             [dic setValue:model.reportOperatorsTypeStr forKey:operatorKey];
-//            [dic setValue:model.reportContent forKey:storeImagerKey];
-//            [dic setValue:model.reportContent forKey:userImagerKey];
+            [dic setValue:model.storeImageStr forKey:storeImagerKey];
+            [dic setValue:model.userImageStr forKey:userImagerKey];
             [dic setValue:model.reportReasonTypeStr forKey:reasonKey];
             [dic setValue:userToken forKey:userTokenKey];
             

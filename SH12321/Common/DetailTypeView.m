@@ -16,20 +16,19 @@
     DetailTypeView *view = [[DetailTypeView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, 100)];
     [superView addSubview:view];
     
-    ReportItemLabel *handleResultLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:view];
-
-    
-    TGView *handleResultContentView = [TGView initWithFrame:CGRectMake(0, handleResultLabel.y + handleResultLabel.height, DEVICE_W, 100) superView:view];
-    TGLabel *handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, handleResultContentView.height) text:reportData.handleResultStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
-    handleResultContentLabel.numberOfLines = 2;
-    
-    CGFloat itemY = handleResultContentView.y + handleResultContentView.height;
+//    ReportItemLabel *handleResultLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:view];
+//
+//    TGView *handleResultContentView = [TGView initWithFrame:CGRectMake(0, handleResultLabel.y + handleResultLabel.height, DEVICE_W, 100) superView:view];
+//    TGLabel *handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, handleResultContentView.height) text:reportData.handleResultStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
+//    handleResultContentLabel.numberOfLines = 2;
+//    CGFloat itemY = handleResultContentView.y + handleResultContentView.height;
+    CGFloat itemY = 0;
     switch (reportData.reportType) {
         case ReportCrankCall:
         {
             DetailItemView *sendNumberItemView = [DetailItemView initWithY:itemY title:@"骚扰电话号码" content:reportData.reportSendNumber superView:view];
             DetailItemView *acceptNumberItemView = [DetailItemView initWithY:sendNumberItemView.y + sendNumberItemView.height title:@"被骚扰电话号码" content:reportData.reportAcceptNumber superView:view];
-            DetailItemView *typeItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"骚扰类型" content:reportData.reportCrankCallTypeStr superView:view];
+            DetailItemView *typeItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"骚扰类型" content:reportData.reportTypeStr  superView:view];
             DetailItemView *statusItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"骚扰形式" content:reportData.reportCrankCallStatusStr superView:view];
             DetailItemView *lengthItemView = [DetailItemView initWithY:statusItemView.y + statusItemView.height title:@"通话时长" content:reportData.reportTimeLengthStr superView:view];
             DetailItemView *timeItemView = [DetailItemView initWithY:lengthItemView.y + lengthItemView.height title:@"来电时间" content:reportData.reportTime superView:view];
@@ -45,7 +44,7 @@
         {
             DetailItemView *sendNumberItemView = [DetailItemView initWithY:itemY title:@"诈骗电话号码" content:reportData.reportSendNumber superView:view];
             DetailItemView *acceptNumberItemView = [DetailItemView initWithY:sendNumberItemView.y + sendNumberItemView.height title:@"被诈骗电话号码" content:reportData.reportAcceptNumber superView:view];
-            DetailItemView *typeItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"诈骗类型" content:reportData.reportCrankCallTypeStr superView:view];
+            DetailItemView *typeItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"诈骗类型" content:reportData.reportTypeStr superView:view];
             DetailItemView *lengthItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"通话时长" content:reportData.reportTimeLengthStr superView:view];
             DetailItemView *timeItemView = [DetailItemView initWithY:lengthItemView.y + lengthItemView.height title:@"来电时间" content:reportData.reportTime superView:view];
             DetailItemView *contentItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"诈骗内容" content:reportData.reportContent superView:view];
@@ -69,7 +68,7 @@
         case ReportWebsite:
         {
             DetailItemView *adressItemView = [DetailItemView initWithY:itemY title:@"不良网站网址" content:reportData.reportWebsiteURL superView:view];
-            DetailItemView *acceptNumberItemView = [DetailItemView initWithY:adressItemView.y + adressItemView.height title:@"不良网站类型" content:reportData.reportWebsiteTypeStr superView:view];
+            DetailItemView *acceptNumberItemView = [DetailItemView initWithY:adressItemView.y + adressItemView.height title:@"不良网站类型" content:reportData.reportTypeStr superView:view];
             DetailItemView *contentItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"不良网站内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
@@ -90,7 +89,7 @@
             
         case ReportFakeBaseStation:
         {
-            DetailItemView *typeItemView = [DetailItemView initWithY:itemY title:@"伪基站类型" content:reportData.reportFakeBasicStationTypeStr superView:view];
+            DetailItemView *typeItemView = [DetailItemView initWithY:itemY title:@"伪基站类型" content:reportData.reportTypeStr superView:view];
             DetailItemView *adressItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"伪基站地址" content:reportData.reportAdress superView:view];
             DetailItemView *timeItemView = [DetailItemView initWithY:adressItemView.y + adressItemView.height title:@"接收时间" content:reportData.reportTime superView:view];
             DetailItemView *contentItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"伪基站描述" content:reportData.reportContent superView:view];
@@ -116,7 +115,7 @@
             DetailItemView *typeItemView = [DetailItemView initWithY:itemY title:@"举报类型" content:reportData.reportSendNumber superView:view];
             DetailItemView *reasonItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"违规原因" content:reportData.reportReasonTypeStr superView:view];
             DetailItemView *nameItemView = [DetailItemView initWithY:reasonItemView.y + reasonItemView.height title:@"店铺名称" content:reportData.reportName superView:view];
-            DetailItemView *phoneItemView = [DetailItemView initWithY:nameItemView.y + nameItemView.height title:@"手机号码" content:reportData.reportNumber superView:view];
+            DetailItemView *phoneItemView = [DetailItemView initWithY:nameItemView.y + nameItemView.height title:@"手机号码" content:reportData.reportBuyNumber superView:view];
             DetailItemView *timeItemView = [DetailItemView initWithY:phoneItemView.y + phoneItemView.height title:@"购卡时间" content:reportData.reportTime superView:view];
             DetailItemView *operatorItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"所属运营商" content:reportData.reportOperatorsTypeStr superView:view];
             

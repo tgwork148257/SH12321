@@ -13,12 +13,14 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic{
     if (self = [super initWithDictionary:dic]) {
-//        self.reportAcceptNumber = [TGJson strForKey:crankCallAcceptNumberKey];
-//        self.reportSendNumber = [TGJson strForKey:crankCallSendNumberKey];
-//        self.reportTime = [TGJson strForKey:crankCallTimeKey];
-//        self.reportTimeLengthStr = [TGJson strForKey:crankCallLengthKey];
-//        self.reportName = [TGJson strForKey:AppNameKey];
-//        
+        self.reportAcceptNumber = [TGJson JsonStr:[dic objectForKey:acceptNumberKey]];
+        self.reportSendNumber = [TGJson JsonStr:[dic objectForKey:sendNumberKey]];
+        self.reportTime = [TGJson JsonStr:[dic objectForKey:callTimeKey]];
+        self.reportTimeLengthStr = [TGJson JsonStr:[dic objectForKey:callLengthKey]];
+        self.reportName = [TGJson JsonStr:[dic objectForKey:nameKey]];
+        self.reportContent = [TGJson JsonStr:[dic objectForKey:contentKey]];
+        self.reportTypeStr = [TGJson JsonStr:[dic objectForKey:typeKey]];
+//
 //        
 //        self.reportName = [TGJson strForKey:AppNameKey];
 //        self.reportName = [TGJson strForKey:AppNameKey];

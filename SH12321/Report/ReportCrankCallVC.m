@@ -193,7 +193,7 @@
     model.reportType = ReportCrankCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
-    model.reportCrankCallTypeStr = [reportCrankTypeView getSelectStr];
+    model.reportTypeStr = [reportCrankTypeView getSelectStr];
     model.reportCrankCallStatusStr = [reportCrankFormView getSelectStr];
     model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
     model.reportTime = [selectTimeItemView itemStr];

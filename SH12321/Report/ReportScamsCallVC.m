@@ -148,7 +148,7 @@
     model.reportType = ReportScamCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
-    model.reportScamCallTypeStr = [reportScamTypeView getSelectStr];
+    model.reportTypeStr = [reportScamTypeView getSelectStr];
     model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;

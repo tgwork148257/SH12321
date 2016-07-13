@@ -13,12 +13,12 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dic{
     if (self = [super init]) {
         if (!EMPTY_DIC(dic)) {
-            self.newsID = [TGJson JsonStr:[dic objectForKey:@"club_id"]];
-            self.newsTime = [TGJson JsonStr:[dic objectForKey:@"club_status"]];
-            self.newsTitle = [TGJson JsonStr:[dic objectForKey:@"join_status"]];
-            self.newsSource = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
-            self.newsContent = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
-            self.newsPicUrlStr = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
+            self.newsID = [TGJson JsonStr:[dic objectForKey:@"news_id"]];
+            self.newsTime = [TGJson JsonStr:[dic objectForKey:@"add_time"]];
+            self.newsTitle = [TGJson JsonStr:[dic objectForKey:@"title"]];
+            self.newsSource = [TGJson JsonStr:[dic objectForKey:@"source"]];
+//            self.newsContent = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
+            self.newsPicUrlStr = [TGJson JsonStr:[dic objectForKey:@"images"]];
         }
     }
     return self;

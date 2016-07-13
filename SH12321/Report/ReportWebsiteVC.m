@@ -96,7 +96,7 @@
     
     model.reportType = ReportWebsite;
     model.reportWebsiteURL = websiteURLTextField.text;
-    model.reportWebsiteTypeStr = [reportWebsiteTypeView getSelectStr];
+    model.reportTypeStr = [reportWebsiteTypeView getSelectStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];

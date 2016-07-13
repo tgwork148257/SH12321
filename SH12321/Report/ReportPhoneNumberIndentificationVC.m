@@ -292,7 +292,7 @@
     }
     
     model.reportType = ReportPhoneNumberIndentification;
-    model.reportStoreTypeStr = [reportStoreTypeView getSelectStr];
+    model.reportTypeStr = [reportStoreTypeView getSelectStr];
     model.reportName = reportStoreNameTextField.text;
 //    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
 //    model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];

@@ -47,7 +47,7 @@
     
     handleResultTitleLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:reportView];
     
-    CGRect contentRect = [TGManager rectWithString:self.data.handleResultStr attrDic:@{NSFontAttributeName: F_TEXT} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
+    CGRect contentRect = [TGManager rectWithString:self.data.handleResultStr attrDic:@{NSFontAttributeName:F_TEXT} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
     
     CGRect handleResultContentRect = CGRectMake(0, handleResultTitleLabel.y + handleResultTitleLabel.height, DEVICE_W, contentRect.size.height);
     
@@ -56,7 +56,7 @@
     
     detailTypeView = [DetailTypeView initWithY:handleResultContentView.y + handleResultContentView.height data:self.data superView:reportView];
     
-    resultLabel = [ReportItemLabel initWithY:0 title:@"伪基站类型" superView:reportView];
+    resultLabel = [ReportItemLabel initWithY:0 title:@"是否已解决您的问题" superView:reportView];
     resultTypeView = [SelectTypeView initWithY:resultLabel.y + resultLabel.height superView:reportView];
     [resultTypeView addTitles:@[@"已解决", @"未解决"]];
     
