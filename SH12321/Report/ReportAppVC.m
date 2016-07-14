@@ -96,8 +96,12 @@
     model.reportAcceptNumber = AppSourceTextField.text;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
-        [TGToast showWithText:@"举报成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            [TGToast showWithText:@"举报成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [TGToast showWithText:@"举报失败"];
+        }
     } fail:^{
         [TGToast showWithText:@"举报失败，请重试"];
     }];
