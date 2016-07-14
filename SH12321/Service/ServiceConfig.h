@@ -21,6 +21,8 @@ static NSString * const GET_CODE = @"App/getCode";
 
 static NSString * const GET_USER_TOKEN = @"App/getUserToken";
 
+static NSString * const GET_UPLOAD_PIC = @"App/uploadPic";
+
 
 static NSString * const COMMIT_REPORT_CRANK_CALL = @"App/harassMobile";
 

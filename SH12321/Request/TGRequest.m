@@ -210,7 +210,15 @@
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
-
+#pragma mark -- 上传图片接口
++ (void)uploadImageWithImage:(UIImage *)image success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *token = [TGUtils getServerToken];
+    NSString *imageStr = [TGUtils imageToBase64Str:image];
+    NSDictionary *parameters = @{@"file":imageStr,
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
 
 

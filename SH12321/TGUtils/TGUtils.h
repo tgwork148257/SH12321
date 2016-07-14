@@ -102,4 +102,18 @@ typedef void (^InfoBlock) ();
 + (BOOL)isUserLogin;
 
 
+#pragma mark -图片转字符串
++ (NSString *)imageToBase64Str:(UIImage *) image;
+
+#pragma mark - 字符串转图片
++ (UIImage *)base64StrToUIImage:(NSString *)encodedImageStr;
+
+
+
+
+
+
+
+
+
 @end

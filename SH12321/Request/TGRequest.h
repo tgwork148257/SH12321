@@ -59,5 +59,7 @@
 #pragma mark -- 举报其他制接口
 + (void)commitReportOthersWithUrlStr:(NSString *)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
+#pragma mark -- 上传图片接口
++ (void)uploadImageWithImage:(UIImage *)image success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 @end

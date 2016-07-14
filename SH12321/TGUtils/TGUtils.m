@@ -318,4 +318,32 @@
     return !EMPTY_STRING([TGUtils getUserToken]);
 }
 
+#pragma mark -图片转字符串
++ (NSString *)imageToBase64Str:(UIImage *) image
+{
+    NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return encodedImageStr;
+}
+
+#pragma mark - 字符串转图片
++ (UIImage *)base64StrToUIImage:(NSString *)encodedImageStr
+{
+    NSData *decodedImageData = [[NSData alloc] initWithBase64Encoding:encodedImageStr];
+    UIImage *decodedImage = [UIImage imageWithData:decodedImageData];
+    return decodedImage;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
