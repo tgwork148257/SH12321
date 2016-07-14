@@ -1,15 +1,15 @@
 //
-//  NewsDetailsVC.h
+//  NewsDetailCell.h
 //  SH12321
 //
-//  Created by Tommy on 6/12/16.
+//  Created by Tommy on 7/14/16.
 //  Copyright © 2016 12321. All rights reserved.
 //
 
-#import "TGViewController.h"
+#import "TGTableViewCell.h"
 #import "NewsDetailCellModel.h"
 
-@interface NewsDetailsVC : TGViewController
+@interface NewsDetailCell : TGTableViewCell
 
 @property (nonatomic, strong) NewsDetailCellModel *model;
 

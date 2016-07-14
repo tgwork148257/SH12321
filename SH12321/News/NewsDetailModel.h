@@ -22,4 +22,5 @@
 
 @property (nonatomic, copy) NSString *newsContent;
 
+
 @end
