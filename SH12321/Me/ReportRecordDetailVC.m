@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addSubviews];
+   
 }
 
 - (void)addSubviews{
@@ -71,11 +71,18 @@
 }
 
 - (void)commitReport{
-    [[TGService sharedInstance] commitReportWithData:self.data success:^(id responseObject) {
-        [TGToast showWithText:@"举报成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+    [TGRequest getReportDetailWithId:self.data.reportID success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSDictionary *dic = [responseObject objectForKey:@"code"];
+            self.data = [[ReportDataModel alloc] initWithDictionary:dic];
+            dispatch_async(main_queue, ^{
+                [self addSubviews];
+            });
+        }else{
+            [TGToast showWithText:@"获取举报详情失败，请重试"];
+        }
     } fail:^{
-        [TGToast showWithText:@"举报失败，请重试"];
+        [TGToast showWithText:@"获取举报详情失败，请重试"];
     }];
 }
 

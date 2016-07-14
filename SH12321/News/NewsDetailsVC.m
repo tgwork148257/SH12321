@@ -18,6 +18,11 @@
     NSMutableArray *tableviewData;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getNewsList];
+}
+
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻详情";
     [super viewDidLoad];
@@ -80,10 +85,8 @@
     }
 }
 
-
-
 - (void)getNewsList{
-    [TGRequest getNewsListWithPage:page  success:^(id responseObject) {
+    [TGRequest getNewsDetailWithId:self.detailModel.newsID  success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             NSDictionary *listDic = [responseObject objectForKey:@"code"];
             for (NSDictionary *dic in [listDic objectForKey:@"list"]) {

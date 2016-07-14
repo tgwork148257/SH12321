@@ -133,7 +133,6 @@
             dispatch_async(main_queue, ^{
                 [tableView.mj_footer endRefreshing];
             });
-
         }
     } fail:^{
         dispatch_async(main_queue, ^{
