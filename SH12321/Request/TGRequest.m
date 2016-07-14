@@ -220,8 +220,41 @@
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
+#pragma mark -- 获取举报列表接口
++ (void)getReportListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"page":@(page),
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
+#pragma mark -- 获取举报详情接口
++ (void)getReportDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"id":reportID,
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
+#pragma mark -- 获取新闻列表接口
++ (void)getNewsListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"page":@(page),
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
+
+#pragma mark -- 获取新闻详情接口
++ (void)getNewsDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *token = [TGUtils getServerToken];
+    NSDictionary *parameters = @{@"id":reportID,
+                                 @"token":token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
 
 

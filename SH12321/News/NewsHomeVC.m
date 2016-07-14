@@ -10,6 +10,7 @@
 #import "NewsDetailModel.h"
 #import "NewsDetailsVC.h"
 #import "NewsHomeCell.h"
+#import "MJRefresh.h"
 
 @interface NewsHomeVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -18,6 +19,7 @@
 @implementation NewsHomeVC{
     UITableView *tableview;
     NSMutableArray *tableviewData;
+    NSInteger page;
 }
 
 - (void)viewDidLoad {
@@ -25,6 +27,7 @@
     
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
+    page = 1;
     
     tableviewData = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; i++) {
@@ -44,6 +47,13 @@
     tableview.backgroundColor = C_WHITE;
     tableview.separatorStyle =  UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableview];
+    
+    //上拉刷新
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf getNewsList];
+    }];
 
 }
 
@@ -91,6 +101,27 @@
         vc.model = model;
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+- (void)getNewsList{
+    [TGRequest getNewsListWithPage:page  success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSDictionary *listDic = [responseObject objectForKey:@"code"];
+            for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
+                NewsDetailModel *model = [[NewsDetailModel alloc] initWithDictionary:dic];
+                [tableviewData addObject:model];
+            }
+            page ++;
+            dispatch_async(main_queue, ^{
+                [tableview.mj_header endRefreshing]; //没有更多数据
+                [tableview reloadData];
+            });
+        }
+    } fail:^{
+        dispatch_async(main_queue, ^{
+            [tableview.mj_header endRefreshing]; //没有更多数据
+        });
+    }];
 }
 
 

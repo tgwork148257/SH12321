@@ -8,6 +8,8 @@
 
 #import "ReportRecordListVC.h"
 #import "ReportRecordCell.h"
+#import "ReportRecordDetailVC.h"
+#import "MJRefresh.h"
 
 @interface ReportRecordListVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,12 +18,14 @@
 @implementation ReportRecordListVC{
     UITableView *tableView;
     NSMutableArray *cellDataArr;
+    NSInteger page;
 }
 
 - (void)viewDidLoad{
     self.navigationTitle = @"我";
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
+    page = 1;
     
     cellDataArr = [[NSMutableArray alloc] init];
     
@@ -37,6 +41,13 @@
     tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
+    
+    //上拉刷新
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf getReportList];
+    }];
     
     if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -96,14 +107,34 @@
 
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
-    //        PostDetialViewController *vc = [[PostDetialViewController alloc] init];
-    //        PostDetailModel *model = [cellDataArr objectAtIndex:indexPath.row];
-    //        vc.blogID = model.blog_id;
-    //        vc.indexRow = indexPath.row;
-    //        vc.postDetailBackDataDelegate = self;
-    //        [self.navigationController pushViewController:vc animated:YES];
-    //    }
+        if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
+            ReportRecordDetailVC *vc = [[ReportRecordDetailVC alloc] init];
+            ReportDataModel *model = [cellDataArr objectAtIndex:indexPath.row];
+            vc.data = model;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+}
+
+
+- (void)getReportList{
+    [TGRequest getReportListWithPage:page  success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSDictionary *listDic = [responseObject objectForKey:@"code"];
+            for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
+                ReportDataModel *model = [[ReportDataModel alloc] initWithDictionary:dic];
+                [cellDataArr addObject:model];
+            }
+            page ++;
+            dispatch_async(main_queue, ^{
+                [tableView.mj_header endRefreshing]; //没有更多数据
+                [tableView reloadData];
+            });
+        }
+    } fail:^{
+        dispatch_async(main_queue, ^{
+            [tableView.mj_header endRefreshing]; //没有更多数据
+        });
+    }];
 }
 
 @end

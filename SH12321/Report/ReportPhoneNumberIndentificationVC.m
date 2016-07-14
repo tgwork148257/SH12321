@@ -55,6 +55,9 @@
     
     ReportDataModel *model;
     
+    NSString *ownImageStr;
+    NSString *storeImageStr;
+    
     BOOL isClickStoreImageItemView;
 }
 
@@ -428,15 +431,27 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     if (isClickStoreImageItemView == YES) {
         [storeUploadImageItemView addImageView:image];
+        storeImageStr = [self upLoadImage:image];
     }else{
         [ownUploadImageItemView addImageView:image];
+        ownImageStr = [self upLoadImage:image];
     }
-//    [self uploadPicAndCreateCommunity];
     [picker dismissViewControllerAnimated:YES completion:^{}];
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
     }
 }
 
+
+- (NSString *)upLoadImage:(UIImage *)image{
+    __block NSString *imageStr = @"";
+    [TGRequest  uploadImageWithImage:image success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            imageStr = [[responseObject objectForKey:@"data"] objectForKey:@"file_path"];
+        }
+    } fail:nil];
+    
+    return imageStr;
+}
 
 @end
