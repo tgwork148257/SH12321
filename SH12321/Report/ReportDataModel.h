@@ -10,6 +10,8 @@
 
 @interface ReportDataModel : TGModel
 
+@property (nonatomic, copy) NSString *reportID;             //举报ID
+
 @property (nonatomic, copy) NSString *reportAcceptNumber;    //接收内容电话
 
 @property (nonatomic, copy) NSString *reportAdress;         //举报地址
@@ -50,6 +52,8 @@
 
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
+
+@property (nonatomic, copy) NSString *typeStr;              //举报类型Str
 
 @property (nonatomic, copy) NSString *handleResultStr;       //处理结果
 
