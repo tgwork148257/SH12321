@@ -86,14 +86,14 @@
         return;
     }
     
-    if (![TGUtils isNumber:AppSourceTextField.text]) {
+    if (EMPTY_STRING(AppNameTextField.text)) {
         [TGToast showWithText:@"请输入App来源"];
         return;
     }
     
     model.reportType = ReportApp;
-    model.reportSendNumber = AppNameTextField.text;
-    model.reportAcceptNumber = AppSourceTextField.text;
+    model.reportName = AppNameTextField.text;
+    model.reportAppSource = AppSourceTextField.text;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {

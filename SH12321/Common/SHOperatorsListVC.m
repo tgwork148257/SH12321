@@ -8,7 +8,7 @@
 
 #import "SHOperatorsListVC.h"
 
-#define cellH 64.0F
+#define cellH 48.0F
 
 @interface SHOperatorsListVC () <UITableViewDelegate, UITableViewDataSource>
 

@@ -247,7 +247,7 @@
 
 #pragma mark - select Operators
 - (void)selectOperatorsTap{
-    SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
+    SHOperatorsListVC *vc = [[SHOperatorsListVC alloc] init];
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -264,7 +264,7 @@
 }
 
 - (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
-    NSString *dateTimeStr = [[[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:@"-"] stringByAppendingString:time];
+    NSString *dateTimeStr = [NSString stringWithFormat:@"%@年%@月%@日: %@",yaer, month, day, time];
     [selectTimeItemView addItemStr:dateTimeStr];
 }
 

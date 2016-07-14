@@ -122,6 +122,7 @@
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportTypeStr forKey:typeKey];
             [dic setValue:model.reportAdress forKey:addressKey];
+            [dic setValue:model.reportTime forKey:callTimeKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
