@@ -119,7 +119,7 @@
     
     meHomeTabBarItem.image=[[UIImage imageNamed:@"tabbar_me_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     meHomeTabBarItem.selectedImage=[[UIImage imageNamed:@"tabbar_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    meHomeTabBarItem.title = @"我";
+    meHomeTabBarItem.title = @"我的";
 //    [meHomeTabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: C_LABEL} forState:UIControlStateNormal];
 //    [meHomeTabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: C_GREEN} forState:UIControlStateSelected];
     
