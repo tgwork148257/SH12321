@@ -18,13 +18,13 @@
 
 @property (nonatomic, weak) id<SelectTypeViewDelegate> delegate;
 
+@property (nonatomic, copy)NSString *typeTitle;
+
 + (SelectTypeView *)initWithY:(CGFloat)y superView:(UIView *)superView;
 
 - (void)addTitles:(NSArray *)titles;
 
-- (NSInteger)getSelectIndex;
-
-- (NSString *)getSelectStr;
+- (NSInteger)selectIndex;
 
 
 @end

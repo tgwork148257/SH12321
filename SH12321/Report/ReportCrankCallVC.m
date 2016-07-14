@@ -185,7 +185,7 @@
         return;
     }
     
-    if (EMPTY_STRING([reportTimeLengthView getSelectStr])) {
+    if (EMPTY_STRING(reportTimeLengthView.typeTitle)) {
         [TGToast showWithText:@"请填写时长"];
         return;
     }
@@ -193,9 +193,9 @@
     model.reportType = ReportCrankCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;
-    model.reportTypeStr = [reportCrankTypeView getSelectStr];
-    model.reportCrankCallStatusStr = [reportCrankFormView getSelectStr];
-    model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
+    model.reportTypeStr = reportCrankTypeView.typeTitle;
+    model.reportCrankCallStatusStr = reportCrankFormView.typeTitle;
+    model.reportTimeLengthStr = reportTimeLengthView.typeTitle;
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

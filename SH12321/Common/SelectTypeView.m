@@ -51,6 +51,7 @@
             btn.selected = YES;
             selectTitleIndex = btn.tag - btnTag;
             selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+            _typeTitle = selectTitleStr;
             if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
                 [self.delegate selectTypeStr:selectTitleStr];
             }
@@ -72,6 +73,7 @@
     
     selectTitleIndex = btn.tag - btnTag;
     selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+    _typeTitle = selectTitleStr;
     btn.selected = YES;
     
     if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
@@ -82,8 +84,5 @@
     return selectTitleIndex;
 }
 
-- (NSString *)getSelectTypeStr{
-    return selectTitleStr;
-}
 
 @end

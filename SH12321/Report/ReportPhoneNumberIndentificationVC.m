@@ -225,13 +225,13 @@
 
 #pragma mark - select illegal reason
 - (void)selectIllegalReason{
-    if (EMPTY_STRING([reportStoreTypeView getSelectStr])) {
+    if (EMPTY_STRING(reportStoreTypeView.typeTitle)) {
         [TGToast showWithText:@"请先选择举报类型"];
         return;
     }
     SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
     
-    if ([reportStoreTypeView getSelectIndex] == 0) {
+    if ([reportStoreTypeView selectIndex] == 0) {
         vc.tableviewData = entityStoreIllegalReasonArr;
     }else{
         vc.tableviewData = internetStoreIllegalReasonArr;
@@ -292,11 +292,11 @@
     }
     
     model.reportType = ReportPhoneNumberIndentification;
-    model.reportTypeStr = [reportStoreTypeView getSelectStr];
+    model.reportTypeStr = reportStoreTypeView.typeTitle;
     model.reportName = reportStoreNameTextField.text;
 //    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
 //    model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];
-    model.reportTimeLengthStr = [reportTimeLengthView getSelectStr];
+    model.reportTimeLengthStr = reportTimeLengthView.typeTitle;
     model.reportTime = [selectTimeItemView itemStr];
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

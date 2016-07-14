@@ -141,7 +141,7 @@
     }
     
     model.reportType = ReportFakeBaseStation;
-    model.reportTypeStr = [reportFakeBasicStationView getSelectStr];
+    model.reportTypeStr = reportFakeBasicStationView.typeTitle;
     model.reportTime = [selectTimeItemView itemStr];
     model.reportAdress = [areaStr stringByAppendingString:detailAdressTextView.text];
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {

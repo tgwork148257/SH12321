@@ -72,6 +72,9 @@ typedef void (^InfoBlock) ();
 #pragma mark - 是否是全数字
 + (BOOL)isNumber:(NSString *)str;
 
+//是否是电话号码
++ (BOOL)isPhoneNumber:(NSString *)str;
+
 //去掉字符串的空格
 + (NSString *)removeStrSpace:(NSString *)str;
 
@@ -97,4 +100,6 @@ typedef void (^InfoBlock) ();
 + (void)saveUserToken:(NSDictionary *)tokenDic;
 
 + (BOOL)isUserLogin;
+
+
 @end
