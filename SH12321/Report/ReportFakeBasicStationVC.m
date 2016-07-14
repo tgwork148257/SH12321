@@ -109,7 +109,7 @@
 }
 
 - (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
-    NSString *dateTimeStr = [[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:time];
+    NSString *dateTimeStr = [[[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:@"-"] stringByAppendingString:time];
     [selectTimeItemView addItemStr:dateTimeStr];
 }
 
