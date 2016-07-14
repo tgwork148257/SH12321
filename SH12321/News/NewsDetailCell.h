@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NewsDetailCellModel *model;
 
++ (CGFloat)cellHeightWithModel:(NewsDetailCellModel *)model;
+
 @end

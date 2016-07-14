@@ -8,9 +8,10 @@
 
 #import "TGViewController.h"
 #import "NewsDetailCellModel.h"
+#import "NewsDetailModel.h"
 
 @interface NewsDetailsVC : TGViewController
 
-@property (nonatomic, strong) NewsDetailCellModel *model;
+@property (nonatomic, strong) NewsDetailModel *detailModel;
 
 @end

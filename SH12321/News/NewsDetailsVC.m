@@ -7,17 +7,95 @@
 //
 
 #import "NewsDetailsVC.h"
+#import "NewsDetailCell.h"
 
-@interface NewsDetailsVC ()
+@interface NewsDetailsVC () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation NewsDetailsVC
+@implementation NewsDetailsVC{
+    UITableView *tableview;
+    NSMutableArray *tableviewData;
+}
 
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻详情";
     [super viewDidLoad];
+    self.leftBtn.hidden = YES;
     
+    tableviewData = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 10; i++) {
+        NewsDetailCellModel *model = [[NewsDetailCellModel alloc] init];
+        model.text = @"ccc";
+        model.type = @"1";
+        [tableviewData addObject:model];
+    }
+    [self addTableView];
+}
+
+
+#pragma mark -- 增加tableview
+- (void)addTableView{
+    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H) style:UITableViewStylePlain];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    tableview.backgroundColor = C_WHITE;
+    tableview.separatorStyle =  UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:tableview];
+}
+
+#pragma mark - cell 数量
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (!EMPTY_ARR(tableviewData)) {
+        return tableviewData.count;
+    }else{
+        return 0;
+    }
+}
+
+#pragma mark - 计算cell高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
+        NewsDetailCellModel *model = [tableviewData objectAtIndex:indexPath.row];
+        return [NewsDetailCell cellHeightWithModel:model];
+    }else{
+        return 0;
+    }
+}
+
+
+
+#pragma mark - build cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row ) {
+        static NSString *str = @"NewsDetailCell";
+        NewsDetailCell *cell = [[NewsDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NewsDetailCellModel *model = [tableviewData objectAtIndex:indexPath.row];
+        cell.model = model;
+        [cell buildCell];
+        return cell;
+    }else{
+        return nil;
+    }
+}
+
+
+
+- (void)getNewsList{
+    [TGRequest getNewsListWithPage:page  success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSDictionary *listDic = [responseObject objectForKey:@"code"];
+            for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
+                NewsDetailCellModel *model = [[NewsDetailCellModel alloc] initWithDictionary:dic];
+                [tableviewData addObject:model];
+            }
+        }else{
+            [TGToast showWithText:@"获取新闻详情失败，请重试"];
+        }
+    } fail:^{
+        [TGToast showWithText:@"获取新闻详情失败，请重试"];
+    }];
 }
 
 

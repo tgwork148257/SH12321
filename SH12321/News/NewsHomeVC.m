@@ -98,7 +98,7 @@
     if (!EMPTY_ARR(tableviewData) && tableviewData.count > indexPath.row) {
         NewsDetailsVC *vc = [[NewsDetailsVC alloc] init];
         NewsDetailModel *model = [tableviewData objectAtIndex:indexPath.row];
-        vc.model = model;
+        vc.detailModel = model;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
