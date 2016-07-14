@@ -113,13 +113,18 @@
             }
             page ++;
             dispatch_async(main_queue, ^{
-                [tableview.mj_header endRefreshing]; //没有更多数据
                 [tableview reloadData];
+                [tableview.mj_footer endRefreshing];
+            });
+        }else{
+            dispatch_async(main_queue, ^{
+                [tableview.mj_footer endRefreshing];
             });
         }
     } fail:^{
         dispatch_async(main_queue, ^{
-            [tableview.mj_header endRefreshing]; //没有更多数据
+            [tableview.mj_footer endRefreshing]; //没有更多数据
+
         });
     }];
 }
