@@ -22,7 +22,7 @@
 
 @property (nonatomic, copy) NSString *reportTypeStr;         //(诈骗电话类型，骚扰电话类型，伪基站类型，实名制实体店或者网店类型)
 
-@property (nonatomic, copy) NSString *reportName;           //举报名称 (App, WIFI, 伪基站,实体店或者网店名字)
+@property (nonatomic, copy) NSString *reportName;           //举报名称 (App, WIFI,实体店或者网店名字)
 
 @property (nonatomic, copy) NSString *reportContent;        //举报内容
 

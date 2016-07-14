@@ -46,7 +46,7 @@ static NSString * const COMMIT_REPORT_BAD_NEWS = @"App/reportOpinion";
 
 static NSString * const COMMIT_REPORT_FRIGMENT = @"App/reportIPR";
 
-static NSString * const COMMIT_REPORT_OTHERS = @"App/reportOthers";
+static NSString * const COMMIT_REPORT_OTHERS = @"App/reportOther";
 
 
 

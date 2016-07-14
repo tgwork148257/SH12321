@@ -17,7 +17,7 @@ static NSString *const phoneVerificationCodeKey     = @"code";          //手机
 
 static NSString *const sendNumberKey = @"report_mobile";    //发送骚扰电话， 诈骗电话 ，垃圾短信的号码Key
 static NSString *const acceptNumberKey = @"accept_mobile";    //接收骚扰电话， 诈骗电话 ，垃圾短信的号码Key
-static NSString *const adressKey = @"report_adress";        //实体店地址， 不良WIFI地址 ，伪基站地址的号码Key
+static NSString *const addressKey = @"report_address";        //实体店地址， 不良WIFI地址 ，伪基站地址的号码Key
 static NSString *const callLengthKey    = @"talk_time";        //骚扰电话, 诈骗电话时间长度Key
 static NSString *const callTimeKey      = @"call_time";        //骚扰电话, 诈骗电话时间Key
 static NSString *const nameKey          = @"name";        //举报名称 (App, WIFI, 伪基站,实体店或者网店名字) Key

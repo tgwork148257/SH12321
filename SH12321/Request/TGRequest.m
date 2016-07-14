@@ -19,10 +19,11 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
 
-    
+    NSLog(@"%@",parameters);
     // 网络访问是异步的,回调是主线程的,因此程序员不用管在主线程更新UI的事情
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject) {
         if(success) {
+            NSLog(@"%@",responseObject);
             success(responseObject);
         }
     }failure:^(AFHTTPRequestOperation*operation,NSError*error){

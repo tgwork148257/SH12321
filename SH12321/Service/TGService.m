@@ -93,8 +93,8 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_WIFI];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportName forKey:nameKey];
-            [dic setValue:model.reportAdress forKey:adressKey];
-            [dic setValue:model.reportContent forKey:contentKey];
+            [dic setValue:model.reportAdress forKey:addressKey];
+            [dic setValue:model.reportTime forKey:callTimeKey];
             [dic setValue:userToken forKey:userTokenKey];
             
             [TGRequest commitReportWifiWithUrlStr:urlStr parameters:dic success:success fail:fail];
@@ -121,7 +121,7 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_FAKE_BASIC_STATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportTypeStr forKey:typeKey];
-            [dic setValue:model.reportAdress forKey:adressKey];
+            [dic setValue:model.reportAdress forKey:addressKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
             
@@ -135,7 +135,7 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_PHONE_NUMBER_IDENTIFICATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportTypeStr forKey:typeKey];
-            [dic setValue:model.reportAdress forKey:adressKey];
+            [dic setValue:model.reportAdress forKey:addressKey];
             [dic setValue:model.reportName forKey:nameKey];
             [dic setValue:model.reportBuyNumber forKey:buyNumberKey];
             [dic setValue:model.reportTime forKey:buyTimeKey];

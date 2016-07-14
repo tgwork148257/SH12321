@@ -25,6 +25,9 @@
     
     SelectItemView *selectTimeItemView;
     
+    ReportItemLabel *reportContentLabel;
+    ReportItemTextView *reportContentTextView;
+    
     CommitButton *commitBtn;
     
     ReportDataModel *model;
@@ -73,7 +76,11 @@
     UITapGestureRecognizer *selectTimeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:selectTimeTap];
     
-    reportView.frame = CGRectMake(0, 0, DEVICE_W, selectTimeItemView.y + selectTimeItemView.height);
+    reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"伪基站描述" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入其他信息详情" superView:reportView];
+    reportContentTextView.delegate = self;
+    
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
     
     
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
@@ -144,6 +151,7 @@
     model.reportTypeStr = reportFakeBasicStationView.typeTitle;
     model.reportTime = [selectTimeItemView itemStr];
     model.reportAdress = [areaStr stringByAppendingString:detailAdressTextView.text];
+    model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
         [self.navigationController popViewControllerAnimated:YES];

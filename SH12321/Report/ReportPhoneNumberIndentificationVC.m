@@ -294,10 +294,12 @@
     model.reportType = ReportPhoneNumberIndentification;
     model.reportTypeStr = reportStoreTypeView.typeTitle;
     model.reportName = reportStoreNameTextField.text;
-//    model.reportCrankCallType = [reportCrankTypeView getSelectIndex];
-//    model.reportCrankCallStatus = [reportCrankFormView getSelectIndex];
-    model.reportTimeLengthStr = reportTimeLengthView.typeTitle;
-    model.reportTime = [selectTimeItemView itemStr];
+    model.buyTime = [selectTimeItemView itemStr];
+    model.reportBuyNumber = reportPhoneNumberTextField.text;
+    model.reportOperatorsTypeStr = [selectOperatorsItemView itemStr];
+    model.reportAdress = detailAdressTextView.text;
+    model.userImageStr = nil;
+    model.storeImageStr = nil;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         [TGToast showWithText:@"举报成功"];
