@@ -130,12 +130,11 @@
         reportTimeLengthLabel.hidden = YES;
         reportTimeLengthView.hidden = YES;
         
-        selectTimeItemView.hidden = YES;
-        
         reportContentLabel.hidden = YES;
         reportContentTextView.hidden = YES;
         
-        reportView.height = reportCrankFormView.y + reportCrankFormView.height;
+        selectTimeItemView.y = reportCrankFormView.y + reportCrankFormView.height;
+        reportView.height = selectTimeItemView.y + selectTimeItemView.height;
         
     }else{
         reportCrankTypeLabel.hidden = NO;
@@ -164,7 +163,6 @@
 }
 
 - (void)selectTimeWithYear:(NSString *)yaer month:(NSString *)month day:(NSString *)day time:(NSString *)time{
-//    NSString *dateTimeStr = [[[[yaer stringByAppendingString:month] stringByAppendingString:day] stringByAppendingString:@"-"] stringByAppendingString:time];
     NSString *dateTimeStr = [NSString stringWithFormat:@"%@年%@月%@日: %@",yaer, month, day, time];
     [selectTimeItemView addItemStr:dateTimeStr];
 }
@@ -186,8 +184,13 @@
         return;
     }
     
-    if (EMPTY_STRING(reportTimeLengthView.typeTitle)) {
+    if (EMPTY_STRING(reportTimeLengthView.typeTitle) && ![[reportCrankFormView typeTitle] isEqualToString:@"响一声就挂"]) {
         [TGToast showWithText:@"请填写时长"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportContentTextView.text) && ![[reportCrankFormView typeTitle] isEqualToString:@"响一声就挂"]) {
+        [TGToast showWithText:@"请填写内容"];
         return;
     }
     

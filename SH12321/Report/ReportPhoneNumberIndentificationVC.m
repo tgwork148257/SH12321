@@ -62,7 +62,7 @@
 }
 
 - (void)viewDidLoad {
-    self.navigationTitle = @"举报骚扰电话";
+    self.navigationTitle = @"手机实名制举报";
     [super viewDidLoad];
     
     self.view.backgroundColor = grayBgColor;
@@ -92,8 +92,8 @@
     UITapGestureRecognizer *selectIllegalReasonTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectIllegalReason)];
     [selectTimeItemView addGestureRecognizer:selectIllegalReasonTap];
     
-    reportStoreNameLabel = [ReportItemLabel initWithY:reportStoreTypeView.y + reportStoreTypeView.height title:@"网店或者实体店名称" superView:reportView];
-    reportStoreNameTextField = [ReportItemTextField initWithY:reportStoreNameLabel.y + reportStoreNameLabel.height placeholder:@"请填写网店或者实体店名称" superView:reportView];
+    reportStoreNameLabel = [ReportItemLabel initWithY:reportStoreTypeView.y + reportStoreTypeView.height title:@"网店名称" superView:reportView];
+    reportStoreNameTextField = [ReportItemTextField initWithY:reportStoreNameLabel.y + reportStoreNameLabel.height placeholder:@"请填写网店名称" superView:reportView];
     
     reportPhoneNumberLabel = [ReportItemLabel initWithY:reportStoreNameTextField.y + reportStoreNameTextField.height title:@"手机号码" superView:reportView];
     reportPhoneNumberTextField = [ReportItemTextField initWithY:reportPhoneNumberLabel.y + reportPhoneNumberLabel.height placeholder:@"请填写购买的手机号码" superView:reportView];
@@ -132,8 +132,8 @@
     [ownUploadImageItemView addGestureRecognizer:ownUploadImageItemViewTap];
     
     
-    reportContentLabel = [ReportItemLabel initWithY:ownUploadImageItemView.y + ownUploadImageItemView.height title:@"骚扰内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入骚扰内容" superView:reportView];
+    reportContentLabel = [ReportItemLabel initWithY:ownUploadImageItemView.y + ownUploadImageItemView.height title:@"具体内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入具体内容" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -169,31 +169,36 @@
 - (void)selectTypeStr:(NSString *)str{
     if ([str isEqualToString:[storeTypeArr objectAtIndex:0]]) {
         [reportStoreNameLabel addText:@"实体店名称"];
-        [reportStoreLabel addText:@"实体店地址"];
-        reportStoreTextField.placeholder = @"请填写实体店地址";
+        [reportEntityStoreAdressLabel addText:@"实体店地址"];
+//        reportStoreTextField.placeholder = @"请填写实体店地址";
         reportStoreNameTextField.placeholder = @"请填写实体店名称";
         [storeUploadImageItemView addTitle:@"实体店照片"];
         
-        reportEntityStoreAdressLabel.hidden = YES;
+        reportStoreLabel.hidden = YES;
+        reportStoreTextField.hidden = YES;
         
-        areaView.hidden = YES;
-        
-        detailAdressTextView.hidden = YES;
+        reportEntityStoreAdressLabel.hidden = NO;
+        areaView.hidden = NO;
+        detailAdressTextView.hidden = NO;
+        for (UIView *view in detailAdressTextView.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                TGLabel *label = (TGLabel *)view;
+                label.text = @"请输入详细地址";
+            }
+        }
         
         reportStoreLabel.y = reportEntityStoreAdressLabel.y;
         
     }else{
         [reportStoreNameLabel addText:@"网店名称"];
-        [reportStoreLabel addText:@"网店地址"];
-        reportStoreTextField.placeholder = @"请填写网店地址";
+        [reportStoreLabel addText:@"网店网址"];
+        reportStoreTextField.placeholder = @"请填写网店网址";
         reportStoreNameTextField.placeholder = @"请填写网店名称";
         [storeUploadImageItemView addTitle:@"订单确认照片"];
         
-        reportEntityStoreAdressLabel.hidden = NO;
-        
+        reportEntityStoreAdressLabel.hidden = YES;
         areaView.hidden = NO;
-        
-        detailAdressTextView.hidden = NO;
+        detailAdressTextView.hidden = YES;
         
         reportStoreLabel.y = detailAdressTextView.y + detailAdressTextView.height;
     }
@@ -291,6 +296,11 @@
     
     if (EMPTY_STRING([selectTimeItemView itemStr])) {
         [TGToast showWithText:@"请选择举报时间"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportContentTextView.text)) {
+        [TGToast showWithText:@"请填写内容"];
         return;
     }
     

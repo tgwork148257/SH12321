@@ -136,6 +136,7 @@
         [TGToast showWithText:@"请输入详细地址"];
         return;
     }
+
     
     model.reportType = ReportWIFI;
     model.reportName = reportWIFINameTextField.text;

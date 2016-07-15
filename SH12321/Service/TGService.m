@@ -37,7 +37,7 @@
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportSendNumber forKey:sendNumberKey];
             [dic setValue:model.reportAcceptNumber forKey:acceptNumberKey];
-            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTypeStr forKey:reportTypeKey];
             [dic setValue:model.reportCrankCallStatusStr forKey:crankCallStatusKey];
             [dic setValue:model.reportTime forKey:callTimeKey];
             [dic setValue:model.reportTimeLengthStr forKey:callLengthKey];
@@ -53,7 +53,7 @@
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportSendNumber forKey:sendNumberKey];
             [dic setValue:model.reportAcceptNumber forKey:acceptNumberKey];
-            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTypeStr forKey:reportTypeKey];
             [dic setValue:model.reportTime forKey:callTimeKey];
             [dic setValue:model.reportTimeLengthStr forKey:callLengthKey];
             [dic setValue:model.reportContent forKey:contentKey];
@@ -80,7 +80,7 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_WEBSITE];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportWebsiteURL forKey:websiteURLKey];
-            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTypeStr forKey:reportTypeKey];
             [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:userToken forKey:userTokenKey];
 
@@ -120,7 +120,7 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_FAKE_BASIC_STATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTypeStr forKey:reportTypeKey];
             [dic setValue:model.reportAdress forKey:addressKey];
             [dic setValue:model.reportTime forKey:callTimeKey];
             [dic setValue:model.reportContent forKey:contentKey];
@@ -135,7 +135,7 @@
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_PHONE_NUMBER_IDENTIFICATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setValue:model.reportTypeStr forKey:typeKey];
+            [dic setValue:model.reportTypeStr forKey:reportTypeKey];
             [dic setValue:model.reportAdress forKey:addressKey];
             [dic setValue:model.reportName forKey:nameKey];
             [dic setValue:model.reportBuyNumber forKey:buyNumberKey];

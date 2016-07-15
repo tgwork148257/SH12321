@@ -131,7 +131,7 @@
 }
 
 - (void)updateTimer{
-    if (time <= 0) {
+    if (timeUpdate <= 0) {
         [timer invalidate];
         sendVerifyCodeBtn.userInteractionEnabled = YES;
         [sendVerifyCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
@@ -146,18 +146,25 @@
 
 
 - (void)loginBtnDidClick{
+    if (![TGUtils isNumber:phoneNumberTextField.text]) {
+        [TGToast showWithText:@"手机号输入不正确"];
+        return;
+    }
+    
     if (![verifyCode isEqualToString:verifyCodeTextField.text] ) {
         [TGToast showWithText:@"验证码输入不正确"];
         return;
-    }else{
-        [TGRequest getUserTokenWithNumber:phoneNumberTextField.text code:verifyCode success:^(id responseObject) {
-            [TGToast showWithText:@"登录成功"];
-            [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
-            [TGUtils saveUserToken:responseObject];
-        } fail:^{
-            [TGToast showWithText:@"登录失败，请重试"];
-        }];
     }
+    [TGRequest getUserTokenWithNumber:phoneNumberTextField.text code:verifyCode success:^(id responseObject) {
+        [TGToast showWithText:@"登录成功"];
+        [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
+        [TGUtils saveUserToken:responseObject];
+    } fail:^{
+        [TGToast showWithText:@"登录失败，请重试"];
+    }];
+    
+//    [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
+    
 }
 
 @end

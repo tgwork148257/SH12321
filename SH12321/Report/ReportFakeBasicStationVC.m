@@ -147,6 +147,11 @@
         [TGToast showWithText:@"请选择时间"];
     }
     
+    if (EMPTY_STRING(reportContentTextView.text)) {
+        [TGToast showWithText:@"请填写内容"];
+        return;
+    }
+    
     model.reportType = ReportFakeBaseStation;
     model.reportTypeStr = reportFakeBasicStationView.typeTitle;
     model.reportTime = [selectTimeItemView itemStr];

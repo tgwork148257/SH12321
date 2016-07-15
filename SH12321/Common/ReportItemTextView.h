@@ -14,4 +14,6 @@
 
 + (ReportItemTextView *)initWithY:(CGFloat)y placeholder:(NSString *)placeholder superView:(UIView *)superView;
 
+
+@property (nonatomic, strong)TGLabel *placeholderLabel;
 @end

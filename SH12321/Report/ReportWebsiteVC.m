@@ -94,6 +94,11 @@
         return;
     }
     
+    if (EMPTY_STRING(reportContentTextView.text)) {
+        [TGToast showWithText:@"请填写内容"];
+        return;
+    }
+    
     model.reportType = ReportWebsite;
     model.reportWebsiteURL = websiteURLTextField.text;
     model.reportTypeStr = reportWebsiteTypeView.typeTitle;

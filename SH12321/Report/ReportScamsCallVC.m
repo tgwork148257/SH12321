@@ -145,6 +145,11 @@
         return;
     }
     
+    if (EMPTY_STRING(reportContentTextView.text)) {
+        [TGToast showWithText:@"请填写内容"];
+        return;
+    }
+    
     model.reportType = ReportScamCall;
     model.reportSendNumber = reportSendNumberTextField.text;
     model.reportAcceptNumber = reportAcceptNumberTextField.text;

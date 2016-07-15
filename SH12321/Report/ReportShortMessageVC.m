@@ -92,6 +92,11 @@
         return;
     }
     
+    if (EMPTY_STRING(messageContentTextView.text)) {
+        [TGToast showWithText:@"请填写内容"];
+        return;
+    }
+    
     model.reportType = ReportMessage;
     model.reportSendNumber = sendNumberTextField.text;
     model.reportAcceptNumber = acceptNumberTextField.text;
