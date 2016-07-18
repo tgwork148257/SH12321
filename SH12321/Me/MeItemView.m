@@ -34,7 +34,7 @@
     NSString *rightLabelStr;
     if ([itemStr isEqualToString:@"我的举报"]) {
         UIImageView *rightIcon = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - iconWH, (viewH - iconWH)/2, iconWH, iconWH)];
-        rightIcon.image = [UIImage imageNamed:@""];
+        rightIcon.image = [UIImage imageNamed:@"next_icon"];
         [view addSubview:rightIcon];
         
         leftIconStr = @"me_report_record";

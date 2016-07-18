@@ -19,15 +19,16 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    [manager.requestSerializer setValue:nil forHTTPHeaderField:nil];
 
-    NSLog(@"%@",parameters);
+    NSLog(@"url is %@",url);
+    NSLog(@"parameters is %@",parameters);
     // 网络访问是异步的,回调是主线程的,因此程序员不用管在主线程更新UI的事情
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject) {
         if(success) {
-            NSLog(@"%@",responseObject);
+            NSLog(@"responseObject is %@",responseObject);
             success(responseObject);
         }
     }failure:^(AFHTTPRequestOperation*operation,NSError*error){
-        NSLog(@"%@",error);
+        NSLog(@"error is %@",error);
         if(fail){
             fail();
         }
@@ -222,7 +223,7 @@
 
 #pragma mark -- 获取举报列表接口
 + (void)getReportListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_REPORT_LIST];
     NSString *token = [TGUtils getServerToken];
     NSDictionary *parameters = @{@"page":@(page),
                                  @"token":token};
@@ -231,7 +232,7 @@
 
 #pragma mark -- 获取举报详情接口
 + (void)getReportDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_REPORT_DETAIL];
     NSString *token = [TGUtils getServerToken];
     NSDictionary *parameters = @{@"id":reportID,
                                  @"token":token};
@@ -240,7 +241,7 @@
 
 #pragma mark -- 获取新闻列表接口
 + (void)getNewsListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_NEWS_LIST];
     NSString *token = [TGUtils getServerToken];
     NSDictionary *parameters = @{@"page":@(page),
                                  @"token":token};
@@ -249,7 +250,7 @@
 
 #pragma mark -- 获取新闻详情接口
 + (void)getNewsDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
+    NSString *urlStr = [BASIC_URL stringByAppendingString:GET_NEWS_DETAIL];
     NSString *token = [TGUtils getServerToken];
     NSDictionary *parameters = @{@"id":reportID,
                                  @"token":token};

@@ -23,6 +23,14 @@ static NSString * const GET_USER_TOKEN = @"App/getUserToken";
 
 static NSString * const GET_UPLOAD_PIC = @"App/uploadPic";
 
+static NSString * const GET_NEWS_LIST = @"App/newsList";
+
+static NSString * const GET_NEWS_DETAIL = @"App/getNewsDetails";
+
+static NSString * const GET_REPORT_LIST = @"App/reportList";
+
+static NSString * const GET_REPORT_DETAIL = @"App/getReportDetails";
+
 
 static NSString * const COMMIT_REPORT_CRANK_CALL = @"App/harassMobile";
 
