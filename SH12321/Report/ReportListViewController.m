@@ -185,7 +185,7 @@
     switch (tag) {
         case 0:
         {
-            [TGRequest TestAFN];
+//            [TGRequest TestAFN];
             vc = [[ReportShortMessageVC alloc] init];
         }
             break;

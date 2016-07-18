@@ -22,6 +22,11 @@
     NSInteger page;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getNewsList];
+}
+
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻";
     
@@ -54,6 +59,7 @@
     tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getNewsList];
     }];
+    
 
 }
 

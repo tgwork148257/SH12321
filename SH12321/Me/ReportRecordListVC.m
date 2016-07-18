@@ -21,6 +21,10 @@
     NSInteger page;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self getReportList];
+}
 - (void)viewDidLoad{
     self.navigationTitle = @"我";
     [super viewDidLoad];
