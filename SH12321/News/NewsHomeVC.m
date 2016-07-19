@@ -22,11 +22,6 @@
     NSInteger page;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self getNewsList];
-}
-
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻";
     
@@ -46,7 +41,7 @@
 
 #pragma mark -- 增加tableview
 - (void)addTableView{
-    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H) style:UITableViewStylePlain];
+    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H - ORIGIN_Y) style:UITableViewStylePlain];
     tableview.delegate = self;
     tableview.dataSource = self;
     tableview.backgroundColor = C_WHITE;
@@ -60,7 +55,11 @@
         [weakSelf getNewsList];
     }];
     
+    [tableview.mj_header beginRefreshing];
 
+    if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 #pragma mark - cell 数量
@@ -130,7 +129,6 @@
     } fail:^{
         dispatch_async(main_queue, ^{
             [tableview.mj_footer endRefreshing]; //没有更多数据
-
         });
     }];
 }

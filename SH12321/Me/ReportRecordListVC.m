@@ -21,10 +21,6 @@
     NSInteger page;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self getReportList];
-}
 - (void)viewDidLoad{
     self.navigationTitle = @"我";
     [super viewDidLoad];
@@ -38,7 +34,7 @@
 
 #pragma mark -- 增加tableview
 - (void)addTableView{
-    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H) style:UITableViewStyleGrouped];
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H - ORIGIN_Y) style:UITableViewStyleGrouped];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundColor = C_WHITE;
@@ -52,6 +48,8 @@
     tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getReportList];
     }];
+    
+    [tableView.mj_header beginRefreshing];
     
     if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
