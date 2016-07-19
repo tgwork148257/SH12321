@@ -49,7 +49,7 @@
         [weakSelf getReportList];
     }];
     
-    [tableView.mj_header beginRefreshing];
+    [tableView.mj_footer beginRefreshing];
     
     if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -59,7 +59,7 @@
 #pragma mark - 计算headView高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     //    return [meHomeTopView viewHeightWithModel:self.meHomeModel];
-    return 0;
+    return 0.1;
 }
 
 #pragma mark - build headview
@@ -109,19 +109,20 @@
 
 #pragma mark -- 点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
-            ReportRecordDetailVC *vc = [[ReportRecordDetailVC alloc] init];
-            ReportDataModel *model = [cellDataArr objectAtIndex:indexPath.row];
-            vc.data = model;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+    if (!EMPTY_ARR(cellDataArr) && cellDataArr.count > indexPath.row) {
+        ReportRecordDetailVC *vc = [[ReportRecordDetailVC alloc] init];
+        ReportDataModel *model = [cellDataArr objectAtIndex:indexPath.row];
+        vc.data = model;
+        [self.navigationController pushViewController:vc animated:YES];
+        [self hiddenTabbar];
+    }
 }
 
 
 - (void)getReportList{
     [TGRequest getReportListWithPage:page  success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            NSDictionary *listDic = [responseObject objectForKey:@"code"];
+            NSDictionary *listDic = [responseObject objectForKey:@"data"];
             for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
                 ReportDataModel *model = [[ReportDataModel alloc] initWithDictionary:dic];
                 [cellDataArr addObject:model];

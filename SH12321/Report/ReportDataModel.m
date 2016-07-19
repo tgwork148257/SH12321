@@ -13,7 +13,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic{
     if (self = [super initWithDictionary:dic]) {
-        self.reportID = [TGJson JsonStr:[dic objectForKey:reportIDKey]];
+        
         self.reportAcceptNumber = [TGJson JsonStr:[dic objectForKey:acceptNumberKey]];
         self.reportSendNumber = [TGJson JsonStr:[dic objectForKey:sendNumberKey]];
         self.reportTime = [TGJson JsonStr:[dic objectForKey:callTimeKey]];
@@ -21,7 +21,7 @@
         self.reportName = [TGJson JsonStr:[dic objectForKey:nameKey]];
         self.reportContent = [TGJson JsonStr:[dic objectForKey:contentKey]];
         self.reportTypeStr = [TGJson JsonStr:[dic objectForKey:reportTypeKey]];
-        self.typeStr = [TGJson JsonStr:[dic objectForKey:typeKey]];
+        
 
         self.reportCrankCallStatusStr = [TGJson JsonStr:[dic objectForKey:crankCallStatusKey]];
         self.reportWebsiteURL = [TGJson JsonStr:[dic objectForKey:websiteURLKey]];
@@ -33,7 +33,12 @@
         self.userImageStr = [TGJson JsonStr:[dic objectForKey:userImagerKey]];
         self.reportReasonTypeStr = [TGJson JsonStr:[dic objectForKey:reasonKey]];
 
+        self.listReportID = [TGJson JsonStr:[dic objectForKey:@"jw_id"]];
+        self.listReportTime = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
+        self.listReportFlag = [TGJson JsonStr:[dic objectForKey:@"con_flag"]];
+        self.listReportTypeStr = [TGJson JsonStr:[dic objectForKey:@"report_type"]];
         
+        self.handleResult = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
     }
     return self;
 }

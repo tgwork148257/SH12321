@@ -224,7 +224,7 @@
 #pragma mark -- 获取举报列表接口
 + (void)getReportListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_REPORT_LIST];
-    NSString *user_token = [TGUtils getServerToken];
+    NSString *user_token = @"56bc97c8c05dd25381e75c9e8d4a44f1";
     NSDictionary *parameters = @{@"page":@(page),
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];

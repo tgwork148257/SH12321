@@ -26,7 +26,7 @@
     ReportItemLabel *resultLabel;
     SelectTypeView *resultTypeView;
     
-    CommitButton *commitBtn;
+//    CommitButton *commitBtn;
     
 }
 
@@ -34,11 +34,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-   
+    [self getReportDetail];
 }
 
 - (void)addSubviews{
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H + TABBAR_H)];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H + TABBAR_H)];
     [self.view addSubview:scrollView];
     
     reportView = [[UIView alloc] init];
@@ -47,33 +47,33 @@
     
     handleResultTitleLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:reportView];
     
-    CGRect contentRect = [TGManager rectWithString:self.data.handleResultStr attrDic:@{NSFontAttributeName:F_TEXT} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
+    CGRect contentRect = [TGManager rectWithString:self.data.handleResult attrDic:@{NSFontAttributeName:F_TEXT} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
     
     CGRect handleResultContentRect = CGRectMake(0, handleResultTitleLabel.y + handleResultTitleLabel.height, DEVICE_W, contentRect.size.height);
     
     handleResultContentView = [TGView initWithFrame:handleResultContentRect superView:reportView];
-    handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, contentRect.size.height) text:self.data.handleResultStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
+    handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, contentRect.size.height) text:self.data.handleResult textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
     
     detailTypeView = [DetailTypeView initWithY:handleResultContentView.y + handleResultContentView.height data:self.data superView:reportView];
     
-    resultLabel = [ReportItemLabel initWithY:0 title:@"是否已解决您的问题" superView:reportView];
+    resultLabel = [ReportItemLabel initWithY:detailTypeView.y + detailTypeView.height title:@"是否已解决您的问题" superView:reportView];
     resultTypeView = [SelectTypeView initWithY:resultLabel.y + resultLabel.height superView:reportView];
     [resultTypeView addTitles:@[@"已解决", @"未解决"]];
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, resultTypeView.y + resultTypeView.height);
     
     
-    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
-    [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
+//    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
+//    [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
+    scrollView.contentSize = CGSizeMake(DEVICE_W, reportView.y + reportView.height);
 
 }
 
-- (void)commitReport{
-    [TGRequest getReportDetailWithId:self.data.reportID success:^(id responseObject) {
+- (void)getReportDetail{
+    [TGRequest getReportDetailWithId:self.data.listReportID success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            NSDictionary *dic = [responseObject objectForKey:@"code"];
+            NSDictionary *dic = [responseObject objectForKey:@"data"];
             self.data = [[ReportDataModel alloc] initWithDictionary:dic];
             dispatch_async(main_queue, ^{
                 [self addSubviews];

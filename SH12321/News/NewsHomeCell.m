@@ -23,9 +23,9 @@
 }
 
 - (void)buildCell{
-    self.model.newsTitle = @"This is the news title";
-    self.model.newsSource = @"法制日报";
-    self.model.newsTime = @"2016年03月20日";
+//    self.model.newsTitle = @"This is the news title";
+//    self.model.newsSource = @"法制日报";
+//    self.model.newsTime = @"2016年03月20日";
     
     CGFloat originY = (cellH - imageViewH)/2;
     imageview = [[UIImageView alloc] initWithFrame:CGRectMake(L_R_EDGE, originY, imageViewW, imageViewH)];

@@ -30,11 +30,6 @@
     page = 1;
     
     tableviewData = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
-        NewsDetailModel *model = [[NewsDetailModel alloc] init];
-        model.newsContent = @"ccc";
-        [tableviewData addObject:model];
-    }
     [self addTableView];
 }
 
@@ -55,7 +50,7 @@
         [weakSelf getNewsList];
     }];
     
-    [tableview.mj_header beginRefreshing];
+    [tableview.mj_footer beginRefreshing];
 
     if ([[UIDevice currentDevice] systemVersion].floatValue>=7.0) {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -105,13 +100,14 @@
         NewsDetailModel *model = [tableviewData objectAtIndex:indexPath.row];
         vc.detailModel = model;
         [self.navigationController pushViewController:vc animated:YES];
+        [self hiddenTabbar];
     }
 }
 
 - (void)getNewsList{
     [TGRequest getNewsListWithPage:page  success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            NSDictionary *listDic = [responseObject objectForKey:@"code"];
+            NSDictionary *listDic = [responseObject objectForKey:@"data"];
             for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
                 NewsDetailModel *model = [[NewsDetailModel alloc] initWithDictionary:dic];
                 [tableviewData addObject:model];

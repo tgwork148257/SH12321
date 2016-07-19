@@ -14,7 +14,6 @@
 + (DetailTypeView *)initWithY:(CGFloat)y data:(ReportDataModel*)reportData superView:(UIView *)superView{
     
     DetailTypeView *view = [[DetailTypeView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, 100)];
-    [superView addSubview:view];
     
 //    ReportItemLabel *handleResultLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:view];
 //
@@ -35,7 +34,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"骚扰内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
             
         }
             break;
@@ -50,7 +48,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"诈骗内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -61,7 +58,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"短信内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -72,7 +68,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"不良网站内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -83,7 +78,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:sourceItemView.y + sourceItemView.height title:@"不良App描述" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -95,7 +89,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"伪基站描述" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -106,7 +99,6 @@
             DetailItemView *adressItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"不良WIFI地址" content:reportData.reportAdress superView:view];
             
             view.height = adressItemView.y + adressItemView.height;
-            return view;
         }
             break;
             
@@ -129,7 +121,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:adressItemView.y + adressItemView.height title:@"骚扰内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -138,7 +129,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"个人信息泄露" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -147,7 +137,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"不良舆情" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -156,7 +145,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"骚扰内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -165,7 +153,6 @@
             DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"骚扰内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
-            return view;
         }
             break;
             
@@ -173,6 +160,7 @@
             break;
     }
     
+    [superView addSubview:view];
     return view;
     
 }
