@@ -77,7 +77,7 @@
     [selectTimeItemView addGestureRecognizer:selectTimeTap];
     
     reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"伪基站描述" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入其他信息详情" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入举报伪基站详情" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -148,7 +148,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

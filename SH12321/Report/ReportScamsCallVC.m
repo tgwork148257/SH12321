@@ -80,7 +80,7 @@
     [selectTimeItemView addGestureRecognizer:tap];
     
     reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"诈骗内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入诈骗内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入举报诈骗内容" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -146,7 +146,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

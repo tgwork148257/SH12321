@@ -133,7 +133,7 @@
     
     
     reportContentLabel = [ReportItemLabel initWithY:ownUploadImageItemView.y + ownUploadImageItemView.height title:@"具体内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入具体内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入举报具体内容" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -300,7 +300,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

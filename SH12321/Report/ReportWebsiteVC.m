@@ -54,7 +54,7 @@
     [reportWebsiteTypeView addTitles:websiteTypeArr];
     
     reportContentLabel = [ReportItemLabel initWithY:reportWebsiteTypeView.y + reportWebsiteTypeView.height title:@"不良网站内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请填写不良网站内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请填写举报不良网站内容" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -95,7 +95,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

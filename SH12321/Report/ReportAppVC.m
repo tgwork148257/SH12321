@@ -51,7 +51,7 @@
     AppSourceTextField = [ReportItemTextField initWithY:AppSourceLabel.y + AppSourceLabel.height placeholder:@"请输入不良App来源" superView:reportView];
     
     reportContentLabel = [ReportItemLabel initWithY:AppSourceTextField.y + AppSourceTextField.height title:@"不良App描述" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入不良App描述" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入举报不良App描述" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -92,7 +92,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

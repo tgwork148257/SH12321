@@ -64,7 +64,7 @@
     [scrollView addSubview:reportView];
     
     reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"骚扰电话" superView:reportView];
-    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"请填写骚扰电话号码" superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"如：01266528739，13918549752" superView:reportView];
     
     reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被骚扰电话" superView:reportView];
     reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:@"请填写被骚扰电话号码" superView:reportView];
@@ -89,7 +89,7 @@
     [selectTimeItemView addGestureRecognizer:tap];
     
     reportContentLabel = [ReportItemLabel initWithY:selectTimeItemView.y + selectTimeItemView.height title:@"骚扰内容" superView:reportView];
-    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入骚扰内容" superView:reportView];
+    reportContentTextView = [ReportItemTextView initWithY:reportContentLabel.y + reportContentLabel.height placeholder:@"请输入举报骚扰内容" superView:reportView];
     reportContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, reportContentTextView.y + reportContentTextView.height);
@@ -190,7 +190,7 @@
     }
     
     if (EMPTY_STRING(reportContentTextView.text) && ![[reportCrankFormView typeTitle] isEqualToString:@"响一声就挂"]) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     

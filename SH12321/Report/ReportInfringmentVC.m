@@ -71,7 +71,7 @@
 - (void)commitReport{
     
     if (EMPTY_STRING(reportContentTextView.text)) {
-        [TGToast showWithText:@"请输入侵权内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     model.reportType = ReportInfringment;

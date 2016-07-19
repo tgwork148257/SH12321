@@ -51,7 +51,7 @@
     acceptNumberTextField = [ReportItemTextField initWithY:acceptNumberLabel.y + acceptNumberLabel.height placeholder:@"请输入接收短信的号码" superView:reportView];
     
     messageContentLabel = [ReportItemLabel initWithY:acceptNumberTextField.y + acceptNumberTextField.height title:@"短信内容" superView:reportView];
-    messageContentTextView = [ReportItemTextView initWithY:messageContentLabel.y + messageContentLabel.height placeholder:@"请输入短信内容" superView:reportView];
+    messageContentTextView = [ReportItemTextView initWithY:messageContentLabel.y + messageContentLabel.height placeholder:@"请输入举报短信内容" superView:reportView];
     messageContentTextView.delegate = self;
     
     reportView.frame = CGRectMake(0, ORIGIN_Y, DEVICE_W, messageContentTextView.y + messageContentTextView.height);
@@ -93,7 +93,7 @@
     }
     
     if (EMPTY_STRING(messageContentTextView.text)) {
-        [TGToast showWithText:@"请填写内容"];
+        [TGToast showWithText:@"举报描述内容不能为空"];
         return;
     }
     
