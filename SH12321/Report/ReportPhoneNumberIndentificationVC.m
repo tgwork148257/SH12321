@@ -23,6 +23,7 @@
     ReportItemLabel *reportTypeLabel;
     SelectTypeView *reportStoreTypeView;
     
+    TGView *selectIllegalReasonGrayView;
     SelectItemView *selectIllegalReasonItemView;
     
     ReportItemLabel *reportStoreNameLabel;
@@ -31,21 +32,23 @@
     ReportItemLabel *reportPhoneNumberLabel;
     ReportItemTextField *reportPhoneNumberTextField;
     
+    TGView *selectTimeItemGrayView;
     SelectItemView *selectTimeItemView;
+    
     SelectItemView *selectOperatorsItemView;
     
     ReportItemLabel *reportEntityStoreAdressLabel;
     SelectItemView *areaView;
     ReportItemTextView *detailAdressTextView;
     
-    ReportItemLabel *reportStoreLabel;
-    ReportItemTextField *reportStoreTextField;
+    ReportItemLabel *reportStoreWebsiteLabel;
+    ReportItemTextField *reportStoreWebsiteTextField;
     
-    ReportItemLabel *reportTimeLengthLabel;
-    SelectTypeView *reportTimeLengthView;
+    ReportItemLabel *reportStoreSaleWebsiteLabel;
+    ReportItemTextField *reportStoreSaleWebsiteTextField;
     
+    TGView *storeUploadImageGrayView;
     UploadImageItemView *storeUploadImageItemView;
-    
     UploadImageItemView *ownUploadImageItemView;
     
     ReportItemLabel *reportContentLabel;
@@ -87,23 +90,25 @@
     [reportStoreTypeView addTitles:storeTypeArr];
     reportStoreTypeView.delegate = self;
     
-    selectIllegalReasonItemView = [SelectItemView initWithY:reportStoreTypeView.y + reportStoreTypeView.height itemStr:@"违规原因" superView:reportView];
-    selectTimeItemView.userInteractionEnabled = YES;
+    selectIllegalReasonGrayView = [TGView initWithFrame:CGRectMake(0, reportStoreTypeView.y + reportStoreTypeView.height, DEVICE_W, reportTypeLabel.height) backgroundColor:grayBgColor superView:reportView];
+    selectIllegalReasonItemView = [SelectItemView initWithY:selectIllegalReasonGrayView.y + selectIllegalReasonGrayView.height itemStr:@"违规原因" superView:reportView];
+    selectIllegalReasonItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectIllegalReasonTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectIllegalReason)];
-    [selectTimeItemView addGestureRecognizer:selectIllegalReasonTap];
+    [selectIllegalReasonItemView addGestureRecognizer:selectIllegalReasonTap];
     
-    reportStoreNameLabel = [ReportItemLabel initWithY:reportStoreTypeView.y + reportStoreTypeView.height title:@"网店名称" superView:reportView];
+    reportStoreNameLabel = [ReportItemLabel initWithY:selectIllegalReasonItemView.y + selectIllegalReasonItemView.height title:@"网店名称" superView:reportView];
     reportStoreNameTextField = [ReportItemTextField initWithY:reportStoreNameLabel.y + reportStoreNameLabel.height placeholder:@"请填写网店名称" superView:reportView];
     
     reportPhoneNumberLabel = [ReportItemLabel initWithY:reportStoreNameTextField.y + reportStoreNameTextField.height title:@"手机号码" superView:reportView];
     reportPhoneNumberTextField = [ReportItemTextField initWithY:reportPhoneNumberLabel.y + reportPhoneNumberLabel.height placeholder:@"请填写购买的手机号码" superView:reportView];
     
-    selectTimeItemView = [SelectItemView initWithY:reportPhoneNumberTextField.y + reportPhoneNumberTextField.height itemStr:@"选择购卡时间" superView:reportView];
+    selectTimeItemGrayView = [TGView initWithFrame:CGRectMake(0, reportPhoneNumberTextField.y + reportPhoneNumberTextField.height, DEVICE_W, reportTypeLabel.height) backgroundColor:grayBgColor superView:reportView];
+    selectTimeItemView = [SelectItemView initWithY:selectTimeItemGrayView.y + selectTimeItemGrayView.height itemStr:@"购卡时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectTimeItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:selectTimeItemViewTap];
     
-    selectOperatorsItemView = [SelectItemView initWithY:selectTimeItemView.y + selectTimeItemView.height itemStr:@"选择运营商" superView:reportView];
+    selectOperatorsItemView = [SelectItemView initWithY:selectTimeItemView.y + selectTimeItemView.height itemStr:@"所属运营商" superView:reportView];
     selectOperatorsItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectOperatorsTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectOperatorsTap)];
     [selectOperatorsItemView addGestureRecognizer:selectOperatorsTap];
@@ -118,10 +123,14 @@
     detailAdressTextView.delegate = self;
     
     
-    reportStoreLabel = [ReportItemLabel initWithY:detailAdressTextView.y + detailAdressTextView.height title:@"实体店或者网店名称" superView:reportView];
-    reportStoreTextField = [ReportItemTextField initWithY:reportStoreLabel.y + reportStoreLabel.height placeholder:@"请填写实体店或者实网店名称" superView:reportView];
+    reportStoreWebsiteLabel = [ReportItemLabel initWithY:detailAdressTextView.y + detailAdressTextView.height title:@"购卡网店网址" superView:reportView];
+    reportStoreWebsiteTextField = [ReportItemTextField initWithY:reportStoreWebsiteLabel.y + reportStoreWebsiteLabel.height placeholder:@"请填写购卡网店网址" superView:reportView];
     
-    storeUploadImageItemView = [UploadImageItemView initWithY:reportStoreTextField.y + reportStoreTextField.height title:@"实体店或者订单确认照片" superView:reportView];
+    reportStoreSaleWebsiteLabel = [ReportItemLabel initWithY:reportStoreWebsiteTextField.y + reportStoreWebsiteTextField.height title:@"销售页面地址" superView:reportView];
+    reportStoreSaleWebsiteTextField = [ReportItemTextField initWithY:reportStoreSaleWebsiteLabel.y + reportStoreSaleWebsiteLabel.height placeholder:@"请填写销售页面地址" superView:reportView];
+    
+    storeUploadImageGrayView = [TGView initWithFrame:CGRectMake(0, reportStoreSaleWebsiteTextField.y + reportStoreSaleWebsiteTextField.height, DEVICE_W, reportTypeLabel.height) backgroundColor:grayBgColor superView:reportView];
+    storeUploadImageItemView = [UploadImageItemView initWithY:storeUploadImageGrayView.y + storeUploadImageGrayView.height title:@"实体店或者订单确认照片" superView:reportView];
     storeUploadImageItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *storeUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(storeUploadImageItemViewTap)];
     [storeUploadImageItemView addGestureRecognizer:storeUploadImageItemViewTap];
@@ -169,17 +178,9 @@
 - (void)selectTypeStr:(NSString *)str{
     if ([str isEqualToString:[storeTypeArr objectAtIndex:0]]) {
         [reportStoreNameLabel addText:@"实体店名称"];
+        reportStoreNameTextField.placeholder = @"请输入实体店名称";
+        
         [reportEntityStoreAdressLabel addText:@"实体店地址"];
-//        reportStoreTextField.placeholder = @"请填写实体店地址";
-        reportStoreNameTextField.placeholder = @"请填写实体店名称";
-        [storeUploadImageItemView addTitle:@"实体店照片"];
-        
-        reportStoreLabel.hidden = YES;
-        reportStoreTextField.hidden = YES;
-        
-        reportEntityStoreAdressLabel.hidden = NO;
-        areaView.hidden = NO;
-        detailAdressTextView.hidden = NO;
         for (UIView *view in detailAdressTextView.subviews) {
             if (view.tag == placeholderLabelTag) {
                 TGLabel *label = (TGLabel *)view;
@@ -187,25 +188,50 @@
             }
         }
         
-        reportStoreLabel.y = reportEntityStoreAdressLabel.y;
+        [storeUploadImageItemView addTitle:@"实体店照片"];
         
+        reportEntityStoreAdressLabel.hidden = NO;
+        areaView.hidden = NO;
+        detailAdressTextView.hidden = NO;
+        
+        reportStoreWebsiteLabel.hidden = YES;
+        reportStoreWebsiteTextField.hidden = YES;
+        reportStoreSaleWebsiteLabel.hidden = YES;
+        reportStoreSaleWebsiteTextField.hidden = YES;
+        
+
+        reportEntityStoreAdressLabel.y = selectOperatorsItemView.y + selectOperatorsItemView.height;
+        areaView.y = reportEntityStoreAdressLabel.y + reportEntityStoreAdressLabel.height;
+        detailAdressTextView.y = areaView.y + areaView.height;
+        
+        storeUploadImageGrayView.y = detailAdressTextView.y + detailAdressTextView.height;
     }else{
         [reportStoreNameLabel addText:@"网店名称"];
-        [reportStoreLabel addText:@"网店网址"];
-        reportStoreTextField.placeholder = @"请填写网店网址";
-        reportStoreNameTextField.placeholder = @"请填写网店名称";
-        [storeUploadImageItemView addTitle:@"订单确认照片"];
+        reportStoreNameTextField.placeholder = @"请输入网店名称";
+        
+        [reportStoreWebsiteLabel addText:@"网店网址"];
+        reportStoreWebsiteTextField.placeholder = @"请填写网店网址";
+        
+        [storeUploadImageItemView addTitle:@"订单确认截图"];
         
         reportEntityStoreAdressLabel.hidden = YES;
-        areaView.hidden = NO;
+        areaView.hidden = YES;
         detailAdressTextView.hidden = YES;
         
-        reportStoreLabel.y = detailAdressTextView.y + detailAdressTextView.height;
+        reportStoreWebsiteLabel.hidden = NO;
+        reportStoreWebsiteTextField.hidden = NO;
+        reportStoreSaleWebsiteLabel.hidden = NO;
+        reportStoreSaleWebsiteTextField.hidden = NO;
+        
+        reportStoreWebsiteLabel.y = selectOperatorsItemView.y + selectOperatorsItemView.height;
+        reportStoreWebsiteTextField.y = reportStoreWebsiteLabel.y + reportStoreWebsiteLabel.height;
+        reportStoreSaleWebsiteLabel.y = reportStoreWebsiteTextField.y + reportStoreWebsiteTextField.height;
+        reportStoreSaleWebsiteTextField.y = reportStoreSaleWebsiteLabel.y + reportStoreSaleWebsiteLabel.height;
+        
+        storeUploadImageGrayView.y = reportStoreSaleWebsiteTextField.y + reportStoreSaleWebsiteTextField.height;
     }
     
-    reportStoreTextField.y = reportStoreLabel.y + reportStoreLabel.height;
-    
-    storeUploadImageItemView.y = reportStoreTextField.y + reportStoreTextField.height;
+    storeUploadImageItemView.y = storeUploadImageGrayView.y + storeUploadImageGrayView.height;
     
     ownUploadImageItemView.y = storeUploadImageItemView.y + storeUploadImageItemView.height;
     
@@ -239,7 +265,7 @@
     }
     SHIllegalReasonListVC *vc = [[SHIllegalReasonListVC alloc] init];
     
-    if ([reportStoreTypeView selectIndex] == 0) {
+    if ([reportStoreTypeView.typeTitle isEqualToString:@"实体店"]) {
         vc.tableviewData = entityStoreIllegalReasonArr;
     }else{
         vc.tableviewData = internetStoreIllegalReasonArr;
@@ -278,24 +304,53 @@
 
 
 - (void)commitReport{
-//    if (EMPTY_STRING(reportStoreNameTextField.text)) {
-//        [TGToast showWithText:@"请输入举报店名称"];
-//        return;
-//    }
+    if (EMPTY_STRING([selectIllegalReasonItemView itemStr])) {
+        [TGToast showWithText:@"请选择违规原因"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportStoreNameTextField.text)) {
+        [TGToast showWithText:@"请输入举报实体店或者网店名称"];
+        return;
+    }
     
     if (EMPTY_STRING(reportPhoneNumberTextField.text)) {
         [TGToast showWithText:@"请输入举报号码"];
         return;
     }
     
+    if (EMPTY_STRING([areaView itemStr]) && [reportStoreTypeView.typeTitle isEqualToString:@"实体店"]) {
+        [TGToast showWithText:@"请选择区县"];
+        return;
+    }
+    
+    if (EMPTY_STRING(detailAdressTextView.text) && [reportStoreTypeView.typeTitle isEqualToString:@"实体店"]) {
+        [TGToast showWithText:@"请输入详细地址"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportStoreWebsiteTextField.text) && [reportStoreTypeView.typeTitle isEqualToString:@"网店"]) {
+        [TGToast showWithText:@"请输入网店地址"];
+        return;
+    }
+    
+    if (EMPTY_STRING(reportStoreSaleWebsiteTextField.text) && [reportStoreTypeView.typeTitle isEqualToString:@"网店"]) {
+        [TGToast showWithText:@"请输入销售页面地址"];
+        return;
+    }
+    
+    if (EMPTY_STRING(detailAdressTextView.text) && [reportStoreTypeView.typeTitle isEqualToString:@"实体店"]) {
+        [TGToast showWithText:@"请输入详细地址"];
+        return;
+    }
     
     if (EMPTY_STRING([selectTimeItemView itemStr])) {
         [TGToast showWithText:@"请选择举报时间"];
         return;
     }
     
-    if (EMPTY_STRING([selectTimeItemView itemStr])) {
-        [TGToast showWithText:@"请选择举报时间"];
+    if (EMPTY_STRING([selectOperatorsItemView itemStr])) {
+        [TGToast showWithText:@"请选择运营商"];
         return;
     }
     
@@ -305,14 +360,17 @@
     }
     
     model.reportType = ReportPhoneNumberIndentification;
+    model.reportReasonTypeStr = [selectIllegalReasonItemView itemStr];
     model.reportTypeStr = reportStoreTypeView.typeTitle;
     model.reportName = reportStoreNameTextField.text;
     model.buyTime = [selectTimeItemView itemStr];
     model.reportBuyNumber = reportPhoneNumberTextField.text;
     model.reportOperatorsTypeStr = [selectOperatorsItemView itemStr];
-    model.reportAdress = detailAdressTextView.text;
-    model.userImageStr = nil;
-    model.storeImageStr = nil;
+    model.reportAdress = [[areaView itemStr] stringByAppendingString:detailAdressTextView.text];
+    model.storeWebsite = reportStoreWebsiteTextField.text;
+    model.storeSaleWebsite = reportStoreSaleWebsiteTextField.text;
+    model.userImageStr = ownImageStr;
+    model.storeImageStr = storeImageStr;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {

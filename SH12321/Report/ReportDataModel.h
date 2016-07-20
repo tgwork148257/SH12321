@@ -37,17 +37,21 @@
 @property (nonatomic, copy) NSString *reportCrankCallStatusStr;    //举报骚扰电话形式字符串
 
 
-@property (nonatomic, copy) NSString *reportReasonTypeStr;         //违规原因类型字符串
+@property (nonatomic, copy) NSString *reportReasonTypeStr;        //违规原因类型字符串
 
 @property (nonatomic, copy) NSString *reportOperatorsTypeStr;     //运营商类型字符串
 
-@property (nonatomic, copy) NSString *reportBuyNumber;               //举报购买手机的手机号码
+@property (nonatomic, copy) NSString *reportBuyNumber;            //举报购买手机的手机号码
 
 @property (nonatomic, copy) NSString *userImageStr;               //用户持卡照片
 
-@property (nonatomic, copy) NSString *storeImageStr;               //实体店或者订单照片
+@property (nonatomic, copy) NSString *storeImageStr;             //实体店或者订单照片
 
-@property (nonatomic, copy) NSString *buyTime;                      //购买时间
+@property (nonatomic, copy) NSString *buyTime;                   //购买时间
+
+@property (nonatomic, copy) NSString *storeWebsite;               //网店网址
+
+@property (nonatomic, copy) NSString *storeSaleWebsite;           //销售页面地址
 
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型

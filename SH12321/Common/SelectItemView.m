@@ -21,7 +21,7 @@
     TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewWH, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, (viewH - imageViewWH)/2, imageViewWH, imageViewWH)];
-    if ([itemStr isEqualToString:@"选择时间"] || [itemStr isEqualToString:@"选择区县"] || [itemStr isEqualToString:@"选择购卡时间"] || [itemStr isEqualToString:@"选择运营商"]) {
+    if ([itemStr isEqualToString:@"选择时间"] || [itemStr isEqualToString:@"来电时间"] || [itemStr isEqualToString:@"选择区县"] || [itemStr isEqualToString:@"购卡时间"] || [itemStr isEqualToString:@"所属运营商"] || [itemStr isEqualToString:@"实体店照片"] || [itemStr isEqualToString:@"本人持卡照片"] || [itemStr isEqualToString:@"订单确认截图"] || [itemStr isEqualToString:@"违规原因"]) {
         icon.image = [UIImage imageNamed:nextIconImageStr];
     }else{
         icon.image = [UIImage imageNamed:selectNormalIconImageStr];

@@ -34,9 +34,11 @@ static NSString *const AppSourceKey                 = @"source";        //不良
 static NSString *const buyNumberKey                 = @"buy_mobile";           //购买的号码Key
 static NSString *const buyTimeKey                   = @"buy_time";                //购买时间Key
 static NSString *const operatorKey                  = @"operator";               //运营商Key
-static NSString *const storeImagerKey               = @"img";                 //实体店照片Key
-static NSString *const userImagerKey                = @"card_img";             //用户持卡照片Key
+static NSString *const storeImageKey               = @"img";                 //实体店照片Key
+static NSString *const userImageKey                = @"card_img";             //用户持卡照片Key
 static NSString *const reasonKey                    = @"reason";                   //违规原因Key
+static NSString *const storeWebsiteKey              = @"store_website";             //网店网址Key
+static NSString *const storeSaleWebsiteKey          = @"store_sale_website";        //网店销售页面Key
 
 
 

@@ -141,9 +141,11 @@
             [dic setValue:model.reportBuyNumber forKey:buyNumberKey];
             [dic setValue:model.reportTime forKey:buyTimeKey];
             [dic setValue:model.reportOperatorsTypeStr forKey:operatorKey];
-            [dic setValue:model.storeImageStr forKey:storeImagerKey];
-            [dic setValue:model.userImageStr forKey:userImagerKey];
+            [dic setValue:model.storeImageStr forKey:storeImageKey];
+            [dic setValue:model.userImageStr forKey:userImageKey];
             [dic setValue:model.reportReasonTypeStr forKey:reasonKey];
+            [dic setValue:model.storeWebsite forKey:storeWebsiteKey];
+            [dic setValue:model.storeSaleWebsite forKey:storeSaleWebsiteKey];
             [dic setValue:userToken forKey:userTokenKey];
             
             [TGRequest commitReportPhoneNumberIdentificationWithUrlStr:urlStr parameters:dic success:success fail:fail];

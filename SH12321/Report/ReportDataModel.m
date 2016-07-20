@@ -29,9 +29,11 @@
         self.reportBuyNumber = [TGJson JsonStr:[dic objectForKey:buyNumberKey]];
         self.buyTime = [TGJson JsonStr:[dic objectForKey:buyTimeKey]];
         self.reportOperatorsTypeStr = [TGJson JsonStr:[dic objectForKey:operatorKey]];
-        self.storeImageStr = [TGJson JsonStr:[dic objectForKey:storeImagerKey]];
-        self.userImageStr = [TGJson JsonStr:[dic objectForKey:userImagerKey]];
+        self.storeImageStr = [TGJson JsonStr:[dic objectForKey:storeImageKey]];
+        self.userImageStr = [TGJson JsonStr:[dic objectForKey:userImageKey]];
         self.reportReasonTypeStr = [TGJson JsonStr:[dic objectForKey:reasonKey]];
+        self.storeWebsite = [TGJson JsonStr:[dic objectForKey:storeWebsiteKey]];
+        self.storeSaleWebsite = [TGJson JsonStr:[dic objectForKey:storeSaleWebsiteKey]];
 
         self.listReportID = [TGJson JsonStr:[dic objectForKey:@"jw_id"]];
         self.listReportTime = [TGJson JsonStr:[dic objectForKey:@"report_time"]];

@@ -10,10 +10,10 @@
 
 #define viewH 48
 #define imageViewW 48
-#define imageViewH viewH
+#define imageViewH 36
 
-#define iconW 24
-#define iconH 24
+#define iconW 15
+#define iconH 15
 #define gap 24
 
 #define itemLabelTag    443434
@@ -27,11 +27,12 @@
     TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW - iconW - gap, viewH) text:title textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     
-    UIImageView *uploadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, 0, imageViewW, imageViewH)];
+    UIImageView *uploadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, (viewH - imageViewH)/2, imageViewW, imageViewH)];
     uploadImageView.tag = imageViewTag;
     [view addSubview:uploadImageView];
     
     UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(uploadImageView.x + uploadImageView.width + gap, (viewH - iconH)/2, iconW, iconH)];
+    icon.image = [UIImage imageNamed:nextIconImageStr];
     [view addSubview:icon];
     
     [superView addSubview:view];

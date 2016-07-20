@@ -28,6 +28,7 @@
     ReportItemLabel *reportTimeLengthLabel;
     SelectTypeView *reportTimeLengthView;
     
+    TGView *grayBgView;
     SelectItemView *selectTimeItemView;
     
     ReportItemLabel *reportContentLabel;
@@ -74,7 +75,8 @@
     reportTimeLengthView = [SelectTypeView initWithY:reportTimeLengthLabel.y + reportTimeLengthLabel.height superView:reportView];
     [reportTimeLengthView addTitles:timeLengthArr];
     
-    selectTimeItemView = [SelectItemView initWithY:reportTimeLengthView.y + reportTimeLengthView.height itemStr:@"选择时间" superView:reportView];
+    grayBgView = [TGView initWithFrame:CGRectMake(0, reportTimeLengthView.y + reportTimeLengthView.height, DEVICE_W, reportTimeLengthLabel.height) backgroundColor:grayBgColor superView:reportView];
+    selectTimeItemView = [SelectItemView initWithY:grayBgView.y + grayBgView.height itemStr:@"来电时间" superView:reportView];
     selectTimeItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:tap];
