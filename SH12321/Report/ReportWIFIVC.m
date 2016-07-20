@@ -136,6 +136,11 @@
         [TGToast showWithText:@"请输入详细地址"];
         return;
     }
+    
+    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+        [TGToast showWithText:@"请填写时间"];
+        return;
+    }
 
     
     model.reportType = ReportWIFI;
