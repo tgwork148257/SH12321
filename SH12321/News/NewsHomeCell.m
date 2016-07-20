@@ -9,9 +9,9 @@
 #import "NewsHomeCell.h"
 
 #define imageViewW 100
-#define imageViewH 64
+#define imageViewH 72
 #define gap 12.0F
-#define cellH 88
+#define cellH 96
 
 @implementation NewsHomeCell{
     UIImageView *imageview;
@@ -29,22 +29,25 @@
     
     CGFloat originY = (cellH - imageViewH)/2;
     imageview = [[UIImageView alloc] initWithFrame:CGRectMake(L_R_EDGE, originY, imageViewW, imageViewH)];
-    imageview.backgroundColor = C_RED;
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.newsPicUrlStr]];
+//    UIImage *image = [UIImage imageWithData:data];
+//    imageview.image = image;
     [imageview sd_setImageWithURL:[NSURL URLWithString:self.model.newsPicUrlStr]];
     [self.contentView addSubview:imageview];
     
     CGFloat titleLabelX = imageview.x + imageview.width + gap;
     CGFloat titleLabelW = DEVICE_W - titleLabelX - L_R_EDGE;
-    CGFloat titleLabelH = 36;
-    titleLabel = [TGLabel initWithFrame:CGRectMake(titleLabelX, originY, titleLabelW, titleLabelH) text:self.model.newsTitle textColor:C_BLACK textFont:FONTSIZE24 textAlignment:NSTextAlignmentLeft superView:self.contentView];
+    CGFloat titleLabelH = 48;
+    titleLabel = [TGLabel initWithFrame:CGRectMake(titleLabelX, originY, titleLabelW, titleLabelH) text:self.model.newsTitle textColor:C_BLACK textFont:FONTSIZE18 textAlignment:NSTextAlignmentLeft superView:self.contentView];
+    titleLabel.numberOfLines = 2;
     
     
     CGFloat bottomLabelY = titleLabel.y + titleLabel.height + gap;
-    CGFloat bottomLabelW = 64;
+    CGFloat bottomLabelW = 76;
     CGFloat bottomLabelH = 16;
     sourceLabel = [TGLabel initWithFrame:CGRectMake(titleLabel.x, bottomLabelY, bottomLabelW, bottomLabelH) text:self.model.newsTime textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self.contentView];
     
-    CGFloat timeLabelX = DEVICE_W - L_R_EDGE - bottomLabelW;
+    CGFloat timeLabelX = sourceLabel.x + sourceLabel.width + 12;
     timeLabel = [TGLabel initWithFrame:CGRectMake(timeLabelX, bottomLabelY, bottomLabelW, bottomLabelH) text:[NSString stringWithFormat:@"来源:%@",self.model.newsSource] textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentRight superView:self.contentView];
     
     line = [[UIView alloc] initWithFrame:CGRectMake(0, cellH - 1, DEVICE_W, 1)];

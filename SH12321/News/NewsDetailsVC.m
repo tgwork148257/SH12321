@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻详情";
     [super viewDidLoad];
-    self.leftBtn.hidden = YES;
+    self.leftBtn.hidden = NO;
     
     tableviewData = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; i++) {

@@ -28,6 +28,11 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self showTabbar];
+}
+
 - (void)viewDidLoad{
     self.navigationTitle = @"我";
     [super viewDidLoad];
@@ -64,6 +69,7 @@
 - (void)jumpToReportList{
     ReportRecordListVC *vc = [[ReportRecordListVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    [self hiddenTabbar];
 }
 
 @end

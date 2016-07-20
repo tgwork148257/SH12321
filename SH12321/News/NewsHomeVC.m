@@ -22,6 +22,11 @@
     NSInteger page;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self showTabbar];
+}
+
 - (void)viewDidLoad {
     self.navigationTitle = @"新闻";
     

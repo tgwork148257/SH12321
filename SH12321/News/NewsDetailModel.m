@@ -18,7 +18,7 @@
             self.newsTitle = [TGJson JsonStr:[dic objectForKey:@"title"]];
             self.newsSource = [TGJson JsonStr:[dic objectForKey:@"source"]];
 //            self.newsContent = [TGJson JsonStr:[dic objectForKey:@"push_status"]];
-            self.newsPicUrlStr = [TGJson JsonStr:[dic objectForKey:@"images"]];
+            self.newsPicUrlStr = [TGJson JsonStr:[dic objectForKey:@"image"]];
         }
     }
     return self;
