@@ -26,13 +26,10 @@
     ReportItemLabel *resultLabel;
     SelectTypeView *resultTypeView;
     
-//    CommitButton *commitBtn;
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     [self getReportDetail];
 }
@@ -61,10 +58,6 @@
     [resultTypeView addTitles:@[@"已解决", @"未解决"]];
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, resultTypeView.y + resultTypeView.height);
-    
-    
-//    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
-//    [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, reportView.y + reportView.height);
 

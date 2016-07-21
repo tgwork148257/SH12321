@@ -26,7 +26,7 @@
         case ReportCrankCall:
         {
             DetailItemView *sendNumberItemView = [DetailItemView initWithY:itemY title:@"骚扰电话号码" content:reportData.reportSendNumber superView:view];
-            DetailItemView *acceptNumberItemView = [DetailItemView initWithY:sendNumberItemView.y + sendNumberItemView.height title:@"被骚扰电话号码" content:reportData.reportAcceptNumber superView:view];
+            DetailItemView *acceptNumberItemView = [DetailItemView initWithY:sendNumberItemView.y + sendNumberItemView.height title:reportData.reportAcceptNumber content:reportData.reportAcceptNumber superView:view];
             DetailItemView *typeItemView = [DetailItemView initWithY:acceptNumberItemView.y + acceptNumberItemView.height title:@"骚扰类型" content:reportData.reportTypeStr  superView:view];
             DetailItemView *statusItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"骚扰形式" content:reportData.reportCrankCallStatusStr superView:view];
             DetailItemView *lengthItemView = [DetailItemView initWithY:statusItemView.y + statusItemView.height title:@"通话时长" content:reportData.reportTimeLengthStr superView:view];
