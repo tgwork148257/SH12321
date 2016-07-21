@@ -22,7 +22,6 @@
         self.reportContent = [TGJson JsonStr:[dic objectForKey:contentKey]];
         self.reportTypeStr = [TGJson JsonStr:[dic objectForKey:reportTypeKey]];
         
-
         self.reportCrankCallStatusStr = [TGJson JsonStr:[dic objectForKey:crankCallStatusKey]];
         self.reportWebsiteURL = [TGJson JsonStr:[dic objectForKey:websiteURLKey]];
         self.reportAppSource = [TGJson JsonStr:[dic objectForKey:AppSourceKey]];
@@ -40,6 +39,7 @@
         self.listReportFlag = [TGJson JsonStr:[dic objectForKey:@"con_flag"]];
         self.listReportTypeStr = [TGJson JsonStr:[dic objectForKey:@"type_name"]];
         
+        self.handleResultIndex = [[TGJson JsonStr:[dic objectForKey:@"report_time"]] integerValue];
         self.handleResult = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
     }
     return self;

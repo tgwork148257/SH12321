@@ -56,7 +56,8 @@
 
 @property (nonatomic, assign) ReportDataType reportType;    //举报类型
 
-@property (nonatomic, copy) NSString *handleResult;       //处理结果
+@property (nonatomic, assign) NSInteger handleResultIndex;       //处理结果index
+@property (nonatomic, copy) NSString *handleResult;             //处理结果
 
 @property (nonatomic, copy) NSString *listReportID;             //举报ID
 @property (nonatomic, copy) NSString *listReportTime;           //列表举报时间
