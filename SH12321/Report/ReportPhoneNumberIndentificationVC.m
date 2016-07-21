@@ -128,8 +128,12 @@
     
     reportStoreSaleWebsiteLabel = [ReportItemLabel initWithY:reportStoreWebsiteTextField.y + reportStoreWebsiteTextField.height title:@"销售页面地址" superView:reportView];
     reportStoreSaleWebsiteTextField = [ReportItemTextField initWithY:reportStoreSaleWebsiteLabel.y + reportStoreSaleWebsiteLabel.height placeholder:@"请填写销售页面地址" superView:reportView];
+    reportStoreWebsiteLabel.hidden = YES;
+    reportStoreWebsiteTextField.hidden = YES;
+    reportStoreSaleWebsiteLabel.hidden = YES;
+    reportStoreSaleWebsiteTextField.hidden = YES;
     
-    storeUploadImageGrayView = [TGView initWithFrame:CGRectMake(0, reportStoreSaleWebsiteTextField.y + reportStoreSaleWebsiteTextField.height, DEVICE_W, reportTypeLabel.height) backgroundColor:grayBgColor superView:reportView];
+    storeUploadImageGrayView = [TGView initWithFrame:CGRectMake(0, detailAdressTextView.y + detailAdressTextView.height, DEVICE_W, reportTypeLabel.height) backgroundColor:grayBgColor superView:reportView];
     storeUploadImageItemView = [UploadImageItemView initWithY:storeUploadImageGrayView.y + storeUploadImageGrayView.height title:@"实体店或者订单确认照片" superView:reportView];
     storeUploadImageItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *storeUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(storeUploadImageItemViewTap)];
