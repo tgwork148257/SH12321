@@ -185,7 +185,7 @@
             
         }
             break;
-        case ReportOthersVC:
+        case ReportOthers:
         {
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_OTHERS];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];

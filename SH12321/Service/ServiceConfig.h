@@ -59,7 +59,7 @@ static NSString * const COMMIT_REPORT_FRIGMENT = @"App/reportIPR";
 static NSString * const COMMIT_REPORT_OTHERS = @"App/reportOther";
 
 
-
+static NSString * const COMMIT_REPORT_FEEDBACK = @"App/reportFeedback";
 
 
 #endif /* ServiceConfig_h */

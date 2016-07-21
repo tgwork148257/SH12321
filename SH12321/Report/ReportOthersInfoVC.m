@@ -75,7 +75,7 @@
         return;
     }
     
-    model.reportType = ReportOthersVC;
+    model.reportType = ReportOthers;
     model.reportContent = reportContentTextView.text;
     [[TGService sharedInstance] commitReportWithData:model success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {

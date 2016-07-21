@@ -26,6 +26,7 @@
     ReportItemLabel *resultLabel;
     SelectTypeView *resultTypeView;
     
+    CommitButton *commitBtn;
 }
 
 - (void)viewDidLoad {
@@ -59,7 +60,10 @@
     
     reportView.frame = CGRectMake(0, 0, DEVICE_W, resultTypeView.y + resultTypeView.height);
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, reportView.y + reportView.height);
+    commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
+    [commitBtn addTarget:self action:@selector(commitReportFeedback) forControlEvents:UIControlEventTouchUpInside];
+    
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
 
 }
 
@@ -76,6 +80,19 @@
         }
     } fail:^{
         [TGToast showWithText:@"获取举报详情失败，请重试"];
+    }];
+}
+
+- (void)commitReportFeedback{
+    
+    [TGRequest reportFeedbackWithId:self.data.listReportID feedback:resultTypeView.typeTitle success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            [TGToast showWithText:@"反馈处理结果成功，请重试"];
+        }else{
+            [TGToast showWithText:@"反馈处理结果失败，请重试"];
+        }
+    } fail:^{
+        [TGToast showWithText:@"反馈处理结果失败，请重试"];
     }];
 }
 

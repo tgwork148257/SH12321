@@ -38,7 +38,7 @@
         self.listReportID = [TGJson JsonStr:[dic objectForKey:@"jw_id"]];
         self.listReportTime = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
         self.listReportFlag = [TGJson JsonStr:[dic objectForKey:@"con_flag"]];
-        self.listReportTypeStr = [TGJson JsonStr:[dic objectForKey:@"report_type"]];
+        self.listReportTypeStr = [TGJson JsonStr:[dic objectForKey:@"type_name"]];
         
         self.handleResult = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
     }

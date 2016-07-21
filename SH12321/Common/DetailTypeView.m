@@ -22,6 +22,35 @@
 //    handleResultContentLabel.numberOfLines = 2;
 //    CGFloat itemY = handleResultContentView.y + handleResultContentView.height;
     CGFloat itemY = 0;
+    
+    if ([reportData.listReportTypeStr isEqualToString:@"不良短信"]) {
+        reportData.reportType = ReportMessage;
+    }else if([reportData.listReportTypeStr isEqualToString:@"骚扰电话"]){
+        reportData.reportType = ReportCrankCall;
+    }else if([reportData.listReportTypeStr isEqualToString:@"诈骗电话"]){
+        reportData.reportType = ReportScamCall;
+    }else if([reportData.listReportTypeStr isEqualToString:@"不良网站"]){
+        reportData.reportType = ReportWebsite;
+    }else if([reportData.listReportTypeStr isEqualToString:@"垃圾邮件"]){
+        reportData.reportType = ReportEmail;
+    }else if([reportData.listReportTypeStr isEqualToString:@"不良App"]){
+        reportData.reportType = ReportApp;
+    }else if([reportData.listReportTypeStr isEqualToString:@"伪基站"]){
+        reportData.reportType = ReportFakeBaseStation;
+    }else if([reportData.listReportTypeStr isEqualToString:@"不良WIFI"]){
+        reportData.reportType = ReportWIFI;
+    }else if([reportData.listReportTypeStr isEqualToString:@"手机实名制"]){
+        reportData.reportType = ReportPhoneNumberIndentification;
+    }else if([reportData.listReportTypeStr isEqualToString:@"个人信息泄露"]){
+        reportData.reportType = ReportInfoReveal;
+    }else if([reportData.listReportTypeStr isEqualToString:@"不良舆情"]){
+        reportData.reportType = ReportBadNews;
+    }else if([reportData.listReportTypeStr isEqualToString:@"知识产权侵权"]){
+        reportData.reportType = ReportInfringment;
+    }else if([reportData.listReportTypeStr isEqualToString:@"其他举报"]){
+        reportData.reportType = ReportOthers;
+    }
+    
     switch (reportData.reportType) {
         case ReportCrankCall:
         {
@@ -142,15 +171,15 @@
             
         case ReportInfringment:
         {
-            DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"骚扰内容" content:reportData.reportContent superView:view];
+            DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"泄露信息内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
         }
             break;
             
-        case ReportOthersVC:
+        case ReportOthers:
         {
-            DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"骚扰内容" content:reportData.reportContent superView:view];
+            DetailItemView *contentItemView = [DetailItemView initWithY:itemY title:@"举报内容" content:reportData.reportContent superView:view];
             
             view.height = contentItemView.y + contentItemView.height;
         }

@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, ReportDataType){
     ReportInfoReveal,                   //举报个人信息泄露
     ReportBadNews,                      //举报不良舆情
     ReportInfringment,                  //举报知识产权侵权
-    ReportOthersVC,                     //举报其他
+    ReportOthers,                     //举报其他
 };
 
 

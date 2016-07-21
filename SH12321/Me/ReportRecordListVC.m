@@ -24,7 +24,7 @@
 - (void)viewDidLoad{
     self.navigationTitle = @"我";
     [super viewDidLoad];
-    self.leftBtn.hidden = YES;
+    self.leftBtn.hidden = NO;
     page = 1;
     
     cellDataArr = [[NSMutableArray alloc] init];
@@ -58,18 +58,11 @@
 
 #pragma mark - 计算headView高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    //    return [meHomeTopView viewHeightWithModel:self.meHomeModel];
     return 0.1;
 }
 
 #pragma mark - build headview
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    //    meHomeTopView = [[meHomeTopView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, [meHomeTopView viewHeightWithModel:self.meHomeModel])];
-    //    meHomeTopView.meHomeModel = self.meHomeModel;
-    //    meHomeTopView.userListArr = friendsUserListDataArr;
-    //    [meHomeTopView addSubviews];
-    //
-    //    return meHomeTopView;
     return nil;
 }
 
@@ -98,7 +91,6 @@
         static NSString *str = @"ReportRecordCell";
         ReportRecordCell *cell = [[ReportRecordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        //        cell.friendsPostCellDelegate = self;
         cell.model = [cellDataArr objectAtIndex:indexPath.row];
         [cell buildCell];
         return cell;
