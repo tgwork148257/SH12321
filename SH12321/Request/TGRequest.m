@@ -74,12 +74,22 @@
     
     //1.创建一个名为mgr的请求管理者
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"test.jpg" forHTTPHeaderField:@"fileName"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyyMMddHHmmss";
+    NSString *imageName = [formatter stringFromDate:[NSDate date]];
+    NSString *fileName = [NSString stringWithFormat:@"%@.jpg",imageName];
+    
+    NSString *user_token = [TGUtils getUserToken];
+//    parameters = @{@"file":imageData,
+//                            @"filename":imageName,
+//                            userTokenKey:user_token};
     
     //3.发送请求
     [manager POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:imageData name:@"file" fileName:@"test.jpg" mimeType:@"image/jpeg/png"];
+        [formData appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/jpeg/jpg"];
         /*
          Data: 要上传的二进制数据
          name:保存在服务器上时用的Key值
@@ -87,14 +97,12 @@
          mimeType:让服务器知道我上传的是哪种类型的文件
          */
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {//发送成功会来到这里
-        NSLog(@"获取用户名称请求成功（图片）");
         if(success){
-            NSLog(@"responseObject is %@",responseObject);
+            NSLog(@"获取用户名称请求成功（图片） responseObject is %@",responseObject);
             success(responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {//发送成功会来到这里
-        NSLog(@"获取用户名称请求失败（图片）——%@",error);
-        NSLog(@"error is %@",error);
+        NSLog(@"获取用户名称请求失败（图片） error is %@",error);
         if(fail){
             fail();
         }
