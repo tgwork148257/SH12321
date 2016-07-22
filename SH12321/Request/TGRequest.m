@@ -35,6 +35,75 @@
     }];
 }
 
+//post提交json数据：
++ (void)postJSONWithUrl:(NSString*)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail
+
+{
+    AFHTTPRequestOperationManager*manager = [AFHTTPRequestOperationManager manager];
+    
+    // 设置请求格式
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+//    // 设置返回格式
+//    
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSLog(@"url is %@",urlStr);
+    NSLog(@"parameters is %@",parameters);
+    
+    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject){
+        if(success){
+            NSLog(@"responseObject is %@",responseObject);
+            success(responseObject);
+        }
+    }failure:^(AFHTTPRequestOperation* operation,NSError* error){
+        NSLog(@"%@",error);
+        if(fail){
+            fail();
+        }
+    }];
+}
+
+
+//上传图片：
++ (void)uploadImageUrl:(NSString*)urlStr parameters:(id)parameters data:(NSData *)imageData success:(void(^)(id responseObject))success fail:(void(^)())fail
+{
+    NSLog(@"url is %@",urlStr);
+    NSLog(@"parameters is %@",parameters);
+    
+    //1.创建一个名为mgr的请求管理者
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    //3.发送请求
+    [manager POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"file" fileName:@"test.jpg" mimeType:@"image/jpeg/png"];
+        /*
+         Data: 要上传的二进制数据
+         name:保存在服务器上时用的Key值
+         fileName:保存在服务器上时用的文件名,注意要加 .jpg或者.png
+         mimeType:让服务器知道我上传的是哪种类型的文件
+         */
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {//发送成功会来到这里
+        NSLog(@"获取用户名称请求成功（图片）");
+        if(success){
+            NSLog(@"responseObject is %@",responseObject);
+            success(responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {//发送成功会来到这里
+        NSLog(@"获取用户名称请求失败（图片）——%@",error);
+        NSLog(@"error is %@",error);
+        if(fail){
+            fail();
+        }
+    }];
+
+}
+
+
+
 //检测网络状态：
 + (void)netWorkStatus
 
@@ -60,43 +129,6 @@
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status){
         NSLog(@"%ld",status);
     }];
-}
-
-//post提交json数据：
-+ (void)postJSONWithUrl:(NSString*)urlStr parameters:(id)parameters success:(void(^)(id responseObject))success fail:(void(^)())fail
-
-{
-    AFHTTPRequestOperationManager*manager = [AFHTTPRequestOperationManager manager];
-    
-    // 设置请求格式
-    
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    
-//    // 设置返回格式
-//    
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    [manager GET:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-//    [manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation* operation,id responseObject){
-//        
-//        //        NSString *result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-//        
-//        if(success){
-//            success(responseObject);
-//        }
-//    }failure:^(AFHTTPRequestOperation* operation,NSError* error){
-//        NSLog(@"%@",error);
-//        
-//        if(fail){
-//            
-//            fail();
-//        }
-//    }];
 }
 
 +(void)TestAFN{
@@ -215,10 +247,11 @@
 + (void)uploadImageWithImage:(UIImage *)image success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_UPLOAD_PIC];
     NSString *user_token = [TGUtils getUserToken];
-    NSString *imageStr = [TGUtils imageToBase64Str:image];
-    NSDictionary *parameters = @{@"file":imageStr,
-                                 userTokenKey:user_token};
-    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+    NSData *imageData = [TGUtils imageToData:image];
+//    NSDictionary *parameters = @{@"file":imageData,
+//                                 userTokenKey:user_token};
+    NSDictionary *parameters = @{ userTokenKey:user_token};
+    [self uploadImageUrl:urlStr parameters:parameters data:imageData success:success fail:fail];
 }
 
 #pragma mark -- 获取举报列表接口

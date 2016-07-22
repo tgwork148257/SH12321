@@ -17,7 +17,6 @@
 @implementation SelectTypeView{
     NSArray *titlesArr;
     NSString *selectTitleStr;
-    NSInteger selectTitleIndex;
 }
 
 + (SelectTypeView *)initWithY:(CGFloat)y superView:(UIView *)superView{
@@ -35,7 +34,7 @@
     CGFloat btnY = (viewH - imageWH)/2;
     for (NSInteger i = 0; i < titles.count; i ++) {
         NSString *title = [titles objectAtIndex:i];
-        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH - 1) text:title textColor:C_BLACK textFont:FONTSIZE10 textAlignment:NSTextAlignmentLeft superView:self];
+        TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH - 1) text:title textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:self];
         label.numberOfLines = 1;
         
         TGView *line = [TGView initWithFrame:CGRectMake(0, label.y + label.height, DEVICE_W, 1) superView:self];
@@ -49,8 +48,7 @@
     
         if (i == 0 ) {
             btn.selected = YES;
-            selectTitleIndex = btn.tag - btnTag;
-            selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+            selectTitleStr = [titlesArr objectAtIndex:(btn.tag - btnTag)];
             _typeTitle = selectTitleStr;
             if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
                 [self.delegate selectTypeStr:selectTitleStr];
@@ -71,17 +69,13 @@
         }
     }
     
-    selectTitleIndex = btn.tag - btnTag;
-    selectTitleStr = [titlesArr objectAtIndex:selectTitleIndex];
+    selectTitleStr = [titlesArr objectAtIndex:(btn.tag - btnTag)];
     _typeTitle = selectTitleStr;
     btn.selected = YES;
     
     if ([self.delegate respondsToSelector:@selector(selectTypeStr:)]) {
         [self.delegate selectTypeStr:selectTitleStr];
     }
-}
-- (NSInteger)getSelectIndex{
-    return selectTitleIndex;
 }
 
 

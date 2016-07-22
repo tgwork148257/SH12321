@@ -108,7 +108,8 @@ typedef void (^InfoBlock) ();
 #pragma mark - 字符串转图片
 + (UIImage *)base64StrToUIImage:(NSString *)encodedImageStr;
 
-
+#pragma mark -图片转二进制
++ (NSData *)imageToData:(UIImage *) image;
 
 
 

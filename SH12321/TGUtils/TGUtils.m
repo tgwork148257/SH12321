@@ -334,7 +334,12 @@
     return decodedImage;
 }
 
-
+#pragma mark -图片转二进制
++ (NSData *)imageToData:(UIImage *) image
+{
+    NSData *data = UIImageJPEGRepresentation(image, 0.5f);
+    return data;
+}
 
 
 

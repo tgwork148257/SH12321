@@ -24,7 +24,6 @@
 
 - (void)addTitles:(NSArray *)titles;
 
-- (NSInteger)selectIndex;
 
 
 @end
