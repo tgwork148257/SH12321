@@ -17,6 +17,7 @@
     if ([self.model.type isEqualToString:@"1"]) {
         CGRect rect = [TGManager rectWithString:self.model.text attrDic:@{NSFontAttributeName: FONTSIZE14}];
         textLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, rect.size.height) text:self.model.text textColor:C_BLACK textFont:FONTSIZE14 textAlignment:NSTextAlignmentLeft superView:self.contentView];
+        textLabel.numberOfLines = 0;
     }else{
         CGFloat width = self.model.width;
         CGFloat height = self.model.height;
@@ -26,6 +27,7 @@
         }
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake((DEVICE_W - width)/2, 0, width, height)];
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.model.imageURL]];
+        [self.contentView addSubview:imageView];
     }
 }
 

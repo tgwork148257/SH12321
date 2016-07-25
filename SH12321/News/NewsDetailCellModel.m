@@ -15,7 +15,7 @@
         if (!EMPTY_DIC(dic)) {
             self.type = [TGJson JsonStr:[dic objectForKey:@"type"]];
             self.text = [TGJson JsonStr:[dic objectForKey:@"text"]];
-            self.imageURL = [TGJson JsonStr:[dic objectForKey:@"imageURL"]];
+            self.imageURL = [TGJson JsonStr:[dic objectForKey:@"url"]];
             self.width = [[TGJson JsonStr:[dic objectForKey:@"width"]] integerValue];
             self.height = [[TGJson JsonStr:[dic objectForKey:@"height"]] integerValue];
         }

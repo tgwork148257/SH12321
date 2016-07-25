@@ -86,7 +86,7 @@
         return;
     }
     
-    if (EMPTY_STRING(AppNameTextField.text)) {
+    if (EMPTY_STRING(AppSourceTextField.text)) {
         [TGToast showWithText:@"请输入App来源"];
         return;
     }

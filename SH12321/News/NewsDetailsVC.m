@@ -29,12 +29,12 @@
     self.leftBtn.hidden = NO;
     
     tableviewData = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
-        NewsDetailCellModel *model = [[NewsDetailCellModel alloc] init];
-        model.text = @"ccc";
-        model.type = @"1";
-        [tableviewData addObject:model];
-    }
+//    for (int i = 0; i < 10; i++) {
+//        NewsDetailCellModel *model = [[NewsDetailCellModel alloc] init];
+//        model.text = @"ccc";
+//        model.type = @"1";
+//        [tableviewData addObject:model];
+//    }
     [self addTableView];
 }
 
@@ -93,6 +93,7 @@
                 NewsDetailCellModel *model = [[NewsDetailCellModel alloc] initWithDictionary:dic];
                 [tableviewData addObject:model];
             }
+            [tableview reloadData];
         }else{
             [TGToast showWithText:@"获取新闻详情失败，请重试"];
         }
