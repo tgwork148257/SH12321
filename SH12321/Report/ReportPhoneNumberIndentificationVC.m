@@ -503,10 +503,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     if (isClickStoreImageItemView == YES) {
         [storeUploadImageItemView addImageView:image];
-        storeImageStr = [self upLoadImage:image];
+        [self upLoadStoreImage:image];
     }else{
         [ownUploadImageItemView addImageView:image];
-        ownImageStr = [self upLoadImage:image];
+        [self upLoadOwnImage:image];
     }
     [picker dismissViewControllerAnimated:YES completion:^{}];
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
@@ -515,15 +515,20 @@
 }
 
 
-- (NSString *)upLoadImage:(UIImage *)image{
-    __block NSString *imageStr = @"";
+- (void)upLoadOwnImage:(UIImage *)image{
     [TGRequest  uploadImageWithImage:image success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            imageStr = [[responseObject objectForKey:@"data"] objectForKey:@"file_path"];
+            ownImageStr = [[responseObject objectForKey:@"data"] objectForKey:@"file_path"];
         }
     } fail:nil];
-    
-    return imageStr;
+}
+
+- (void)upLoadStoreImage:(UIImage *)image{
+    [TGRequest  uploadImageWithImage:image success:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            storeImageStr = [[responseObject objectForKey:@"data"] objectForKey:@"file_path"];
+        }
+    } fail:nil];
 }
 
 @end

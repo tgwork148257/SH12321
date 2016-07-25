@@ -70,23 +70,25 @@
 + (void)uploadImageUrl:(NSString*)urlStr parameters:(id)parameters data:(NSData *)imageData success:(void(^)(id responseObject))success fail:(void(^)())fail
 {
     NSLog(@"url is %@",urlStr);
-    NSLog(@"parameters is %@",parameters);
+    
     
     //1.创建一个名为mgr的请求管理者
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 //    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager.requestSerializer setValue:@"test.jpg" forHTTPHeaderField:@"fileName"];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyyMMddHHmmss";
     NSString *imageName = [formatter stringFromDate:[NSDate date]];
     NSString *fileName = [NSString stringWithFormat:@"%@.jpg",imageName];
     
-    NSString *user_token = [TGUtils getUserToken];
+//    NSString *user_token = [TGUtils getUserToken];
 //    parameters = @{@"file":imageData,
-//                            @"filename":imageName,
+//                            @"filename":fileName,
 //                            userTokenKey:user_token};
     
+    NSLog(@"parameters is %@",parameters);
     //3.发送请求
     [manager POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/jpeg/jpg"];
@@ -98,11 +100,11 @@
          */
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {//发送成功会来到这里
         if(success){
-            NSLog(@"获取用户名称请求成功（图片） responseObject is %@",responseObject);
+            NSLog(@"请求图片接口成功 responseObject is %@",responseObject);
             success(responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {//发送成功会来到这里
-        NSLog(@"获取用户名称请求失败（图片） error is %@",error);
+        NSLog(@"请求图片接口失败  error is %@",error);
         if(fail){
             fail();
         }
@@ -275,7 +277,7 @@
 + (void)getReportDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_REPORT_DETAIL];
     NSString *user_token = [TGUtils getUserToken];
-    NSDictionary *parameters = @{@"id":reportID,
+    NSDictionary *parameters = @{@"jw_id":reportID,
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
@@ -290,10 +292,10 @@
 }
 
 #pragma mark -- 获取新闻详情接口
-+ (void)getNewsDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail{
++ (void)getNewsDetailWithId:(NSString *)newsID success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_NEWS_DETAIL];
     NSString *user_token = [TGUtils getUserToken];
-    NSDictionary *parameters = @{@"id":reportID,
+    NSDictionary *parameters = @{@"news_id":newsID,
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
@@ -303,7 +305,7 @@
 + (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_FEEDBACK];
     NSString *user_token = [TGUtils getUserToken];
-    NSDictionary *parameters = @{@"id":reportID,
+    NSDictionary *parameters = @{@"jw_id":reportID,
                                  @"feedback":feedback,
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];

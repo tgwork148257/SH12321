@@ -136,15 +136,16 @@
             urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_PHONE_NUMBER_IDENTIFICATION];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:model.reportTypeStr forKey:reportTypeKey];
-            [dic setValue:model.reportAdress forKey:addressKey];
+            [dic setValue:model.reportAdress forKey:@"address"];
             [dic setValue:model.reportName forKey:nameKey];
             [dic setValue:model.reportBuyNumber forKey:buyNumberKey];
-            [dic setValue:model.reportTime forKey:buyTimeKey];
+            [dic setValue:model.buyTime forKey:buyTimeKey];
             [dic setValue:model.reportOperatorsTypeStr forKey:operatorKey];
             [dic setValue:model.storeImageStr forKey:storeImageKey];
             [dic setValue:model.userImageStr forKey:userImageKey];
             [dic setValue:model.reportReasonTypeStr forKey:reasonKey];
             [dic setValue:model.storeWebsite forKey:storeWebsiteKey];
+            [dic setValue:model.reportContent forKey:contentKey];
             [dic setValue:model.storeSaleWebsite forKey:storeSaleWebsiteKey];
             [dic setValue:userToken forKey:userTokenKey];
             

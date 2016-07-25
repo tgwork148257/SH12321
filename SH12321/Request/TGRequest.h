@@ -73,7 +73,7 @@
 + (void)getNewsListWithPage:(NSInteger)page success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 获取新闻详情接口
-+ (void)getNewsDetailWithId:(NSString *)reportID success:(void(^)(id responseObject))success fail:(void(^)())fail;
++ (void)getNewsDetailWithId:(NSString *)newsID success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 举报反馈接口
 + (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback success:(void(^)(id responseObject))success fail:(void(^)())fail;

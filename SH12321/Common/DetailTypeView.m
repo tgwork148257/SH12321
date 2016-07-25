@@ -137,7 +137,7 @@
             DetailItemView *reasonItemView = [DetailItemView initWithY:typeItemView.y + typeItemView.height title:@"违规原因" content:reportData.reportReasonTypeStr superView:view];
             DetailItemView *nameItemView = [DetailItemView initWithY:reasonItemView.y + reasonItemView.height title:@"店铺名称" content:reportData.reportName superView:view];
             DetailItemView *phoneItemView = [DetailItemView initWithY:nameItemView.y + nameItemView.height title:@"手机号码" content:reportData.reportBuyNumber superView:view];
-            DetailItemView *timeItemView = [DetailItemView initWithY:phoneItemView.y + phoneItemView.height title:@"购卡时间" content:reportData.reportTime superView:view];
+            DetailItemView *timeItemView = [DetailItemView initWithY:phoneItemView.y + phoneItemView.height title:@"购卡时间" content:reportData.buyTime superView:view];
             DetailItemView *operatorItemView = [DetailItemView initWithY:timeItemView.y + timeItemView.height title:@"所属运营商" content:reportData.reportOperatorsTypeStr superView:view];
             
             NSString *adress;

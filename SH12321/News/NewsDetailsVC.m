@@ -88,8 +88,8 @@
 - (void)getNewsList{
     [TGRequest getNewsDetailWithId:self.detailModel.newsID  success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            NSDictionary *listDic = [responseObject objectForKey:@"code"];
-            for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
+            NSArray *listData = [responseObject objectForKey:@"data"];
+            for (NSDictionary *dic in listData) {
                 NewsDetailCellModel *model = [[NewsDetailCellModel alloc] initWithDictionary:dic];
                 [tableviewData addObject:model];
             }

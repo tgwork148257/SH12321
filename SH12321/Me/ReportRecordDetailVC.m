@@ -87,7 +87,8 @@
     
     [TGRequest reportFeedbackWithId:self.data.listReportID feedback:resultTypeView.typeTitle success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
-            [TGToast showWithText:@"反馈处理结果成功，请重试"];
+            [TGToast showWithText:@"反馈处理结果成功"];
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
             [TGToast showWithText:@"反馈处理结果失败，请重试"];
         }
