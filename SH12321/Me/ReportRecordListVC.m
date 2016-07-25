@@ -129,10 +129,18 @@
                 [tableView.mj_footer endRefreshing];
             });
         }
+        
+        if (cellDataArr.count < 20) {
+            tableView.mj_footer.hidden = YES;
+        }
     } fail:^{
         dispatch_async(main_queue, ^{
             [tableView.mj_footer endRefreshing]; //没有更多数据
         });
+        
+        if (cellDataArr.count < 20) {
+            tableView.mj_footer.hidden = YES;
+        }
     }];
 }
 
