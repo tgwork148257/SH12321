@@ -30,8 +30,8 @@
     titlesArr = titles;
     CGFloat labelX = L_R_EDGE;
     CGFloat labelY = 0;
-    CGFloat btnX = DEVICE_W - L_R_EDGE - imageWH;
-    CGFloat btnY = (viewH - imageWH)/2;
+    CGFloat btnX = DEVICE_W - L_R_EDGE - viewH + 10;
+    CGFloat btnY = 0;
     for (NSInteger i = 0; i < titles.count; i ++) {
         NSString *title = [titles objectAtIndex:i];
         TGLabel *label = [TGLabel initWithFrame:CGRectMake(labelX, labelY, 100, viewH - 1) text:title textColor:C_BLACK textFont:FONTSIZE12 textAlignment:NSTextAlignmentLeft superView:self];
@@ -40,7 +40,7 @@
         TGView *line = [TGView initWithFrame:CGRectMake(0, label.y + label.height, DEVICE_W, 1) superView:self];
         line.backgroundColor = C_LINE;
         
-        TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, imageWH, imageWH) superView:self];
+        TGButton *btn = [TGButton initWithFrame:CGRectMake(btnX, btnY, (viewH-1), (viewH-1)) superView:self];
         [btn setImage:[UIImage imageNamed:selectNormalIconImageStr] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:selectSelectedIconImageStr] forState:UIControlStateSelected];
         btn.tag = btnTag + i;
