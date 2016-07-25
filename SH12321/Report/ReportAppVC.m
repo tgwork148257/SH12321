@@ -60,6 +60,15 @@
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:self.view];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
+    UITapGestureRecognizer *resignTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resign)];
+    reportView.userInteractionEnabled = YES;
+    [reportView addGestureRecognizer:resignTap];
+}
+
+- (void)resign{
+    [AppNameTextField resignFirstResponder];
+    [AppSourceTextField resignFirstResponder];
+    [reportContentTextView resignFirstResponder];
 }
 
 - (void)textViewDidChange:(UITextView *)textView{

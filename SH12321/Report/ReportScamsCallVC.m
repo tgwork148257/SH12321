@@ -62,7 +62,7 @@
     [scrollView addSubview:reportView];
     
     reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"诈骗电话" superView:reportView];
-    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"请填写诈骗电话号码" superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"如：01266528739，13918549752" superView:reportView];
     
     reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被诈骗电话" superView:reportView];
     reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:@"请填写被诈骗电话号码" superView:reportView];
@@ -94,6 +94,14 @@
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnBottomGap);
     
+    UITapGestureRecognizer *resignTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resign)];
+    [scrollView addGestureRecognizer:resignTap];
+}
+
+- (void)resign{
+    [reportSendNumberTextField resignFirstResponder];
+    [reportAcceptNumberTextField resignFirstResponder];
+    [reportContentTextView resignFirstResponder];
 }
 
 - (void)textViewDidChange:(UITextView *)textView{

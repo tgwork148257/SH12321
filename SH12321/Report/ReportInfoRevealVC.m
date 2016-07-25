@@ -69,6 +69,10 @@
     }
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [reportContentTextView resignFirstResponder];
+}
+
 - (void)commitReport{
     
     if (EMPTY_STRING(reportContentTextView.text)) {

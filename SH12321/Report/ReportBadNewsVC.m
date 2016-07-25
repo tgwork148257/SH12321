@@ -50,6 +50,10 @@
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [reportContentTextView resignFirstResponder];
+}
+
 
 - (void)textViewDidChange:(UITextView *)textView{
     if (!EMPTY_STRING(textView.text)) {

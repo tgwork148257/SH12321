@@ -87,7 +87,13 @@
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
-    
+    UITapGestureRecognizer *resignTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resign)];
+    [scrollView addGestureRecognizer:resignTap];
+}
+
+- (void)resign{
+    [detailAdressTextView resignFirstResponder];
+    [reportContentTextView resignFirstResponder];
 }
 
 - (void)selectArea{

@@ -157,7 +157,8 @@
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnBottomGap);
-    
+    UITapGestureRecognizer *resignTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resign)];
+    [scrollView addGestureRecognizer:resignTap];
 }
 
 - (void)textViewDidChange:(UITextView *)textView{
@@ -529,6 +530,26 @@
             storeImageStr = [[responseObject objectForKey:@"data"] objectForKey:@"file_path"];
         }
     } fail:nil];
+}
+
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [reportStoreNameTextField resignFirstResponder];
+    [reportPhoneNumberTextField resignFirstResponder];
+    [reportStoreWebsiteTextField resignFirstResponder];
+    [reportStoreSaleWebsiteTextField resignFirstResponder];
+    [reportContentTextView resignFirstResponder];
+}
+
+- (void)resign{
+    [reportStoreNameTextField resignFirstResponder];
+    [reportPhoneNumberTextField resignFirstResponder];
+    [reportStoreWebsiteTextField resignFirstResponder];
+    [reportStoreSaleWebsiteTextField resignFirstResponder];
+    [detailAdressTextView resignFirstResponder];
+    [reportContentTextView resignFirstResponder];
 }
 
 @end
