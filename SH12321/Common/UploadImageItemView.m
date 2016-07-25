@@ -24,7 +24,7 @@
 
 + (UploadImageItemView *)initWithY:(CGFloat)y title:(NSString *)title superView:(UIView *)superView{
     UploadImageItemView *view = [[UploadImageItemView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
-    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW - iconW - gap, viewH) text:title textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *label = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W - imageViewW - iconW - gap, viewH) text:title textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
     label.tag = itemLabelTag;
     
     UIImageView *uploadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(label.x + label.width, (viewH - imageViewH)/2, imageViewW, imageViewH)];

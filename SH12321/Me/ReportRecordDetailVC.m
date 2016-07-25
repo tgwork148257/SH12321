@@ -45,12 +45,12 @@
     
     handleResultTitleLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:reportView];
     
-    CGRect contentRect = [TGManager rectWithString:self.data.handleResult attrDic:@{NSFontAttributeName:F_TEXT} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
+    CGRect contentRect = [TGManager rectWithString:self.data.handleResult attrDic:@{NSFontAttributeName:F_TITLE} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
     
     CGRect handleResultContentRect = CGRectMake(0, handleResultTitleLabel.y + handleResultTitleLabel.height, DEVICE_W, contentRect.size.height);
     
     handleResultContentView = [TGView initWithFrame:handleResultContentRect superView:reportView];
-    handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, contentRect.size.height) text:self.data.handleResult textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
+    handleResultContentLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, 0, MIDDLE_W, contentRect.size.height) text:self.data.handleResult textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:handleResultContentView];
     
     detailTypeView = [DetailTypeView initWithY:handleResultContentView.y + handleResultContentView.height data:self.data superView:reportView];
     

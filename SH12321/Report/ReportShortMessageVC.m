@@ -96,7 +96,7 @@
         return;
     }
     
-    if (![TGUtils isNumber:acceptNumberTextField.text]) {
+    if (![TGUtils isNumber:acceptNumberTextField.text] || (acceptNumberTextField.text.length != 11)) {
         [TGToast showWithText:@"接收号码输入错误"];
         return;
     }

@@ -62,7 +62,8 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 #define C_LABEL [TGManager colorWithString:@"707070"]
 #define C_INPUT [TGManager colorWithString:@"b7b7b7"]
 
-#define F_TEXT FONTSIZE15
+#define F_TITLE FONTSIZE15
+#define F_TEXT FONTSIZE13
 
 static const CGFloat reportItemLabelH = 40.0F;
 static const CGFloat reportItemTextFieldH = 35.0F;

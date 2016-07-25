@@ -16,9 +16,9 @@
     ReportItemTextView *tv = [[ReportItemTextView alloc] initWithFrame:CGRectMake(L_R_EDGE - 4, y, MIDDLE_W, reportItemTextViewH)];
     tv.textColor = C_INPUT;
     tv.backgroundColor = C_WHITE;
-    tv.font = FONTSIZE15;
+    tv.font = FONTSIZE13;
     tv.textAlignment = NSTextAlignmentLeft;
-    TGLabel *placeholderLabel = [TGLabel initWithFrame:CGRectMake(4, 3, MIDDLE_W, placeholderLabelH) text:placeholder textColor:C_INPUT textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:tv];
+    TGLabel *placeholderLabel = [TGLabel initWithFrame:CGRectMake(4, 3, MIDDLE_W, placeholderLabelH) text:placeholder textColor:C_INPUT textFont:FONTSIZE13 textAlignment:NSTextAlignmentLeft superView:tv];
     placeholderLabel.tag = placeholderLabelTag;
     [superView addSubview:tv];
     

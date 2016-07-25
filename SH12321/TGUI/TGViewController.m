@@ -79,7 +79,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     //导航栏标题
     CGRect navigationLabelRect;
     if (!EMPTY_STRING(self.navigationTitle)) {
-        navigationLabelRect = [TGManager rectWithString:self.navigationTitle attrDic:@{NSFontAttributeName: FONTSIZE16}];;
+        navigationLabelRect = [TGManager rectWithString:self.navigationTitle attrDic:@{NSFontAttributeName: FONTSIZE20}];;
     }else{
         navigationLabelRect = CGRectZero;
     }
@@ -87,7 +87,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     _navigationLabel = [[UILabel alloc] initWithFrame:CGRectMake((navigationViewWidth - navigationLabelRect.size.width)/2, 0, navigationLabelRect.size.width, navigationViewHeight)];
     _navigationLabel.textAlignment = NSTextAlignmentCenter;
     _navigationLabel.textColor = C_WHITE;
-    _navigationLabel.font = FONTSIZE16;
+    _navigationLabel.font = FONTSIZE20;
     _navigationLabel.text = self.navigationTitle;
     [_navigationView addSubview:_navigationLabel];
     self.navigationItem.titleView = _navigationView;

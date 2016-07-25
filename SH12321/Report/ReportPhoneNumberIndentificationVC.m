@@ -349,7 +349,7 @@
         return;
     }
     
-    if (EMPTY_STRING([selectTimeItemView itemStr])) {
+    if (EMPTY_STRING([selectTimeItemView itemStr]) || ([[selectTimeItemView itemStr] isEqualToString:@"选择时间"])) {
         [TGToast showWithText:@"请选择举报时间"];
         return;
     }

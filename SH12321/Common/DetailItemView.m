@@ -23,14 +23,14 @@
     TGView *line = [TGView initWithFrame:CGRectMake(0, 0, DEVICE_W, 1) superView:view];
     line.backgroundColor = C_LINE;
     
-    TGLabel *titleLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, line.y + line.height, 120, labelH) text:title textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *titleLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, line.y + line.height, 120, labelH) text:title textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
     CGRect contentLabelRect = CGRectMake(titleLabel.x + titleLabel.width, titleLabel.y , 164, labelH);
     
 //    contentLabelRect = [TGManager rectWithString:content attrDic:@{NSFontAttributeName:F_TEXT} size:contentLabelRect.size];
 //    if (contentLabelRect.size.height > 20) {
 //        
 //    }
-    TGLabel *contentLabel = [TGLabel initWithFrame:contentLabelRect text:content textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *contentLabel = [TGLabel initWithFrame:contentLabelRect text:content textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
     
     view.height = contentLabel.y + contentLabel.height;
     

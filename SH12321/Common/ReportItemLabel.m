@@ -16,7 +16,7 @@
     label.text = [NSString stringWithFormat:@"    %@",title];
     label.textColor = C_LABEL;
     label.backgroundColor = grayBgColor;
-    label.font = F_TEXT;
+    label.font = F_TITLE;
     label.textAlignment = NSTextAlignmentLeft;
     [superView addSubview:label];
     

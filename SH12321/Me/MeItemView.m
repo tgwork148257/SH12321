@@ -25,9 +25,9 @@
     [view addSubview:leftIcon];
     
     CGFloat labelW = (MIDDLE_W - iconWH - L_R_EDGE)/2;
-    TGLabel *leftLabel = [TGLabel initWithFrame:CGRectMake(leftIcon.x + leftIcon.width + L_R_EDGE, 0, labelW, viewH) text:itemStr textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:view];
+    TGLabel *leftLabel = [TGLabel initWithFrame:CGRectMake(leftIcon.x + leftIcon.width + L_R_EDGE, 0, labelW, viewH) text:itemStr textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
     leftLabel.numberOfLines = 1;
-    TGLabel *rightLabel = [TGLabel initWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - labelW, 0, labelW, viewH) text:@"" textColor:C_INPUT textFont:F_TEXT textAlignment:NSTextAlignmentRight superView:view];
+    TGLabel *rightLabel = [TGLabel initWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - labelW, 0, labelW, viewH) text:@"" textColor:C_INPUT textFont:F_TITLE textAlignment:NSTextAlignmentRight superView:view];
     
     
     NSString *leftIconStr;
