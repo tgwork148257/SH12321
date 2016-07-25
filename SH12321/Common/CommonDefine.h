@@ -72,6 +72,7 @@ static const CGFloat selectTimeViewH = 240.0F;
 static const CGFloat commitBtnTopGap = 40.0F;
 static const CGFloat commitBtnBottomGap = 64.0F;
 
+static NSString *const addressPlaceholder = @"请输入详细地址";
 
 static NSString *const sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
 static NSString *const failureShowStr = @"提交失败，请重新提交或者检查网络";

@@ -22,6 +22,10 @@
     placeholderLabel.tag = placeholderLabelTag;
     [superView addSubview:tv];
     
+    if ([placeholder isEqualToString:addressPlaceholder]) {
+        TGView *line = [TGView initWithFrame:CGRectMake(0, y, DEVICE_W, 1) superView:superView.superview];
+        line.backgroundColor = C_LINE;
+    }
     
     return tv;
 }

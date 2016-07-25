@@ -58,7 +58,7 @@
     
     reportWIFIAdressLabel = [ReportItemLabel initWithY:reportWIFINameTextField.y + reportWIFINameTextField.height title:@"不良WIFI地址" superView:reportView];
     areaView = [SelectItemView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height itemStr:@"选择区县" superView:reportView];
-    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:@"请输入详细地址" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:addressPlaceholder superView:reportView];
     detailAdressTextView.delegate = self;
     
     areaView.userInteractionEnabled = YES;

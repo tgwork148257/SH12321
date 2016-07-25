@@ -34,7 +34,7 @@
     
     TGView *selectTimeItemGrayView;
     SelectItemView *selectTimeItemView;
-    
+    TGView *line1;
     SelectItemView *selectOperatorsItemView;
     
     ReportItemLabel *reportEntityStoreAdressLabel;
@@ -49,6 +49,7 @@
     
     TGView *storeUploadImageGrayView;
     UploadImageItemView *storeUploadImageItemView;
+    TGView *line2;
     UploadImageItemView *ownUploadImageItemView;
     
     ReportItemLabel *reportContentLabel;
@@ -108,7 +109,9 @@
     UITapGestureRecognizer *selectTimeItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectTime)];
     [selectTimeItemView addGestureRecognizer:selectTimeItemViewTap];
     
-    selectOperatorsItemView = [SelectItemView initWithY:selectTimeItemView.y + selectTimeItemView.height itemStr:@"所属运营商" superView:reportView];
+    line1 = [TGView initWithFrame:CGRectMake(0, selectTimeItemView.y + selectTimeItemView.height, DEVICE_W, 1) backgroundColor:C_LINE superView:reportView];
+    
+    selectOperatorsItemView = [SelectItemView initWithY:line1.y + line1.height itemStr:@"所属运营商" superView:reportView];
     selectOperatorsItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *selectOperatorsTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectOperatorsTap)];
     [selectOperatorsItemView addGestureRecognizer:selectOperatorsTap];
@@ -119,7 +122,7 @@
     UITapGestureRecognizer *areaViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(areaViewTap)];
     [areaView addGestureRecognizer:areaViewTap];
     
-    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:@"请输入详细地址" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:addressPlaceholder superView:reportView];
     detailAdressTextView.delegate = self;
     
     
@@ -139,7 +142,9 @@
     UITapGestureRecognizer *storeUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(storeUploadImageItemViewTap)];
     [storeUploadImageItemView addGestureRecognizer:storeUploadImageItemViewTap];
     
-    ownUploadImageItemView = [UploadImageItemView initWithY:storeUploadImageItemView.y + storeUploadImageItemView.height title:@"本人持卡照片" superView:reportView];
+    line2 = [TGView initWithFrame:CGRectMake(0, storeUploadImageItemView.y + storeUploadImageItemView.height, DEVICE_W, 1) backgroundColor:C_LINE superView:reportView];
+    
+    ownUploadImageItemView = [UploadImageItemView initWithY:line2.y + line2.height title:@"本人持卡照片" superView:reportView];
     ownUploadImageItemView.userInteractionEnabled = YES;
     UITapGestureRecognizer *ownUploadImageItemViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ownUploadImageItemViewTap)];
     [ownUploadImageItemView addGestureRecognizer:ownUploadImageItemViewTap];
@@ -189,7 +194,7 @@
         for (UIView *view in detailAdressTextView.subviews) {
             if (view.tag == placeholderLabelTag) {
                 TGLabel *label = (TGLabel *)view;
-                label.text = @"请输入详细地址";
+                label.text = addressPlaceholder;
             }
         }
         

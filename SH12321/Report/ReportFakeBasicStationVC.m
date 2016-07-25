@@ -63,7 +63,7 @@
     
     reportAdressLabel = [ReportItemLabel initWithY:reportFakeBasicStationView.y + reportFakeBasicStationView.height title:@"不良WIFI地址" superView:reportView];
     areaView = [SelectItemView initWithY:reportAdressLabel.y + reportAdressLabel.height itemStr:@"选择区县" superView:reportView];
-    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:@"请输入详细地址" superView:reportView];
+    detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:addressPlaceholder superView:reportView];
     detailAdressTextView.delegate = self;
     
     areaView.userInteractionEnabled = YES;
