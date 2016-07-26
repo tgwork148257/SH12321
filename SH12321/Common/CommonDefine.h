@@ -36,13 +36,13 @@ typedef NS_ENUM(NSInteger, ReportDataType){
 #define storeTypeArr                @[@"实体店",@"网店"]
 #define internetStoreIllegalReasonArr  @[@"配送已激活卡，预选号环节不要求上传身份证扫描信息",\
                                   @"配送已激活卡，预选号环节未对上传身份信息联网核验",\
-                                  @"配送已激活卡，物流环节未确认'人、证、网上提交信息一致",\
+                                  @"配送已激活卡，物流环节未确认人证网上提交信息一致",\
                                   @"配送未激活卡，收卡后未上传或未联网核验本人身份信息",\
                                   @"无授权代理标志"]
 #define entityStoreIllegalReasonArr  @[@"无需本人身份证原件即售卡",@"无二代证识别设备",@"无统一的授权代理标志"]
 
 #define areaData  @[@"黄浦区",@"徐汇区",@"长宁区",@"静安区",@"虹口区",@"普陀区",@"杨浦区",@"闵行区",@"浦东区",@"宝山区",\
-                                @"金山区",@"嘉定区",@"奉贤区",@"松江区",@"青浦区",@"崇明县"]
+                                @"金山区",@"嘉定区",@"奉贤区",@"松江区",@"青浦区",@"崇明区"]
 
 #define operatorsData  @[@"阿里",@"爱施德",@"巴士在线",@"北京青牛",@"长江",@"二六三",@"分享在线",@"凤凰石",@"凤凰资产",@"富士康",@"海尔",@"广州博元",\
                                 @"国美",@"海信",@"合一信息",@"恒大和",@"红豆集团",@"华翔联信",@"话机世界",@"京东",@"朗玛",@"乐语",@"连连",@"鹏博士",@"民生电子",\
@@ -73,6 +73,8 @@ static const CGFloat commitBtnTopGap = 40.0F;
 static const CGFloat commitBtnBottomGap = 64.0F;
 
 static NSString *const addressPlaceholder = @"请输入详细地址";
+static NSString *phoneNumberPlaceholder = @"如：02166528739，13918549752";
+
 
 static NSString *const sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
 static NSString *const failureShowStr = @"提交失败，请重新提交或者检查网络";

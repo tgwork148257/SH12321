@@ -62,10 +62,10 @@
     [scrollView addSubview:reportView];
     
     reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"诈骗电话" superView:reportView];
-    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"如：01266528739，13918549752" superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:phoneNumberPlaceholder superView:reportView];
     
     reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被诈骗电话" superView:reportView];
-    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:@"请填写被诈骗电话号码" superView:reportView];
+    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:phoneNumberPlaceholder superView:reportView];
     
     reportScamTypeLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"诈骗类型" superView:reportView];
     reportScamTypeView = [SelectTypeView initWithY:reportScamTypeLabel.y + reportScamTypeLabel.height superView:reportView];

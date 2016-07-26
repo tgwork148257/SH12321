@@ -64,10 +64,10 @@
     [scrollView addSubview:reportView];
     
     reportSendNumberLabel = [ReportItemLabel initWithY:0 title:@"骚扰电话" superView:reportView];
-    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:@"如：01266528739，13918549752" superView:reportView];
+    reportSendNumberTextField = [ReportItemTextField initWithY:reportSendNumberLabel.y + reportSendNumberLabel.height placeholder:phoneNumberPlaceholder superView:reportView];
     
     reportAcceptNumberLabel = [ReportItemLabel initWithY:reportSendNumberTextField.y + reportSendNumberTextField.height title:@"被骚扰电话" superView:reportView];
-    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:@"请填写被骚扰电话号码" superView:reportView];
+    reportAcceptNumberTextField = [ReportItemTextField initWithY:reportAcceptNumberLabel.y + reportAcceptNumberLabel.height placeholder:phoneNumberPlaceholder superView:reportView];
     
     reportCrankFormLabel = [ReportItemLabel initWithY:reportAcceptNumberTextField.y + reportAcceptNumberTextField.height title:@"骚扰形式" superView:reportView];
     reportCrankFormView = [SelectTypeView initWithY:reportCrankFormLabel.y + reportCrankFormLabel.height superView:reportView];
