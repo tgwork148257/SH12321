@@ -25,7 +25,7 @@
     MeItemView *websiteView;
     MeItemView *phoneView;
     MeItemView *adviceView;
-    
+    MeItemView *versionView;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -59,9 +59,9 @@
     websiteView = [MeItemView initWithY:wechatView.y + wechatView.height itemStr:@"官方网站" superView:reportView];
     phoneView = [MeItemView initWithY:websiteView.y + websiteView.height itemStr:@"举报电话" superView:reportView];
     adviceView = [MeItemView initWithY:phoneView.y + phoneView.height itemStr:@"投诉建议" superView:reportView];
+    versionView = [MeItemView initWithY:adviceView.y + adviceView.height itemStr:@"版本信息" superView:reportView];
     
-    
-    reportView.frame = CGRectMake(0, 0, DEVICE_W, adviceView.y + adviceView.height);
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, versionView.y + versionView.height);
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, reportView.y + reportView.height);
 }

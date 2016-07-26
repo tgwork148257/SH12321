@@ -18,16 +18,19 @@
     MeItemView *view = [[MeItemView alloc] initWithFrame:CGRectMake(0, y, DEVICE_W, viewH)];
     [superView addSubview:view];
     
-    TGView *line = [TGView initWithFrame:CGRectMake(0, 0, DEVICE_W, 1) superView:view];
+    TGView *line = [TGView initWithFrame:CGRectMake(0, viewH -1, DEVICE_W, 1) superView:view];
     line.backgroundColor = C_LINE;
     
     UIImageView *leftIcon = [[UIImageView alloc] initWithFrame:CGRectMake(L_R_EDGE, (viewH - iconWH)/2, iconWH, iconWH)];
     [view addSubview:leftIcon];
     
     CGFloat labelW = (MIDDLE_W - iconWH - L_R_EDGE)/2;
-    TGLabel *leftLabel = [TGLabel initWithFrame:CGRectMake(leftIcon.x + leftIcon.width + L_R_EDGE, 0, labelW, viewH) text:itemStr textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
+    CGFloat leftLabelW = labelW - 20;
+    TGLabel *leftLabel = [TGLabel initWithFrame:CGRectMake(leftIcon.x + leftIcon.width + L_R_EDGE, 0, leftLabelW, viewH) text:itemStr textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:view];
     leftLabel.numberOfLines = 1;
-    TGLabel *rightLabel = [TGLabel initWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - labelW, 0, labelW, viewH) text:@"" textColor:C_INPUT textFont:F_TITLE textAlignment:NSTextAlignmentRight superView:view];
+    
+    CGFloat rightLabelW = labelW + 20;
+    TGLabel *rightLabel = [TGLabel initWithFrame:CGRectMake(leftLabel.x + leftLabel.width, 0, rightLabelW, viewH) text:@"" textColor:C_INPUT textFont:F_TITLE textAlignment:NSTextAlignmentRight superView:view];
     
     
     NSString *leftIconStr;
@@ -53,6 +56,10 @@
     }else if([itemStr isEqualToString:@"投诉建议"]){
         
         rightLabelStr = @"021-64031915";
+        leftIconStr = @"official_phone";
+    }else if([itemStr isEqualToString:@"版本信息"]){
+        
+        rightLabelStr = @"1.0.1";
         leftIconStr = @"official_phone";
     }
     
