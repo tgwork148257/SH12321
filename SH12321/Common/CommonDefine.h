@@ -73,7 +73,7 @@ static const CGFloat commitBtnTopGap = 40.0F;
 static const CGFloat commitBtnBottomGap = 64.0F;
 
 static NSString *const addressPlaceholder = @"请输入详细地址";
-static NSString *phoneNumberPlaceholder = @"如：02166528739，13918549752";
+static NSString *const phoneNumberPlaceholder = @"如：02166528739，13918549752";
 
 
 static NSString *const sucessShowStr = @"我们已经收到你的举报，谢谢你的参与";
