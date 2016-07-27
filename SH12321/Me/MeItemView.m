@@ -58,9 +58,8 @@
         rightLabelStr = @"021-64031915";
         leftIconStr = @"official_phone";
     }else if([itemStr isEqualToString:@"版本信息"]){
-        
         rightLabelStr = @"1.0.1";
-        leftIconStr = @"official_phone";
+        leftIconStr = @"me_version";
     }
     
     rightLabel.text = rightLabelStr;

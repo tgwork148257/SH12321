@@ -53,24 +53,24 @@ typedef NS_ENUM(NSInteger, ReportDataType){
     @"report_fake_station",@"report_wifi",@"report_sim",@"report_userInfo",@"report_badnews",@"report_infringement",@"report_others"]
 
 
-#define grayBgColor  [TGManager colorWithString:@"EEEEEE"]      //灰色背景
-#define commitBtnBgColor [TGManager colorWithString:@"3DCE3D"]  //提交按钮背景
-#define greenBgColor C_GREEN                                    //绿色背景
-#define redTextColor [TGManager colorWithString:@"ff5a00"]
-#define placeholderTextColor grayBgColor
+#define grayBgColor             [TGManager colorWithString:@"EEEEEE"]      //灰色背景
+#define commitBtnBgColor        [TGManager colorWithString:@"3DCE3D"]  //提交按钮背景
+#define greenBgColor            C_GREEN                                    //绿色背景
+#define redTextColor            [TGManager colorWithString:@"ff5a00"]
+#define placeholderTextColor    grayBgColor
 
 #define C_LABEL [TGManager colorWithString:@"707070"]
 #define C_INPUT [TGManager colorWithString:@"b7b7b7"]
 
 #define F_TITLE FONTSIZE15
-#define F_TEXT FONTSIZE13
+#define F_TEXT  FONTSIZE13
 
-static const CGFloat reportItemLabelH = 40.0F;
-static const CGFloat reportItemTextFieldH = 35.0F;
-static const CGFloat reportItemTextViewH = 80.0F;
-static const CGFloat selectTimeViewH = 240.0F;
-static const CGFloat commitBtnTopGap = 40.0F;
-static const CGFloat commitBtnBottomGap = 64.0F;
+static const CGFloat reportItemLabelH       = 40.0F;
+static const CGFloat reportItemTextFieldH   = 35.0F;
+static const CGFloat reportItemTextViewH    = 80.0F;
+static const CGFloat selectTimeViewH        = 240.0F;
+static const CGFloat commitBtnTopGap        = 40.0F;
+static const CGFloat commitBtnBottomGap     = 64.0F;
 
 static NSString *const addressPlaceholder = @"请输入详细地址";
 static NSString *const phoneNumberPlaceholder = @"如：02166528739，13918549752";

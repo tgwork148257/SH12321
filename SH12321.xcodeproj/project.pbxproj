@@ -86,6 +86,7 @@
 		6570481F1D17C8D300D98E92 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6570480E1D17C8D300D98E92 /* UIImageView+WebCache.m */; };
 		657048201D17C8D300D98E92 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 657048101D17C8D300D98E92 /* UIView+WebCacheOperation.m */; };
 		657048231D17D1D200D98E92 /* TGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 657048221D17D1D200D98E92 /* TGToast.m */; };
+		657995DB1D485FFF00874376 /* me_version@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 657995DA1D485FFF00874376 /* me_version@3X.png */; };
 		65DDC07A1D19162400F02FA3 /* ReportInfoRevealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */; };
 		65DDC0801D19206900F02FA3 /* CommitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC07F1D19206900F02FA3 /* CommitButton.m */; };
 		65DDC0831D19244600F02FA3 /* ReportItemLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDC0821D19244600F02FA3 /* ReportItemLabel.m */; };
@@ -287,6 +288,7 @@
 		657048101D17C8D300D98E92 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		657048211D17D1D200D98E92 /* TGToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGToast.h; sourceTree = "<group>"; };
 		657048221D17D1D200D98E92 /* TGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGToast.m; sourceTree = "<group>"; };
+		657995DA1D485FFF00874376 /* me_version@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_version@3X.png"; sourceTree = "<group>"; };
 		65DDC0771D18DAA800F02FA3 /* ServiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceDefine.h; sourceTree = "<group>"; };
 		65DDC0781D19162400F02FA3 /* ReportInfoRevealVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportInfoRevealVC.h; sourceTree = "<group>"; };
 		65DDC0791D19162400F02FA3 /* ReportInfoRevealVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportInfoRevealVC.m; sourceTree = "<group>"; };
@@ -887,6 +889,7 @@
 		65F8CD931D0F940B008C7763 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				657995DA1D485FFF00874376 /* me_version@3X.png */,
 				65042FC51D2B6334003B08F9 /* app_logo@3x.png */,
 				65042FC61D2B6334003B08F9 /* login_phone@3x.png */,
 				65042FC71D2B6334003B08F9 /* me_report_record@3x.png */,
@@ -982,6 +985,7 @@
 				65042FF81D2B6335003B08F9 /* tabbar_me_selected@3x.png in Resources */,
 				65042FFD1D2B6335003B08F9 /* type_normal@3x.png in Resources */,
 				65042FED1D2B6335003B08F9 /* report_email_big@3x.png in Resources */,
+				657995DB1D485FFF00874376 /* me_version@3X.png in Resources */,
 				65042FF91D2B6335003B08F9 /* tabbar_news_normal@3x.png in Resources */,
 				65042FE41D2B6335003B08F9 /* me_report_record@3x.png in Resources */,
 				65042FFC1D2B6335003B08F9 /* tabbar_report_selected@3x.png in Resources */,
