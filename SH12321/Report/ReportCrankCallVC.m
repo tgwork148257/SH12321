@@ -155,6 +155,9 @@
         reportContentLabel.hidden = NO;
         reportContentTextView.hidden = NO;
         
+        selectTimeItemView.y = reportTimeLengthView.y + reportTimeLengthView.height;
+        reportContentLabel.y = selectTimeItemView.y + selectTimeItemView.height;
+        reportContentTextView.y = reportContentLabel.y + reportContentLabel.height;
         reportView.height = reportContentTextView.y + reportContentTextView.height;
     }
     
