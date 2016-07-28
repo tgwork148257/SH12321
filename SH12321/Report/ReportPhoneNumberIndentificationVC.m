@@ -97,8 +97,8 @@
     UITapGestureRecognizer *selectIllegalReasonTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectIllegalReason)];
     [selectIllegalReasonItemView addGestureRecognizer:selectIllegalReasonTap];
     
-    reportStoreNameLabel = [ReportItemLabel initWithY:selectIllegalReasonItemView.y + selectIllegalReasonItemView.height title:@"网店名称" superView:reportView];
-    reportStoreNameTextField = [ReportItemTextField initWithY:reportStoreNameLabel.y + reportStoreNameLabel.height placeholder:@"请填写网店名称" superView:reportView];
+    reportStoreNameLabel = [ReportItemLabel initWithY:selectIllegalReasonItemView.y + selectIllegalReasonItemView.height title:@"实体店名称" superView:reportView];
+    reportStoreNameTextField = [ReportItemTextField initWithY:reportStoreNameLabel.y + reportStoreNameLabel.height placeholder:@"请填写实体店名称" superView:reportView];
     
     reportPhoneNumberLabel = [ReportItemLabel initWithY:reportStoreNameTextField.y + reportStoreNameTextField.height title:@"手机号码" superView:reportView];
     reportPhoneNumberTextField = [ReportItemTextField initWithY:reportPhoneNumberLabel.y + reportPhoneNumberLabel.height placeholder:@"请填写购买的手机号码" superView:reportView];
