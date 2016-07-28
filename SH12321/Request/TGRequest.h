@@ -78,6 +78,8 @@
 #pragma mark -- 举报反馈接口
 + (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
+#pragma mark -- 更新版本接口
++ (void)updateVerisonSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 
 @end

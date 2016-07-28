@@ -58,7 +58,8 @@
         rightLabelStr = @"021-64031915";
         leftIconStr = @"official_phone";
     }else if([itemStr isEqualToString:@"版本信息"]){
-        rightLabelStr = @"1.0.1";
+        NSString *currentVersionStr = [TGUtils getVersion];
+        rightLabelStr = currentVersionStr;
         leftIconStr = @"me_version";
     }
     

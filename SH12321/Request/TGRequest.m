@@ -311,10 +311,14 @@
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
-
-
-
-
+#pragma mark -- 更新版本接口
++ (void)updateVerisonSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_UPDATE_VERSION];
+    NSString *user_token = [TGUtils getUserToken];
+    NSDictionary *parameters = @{@"device":@"ios",
+                                 userTokenKey:user_token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
 
 

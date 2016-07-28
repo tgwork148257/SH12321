@@ -25,7 +25,8 @@ typedef NS_ENUM(NSInteger, ReportDataType){
     ReportOthers,                     //举报其他
 };
 
-
+#define reportArr                   @[@"不良短信",@"诈骗电话",@"骚扰电话",@"不良网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"手机实名制",\
+                                    @"个人信息泄露",@"不良舆情",@"知识产权侵权",@"其他举报"]
 #define timeLengthArr               @[@"3分钟以下",@"3-5分钟",@"5-10分钟",@"10分钟以上"]
 #define crankFormArr                @[@"响一声就挂",@"自动语音骚扰",@"人工骚扰"]
 #define crankTypeArr                @[@"色情",@"发票",@"赌博",@"违禁品",@"高利贷",@"反动",@"广告骚扰"]

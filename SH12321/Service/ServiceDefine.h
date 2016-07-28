@@ -40,6 +40,6 @@ static NSString *const reasonKey                    = @"reason";                
 static NSString *const storeWebsiteKey              = @"store_website";             //网店网址Key
 static NSString *const storeSaleWebsiteKey          = @"store_sale_website";        //网店销售页面Key
 
-
+static NSString *const versionKey                   = @"version";          //版本 Key
 
 #endif /* ServiceDefine_h */

@@ -38,7 +38,7 @@
 #define imageStrWithIndex(index)  ([reportIconArr objectAtIndex:index])
 
 
-@interface ReportListViewController ()
+@interface ReportListViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -49,8 +49,8 @@
     UIView *pageView;
     TGButton *firstPageBtn;
     TGButton *secondPageBtn;
-    
-    NSArray *labelArr;  
+        
+    NSString *versionUrlStr;
 }
 
 - (void)leftBtnDidClick{
@@ -68,9 +68,10 @@
     self.navigationTitle = @"选择举报类别";
     [super viewDidLoad];
     self.leftBtn.hidden = YES;
-    
-    labelArr = @[@"不良短信",@"诈骗电话",@"骚扰电话",@"不良网站",@"垃圾邮件",@"不良APP",@"伪基站",@"不良WIFI",@"手机实名制",@"个人信息泄露",@"不良舆情",@"知识产权侵权",@"其他举报"];
+    versionUrlStr = @"";
     [self addViews];
+    
+    [self updateNewVersion];
 }
 
 - (void)addViews{
@@ -115,7 +116,7 @@
         imageView.image = [UIImage imageNamed:imageStrWithIndex(i)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y + imageView.frame.size.height + imageviewToLabelGap, viewW, labelH)];
-        label.text = labelArr[i];
+        label.text = reportArr[i];
         label.textAlignment  = NSTextAlignmentCenter;
         label.textColor = C_BLACK;
         
@@ -144,7 +145,7 @@
         imageView.image = [UIImage imageNamed:imageStrWithIndex(i)];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y + imageView.frame.size.height + imageviewToLabelGap, viewW, labelH)];
-        label.text = labelArr[i];
+        label.text = reportArr[i];
         label.textAlignment  = NSTextAlignmentCenter;
         label.textColor = C_BLACK;
         
@@ -180,7 +181,7 @@
 
 - (void)jumpToReportVC:(UITapGestureRecognizer *)tap{
     NSInteger tag = tap.view.tag;
-    NSString *title = labelArr[tag];
+    NSString *title = reportArr[tag];
     TGViewController *vc;
     switch (tag) {
         case 0:
@@ -257,6 +258,42 @@
     vc.navigationTitle = title;
     [self.navigationController pushViewController:vc animated:YES];
     [self hiddenTabbar];
+}
+
+
+- (void)updateNewVersion{
+    [TGRequest updateVerisonSuccess:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSString *currentVersionStr = [TGUtils getVersion];
+            NSString *newVersionStr = [responseObject objectForKey:versionKey];
+            NSString *appType = [responseObject objectForKey:@"appType"];
+            if ([appType isEqualToString:@"ios"] &&
+                ![currentVersionStr isEqualToString:newVersionStr]) {
+                versionUrlStr = [responseObject objectForKey:@"url"];
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:nil message:@"版本更新" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
+                [alert show];
+            }
+        }
+    } fail:^{}];
+}
+
+#pragma mark -- actionSheet delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0://取消
+        {
+            break;
+        }
+        case 1://更新
+        {
+            if (!EMPTY_STRING(versionUrlStr)) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:versionUrlStr]];
+            }
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

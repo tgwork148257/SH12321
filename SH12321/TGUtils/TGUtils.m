@@ -342,6 +342,16 @@
 }
 
 
+#pragma mark - version info
++ (NSString *)getVersion{
+    NSString *versionStr = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
+    return versionStr;
+}
+
++ (void)saveVersion:(NSDictionary *)dic{
+    NSString *versionStr = [dic objectForKey:versionKey];
+    [[NSUserDefaults standardUserDefaults] setObject:versionStr forKey:versionKey];
+}
 
 
 

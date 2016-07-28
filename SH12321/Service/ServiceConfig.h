@@ -58,6 +58,7 @@ static NSString * const COMMIT_REPORT_FRIGMENT = @"App/reportIPR";
 
 static NSString * const COMMIT_REPORT_OTHERS = @"App/reportOther";
 
+static NSString * const COMMIT_UPDATE_VERSION = @"App/updateVersion";
 
 static NSString * const COMMIT_REPORT_FEEDBACK = @"App/reportFeedback";
 

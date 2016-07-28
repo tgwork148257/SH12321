@@ -112,7 +112,9 @@ typedef void (^InfoBlock) ();
 + (NSData *)imageToData:(UIImage *) image;
 
 
-
+#pragma mark - version info
++ (NSString *)getVersion;
++ (void)saveVersion:(NSDictionary *)Dic;
 
 
 
