@@ -266,14 +266,19 @@
     // 当前应用名称
     NSString *appCurName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
     // 当前应用软件版本  比如：1.0.1
-    NSString *appCurVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    [TGUtils saveVersion:appCurVersion];
+    NSString *appCurVersion = [TGUtils getVersion];
+    if (EMPTY_STRING(appCurVersion)) {
+        appCurVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        [TGUtils saveVersion:appCurVersion];
+    }
+    
     [TGRequest updateVerisonSuccess:^(id responseObject) {
         NSString *currentVersionStr = [TGUtils getVersion];
         NSString *newVersionStr = [responseObject objectForKey:versionKey];
         NSString *appType = [responseObject objectForKey:@"app_type"];
         if ([appType isEqualToString:@"ios"] &&
             ![currentVersionStr isEqualToString:newVersionStr]) {
+            [TGUtils saveVersion:newVersionStr];
             versionUrlStr = [responseObject objectForKey:@"url"];
             UIAlertView *alert =[[UIAlertView alloc] initWithTitle:nil message:@"版本更新" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更新", nil];
             [alert show];
