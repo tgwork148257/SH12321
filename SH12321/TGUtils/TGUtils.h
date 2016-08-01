@@ -114,7 +114,7 @@ typedef void (^InfoBlock) ();
 
 #pragma mark - version info
 + (NSString *)getVersion;
-+ (void)saveVersion:(NSDictionary *)Dic;
++ (void)saveVersion:(NSString *)versionStr;
 
 
 

@@ -348,8 +348,7 @@
     return versionStr;
 }
 
-+ (void)saveVersion:(NSDictionary *)dic{
-    NSString *versionStr = [dic objectForKey:versionKey];
++ (void)saveVersion:(NSString *)versionStr{
     [[NSUserDefaults standardUserDefaults] setObject:versionStr forKey:versionKey];
 }
 
