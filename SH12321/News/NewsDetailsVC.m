@@ -29,19 +29,13 @@
     self.leftBtn.hidden = NO;
     
     tableviewData = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < 10; i++) {
-//        NewsDetailCellModel *model = [[NewsDetailCellModel alloc] init];
-//        model.text = @"ccc";
-//        model.type = @"1";
-//        [tableviewData addObject:model];
-//    }
     [self addTableView];
 }
 
 
 #pragma mark -- 增加tableview
 - (void)addTableView{
-    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H) style:UITableViewStylePlain];
+    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_W, DEVICE_H + TABBAR_H) style:UITableViewStylePlain];
     tableview.delegate = self;
     tableview.dataSource = self;
     tableview.backgroundColor = C_WHITE;
