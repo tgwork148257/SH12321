@@ -48,7 +48,7 @@
     sendNumberTextField = [ReportItemTextField initWithY:sendNumberLabel.y + sendNumberLabel.height placeholder:@"请输入发送短信的号码" superView:reportView];
     
     acceptNumberLabel = [ReportItemLabel initWithY:sendNumberTextField.y + sendNumberTextField.height title:@"接收短信号码" superView:reportView];
-    acceptNumberTextField = [ReportItemTextField initWithY:acceptNumberLabel.y + acceptNumberLabel.height placeholder:@"请输入接收短信的号码" superView:reportView];
+    acceptNumberTextField = [ReportItemTextField initWithY:acceptNumberLabel.y + acceptNumberLabel.height placeholder:@"请填写接收短信的手机号码" superView:reportView];
     
     messageContentLabel = [ReportItemLabel initWithY:acceptNumberTextField.y + acceptNumberTextField.height title:@"短信内容" superView:reportView];
     messageContentTextView = [ReportItemTextView initWithY:messageContentLabel.y + messageContentLabel.height placeholder:@"请输入举报短信内容" superView:reportView];

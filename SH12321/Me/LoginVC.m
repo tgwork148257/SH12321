@@ -111,6 +111,14 @@
     loginBtn.backgroundColor = greenBgColor;
     [loginBtn addTarget:self action:@selector(loginBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     
+    UITapGestureRecognizer *resignTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resign)];
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:resignTap];
+}
+
+- (void)resign{
+    [verifyCodeTextField resignFirstResponder];
+    [phoneNumberTextField resignFirstResponder];
 }
 
 - (void)sendVerifyCodeBtnDidClick{
