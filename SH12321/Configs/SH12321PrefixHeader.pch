@@ -32,7 +32,7 @@
 #import "ReportItemLabel.h"
 #import "ReportItemTextField.h"
 #import "ReportItemTextView.h"
-#include "SelectTypeView.h"
+#import "SelectTypeView.h"
 #import "SelectItemView.h"
 #import "SelectTimeView.h"
 #import "SHAreasListVC.h"
