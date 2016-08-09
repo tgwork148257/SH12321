@@ -144,8 +144,10 @@
 
 //设备唯一标识符 device token
 #define DEVICE_TOKEN [[[UIDevice currentDevice] identifierForVendor] UUIDString]
+
 //设备系统版本 device os version
 #define DEVICE_OS_VERSION [[UIDevice currentDevice] systemVersion]
+
 //设备当前应用版本 device app version
 #define DEVICE_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
@@ -161,7 +163,7 @@
 #pragma mark ----- 第三方平台信息
 /*
  ************************
- *     第三方平台信息       *
+ *     第三方平台信息     *
  ************************
  */
 
