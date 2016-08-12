@@ -81,5 +81,7 @@
 #pragma mark -- 更新版本接口
 + (void)updateVerisonSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
 
+#pragma mark -- 修改个人信息
++ (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 @end

@@ -10,6 +10,7 @@
 #import "ReportRecordCell.h"
 #import "MeItemView.h"
 #import "ReportRecordListVC.h"
+#import "MyInfoVC.h"
 
 @interface MeHomeVC ()
 
@@ -20,6 +21,7 @@
     UIScrollView *scrollView;
     UIView *reportView;
     MeItemView *myReportView;
+    MeItemView *myInfoView;
     ReportItemLabel *aboutOursLabel;
     MeItemView *wechatView;
     MeItemView *websiteView;
@@ -50,11 +52,16 @@
     [scrollView addSubview:reportView];
     
     myReportView = [MeItemView initWithY:0 itemStr:@"我的举报" superView:reportView];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToReportList)];
+    UITapGestureRecognizer *myReportViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToReportList)];
     myReportView.userInteractionEnabled = YES;
-    [myReportView addGestureRecognizer:tap];
+    [myReportView addGestureRecognizer:myReportViewTap];
     
-    aboutOursLabel = [ReportItemLabel initWithY:myReportView.y + myReportView.height title:@"关于我们" superView:reportView];
+    myInfoView = [MeItemView initWithY:myReportView.y + myReportView.height itemStr:@"个人信息" superView:reportView];
+    UITapGestureRecognizer *myInfoViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpToMyInfoViewList)];
+    myInfoView.userInteractionEnabled = YES;
+    [myInfoView addGestureRecognizer:myInfoViewTap];
+    
+    aboutOursLabel = [ReportItemLabel initWithY:myInfoView.y + myInfoView.height title:@"关于我们" superView:reportView];
     wechatView = [MeItemView initWithY:aboutOursLabel.y + aboutOursLabel.height itemStr:@"官方微信" superView:reportView];
     websiteView = [MeItemView initWithY:wechatView.y + wechatView.height itemStr:@"官方网站" superView:reportView];
     phoneView = [MeItemView initWithY:websiteView.y + websiteView.height itemStr:@"举报电话" superView:reportView];
@@ -68,6 +75,12 @@
 
 - (void)jumpToReportList{
     ReportRecordListVC *vc = [[ReportRecordListVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+    [self hiddenTabbar];
+}
+
+- (void)jumpToMyInfoViewList{
+    MyInfoVC *vc = [[MyInfoVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
     [self hiddenTabbar];
 }

@@ -39,6 +39,8 @@
 		65042FFD1D2B6335003B08F9 /* type_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65042FE01D2B6335003B08F9 /* type_normal@3x.png */; };
 		65042FFE1D2B6335003B08F9 /* type_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65042FE11D2B6335003B08F9 /* type_selected@3x.png */; };
 		650430001D2B65E9003B08F9 /* report_userInfo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65042FFF1D2B65E9003B08F9 /* report_userInfo@3x.png */; };
+		651066281D5D732B00E3F88C /* MyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 651066271D5D732B00E3F88C /* MyInfoVC.m */; };
+		6510662B1D5D742F00E3F88C /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510662A1D5D742F00E3F88C /* UserInfoView.m */; };
 		65199FF71D2250F200C47DD4 /* SHOperatorsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */; };
 		65199FFA1D2257C700C47DD4 /* SHIllegalReasonListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FF91D2257C700C47DD4 /* SHIllegalReasonListVC.m */; };
 		65199FFD1D225A1800C47DD4 /* UploadImageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */; };
@@ -193,6 +195,10 @@
 		65042FE01D2B6335003B08F9 /* type_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type_normal@3x.png"; sourceTree = "<group>"; };
 		65042FE11D2B6335003B08F9 /* type_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "type_selected@3x.png"; sourceTree = "<group>"; };
 		65042FFF1D2B65E9003B08F9 /* report_userInfo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report_userInfo@3x.png"; sourceTree = "<group>"; };
+		651066261D5D732B00E3F88C /* MyInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoVC.h; sourceTree = "<group>"; };
+		651066271D5D732B00E3F88C /* MyInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoVC.m; sourceTree = "<group>"; };
+		651066291D5D742F00E3F88C /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoView.h; sourceTree = "<group>"; };
+		6510662A1D5D742F00E3F88C /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
 		65199FF51D2250F200C47DD4 /* SHOperatorsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHOperatorsListVC.h; sourceTree = "<group>"; };
 		65199FF61D2250F200C47DD4 /* SHOperatorsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHOperatorsListVC.m; sourceTree = "<group>"; };
 		65199FF81D2257C700C47DD4 /* SHIllegalReasonListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHIllegalReasonListVC.h; sourceTree = "<group>"; };
@@ -600,6 +606,8 @@
 				65DDC0851D19278400F02FA3 /* ReportItemTextField.m */,
 				65DDC0871D19279C00F02FA3 /* ReportItemTextView.h */,
 				65DDC0881D19279C00F02FA3 /* ReportItemTextView.m */,
+				651066291D5D742F00E3F88C /* UserInfoView.h */,
+				6510662A1D5D742F00E3F88C /* UserInfoView.m */,
 				65199FFB1D225A1800C47DD4 /* UploadImageItemView.h */,
 				65199FFC1D225A1800C47DD4 /* UploadImageItemView.m */,
 				65DDC0901D19337700F02FA3 /* SHAreasListVC.h */,
@@ -876,6 +884,8 @@
 				65F8CD831D0D34D8008C7763 /* MeHomeVC.m */,
 				65042F7D1D2A3A11003B08F9 /* MeItemView.h */,
 				65042F7E1D2A3A11003B08F9 /* MeItemView.m */,
+				651066261D5D732B00E3F88C /* MyInfoVC.h */,
+				651066271D5D732B00E3F88C /* MyInfoVC.m */,
 				65042F801D2A3F0B003B08F9 /* ReportRecordListVC.h */,
 				65042F811D2A3F0B003B08F9 /* ReportRecordListVC.m */,
 				65F8CD891D0D4007008C7763 /* ReportRecordCell.h */,
@@ -1034,6 +1044,7 @@
 				65DDC0831D19244600F02FA3 /* ReportItemLabel.m in Sources */,
 				65F8CC841D0CFE7F008C7763 /* MyMD5.m in Sources */,
 				657048121D17C8D300D98E92 /* NSData+ImageContentType.m in Sources */,
+				6510662B1D5D742F00E3F88C /* UserInfoView.m in Sources */,
 				651DFFA61D37682700E79107 /* MJRefreshAutoGifFooter.m in Sources */,
 				65F8CDAB1D0FA778008C7763 /* ReportWebsiteVC.m in Sources */,
 				651DFFAD1D37682700E79107 /* MJRefreshNormalHeader.m in Sources */,
@@ -1081,6 +1092,7 @@
 				65F8CD7C1D0D34A4008C7763 /* NewsDetailsVC.m in Sources */,
 				65F8CD061D0D00FB008C7763 /* SBJsonStreamParserState.m in Sources */,
 				657048201D17C8D300D98E92 /* UIView+WebCacheOperation.m in Sources */,
+				651066281D5D732B00E3F88C /* MyInfoVC.m in Sources */,
 				65F8CD261D0D0DCE008C7763 /* AFSecurityPolicy.m in Sources */,
 				651DFFB01D37682700E79107 /* MJRefreshConst.m in Sources */,
 				652190591D1A6C500038EEA1 /* SelectTimeView.m in Sources */,
