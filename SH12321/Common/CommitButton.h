@@ -12,4 +12,6 @@
 
 + (CommitButton *)initWithY:(CGFloat)y superView:(UIView *)superView;
 
++ (CommitButton *)initWithY:(CGFloat)y title:(NSString *)title superView:(UIView *)superView;
+
 @end

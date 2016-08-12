@@ -8,6 +8,7 @@
 
 #import "MyInfoVC.h"
 #import "UserInfoView.h"
+#import "LoginVC.h"
 
 @interface MyInfoVC ()<SHAreasListVCDelegate, UITextViewDelegate>
 
@@ -33,6 +34,10 @@
 - (void)viewDidLoad {
     self.navigationTitle = @"个人信息";
     [super viewDidLoad];
+    
+    self.rightBtn.hidden = NO;
+    [self.rightBtn setTitle:@"提交" forState:UIControlStateNormal];
+    [self.rightBtn setTitleColor:C_WHITE forState:UIControlStateNormal];
     
     self.view.backgroundColor = grayBgColor;
     
@@ -62,8 +67,7 @@
     
     contentView.frame = CGRectMake(0, 0, DEVICE_W, detailAdressTextView.y + detailAdressTextView.height);
     
-    
-    commitBtn = [CommitButton initWithY:contentView.y + contentView.height + commitBtnTopGap superView:scrollView];
+    commitBtn = [CommitButton initWithY:contentView.y + contentView.height + commitBtnTopGap title:@"退出" superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
@@ -106,22 +110,22 @@
     }
 }
 
-- (void)commitReport{
-//    if (EMPTY_STRING(reportWIFINameTextField.text)) {
-//        [TGToast showWithText:@"请输入WIFI名称"];
-//        return;
-//    }
-//    
-//    if (EMPTY_STRING(areaStr)) {
-//        [TGToast showWithText:@"请选择区县"];
-//        return;
-//    }
-//    
-//    
-//    if (EMPTY_STRING(detailAdressTextView.text)) {
-//        [TGToast showWithText:@"请输入详细地址"];
-//        return;
-//    }
+- (void)rightBtnDidClick{
+    //    if (EMPTY_STRING(reportWIFINameTextField.text)) {
+    //        [TGToast showWithText:@"请输入WIFI名称"];
+    //        return;
+    //    }
+    //
+    //    if (EMPTY_STRING(areaStr)) {
+    //        [TGToast showWithText:@"请选择区县"];
+    //        return;
+    //    }
+    //
+    //
+    //    if (EMPTY_STRING(detailAdressTextView.text)) {
+    //        [TGToast showWithText:@"请输入详细地址"];
+    //        return;
+    //    }
     
     NSString *address = [areaStr stringByAppendingString:detailAdressTextView.text];
     
@@ -135,6 +139,14 @@
     } fail:^{
         [TGToast showWithText:@"修改个人信息失败，请重试"];
     }];
+}
+
+- (void)commitReport{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:userTokenKey];
+    
+    LoginVC *loginVC = [[LoginVC alloc] init];
+    loginVC.isPresent = YES;
+    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
 }
 
 @end

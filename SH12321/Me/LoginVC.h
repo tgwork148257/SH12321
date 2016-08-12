@@ -10,4 +10,6 @@
 
 @interface LoginVC : TGViewController
 
+@property (nonatomic, assign) BOOL isPresent;
+
 @end
