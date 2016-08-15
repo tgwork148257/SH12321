@@ -20,6 +20,7 @@
     UIView *contentView;
     UserInfoView *nameView;
     UserInfoView *genderView;
+    UserInfoView *ageView;
     
     ReportItemLabel *reportWIFIAdressLabel;
     SelectItemView *areaView;
@@ -41,6 +42,7 @@
     
     self.view.backgroundColor = grayBgColor;
     
+    [self getUserInfo];
     [self addSubviews];
 }
 
@@ -54,8 +56,9 @@
     
     nameView = [UserInfoView initY:0 preLabelTitle:@"姓名：" placeholder:@"请输入真实姓名" superView:contentView];
     genderView = [UserInfoView initY:nameView.y + nameView.height preLabelTitle:@"性别：" placeholder:@"请填写性别" superView:contentView];
+    ageView = [UserInfoView initY:genderView.y + genderView.height preLabelTitle:@"年龄：" placeholder:@"请填写年龄" superView:contentView];
     
-    reportWIFIAdressLabel = [ReportItemLabel initWithY:genderView.y + genderView.height title:@"地址" superView:contentView];
+    reportWIFIAdressLabel = [ReportItemLabel initWithY:ageView.y + ageView.height title:@"地址" superView:contentView];
     areaView = [SelectItemView initWithY:reportWIFIAdressLabel.y + reportWIFIAdressLabel.height itemStr:@"选择区县" superView:contentView];
     detailAdressTextView = [ReportItemTextView initWithY:areaView.y + areaView.height placeholder:addressPlaceholder superView:contentView];
     detailAdressTextView.delegate = self;
@@ -67,7 +70,7 @@
     
     contentView.frame = CGRectMake(0, 0, DEVICE_W, detailAdressTextView.y + detailAdressTextView.height);
     
-    commitBtn = [CommitButton initWithY:contentView.y + contentView.height + commitBtnTopGap title:@"退出" superView:scrollView];
+    commitBtn = [CommitButton initWithY:contentView.y + contentView.height + commitBtnTopGap title:@"退出登录" superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReport) forControlEvents:UIControlEventTouchUpInside];
     
     scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
@@ -152,9 +155,13 @@
             NSString *gender = [data objectForKey:@"sex"];
             NSString *address = [data objectForKey:@"address"];
             
+            NSString *userAreaStr = [address substringToIndex:2];
+            NSString *userDetailAddress = [address substringFromIndex:3];
             [nameView addTextFieldTitle:name];
             [genderView addTextFieldTitle:gender];
-            detailAdressTextView.text = address;
+            [ageView addTextFieldTitle:age];
+            [areaView addItemStr:userAreaStr];
+            detailAdressTextView.text = userDetailAddress;
         }else{
             [TGToast showWithText:@"获取个人信息失败，请重试"];
         }

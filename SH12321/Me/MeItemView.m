@@ -61,6 +61,12 @@
         NSString *currentVersionStr = [TGUtils getVersion];
         rightLabelStr = currentVersionStr;
         leftIconStr = @"me_version";
+    }else if([itemStr isEqualToString:@"个人信息"]){
+        UIImageView *rightIcon = [[UIImageView alloc] initWithFrame:CGRectMake(DEVICE_W - L_R_EDGE - iconWH, (viewH - iconWH)/2, iconWH, iconWH)];
+        rightIcon.image = [UIImage imageNamed:@"next_icon"];
+        [view addSubview:rightIcon];
+        
+        leftIconStr = @"me_report_record";
     }
     
     rightLabel.text = rightLabelStr;

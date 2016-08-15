@@ -39,7 +39,7 @@
 }
 
 - (void)addSubviews{
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H + TABBAR_H)];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ORIGIN_Y, DEVICE_W, DEVICE_H - ORIGIN_Y)];
     [self.view addSubview:scrollView];
     
     reportView = [[UIView alloc] init];
@@ -70,7 +70,7 @@
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReportFeedback) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height);
+    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnTopGap);
 
 }
 
@@ -91,7 +91,6 @@
 }
 
 - (void)commitReportFeedback{
-    
     [TGRequest reportFeedbackWithId:self.data.listReportID feedback:resultTypeView.typeTitle score:scoreTypeView.typeTitle success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             [TGToast showWithText:@"反馈处理结果成功"];
