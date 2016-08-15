@@ -167,7 +167,7 @@
         [TGToast showWithText:@"登录成功"];
         [TGUtils saveUserToken:responseObject];
         if (self.isPresent) {
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }else{
             [self.navigationController pushViewController:[[ReportListViewController alloc] init] animated:YES];
         }

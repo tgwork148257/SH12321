@@ -62,5 +62,12 @@ static NSString * const COMMIT_UPDATE_VERSION = @"App/updateVersion";
 
 static NSString * const COMMIT_REPORT_FEEDBACK = @"App/reportFeedback";
 
+static NSString * const COMMIT_USER_ADD_USERINFO = @"App/addUserInfo";
+
+static NSString * const COMMIT_USER_GET_USERINFO = @"App/getUserInfo";
+
+static NSString * const COMMIT_USER_MODIFY_USERINFO = @"App/alterUserInfo";
+
+
 
 #endif /* ServiceConfig_h */

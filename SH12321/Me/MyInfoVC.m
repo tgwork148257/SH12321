@@ -141,12 +141,34 @@
     }];
 }
 
+
+- (void)getUserInfo{
+    [TGRequest getUserInfoSuccess:^(id responseObject) {
+        if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            NSDictionary *data = [responseObject objectForKey:@"data"];
+            NSString *mobile = [data objectForKey:@"mobile"];
+            NSString *name = [data objectForKey:@"name"];
+            NSString *age = [data objectForKey:@"age"];
+            NSString *gender = [data objectForKey:@"sex"];
+            NSString *address = [data objectForKey:@"address"];
+            
+            [nameView addTextFieldTitle:name];
+            [genderView addTextFieldTitle:gender];
+            detailAdressTextView.text = address;
+        }else{
+            [TGToast showWithText:@"获取个人信息失败，请重试"];
+        }
+    } fail:^{
+        [TGToast showWithText:@"获取个人信息失败，请重试"];
+    }];
+}
+
 - (void)commitReport{
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:userTokenKey];
     
     LoginVC *loginVC = [[LoginVC alloc] init];
     loginVC.isPresent = YES;
-    [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 @end

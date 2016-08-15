@@ -302,11 +302,12 @@
 
 
 #pragma mark -- 举报反馈接口
-+ (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback success:(void(^)(id responseObject))success fail:(void(^)())fail{
++ (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback score:(NSString *)grade success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_REPORT_FEEDBACK];
     NSString *user_token = [TGUtils getUserToken];
     NSDictionary *parameters = @{@"jw_id":reportID,
                                  @"feedback":feedback,
+                                 @"grade":grade,
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
@@ -322,14 +323,23 @@
 
 #pragma mark -- 修改个人信息
 + (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail{
-    NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_UPDATE_VERSION];
+    NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_USER_MODIFY_USERINFO];
     NSString *user_token = [TGUtils getUserToken];
-    NSDictionary *parameters = @{@"device":@"ios",
+    NSDictionary *parameters = @{@"name":name,
+                                 @"sex":gender,
+                                 @"age":address,
+                                 @"address":address,
                                  userTokenKey:user_token};
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
-
+#pragma mark -- 获取个人信息
++ (void)getUserInfoSuccess:(void(^)(id responseObject))success fail:(void(^)())fail{
+    NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_USER_GET_USERINFO];
+    NSString *user_token = [TGUtils getUserToken];
+    NSDictionary *parameters = @{userTokenKey:user_token};
+    [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
+}
 
 
 

@@ -26,6 +26,9 @@
     ReportItemLabel *resultLabel;
     SelectTypeView *resultTypeView;
     
+    ReportItemLabel *scoreLabel;
+    SelectTypeView *scoreTypeView;
+    
     CommitButton *commitBtn;
 }
 
@@ -58,7 +61,11 @@
     resultTypeView = [SelectTypeView initWithY:resultLabel.y + resultLabel.height superView:reportView];
     [resultTypeView addTitles:@[@"已解决", @"未解决"]];
     
-    reportView.frame = CGRectMake(0, 0, DEVICE_W, resultTypeView.y + resultTypeView.height);
+    scoreLabel = [ReportItemLabel initWithY:resultTypeView.y + resultTypeView.height title:@"评分" superView:reportView];
+    scoreTypeView = [SelectTypeView initWithY:scoreLabel.y + scoreLabel.height superView:reportView];
+    [scoreTypeView addTitles:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10"]];
+    
+    reportView.frame = CGRectMake(0, 0, DEVICE_W, scoreTypeView.y + scoreTypeView.height);
     
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReportFeedback) forControlEvents:UIControlEventTouchUpInside];
@@ -85,7 +92,7 @@
 
 - (void)commitReportFeedback{
     
-    [TGRequest reportFeedbackWithId:self.data.listReportID feedback:resultTypeView.typeTitle success:^(id responseObject) {
+    [TGRequest reportFeedbackWithId:self.data.listReportID feedback:resultTypeView.typeTitle score:scoreTypeView.typeTitle success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             [TGToast showWithText:@"反馈处理结果成功"];
             [self.navigationController popViewControllerAnimated:YES];

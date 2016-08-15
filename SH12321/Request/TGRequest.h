@@ -76,7 +76,7 @@
 + (void)getNewsDetailWithId:(NSString *)newsID success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 举报反馈接口
-+ (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback success:(void(^)(id responseObject))success fail:(void(^)())fail;
++ (void)reportFeedbackWithId:(NSString *)reportID feedback:(NSString *)feedback score:(NSString *)grade success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 更新版本接口
 + (void)updateVerisonSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
@@ -84,4 +84,6 @@
 #pragma mark -- 修改个人信息
 + (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
+#pragma mark -- 获取个人信息
++ (void)getUserInfoSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
 @end
