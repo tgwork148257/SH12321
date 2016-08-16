@@ -130,9 +130,24 @@
     //        return;
     //    }
     
-    NSString *address = [areaStr stringByAppendingString:detailAdressTextView.text];
+    if ([TGUtils isNumber:[ageView textFieldTitle]]) {
+        [TGToast showWithText:@"请输入有效的年龄"];
+    }
     
-    [TGRequest modifyUserInfoWithName:[nameView textFieldTitle] gender:[genderView textFieldTitle] adress:address success:^(id responseObject) {
+    if ([[ageView textFieldTitle] integerValue] >= 100 || [[ageView textFieldTitle] integerValue] < 16) {
+        [TGToast showWithText:@"请输入有效的年龄"];
+    }
+    
+    if (!EMPTY_STRING(detailAdressTextView.text) && EMPTY_STRING(areaStr)) {
+        [TGToast showWithText:@"请选择区县"];
+    }
+
+    NSString *address = [areaStr stringByAppendingString:detailAdressTextView.text];
+    if (EMPTY_STRING(address)) {
+        address = @"";
+    }
+    
+    [TGRequest modifyUserInfoWithName:[nameView textFieldTitle] gender:[genderView textFieldTitle] age:[ageView textFieldTitle] adress:address success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             [TGToast showWithText:@"修改个人信息成功"];
             [self.navigationController popViewControllerAnimated:YES];
@@ -149,19 +164,24 @@
     [TGRequest getUserInfoSuccess:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             NSDictionary *data = [responseObject objectForKey:@"data"];
-            NSString *mobile = [data objectForKey:@"mobile"];
+//            NSString *mobile = [data objectForKey:@"mobile"];
             NSString *name = [data objectForKey:@"name"];
             NSString *age = [data objectForKey:@"age"];
             NSString *gender = [data objectForKey:@"sex"];
             NSString *address = [data objectForKey:@"address"];
-            
-            NSString *userAreaStr = [address substringToIndex:2];
-            NSString *userDetailAddress = [address substringFromIndex:3];
+            NSString *userAreaStr = @"选择区县";
+            NSString *userDetailAddress = @"";
+            if (!EMPTY_STRING(address)) {
+                userAreaStr = [address substringToIndex:2];
+                userDetailAddress = [address substringFromIndex:3];
+            }
             [nameView addTextFieldTitle:name];
             [genderView addTextFieldTitle:gender];
             [ageView addTextFieldTitle:age];
             [areaView addItemStr:userAreaStr];
             detailAdressTextView.text = userDetailAddress;
+        }else if ([[responseObject objectForKey:@"code"] integerValue] == 4007){
+            [TGToast showWithText:@"没有用户信息"];
         }else{
             [TGToast showWithText:@"获取个人信息失败，请重试"];
         }

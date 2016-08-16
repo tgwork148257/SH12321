@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650032321D62F1B50044D71F /* personalInformation@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = 650032311D62F1B50044D71F /* personalInformation@3X.png */; };
 		65042F7F1D2A3A11003B08F9 /* MeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65042F7E1D2A3A11003B08F9 /* MeItemView.m */; };
 		65042F821D2A3F0B003B08F9 /* ReportRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65042F811D2A3F0B003B08F9 /* ReportRecordListVC.m */; };
 		65042FE21D2B6335003B08F9 /* app_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65042FC51D2B6334003B08F9 /* app_logo@3x.png */; };
@@ -161,6 +162,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650032311D62F1B50044D71F /* personalInformation@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "personalInformation@3X.png"; sourceTree = "<group>"; };
 		65042F7D1D2A3A11003B08F9 /* MeItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeItemView.h; sourceTree = "<group>"; };
 		65042F7E1D2A3A11003B08F9 /* MeItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeItemView.m; sourceTree = "<group>"; };
 		65042F801D2A3F0B003B08F9 /* ReportRecordListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportRecordListVC.h; sourceTree = "<group>"; };
@@ -899,6 +901,7 @@
 		65F8CD931D0F940B008C7763 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				650032311D62F1B50044D71F /* personalInformation@3X.png */,
 				657995DA1D485FFF00874376 /* me_version@3X.png */,
 				65042FC51D2B6334003B08F9 /* app_logo@3x.png */,
 				65042FC61D2B6334003B08F9 /* login_phone@3x.png */,
@@ -1002,6 +1005,7 @@
 				65042FF61D2B6335003B08F9 /* report_wifi@3x.png in Resources */,
 				65F8CBC01D07E60E008C7763 /* LaunchScreen.storyboard in Resources */,
 				65042FF01D2B6335003B08F9 /* report_infringement@3x.png in Resources */,
+				650032321D62F1B50044D71F /* personalInformation@3X.png in Resources */,
 				65F8CBBD1D07E60E008C7763 /* Assets.xcassets in Resources */,
 				65042FEE1D2B6335003B08F9 /* report_email@3x.png in Resources */,
 				65042FE51D2B6335003B08F9 /* nav_back@3x.png in Resources */,

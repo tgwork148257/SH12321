@@ -82,7 +82,7 @@
 + (void)updateVerisonSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 修改个人信息
-+ (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail;
++ (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender age:(NSString *)age adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail;
 
 #pragma mark -- 获取个人信息
 + (void)getUserInfoSuccess:(void(^)(id responseObject))success fail:(void(^)())fail;

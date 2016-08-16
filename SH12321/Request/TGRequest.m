@@ -322,14 +322,15 @@
 }
 
 #pragma mark -- 修改个人信息
-+ (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail{
++ (void)modifyUserInfoWithName:(NSString *)name gender:(NSString *)gender age:(NSString *)age adress:(NSString *)address success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:COMMIT_USER_MODIFY_USERINFO];
     NSString *user_token = [TGUtils getUserToken];
-    NSDictionary *parameters = @{@"name":name,
-                                 @"sex":gender,
-                                 @"age":address,
-                                 @"address":address,
-                                 userTokenKey:user_token};
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:name forKey:@"name"];
+    [parameters setValue:gender forKey:@"gender"];
+    [parameters setValue:age forKey:@"age"];
+    [parameters setValue:address forKey:@"address"];
+    [parameters setValue:user_token forKey:userTokenKey];
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 

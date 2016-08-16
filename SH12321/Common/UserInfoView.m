@@ -36,8 +36,10 @@
     for (UIView *view in self.subviews) {
         if (view.tag == tfTag) {
             UITextField *tf = (UITextField *)view;
-            tf.text = str;
-            tf.placeholder = @"";
+            if (!EMPTY_STRING(str)) {
+                tf.text = str;
+                tf.placeholder = @"";
+            }
         }
     }
 }
