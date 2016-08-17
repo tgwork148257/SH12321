@@ -106,7 +106,7 @@ static CGFloat const navigationViewHeight = 24.0F;            //导航栏view最
     _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _rightBtn.frame = CGRectMake(0, 0, 48, 48);
     [_rightBtn setTitleColor:C_BLACK forState:UIControlStateNormal];
-    _rightBtn.titleLabel.font = FONTSIZE14;
+    _rightBtn.titleLabel.font = FONTSIZE16;
     [_rightBtn addTarget:self action:@selector(rightBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:_rightBtn];
     //    rightItem.width = 20;//此处修改到边界的距离，请自行测试

@@ -26,6 +26,9 @@
     tf.textAlignment = NSTextAlignmentLeft;
     tf.placeholder = placeholder;
     tf.tag = tfTag;
+    if ([title isEqualToString:@"手机号:"]) {
+        tf.userInteractionEnabled = NO;
+    }
     [view addSubview:tf];
     
     [superView addSubview:view];

@@ -18,6 +18,7 @@
     
     UIScrollView *scrollView;
     UIView *contentView;
+    UserInfoView *phoneView;
     UserInfoView *nameView;
     UserInfoView *genderView;
     UserInfoView *ageView;
@@ -54,7 +55,8 @@
     contentView.backgroundColor = C_WHITE;
     [scrollView addSubview:contentView];
     
-    nameView = [UserInfoView initY:0 preLabelTitle:@"姓名：" placeholder:@"请输入真实姓名" superView:contentView];
+    phoneView = [UserInfoView initY:0 preLabelTitle:@"手机号：" placeholder:@"" superView:contentView];
+    nameView = [UserInfoView initY:phoneView.y + phoneView.height preLabelTitle:@"姓名：" placeholder:@"请输入真实姓名" superView:contentView];
     genderView = [UserInfoView initY:nameView.y + nameView.height preLabelTitle:@"性别：" placeholder:@"请填写性别" superView:contentView];
     ageView = [UserInfoView initY:genderView.y + genderView.height preLabelTitle:@"年龄：" placeholder:@"请填写年龄" superView:contentView];
     
@@ -114,32 +116,29 @@
 }
 
 - (void)rightBtnDidClick{
-    //    if (EMPTY_STRING(reportWIFINameTextField.text)) {
-    //        [TGToast showWithText:@"请输入WIFI名称"];
-    //        return;
-    //    }
-    //
-    //    if (EMPTY_STRING(areaStr)) {
-    //        [TGToast showWithText:@"请选择区县"];
-    //        return;
-    //    }
-    //
-    //
-    //    if (EMPTY_STRING(detailAdressTextView.text)) {
-    //        [TGToast showWithText:@"请输入详细地址"];
-    //        return;
-    //    }
-    
-    if ([TGUtils isNumber:[ageView textFieldTitle]]) {
+    if (![TGUtils isNumber:[ageView textFieldTitle]]) {
         [TGToast showWithText:@"请输入有效的年龄"];
+        return;
     }
     
     if ([[ageView textFieldTitle] integerValue] >= 100 || [[ageView textFieldTitle] integerValue] < 16) {
         [TGToast showWithText:@"请输入有效的年龄"];
+        return;
     }
     
-    if (!EMPTY_STRING(detailAdressTextView.text) && EMPTY_STRING(areaStr)) {
+    if (! ([[genderView textFieldTitle] isEqualToString:@"男"] || [[genderView textFieldTitle] isEqualToString:@"女"])) {
+        [TGToast showWithText:@"请输入有效性别"];
+        return;
+    }
+    
+    if (EMPTY_STRING(areaStr)) {
         [TGToast showWithText:@"请选择区县"];
+        return;
+    }
+    
+    if (EMPTY_STRING(detailAdressTextView.text)) {
+        [TGToast showWithText:@"请输入详细地址"];
+        return;
     }
 
     NSString *address = [areaStr stringByAppendingString:detailAdressTextView.text];
@@ -164,7 +163,7 @@
     [TGRequest getUserInfoSuccess:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
             NSDictionary *data = [responseObject objectForKey:@"data"];
-//            NSString *mobile = [data objectForKey:@"mobile"];
+            NSString *mobile = [data objectForKey:@"mobile"];
             NSString *name = [data objectForKey:@"name"];
             NSString *age = [data objectForKey:@"age"];
             NSString *gender = [data objectForKey:@"sex"];
@@ -175,6 +174,7 @@
                 userAreaStr = [address substringToIndex:2];
                 userDetailAddress = [address substringFromIndex:3];
             }
+            [phoneView addTextFieldTitle:mobile];
             [nameView addTextFieldTitle:name];
             [genderView addTextFieldTitle:gender];
             [ageView addTextFieldTitle:age];
