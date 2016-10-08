@@ -10,7 +10,7 @@
 #define ServiceConfig_h
 
 static NSString * const APP_API_BASIC_URL_TEST = @"http://12321.shyytx.cn/index.php/";
-//static NSString * const APP_API_BASIC_URL_DEBUG = @"http://api.orz.meimi.me/";
+//static NSString * const APP_API_BASIC_URL_DEBUG = @"http://12321.shyytx.cn/index.php/";
 //static NSString * const APP_API_BASIC_URL_RELEASE = @"http://api.romic.orz.meimi.me/";
 
 #define BASIC_URL  APP_API_BASIC_URL_TEST

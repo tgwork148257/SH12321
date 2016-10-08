@@ -59,6 +59,8 @@
     [super viewDidLoad];
     timeUpdate = 60;
     [self hiddenTabbar];
+    self.leftBtn.hidden = YES;
+    self.rightBtn.hidden = YES;
     
     [self addSubviews];
 }
