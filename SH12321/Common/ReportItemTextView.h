@@ -16,4 +16,6 @@
 
 
 @property (nonatomic, strong)TGLabel *placeholderLabel;
+
+- (void)addText:(NSString *)text;
 @end

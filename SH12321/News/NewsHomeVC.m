@@ -25,6 +25,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self showTabbar];
+    [self addTableView];
 }
 
 - (void)viewDidLoad {
@@ -35,7 +36,7 @@
     page = 1;
     
     tableviewData = [[NSMutableArray alloc] init];
-    [self addTableView];
+//    [self addTableView];
 }
 
 

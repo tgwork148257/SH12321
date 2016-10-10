@@ -179,7 +179,7 @@
             [genderView addTextFieldTitle:gender];
             [ageView addTextFieldTitle:age];
             [areaView addItemStr:userAreaStr];
-            detailAdressTextView.text = userDetailAddress;
+            [detailAdressTextView addText:userDetailAddress];
         }else if ([[responseObject objectForKey:@"code"] integerValue] == 4007){
             [TGToast showWithText:@"没有用户信息"];
         }else{

@@ -66,7 +66,7 @@
         rightIcon.image = [UIImage imageNamed:@"next_icon"];
         [view addSubview:rightIcon];
         
-        leftIconStr = @"personalInformation";
+        leftIconStr = @"personal_information";
     }
     
     rightLabel.text = rightLabelStr;

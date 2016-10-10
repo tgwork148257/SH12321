@@ -30,4 +30,15 @@
     return tv;
 }
 
+- (void)addText:(NSString *)text{
+    if (!EMPTY_STRING(text)) {
+        self.text = text;
+        for (UIView *view in self.subviews) {
+            if (view.tag == placeholderLabelTag) {
+                [view removeFromSuperview];
+            }
+        }
+    }
+}
+
 @end

@@ -31,7 +31,10 @@
     if (EMPTY_STRING([TGUtils getServerToken])) {
         [TGRequest getServerTokenSuccess:^(id responseObject) {
             [TGUtils saveServerToken:responseObject];
-        } fail:nil];
+        } fail:^{
+            [TGToast showWithText:@"网络错误，请重试"];
+        }
+        ];
     }
    
     

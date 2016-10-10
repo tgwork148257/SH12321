@@ -186,9 +186,15 @@
 + (void)getUserTokenWithNumber:(NSString *)phoneNumber code:(NSString *)code success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_USER_TOKEN];
     NSString *token = [TGUtils getServerToken];
-    NSDictionary *parameters = @{@"mobile":phoneNumber,
-                                 @"code":code,
-                                 @"token":token};
+    NSDictionary *parameters = [[NSDictionary alloc] init];
+    if (!EMPTY_STRING(token)) {
+        parameters = @{@"mobile":phoneNumber,
+                        @"code":code,
+                        @"token":token};
+    }else{
+        parameters = @{@"mobile":phoneNumber,
+                       @"code":code,};
+    }
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 
