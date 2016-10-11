@@ -166,8 +166,13 @@
         return;
     }
     [TGRequest getUserTokenWithNumber:phoneNumberTextField.text code:verifyCode success:^(id responseObject) {
-        [TGToast showWithText:@"登录成功"];
+        
         [TGUtils saveUserToken:responseObject];
+        if ([[responseObject objectForKey:registerKey] isEqualToString:@"0"]) {
+            [TGToast showWithText:@"注册成功"];
+        }else{
+            [TGToast showWithText:@"登录成功"];
+        }
         if (self.isPresent) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{

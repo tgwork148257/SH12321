@@ -27,7 +27,7 @@
             NSLog(@"responseObject is %@",responseObject);
             success(responseObject);
         }
-    }failure:^(AFHTTPRequestOperation*operation,NSError*error){
+    }failure:^(AFHTTPRequestOperation* operation,NSError* error){
         NSLog(@"error is %@",error);
         if(fail){
             fail();

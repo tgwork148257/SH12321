@@ -12,6 +12,7 @@
 
 static NSString *const serverTokenKey               = @"token";         //服务端返回token Key
 static NSString *const userTokenKey                 = @"user_token";    //用户token Key
+static NSString *const registerKey                 = @"register";    //是否是注册
 static NSString *const phoneVerificationCodeKey     = @"code";          //手机验证码Key
 
 static NSString *const typeKey                      = @"type";               //举报类型Key

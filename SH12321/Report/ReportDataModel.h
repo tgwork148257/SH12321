@@ -58,6 +58,9 @@
 
 @property (nonatomic, assign) NSInteger handleResultIndex;       //处理结果index
 @property (nonatomic, copy) NSString *handleResult;             //处理结果
+@property (nonatomic, copy) NSString *feedback;                 //是否反馈  0：未反馈  1：已反馈
+@property (nonatomic, copy) NSString *feedbackResult;           //反馈结果  已解决  未解决
+@property (nonatomic, copy) NSString *feedbackScore;            //反馈分数
 
 @property (nonatomic, copy) NSString *listReportID;             //举报ID
 @property (nonatomic, copy) NSString *listReportTime;           //列表举报时间

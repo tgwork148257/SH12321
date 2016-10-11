@@ -29,6 +29,8 @@
     ReportItemLabel *scoreLabel;
     SelectTypeView *scoreTypeView;
     
+    TGLabel *feedbackLabel;
+    
     CommitButton *commitBtn;
 }
 
@@ -70,8 +72,30 @@
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReportFeedback) forControlEvents:UIControlEventTouchUpInside];
     
-    scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnTopGap);
-
+    feedbackLabel = [TGLabel initWithFrame:CGRectMake(0, detailTypeView.y+detailTypeView.height, DEVICE_W, reportItemLabelH) text:@"无反馈" textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:reportView];
+    
+    if ([self.data.feedback isEqualToString:@"1"]) {
+        commitBtn.hidden = YES;
+        scoreLabel.hidden = YES;
+        scoreTypeView.hidden = YES;
+        resultLabel.hidden = YES;
+        resultTypeView.hidden = YES;
+        
+        NSString *feedback = [NSString stringWithFormat:@"    是否解决:%@  评分:%@",self.data.feedbackResult,self.data.feedbackScore];
+        feedbackLabel.text = feedback;
+        feedbackLabel.hidden = NO;
+        reportView.frame = CGRectMake(0, 0, DEVICE_W, feedbackLabel.y + feedbackLabel.height);
+        scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnTopGap);
+    }else{
+        commitBtn.hidden = NO;
+        scoreLabel.hidden = NO;
+        scoreTypeView.hidden = NO;
+        resultLabel.hidden = NO;
+        resultTypeView.hidden = NO;
+        
+        feedbackLabel.hidden = YES;
+        scrollView.contentSize = CGSizeMake(DEVICE_W, commitBtn.y + commitBtn.height + commitBtnTopGap);
+    }
 }
 
 - (void)getReportDetail{

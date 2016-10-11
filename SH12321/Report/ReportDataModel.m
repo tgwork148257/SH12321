@@ -41,6 +41,9 @@
         
         self.handleResultIndex = [[TGJson JsonStr:[dic objectForKey:@"report_time"]] integerValue];
         self.handleResult = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
+        self.feedback = [TGJson JsonStr:[dic objectForKey:@"feedback"]];
+        self.feedbackResult = [TGJson JsonStr:[dic objectForKey:@"feedback_result"]];
+        self.feedbackScore = [TGJson JsonStr:[dic objectForKey:@"feedback_score"]];
     }
     return self;
 }
