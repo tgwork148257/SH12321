@@ -23,29 +23,29 @@
 //    CGFloat itemY = handleResultContentView.y + handleResultContentView.height;
     CGFloat itemY = 0;
     
-    if ([reportData.listReportTypeStr isEqualToString:@"不良短信"]) {
+    if ([reportData.listReportTypeStr isEqualToString:@"举报短信"]) {
         reportData.reportType = ReportMessage;
-    }else if([reportData.listReportTypeStr isEqualToString:@"骚扰电话"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报骚扰电话"]){
         reportData.reportType = ReportCrankCall;
-    }else if([reportData.listReportTypeStr isEqualToString:@"诈骗电话"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报诈骗电话"]){
         reportData.reportType = ReportScamCall;
-    }else if([reportData.listReportTypeStr isEqualToString:@"不良网站"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报网站"]){
         reportData.reportType = ReportWebsite;
-    }else if([reportData.listReportTypeStr isEqualToString:@"垃圾邮件"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"垃圾邮件举报"]){
         reportData.reportType = ReportEmail;
-    }else if([reportData.listReportTypeStr isEqualToString:@"不良App"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报App"]){
         reportData.reportType = ReportApp;
-    }else if([reportData.listReportTypeStr isEqualToString:@"伪基站"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报伪基站"]){
         reportData.reportType = ReportFakeBaseStation;
-    }else if([reportData.listReportTypeStr isEqualToString:@"不良WIFI"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报wifi"]){
         reportData.reportType = ReportWIFI;
-    }else if([reportData.listReportTypeStr isEqualToString:@"手机实名制"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报手机实名认证"]){
         reportData.reportType = ReportPhoneNumberIndentification;
-    }else if([reportData.listReportTypeStr isEqualToString:@"个人信息泄露"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报信息泄露"]){
         reportData.reportType = ReportInfoReveal;
-    }else if([reportData.listReportTypeStr isEqualToString:@"不良舆情"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报不良舆情"]){
         reportData.reportType = ReportBadNews;
-    }else if([reportData.listReportTypeStr isEqualToString:@"知识产权侵权"]){
+    }else if([reportData.listReportTypeStr isEqualToString:@"举报知识产权侵权"]){
         reportData.reportType = ReportInfringment;
     }else if([reportData.listReportTypeStr isEqualToString:@"其他举报"]){
         reportData.reportType = ReportOthers;

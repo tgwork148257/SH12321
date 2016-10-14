@@ -22,6 +22,9 @@
     TGLabel *reportPreDateLabel;
     TGLabel *reportDateLabel;
     
+    TGLabel *reportPreResultLabel;
+    TGLabel *reportResultLabel;
+    
     UIImageView *icon;
 }
 
@@ -40,12 +43,15 @@
     reportPreDateLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, reportPreTypeLabel.y + reportPreTypeLabel.height, preLabelW, labelH) text:@"举报日期: " textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:self.contentView];
     reportDateLabel = [TGLabel initWithFrame:CGRectMake(reportPreDateLabel.x + reportPreDateLabel.width, reportPreDateLabel.y, labelW, labelH) text:[self.model.listReportTime substringToIndex:11] textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:self.contentView];
     
+    reportPreResultLabel = [TGLabel initWithFrame:CGRectMake(L_R_EDGE, reportDateLabel.y + reportDateLabel.height, preLabelW, labelH) text:@"处理结果: " textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:self.contentView];
+    reportResultLabel = [TGLabel initWithFrame:CGRectMake(reportPreResultLabel.x + reportPreResultLabel.width, reportPreResultLabel.y, labelW, labelH) text:self.model.reportProcessResult textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:self.contentView];
+    
     icon = [[UIImageView alloc] initWithFrame:CGRectMake(reportNumberLabel.x + reportNumberLabel.width, labelH + (labelH - iconWH)/2, iconWH, iconWH)];
     icon.image = [UIImage imageNamed:nextIconImageStr];
 }
 
 + (CGFloat)cellHeight{
-    return labelH * 3;
+    return labelH * 4;
 }
 
 @end

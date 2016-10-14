@@ -48,7 +48,8 @@
     reportView.backgroundColor = C_WHITE;
     [scrollView addSubview:reportView];
     
-    handleResultTitleLabel = [ReportItemLabel initWithY:0 title:@"处理结果" superView:reportView];
+    NSString *result = [@"处理结果:" stringByAppendingString:self.data.reportProcessResult];
+    handleResultTitleLabel = [ReportItemLabel initWithY:0 title:result superView:reportView];
     
     CGRect contentRect = [TGManager rectWithString:self.data.handleResult attrDic:@{NSFontAttributeName:F_TITLE} size:CGSizeMake(MIDDLE_W, MAXFLOAT)];
     
@@ -72,7 +73,8 @@
     commitBtn = [CommitButton initWithY:reportView.y + reportView.height + commitBtnTopGap superView:scrollView];
     [commitBtn addTarget:self action:@selector(commitReportFeedback) forControlEvents:UIControlEventTouchUpInside];
     
-    feedbackLabel = [TGLabel initWithFrame:CGRectMake(0, detailTypeView.y+detailTypeView.height, DEVICE_W, reportItemLabelH) text:@"无反馈" textColor:C_LABEL textFont:F_TEXT textAlignment:NSTextAlignmentLeft superView:reportView];
+    feedbackLabel = [TGLabel initWithFrame:CGRectMake(0, detailTypeView.y+detailTypeView.height, DEVICE_W, reportItemLabelH) text:@"无反馈" textColor:C_LABEL textFont:F_TITLE textAlignment:NSTextAlignmentLeft superView:reportView];
+    feedbackLabel.backgroundColor = grayBgColor;
     
     if ([self.data.feedback isEqualToString:@"1"]) {
         commitBtn.hidden = YES;

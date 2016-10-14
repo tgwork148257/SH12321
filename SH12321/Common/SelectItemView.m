@@ -45,7 +45,7 @@
     for (UIView *view in self.subviews) {
         if (view.tag == itemLabelTag) {
             TGLabel *label = (TGLabel *)view;
-            return label.text;
+            return [label.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];;
         }
     }
     return nil;

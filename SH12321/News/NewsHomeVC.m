@@ -113,6 +113,7 @@
 - (void)getNewsList{
     [TGRequest getNewsListWithPage:page  success:^(id responseObject) {
         if ([[responseObject objectForKey:@"code"] integerValue] == 200) {
+            [tableviewData removeAllObjects];
             NSDictionary *listDic = [responseObject objectForKey:@"data"];
             for (NSDictionary *dic in [listDic objectForKey:@"list"]) {
                 NewsDetailModel *model = [[NewsDetailModel alloc] initWithDictionary:dic];

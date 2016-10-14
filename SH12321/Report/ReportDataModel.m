@@ -13,7 +13,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic{
     if (self = [super initWithDictionary:dic]) {
-        
+        self.reportAdress = [TGJson JsonStr:[dic objectForKey:addressKey]];
         self.reportAcceptNumber = [TGJson JsonStr:[dic objectForKey:acceptNumberKey]];
         self.reportSendNumber = [TGJson JsonStr:[dic objectForKey:sendNumberKey]];
         self.reportTime = [TGJson JsonStr:[dic objectForKey:callTimeKey]];
@@ -39,6 +39,7 @@
         self.listReportFlag = [TGJson JsonStr:[dic objectForKey:@"con_flag"]];
         self.listReportTypeStr = [TGJson JsonStr:[dic objectForKey:@"type_name"]];
         
+        self.reportProcessResult = [TGJson JsonStr:[dic objectForKey:@"operator_rs"]];
         self.handleResultIndex = [[TGJson JsonStr:[dic objectForKey:@"report_time"]] integerValue];
         self.handleResult = [TGJson JsonStr:[dic objectForKey:@"report_time"]];
         self.feedback = [TGJson JsonStr:[dic objectForKey:@"feedback"]];

@@ -65,6 +65,7 @@
 @property (nonatomic, copy) NSString *listReportID;             //举报ID
 @property (nonatomic, copy) NSString *listReportTime;           //列表举报时间
 @property (nonatomic, copy) NSString *listReportFlag;           //列表处理进度
+@property (nonatomic, copy) NSString *reportProcessResult;      //处理结果
 @property (nonatomic, copy) NSString *listReportTypeStr;        //列表举报类型
 
 @end
