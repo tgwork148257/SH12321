@@ -129,12 +129,12 @@
         return;
     }
     
-    sendVerifyCodeBtn.userInteractionEnabled = NO;
-    timer =  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     
     [TGRequest getVerificationCodeWithNumber:phoneNumberTextField.text success:^(id responseObject) {
         [TGToast showWithText:@"验证码已发送，请查收"];
         verifyCode = [responseObject objectForKey:phoneVerificationCodeKey];
+        sendVerifyCodeBtn.userInteractionEnabled = NO;
+        timer =  [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     } fail:^{
         [TGToast showWithText:@"发送验证码失败，请查收"];
     }];

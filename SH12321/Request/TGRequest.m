@@ -177,8 +177,13 @@
 + (void)getVerificationCodeWithNumber:(NSString *)phoneNumber success:(void(^)(id responseObject))success fail:(void(^)())fail{
     NSString *urlStr = [BASIC_URL stringByAppendingString:GET_CODE];
     NSString *token = [TGUtils getServerToken];
-    NSDictionary *parameters = @{@"mobile":phoneNumber,
-                                 @"token":token};
+    NSDictionary *parameters = [[NSDictionary alloc] init];
+    if (!EMPTY_STRING(token)) {
+        parameters = @{@"mobile":phoneNumber,
+                       @"token":token};
+    }else{
+        parameters = @{@"mobile":phoneNumber};
+    }
     [self getJsonDataWithUrl:urlStr parameters:parameters success:success fail:fail];
 }
 

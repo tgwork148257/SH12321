@@ -22,7 +22,7 @@
 }
 
 - (void)viewDidLoad{
-    self.navigationTitle = @"我";
+    self.navigationTitle = @"我的举报";
     [super viewDidLoad];
     self.leftBtn.hidden = NO;
     page = 1;
